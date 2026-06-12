@@ -1,0 +1,8 @@
+{
+  "name": "WAMU",
+  "description": "The operating system for informal finance in East Africa. A WhatsApp-native digital agent platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
