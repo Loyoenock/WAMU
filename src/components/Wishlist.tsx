@@ -12,7 +12,8 @@ export function Wishlist() {
     interest: 'Savings Groups',
     message: ''
   });
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,13 +40,19 @@ export function Wishlist() {
           window.location.reload();
         }, 2000);
       } else {
-        setStatus('idle');
         const errorData = await res.json().catch(() => null);
-        alert(errorData?.error || 'Could not save to Supabase. Unknown error.');
+        setErrorMessage(errorData?.error || 'Could not save. Unknown error.');
+        setStatus('error');
+        setTimeout(() => {
+          setStatus('idle');
+        }, 3000);
       }
     } catch (err) {
-      setStatus('idle');
-      alert('Network error. Please try again.');
+      setErrorMessage('Network error. Please try again.');
+      setStatus('error');
+      setTimeout(() => {
+        setStatus('idle');
+      }, 3000);
     }
   };
 
@@ -72,6 +79,15 @@ export function Wishlist() {
           >
             <div className="font-serif text-3xl mb-4 text-brand-highlight">Thank you.</div>
             <div className="text-brand-moss">We'll keep you informed as WAMU evolves.</div>
+          </motion.div>
+        ) : status === 'error' ? (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="text-center p-12 bg-[#0D1A12] border border-red-900/50"
+          >
+            <div className="font-serif text-3xl mb-4 text-red-500">Notice</div>
+            <div className="text-brand-moss">{errorMessage}</div>
           </motion.div>
         ) : (
           <form className="space-y-4" onSubmit={handleSubmit}>
