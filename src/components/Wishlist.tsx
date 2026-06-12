@@ -57,7 +57,25 @@ export function Wishlist() {
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    const { name, value } = e.target;
+    
+    if (name === 'country') {
+      let code = '';
+      if (value === 'Uganda') code = '+256';
+      else if (value === 'Kenya') code = '+254';
+      else if (value === 'Rwanda') code = '+250';
+      
+      setFormData(prev => {
+        const isCurrentPhoneJustCode = !prev.phone || ['+256', '+254', '+250'].includes(prev.phone.trim());
+        return {
+          ...prev,
+          [name]: value,
+          phone: isCurrentPhoneJustCode ? (code ? `${code} ` : '') : prev.phone
+        };
+      });
+    } else {
+      setFormData(prev => ({ ...prev, [name]: value }));
+    }
   };
 
   return (
