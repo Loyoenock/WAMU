@@ -49,6 +49,22 @@ async function startServer() {
     try {
       const { name, email, phone, organization, country, interest, message } = data;
       
+      // Check for duplicate
+      const { data: existingData, error: searchError } = await supabaseAdmin
+        .from('wamu')
+        .select('email')
+        .eq('email', email)
+        .limit(1);
+
+      if (searchError) {
+        console.error("Supabase search error:", searchError);
+        return res.status(500).json({ error: searchError.message });
+      }
+
+      if (existingData && existingData.length > 0) {
+        return res.status(400).json({ error: "An entry with this email already exists." });
+      }
+
       const { error } = await supabaseAdmin
         .from('wamu')
         .insert([{ name, email, phone, organization, country, interest, message }]);

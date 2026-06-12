@@ -29,7 +29,7 @@ export function Wishlist() {
       } else {
         setStatus('idle');
         const errorData = await res.json().catch(() => null);
-        alert(`Could not save to Supabase: ${errorData?.error || 'Unknown error'}`);
+        alert(errorData?.error || 'Could not save to Supabase. Unknown error.');
       }
     } catch (err) {
       setStatus('idle');
