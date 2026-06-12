@@ -1,6 +1,8 @@
+import "dotenv/config";
 import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
+import { createClient } from "@supabase/supabase-js";
 
 const wishlist: any[] = [];
 
@@ -8,18 +10,69 @@ async function startServer() {
   const app = express();
   const PORT = 3000;
 
+  // Initialize Supabase Admin Client for secure backend operations
+  // This bypasses RLS, so be careful to enforce business logic here
+  const rawUrl = process.env.VITE_SUPABASE_URL || "";
+  const rawServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
+  const rawAnonKey = process.env.VITE_SUPABASE_ANON_KEY || "";
+  
+  const isValidUrl = (url: string) => {
+    try {
+      return new URL(url).protocol.startsWith('http');
+    } catch {
+      return false;
+    }
+  };
+
+  let supabaseAdmin: any = null;
+  if (isValidUrl(rawUrl)) {
+    const keyToUse = (rawServiceKey && rawServiceKey !== 'YOUR_SUPABASE_SERVICE_ROLE_KEY') 
+      ? rawServiceKey 
+      : (rawAnonKey && rawAnonKey !== 'YOUR_SUPABASE_ANON_KEY') ? rawAnonKey : null;
+      
+    if (keyToUse) {
+      supabaseAdmin = createClient(rawUrl, keyToUse);
+    }
+  }
+
   app.use(express.json());
 
   // API routes FIRST
-  app.post("/api/wishlist", (req, res) => {
+  app.post("/api/wishlist", async (req, res) => {
     const data = req.body;
-    wishlist.push({ ...data, timestamp: new Date().toISOString() });
-    res.json({ success: true, message: "Added to wishlist" });
+    
+    if (!supabaseAdmin) {
+      console.error("Supabase client is not initialized on the server.");
+      return res.status(500).json({ error: "Server database configuration missing" });
+    }
+
+    try {
+      const { name, email, phone, organization, country, interest, message } = data;
+      
+      const { error } = await supabaseAdmin
+        .from('wamu')
+        .insert([{ name, email, phone, organization, country, interest, message }]);
+      
+      if (error) {
+        console.error("Supabase insert error:", error);
+        return res.status(500).json({ error: error.message });
+      }
+      
+      res.json({ success: true, message: "Added to wishlist" });
+    } catch (err) {
+      console.error("Server error:", err);
+      res.status(500).json({ error: "Internal server error" });
+    }
   });
 
-  app.get("/api/wishlist", (req, res) => {
-    // Hidden endpoint for testing
-    res.json(wishlist);
+  app.get("/api/wishlist", async (req, res) => {
+    if (supabaseAdmin) {
+      const { data, error } = await supabaseAdmin.from('wamu').select('*');
+      if (!error && data) {
+        return res.json(data);
+      }
+    }
+    res.json([]);
   });
 
   // Vite middleware for development

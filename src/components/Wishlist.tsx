@@ -28,7 +28,8 @@ export function Wishlist() {
         setStatus('success');
       } else {
         setStatus('idle');
-        alert('Something went wrong. Please try again.');
+        const errorData = await res.json().catch(() => null);
+        alert(`Could not save to Supabase: ${errorData?.error || 'Unknown error'}`);
       }
     } catch (err) {
       setStatus('idle');
