@@ -26,6 +26,18 @@ export function Wishlist() {
       });
       if (res.ok) {
         setStatus('success');
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          country: '',
+          organization: '',
+          interest: 'Savings Groups',
+          message: ''
+        });
+        setTimeout(() => {
+          setStatus('idle');
+        }, 5000);
       } else {
         setStatus('idle');
         const errorData = await res.json().catch(() => null);
