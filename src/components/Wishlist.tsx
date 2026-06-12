@@ -36,8 +36,8 @@ export function Wishlist() {
           message: ''
         });
         setTimeout(() => {
-          setStatus('idle');
-        }, 5000);
+          window.location.reload();
+        }, 2000);
       } else {
         setStatus('idle');
         const errorData = await res.json().catch(() => null);
