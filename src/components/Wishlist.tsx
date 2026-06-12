@@ -105,7 +105,7 @@ export function Wishlist() {
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="w-full bg-brand-highlight hover:bg-brand-mist text-[#0D1A12] font-bold py-4 text-xs uppercase tracking-[0.2em] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center mt-4 shadow-[0_0_15px_rgba(93,202,165,0.2)]"
+              className="w-full cursor-pointer bg-brand-highlight hover:bg-brand-mist text-[#0D1A12] font-bold py-4 text-xs uppercase tracking-[0.2em] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center mt-4 shadow-[0_0_15px_rgba(93,202,165,0.2)]"
             >
               {status === 'submitting' ? <Loader2 className="w-5 h-5 animate-spin" /> : "Request Access"}
             </button>
