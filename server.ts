@@ -3,6 +3,7 @@ import express from "express";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import { createClient } from "@supabase/supabase-js";
+import { Resend } from "resend";
 
 const wishlist: any[] = [];
 
@@ -15,6 +16,9 @@ async function startServer() {
   const rawUrl = process.env.VITE_SUPABASE_URL || "";
   const rawServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
   const rawAnonKey = process.env.VITE_SUPABASE_ANON_KEY || "";
+  
+  const resendApiKey = process.env.RESEND_API_KEY || "";
+  const resend = resendApiKey ? new Resend(resendApiKey) : null;
   
   const isValidUrl = (url: string) => {
     try {
@@ -72,6 +76,31 @@ async function startServer() {
       if (error) {
         console.error("Supabase insert error:", error);
         return res.status(500).json({ error: error.message });
+      }
+      
+      // Send confirmation email
+      if (resend) {
+        try {
+          await resend.emails.send({
+            from: 'WAMU <onboarding@resend.dev>',
+            to: email,
+            subject: 'Welcome to WAMU Wishlist',
+            html: `
+              <div style="font-family: sans-serif; color: #333;">
+                <h2 style="color: #5DCAA5;">Welcome to WAMU, ${name}!</h2>
+                <p>Thank you for subscribing to our wishlist.</p>
+                <p>We've received your details and are excited to have you on board. We'll keep you informed as WAMU evolves.</p>
+                <br />
+                <p>Best regards,<br />The WAMU Team</p>
+              </div>
+            `
+          });
+          console.log(`Confirmation email sent to ${email}`);
+        } catch (emailError) {
+          console.error("Failed to send welcome email:", emailError);
+        }
+      } else {
+        console.warn("RESEND_API_KEY is not configured. Skipping confirmation email.");
       }
       
       res.json({ success: true, message: "Added to wishlist" });
