@@ -71,7 +71,7 @@ export function Navigation() {
               onClick={(e) => smoothScroll(e, 'wishlist')}
               className="text-[10px] font-bold border border-brand-highlight/30 text-brand-highlight px-6 py-3 rounded-full text-center uppercase tracking-widest mt-4"
             >
-              Institutional Access Only
+              Join Wishlist
             </a>
           </motion.div>
         )}
