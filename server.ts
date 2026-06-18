@@ -81,8 +81,9 @@ async function startServer() {
       // Send confirmation email
       if (resend) {
         try {
-          await resend.emails.send({
-            from: 'WAMU <onboarding@resend.dev>',
+          const resendFromEmail = process.env.RESEND_FROM_EMAIL || 'WAMU <onboarding@resend.dev>';
+          const resendResponse = await resend.emails.send({
+            from: resendFromEmail,
             to: email,
             subject: 'Welcome to WAMU Wishlist',
             html: `
@@ -95,9 +96,14 @@ async function startServer() {
               </div>
             `
           });
-          console.log(`Confirmation email sent to ${email}`);
+          
+          if (resendResponse.error) {
+            console.error("Failed to send welcome email. Resend error:", resendResponse.error);
+          } else {
+            console.log(`Confirmation email sent to ${email}`);
+          }
         } catch (emailError) {
-          console.error("Failed to send welcome email:", emailError);
+          console.error("Failed to send welcome email exception:", emailError);
         }
       } else {
         console.warn("RESEND_API_KEY is not configured. Skipping confirmation email.");
