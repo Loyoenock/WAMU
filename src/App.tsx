@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { motion } from 'motion/react';
+import { motion, useScroll, useSpring } from 'motion/react';
 import Lenis from 'lenis';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
@@ -26,6 +26,13 @@ const ScrollSection = ({ children }: { children: React.ReactNode }) => (
 );
 
 export default function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -46,6 +53,10 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0D1A12]">
+      <motion.div
+        className="fixed top-0 left-0 right-0 h-1.5 bg-brand-primary z-[60] origin-left shadow-[0_0_10px_rgba(15,110,86,0.5)]"
+        style={{ scaleX }}
+      />
       <Navigation />
       <main>
         <Hero />
