@@ -24,21 +24,37 @@ export function Ecosystem() {
         </p>
 
         <div className="relative max-w-4xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 relative z-10">
+          <motion.div 
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 relative z-10"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={{
+              visible: { 
+                opacity: 1, 
+                transition: { 
+                  staggerChildren: 0.1 
+                } 
+              },
+              hidden: { 
+                opacity: 0 
+              }
+            }}
+          >
             {nodes.map((node, idx) => (
               <motion.div
                 key={idx}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: idx * 0.1 }}
-                className="bg-[#0D1A12] border border-brand-grove/50 p-6 flex flex-col items-center justify-center text-center h-32 hover:border-brand-highlight transition-colors group"
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } }
+                }}
+                className="bg-[#0D1A12] border border-brand-grove/50 p-6 flex flex-col items-center justify-center text-center h-32 hover:border-brand-highlight transition-colors group cursor-none"
               >
                 <span className="font-bold tracking-tight text-brand-mist group-hover:text-white transition-colors">{node}</span>
                 <span className="text-[10px] uppercase tracking-widest text-brand-moss mt-2 opacity-0 group-hover:opacity-100 transition-opacity">Integrated</span>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
           
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none -z-0 opacity-20 hidden md:block">
             <svg className="w-full h-full" overflow="visible">

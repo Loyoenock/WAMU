@@ -81,10 +81,10 @@ async function startServer() {
       // Send confirmation email
       if (resend) {
         try {
-          const resendFromEmail = process.env.RESEND_FROM_EMAIL || 'WAMU <onboarding@resend.dev>';
+          const resendFromEmail = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
           const resendResponse = await resend.emails.send({
             from: resendFromEmail,
-            to: email,
+            to: typeof email === 'string' ? [email] : email,
             subject: 'Welcome to WAMU Wishlist',
             html: `
               <div style="font-family: sans-serif; color: #333;">
