@@ -148,18 +148,18 @@ export function Hero() {
                   initial={false}
                   animate={{ 
                     opacity: hoveredNode ? 1 : 0, 
-                    y: hoveredNode ? 0 : 20,
+                    scale: hoveredNode ? 1 : 0.9,
                     pointerEvents: hoveredNode ? 'auto' : 'none'
                   }}
                   transition={{ duration: 0.3 }}
-                  className="absolute bottom-0 left-0 right-0 p-4 bg-brand-midnight/80 backdrop-blur-lg rounded-xl border border-white/10 text-center z-30 shadow-2xl mx-4"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] p-4 bg-[#0D1A12]/90 backdrop-blur-md rounded-2xl border border-white/10 text-center z-40 shadow-2xl flex flex-col items-center justify-center"
                 >
                   {hoveredNode && (
                     <>
-                      <h3 className={`text-sm font-bold tracking-wider uppercase mb-1 ${ecosystemNodes.find(n => n.label === hoveredNode)?.textColor}`}>
+                      <h3 className={`text-xs font-bold tracking-wider uppercase mb-2 ${ecosystemNodes.find(n => n.label === hoveredNode)?.textColor}`}>
                         {hoveredNode}
                       </h3>
-                      <p className="text-brand-mist text-xs leading-relaxed max-w-[280px] mx-auto">
+                      <p className="text-brand-mist text-[10px] leading-relaxed max-w-[180px] mx-auto">
                         {ecosystemNodes.find(n => n.label === hoveredNode)?.description}
                       </p>
                     </>
