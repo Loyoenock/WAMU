@@ -13,6 +13,7 @@ import { Roadmap } from './components/Roadmap';
 import { Wishlist } from './components/Wishlist';
 import { Footer } from './components/Footer';
 import { BackToTop } from './components/BackToTop';
+import { CustomCursor } from './components/CustomCursor';
 
 const ScrollSection = ({ children }: { children: React.ReactNode }) => (
   <motion.div
@@ -53,6 +54,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0D1A12]">
+      <CustomCursor />
       <motion.div
         className="fixed top-0 left-0 right-0 h-1.5 bg-brand-primary z-[60] origin-left shadow-[0_0_10px_rgba(15,110,86,0.5)]"
         style={{ scaleX }}

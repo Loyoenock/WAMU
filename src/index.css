@@ -19,7 +19,13 @@
     scroll-behavior: smooth;
     overflow-x: hidden;
   }
+  body, a, button, select, [role="button"] {
+    cursor: none !important;
+  }
   body {
     @apply bg-[#0D1A12] text-[#C3E8D6] font-sans antialiased overflow-x-hidden selection:bg-brand-primary selection:text-white border-[4px] md:border-8 border-brand-grove;
+  }
+  input, textarea {
+    cursor: auto !important;
   }
 }
