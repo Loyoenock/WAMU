@@ -37,7 +37,7 @@ export function Navigation() {
           !scrolled && "max-w-7xl"
         )}>
           <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-3">
-            <img src="/wamu-logo-v1.png" alt="WAMU Logo" className="h-10 w-10 object-contain rounded-xl shrink-0" />
+            <img src="/wamu-logo-v1.png" alt="WAMU Logo" className="h-10 w-10 object-contain rounded-[100%] shrink-0" />
             <span className="font-serif text-2xl font-bold tracking-tight text-white">WAMU</span>
           </a>
 
