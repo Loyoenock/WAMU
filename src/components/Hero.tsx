@@ -30,7 +30,11 @@ export function Hero() {
             className="lg:col-span-7"
           >
             <div className="mb-4 inline-flex items-center gap-2 text-brand-highlight font-semibold text-sm uppercase tracking-widest">
-              <span className="w-2 h-2 rounded-full bg-brand-highlight"></span> East African Financial OS
+              <motion.span 
+                className="w-2 h-2 rounded-full bg-brand-highlight"
+                animate={{ opacity: [0.5, 1, 0.5], scale: [0.8, 1.2, 0.8] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              /> East African Financial OS
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-[56px] leading-[1.05] font-serif text-white mb-6 md:pr-10">
               Orchestrating the future of informal finance.
