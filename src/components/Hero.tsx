@@ -130,7 +130,7 @@ export function Hero() {
                           style={{ filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.4))' }}
                         />
                       </motion.div>
-                      <span className={`text-[10px] ${hoveredNode === node.label ? 'text-white bg-brand-midnight/90' : 'text-brand-mist/90 bg-brand-midnight/60'} uppercase tracking-widest font-mono backdrop-blur-md px-3 py-1.5 border border-white/5 rounded shadow-lg whitespace-nowrap transition-colors`}>
+                      <span className={`text-[10px] text-brand-mist/90 bg-brand-midnight/60 uppercase tracking-widest font-mono backdrop-blur-md px-3 py-1.5 border border-white/5 rounded shadow-lg whitespace-nowrap transition-all duration-300 ${hoveredNode ? 'opacity-0 invisible' : 'opacity-100 visible'}`}>
                         {node.label}
                       </span>
                     </motion.div>
