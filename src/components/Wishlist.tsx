@@ -79,7 +79,7 @@ export function Wishlist() {
   };
 
   return (
-    <section id="wishlist" className="py-24 bg-transparent border-b border-brand-grove/30 text-white relative overflow-hidden">
+    <section id="wishlist" className="py-24 bg-white border-b border-brand-grove/30 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(#2D4A38 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
       <div className="max-w-2xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
@@ -93,19 +93,19 @@ export function Wishlist() {
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-center p-12 bg-[#0D1A12] border border-brand-grove"
+            className="text-center p-12 bg-white border border-brand-highlight shadow-sm"
           >
-            <div className="font-serif text-3xl mb-4 text-brand-highlight">Thank you.</div>
-            <div className="text-brand-moss">We'll keep you informed as WAMU evolves.</div>
+            <div className="font-serif text-3xl mb-4 text-brand-primary">Thank you.</div>
+            <div className="text-brand-grove">We'll keep you informed as WAMU evolves.</div>
           </motion.div>
         ) : status === 'error' ? (
           <motion.div 
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="text-center p-12 bg-[#0D1A12] border border-red-900/50"
+            className="text-center p-12 bg-white border border-red-200 shadow-sm"
           >
-            <div className="font-serif text-3xl mb-4 text-red-500">Notice</div>
-            <div className="text-brand-moss">{errorMessage}</div>
+            <div className="font-serif text-3xl mb-4 text-red-600">Notice</div>
+            <div className="text-red-800">{errorMessage}</div>
           </motion.div>
         ) : (
           <form className="space-y-4" onSubmit={handleSubmit}>
