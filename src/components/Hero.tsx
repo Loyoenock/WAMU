@@ -1,12 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Smartphone, MessageCircle, Shield, Users, Zap } from 'lucide-react';
 
 export function Hero() {
+  const [hoveredNode, setHoveredNode] = useState<string | null>(null);
+
   const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
+
+  const ecosystemNodes = [
+    { label: "Mobile Money", textColor: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/30", icon: Smartphone, angle: 0, description: "Programmatic USSD parsing for instant funds movement." },
+    { label: "WhatsApp", textColor: "text-green-400", bg: "bg-green-500/10", border: "border-green-500/30", icon: MessageCircle, angle: 72, description: "Frictionless financial interactions natively embedded in chat." },
+    { label: "Insurance", textColor: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/30", icon: Shield, angle: 144, description: "Automated claims and micro-premiums with zero paperwork." },
+    { label: "Savings Clubs", textColor: "text-teal-400", bg: "bg-teal-500/10", border: "border-teal-500/30", icon: Users, angle: 216, description: "Transparent, real-time shared ledgers for community capital." },
+    { label: "Utilities", textColor: "text-purple-400", bg: "bg-purple-500/10", border: "border-purple-500/30", icon: Zap, angle: 288, description: "Unified programmable abstraction layer for instant settlement." },
+  ];
 
   return (
     <section className="relative pt-40 pb-20 md:pt-52 md:pb-32 overflow-hidden bg-[#0D1A12] border-b border-brand-grove/30">
@@ -59,36 +69,68 @@ export function Hero() {
                 {/* Center Node representing WAMU */}
                 <motion.div 
                   initial={{ scale: 0 }}
-                  animate={{ scale: 1 }}
-                  transition={{ delay: 0.5, type: 'spring', damping: 20 }}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-brand-primary rounded-full flex items-center justify-center z-20 shadow-lg shadow-brand-primary/50"
+                  animate={{ 
+                    scale: hoveredNode ? 0.8 : 1,
+                    opacity: hoveredNode ? 0 : 1
+                  }}
+                  transition={{ 
+                    duration: 0.3,
+                    type: hoveredNode ? 'tween' : 'spring',
+                    damping: 20
+                  }}
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[68px] h-[68px] bg-brand-primary rounded-full flex items-center justify-center z-20 shadow-lg shadow-brand-primary/50 overflow-hidden"
                 >
-                  <span className="font-serif text-white font-bold tracking-widest">WAMU</span>
+                  <img src="/wamu-logo-v1.png" alt="WAMU Logo" className="w-full h-full object-cover" />
                 </motion.div>
 
                 {/* Orbiting Elements */}
-                {[
-                  { label: "Mobile Money", color: "bg-yellow-500", angle: 0 },
-                  { label: "WhatsApp", color: "bg-green-500", angle: 72 },
-                  { label: "Insurance", color: "bg-blue-500", angle: 144 },
-                  { label: "Savings Clubs", color: "bg-brand-highlight", angle: 216 },
-                  { label: "Utilities", color: "bg-purple-500", angle: 288 },
-                ].map((node, i) => (
+                {ecosystemNodes.map((node, i) => (
                   <div
                     key={node.label}
-                    className="absolute top-1/2 left-1/2 z-10"
+                    className="absolute top-1/2 left-1/2 z-10 cursor-pointer"
+                    onMouseEnter={() => setHoveredNode(node.label)}
+                    onMouseLeave={() => setHoveredNode(null)}
                     style={{
                       transform: `translate(-50%, -50%) rotate(${node.angle}deg) translateY(-140px) rotate(-${node.angle}deg)`,
+                      perspective: "1000px"
                     }}
                   >
                     <motion.div
                       initial={{ opacity: 0, scale: 0 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ delay: 0.8 + i * 0.1, duration: 0.6 }}
-                      className="flex flex-col items-center gap-3"
+                      animate={{ 
+                        opacity: hoveredNode === null || hoveredNode === node.label ? 1 : 0.1,
+                        scale: hoveredNode === node.label ? 1.15 : 1
+                      }}
+                      transition={{ 
+                        opacity: { duration: 0.3 },
+                        scale: { duration: 0.3 },
+                        default: { delay: 0.8 + i * 0.1, duration: 0.6 }
+                      }}
+                      className="flex flex-col items-center gap-3 transition-transform"
                     >
-                      <div className={`w-3 h-3 rounded-full ${node.color}`} />
-                      <span className="text-xs text-brand-mist uppercase tracking-wider font-mono opacity-80 backdrop-blur px-2 py-1 bg-white/5 rounded whitespace-nowrap whitespace-nowrap">
+                      <motion.div
+                        animate={hoveredNode === node.label ? { y: 0 } : { y: [0, -10, 0] }}
+                        transition={{ 
+                          repeat: hoveredNode === node.label ? 0 : Infinity, 
+                          duration: 3.5 + (i * 0.5), 
+                          ease: "easeInOut" 
+                        }}
+                        className={`p-4 rounded-2xl ${node.bg} backdrop-blur-xl border ${node.border} flex items-center justify-center relative overflow-hidden`}
+                        style={{
+                          boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.4), 0 10px 20px rgba(0,0,0,0.3)',
+                        }}
+                      >
+                        {/* 3D Glass shine effect */}
+                        <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent" />
+                        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10" />
+                        
+                        <node.icon 
+                          className={`w-7 h-7 ${node.textColor} relative z-10`} 
+                          strokeWidth={hoveredNode === node.label ? 2 : 1.5} 
+                          style={{ filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.4))' }}
+                        />
+                      </motion.div>
+                      <span className={`text-[10px] ${hoveredNode === node.label ? 'text-white bg-brand-midnight/90' : 'text-brand-mist/90 bg-brand-midnight/60'} uppercase tracking-widest font-mono backdrop-blur-md px-3 py-1.5 border border-white/5 rounded shadow-lg whitespace-nowrap transition-colors`}>
                         {node.label}
                       </span>
                     </motion.div>
@@ -100,6 +142,29 @@ export function Hero() {
                   <circle cx="50%" cy="50%" r="140" className="stroke-brand-grove/40 stroke-1 fill-none" />
                   <circle cx="50%" cy="50%" r="140" className="stroke-brand-highlight/20 stroke-[3] fill-none" strokeDasharray="4 20" />
                 </svg>
+
+                {/* Hover Description Popup */}
+                <motion.div
+                  initial={false}
+                  animate={{ 
+                    opacity: hoveredNode ? 1 : 0, 
+                    y: hoveredNode ? 0 : 20,
+                    pointerEvents: hoveredNode ? 'auto' : 'none'
+                  }}
+                  transition={{ duration: 0.3 }}
+                  className="absolute bottom-0 left-0 right-0 p-4 bg-brand-midnight/80 backdrop-blur-lg rounded-xl border border-white/10 text-center z-30 shadow-2xl mx-4"
+                >
+                  {hoveredNode && (
+                    <>
+                      <h3 className={`text-sm font-bold tracking-wider uppercase mb-1 ${ecosystemNodes.find(n => n.label === hoveredNode)?.textColor}`}>
+                        {hoveredNode}
+                      </h3>
+                      <p className="text-brand-mist text-xs leading-relaxed max-w-[280px] mx-auto">
+                        {ecosystemNodes.find(n => n.label === hoveredNode)?.description}
+                      </p>
+                    </>
+                  )}
+                </motion.div>
               </div>
             </div>
             {/* Architectural Grid Background */}
