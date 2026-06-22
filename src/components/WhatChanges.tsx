@@ -86,7 +86,7 @@ export function WhatChanges() {
           </div>
 
           <div className="lg:col-span-7 bg-[#0A140F] border border-brand-grove/30 p-8 md:p-12 min-h-[400px] flex items-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[100px] pointer-events-none" aria-hidden="true" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[60px] md:blur-[100px] pointer-events-none transform-gpu will-change-transform" aria-hidden="true" />
             
             <AnimatePresence mode="wait">
               {capabilities.map((cap) => 

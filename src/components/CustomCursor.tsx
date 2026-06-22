@@ -6,7 +6,15 @@ export function CustomCursor() {
   const [isHoveringLink, setIsHoveringLink] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
+  const [isTouchDevice, setIsTouchDevice] = useState(false);
+
   useEffect(() => {
+    setIsTouchDevice(window.matchMedia('(pointer: coarse)').matches);
+  }, []);
+
+  useEffect(() => {
+    if (isTouchDevice) return;
+
     const updateMousePosition = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
       if (!isVisible) setIsVisible(true);
@@ -31,10 +39,10 @@ export function CustomCursor() {
       setIsVisible(false);
     };
 
-    window.addEventListener('mousemove', updateMousePosition);
-    window.addEventListener('mouseover', handleMouseOver);
-    document.addEventListener('mouseleave', handleMouseLeave);
-    document.addEventListener('mouseenter', () => setIsVisible(true));
+    window.addEventListener('mousemove', updateMousePosition, { passive: true });
+    window.addEventListener('mouseover', handleMouseOver, { passive: true });
+    document.addEventListener('mouseleave', handleMouseLeave, { passive: true });
+    document.addEventListener('mouseenter', () => setIsVisible(true), { passive: true });
 
     return () => {
       window.removeEventListener('mousemove', updateMousePosition);
@@ -42,23 +50,25 @@ export function CustomCursor() {
       document.removeEventListener('mouseleave', handleMouseLeave);
       document.removeEventListener('mouseenter', () => setIsVisible(true));
     };
-  }, [isVisible]);
+  }, [isVisible, isTouchDevice]);
 
   const springConfig = { damping: 25, stiffness: 150, mass: 0.5 };
   const cursorXSpring = useSpring(mousePosition.x, springConfig);
   const cursorYSpring = useSpring(mousePosition.y, springConfig);
 
   useEffect(() => {
-    cursorXSpring.set(mousePosition.x);
-    cursorYSpring.set(mousePosition.y);
-  }, [mousePosition, cursorXSpring, cursorYSpring]);
+    if (!isTouchDevice) {
+      cursorXSpring.set(mousePosition.x);
+      cursorYSpring.set(mousePosition.y);
+    }
+  }, [mousePosition, cursorXSpring, cursorYSpring, isTouchDevice]);
 
-  if (!isVisible) return null;
+  if (isTouchDevice || !isVisible) return null;
 
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-2.5 h-2.5 bg-brand-highlight rounded-full pointer-events-none z-[100] shadow-[0_0_8px_rgba(93,202,165,0.8)]"
+        className="fixed top-0 left-0 w-2.5 h-2.5 bg-brand-highlight rounded-full pointer-events-none z-[100] shadow-[0_0_8px_rgba(93,202,165,0.8)] hidden md:block will-change-transform"
         style={{
           x: mousePosition.x - 5,
           y: mousePosition.y - 5,
@@ -69,7 +79,7 @@ export function CustomCursor() {
         transition={{ type: 'spring', stiffness: 300, damping: 20 }}
       />
       <motion.div
-        className="fixed top-0 left-0 w-8 h-8 border-[1.5px] border-brand-highlight rounded-full pointer-events-none z-[99]"
+        className="fixed top-0 left-0 w-8 h-8 border-[1.5px] border-brand-highlight rounded-full pointer-events-none z-[99] hidden md:block will-change-transform"
         style={{
           x: cursorXSpring,
           y: cursorYSpring,

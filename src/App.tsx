@@ -1,26 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
 import Lenis from 'lenis';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
-import { RealityToday } from './components/RealityToday';
-import { WhatChanges } from './components/WhatChanges';
-import { HowItWorks } from './components/HowItWorks';
-import { WhyDifferent } from './components/WhyDifferent';
-import { BuiltForEA } from './components/BuiltForEA';
-import { Ecosystem } from './components/Ecosystem';
-import { Roadmap } from './components/Roadmap';
-import { Wishlist } from './components/Wishlist';
-import { Footer } from './components/Footer';
-import { BackToTop } from './components/BackToTop';
-import { CustomCursor } from './components/CustomCursor';
+
+const RealityToday = lazy(() => import('./components/RealityToday').then(module => ({ default: module.RealityToday })));
+const WhatChanges = lazy(() => import('./components/WhatChanges').then(module => ({ default: module.WhatChanges })));
+const HowItWorks = lazy(() => import('./components/HowItWorks').then(module => ({ default: module.HowItWorks })));
+const WhyDifferent = lazy(() => import('./components/WhyDifferent').then(module => ({ default: module.WhyDifferent })));
+const BuiltForEA = lazy(() => import('./components/BuiltForEA').then(module => ({ default: module.BuiltForEA })));
+const Ecosystem = lazy(() => import('./components/Ecosystem').then(module => ({ default: module.Ecosystem })));
+const Roadmap = lazy(() => import('./components/Roadmap').then(module => ({ default: module.Roadmap })));
+const Wishlist = lazy(() => import('./components/Wishlist').then(module => ({ default: module.Wishlist })));
+const Footer = lazy(() => import('./components/Footer').then(module => ({ default: module.Footer })));
+const BackToTop = lazy(() => import('./components/BackToTop').then(module => ({ default: module.BackToTop })));
+const CustomCursor = lazy(() => import('./components/CustomCursor').then(module => ({ default: module.CustomCursor })));
 
 const ScrollSection = ({ children }: { children: React.ReactNode }) => (
   <motion.div
-    initial={{ opacity: 0, scale: 0.96 }}
-    whileInView={{ opacity: 1, scale: 1 }}
-    viewport={{ once: false, amount: 0.1 }}
-    transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+    initial={{ opacity: 0, y: 20 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: true, margin: "200px" }}
+    transition={{ duration: 0.5, ease: 'easeOut' }}
+    className="will-change-transform will-change-opacity"
   >
     {children}
   </motion.div>
@@ -35,6 +37,10 @@ export default function App() {
   });
 
   useEffect(() => {
+    // Disable smooth scrolling on touch devices for better performance
+    const isTouchDevice = window.matchMedia('(pointer: coarse)').matches;
+    if (isTouchDevice) return;
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -57,25 +63,31 @@ export default function App() {
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:p-4 focus:bg-brand-primary focus:text-white font-bold rounded-md">
         Skip to main content
       </a>
-      <CustomCursor />
+      <Suspense fallback={null}>
+        <CustomCursor />
+      </Suspense>
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1.5 bg-brand-primary z-[60] origin-left shadow-[0_0_10px_rgba(15,110,86,0.5)]"
+        className="fixed top-0 left-0 right-0 h-1.5 bg-brand-primary z-[60] origin-left shadow-[0_0_10px_rgba(15,110,86,0.5)] transform-gpu will-change-transform"
         style={{ scaleX }}
       />
       <Navigation />
       <main id="main-content">
         <Hero />
-        <ScrollSection><RealityToday /></ScrollSection>
-        <ScrollSection><WhatChanges /></ScrollSection>
-        <ScrollSection><HowItWorks /></ScrollSection>
-        <ScrollSection><WhyDifferent /></ScrollSection>
-        <ScrollSection><BuiltForEA /></ScrollSection>
-        <ScrollSection><Ecosystem /></ScrollSection>
-        <ScrollSection><Roadmap /></ScrollSection>
-        <ScrollSection><Wishlist /></ScrollSection>
+        <Suspense fallback={<div className="h-screen bg-[#0D1A12]" />}>
+          <ScrollSection><RealityToday /></ScrollSection>
+          <ScrollSection><WhatChanges /></ScrollSection>
+          <ScrollSection><HowItWorks /></ScrollSection>
+          <ScrollSection><WhyDifferent /></ScrollSection>
+          <ScrollSection><BuiltForEA /></ScrollSection>
+          <ScrollSection><Ecosystem /></ScrollSection>
+          <ScrollSection><Roadmap /></ScrollSection>
+          <ScrollSection><Wishlist /></ScrollSection>
+        </Suspense>
       </main>
-      <Footer />
-      <BackToTop />
+      <Suspense fallback={null}>
+        <Footer />
+        <BackToTop />
+      </Suspense>
     </div>
   );
 }
