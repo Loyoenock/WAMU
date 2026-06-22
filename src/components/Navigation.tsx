@@ -8,8 +8,17 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrolled(window.scrollY > 50);
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -37,7 +46,7 @@ export function Navigation() {
           !scrolled && "max-w-7xl"
         )}>
           <a id="nav-logo" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-3">
-            <img src="/wamu-logo-v1.png" alt="WAMU Logo" className="h-10 w-10 object-contain rounded-[100%] shrink-0" />
+            <img src="/wamu-logo-v1.png" alt="WAMU Logo" className="h-10 w-10 object-contain rounded-[100%] shrink-0" fetchPriority="high" />
             <span className="font-serif text-2xl font-bold tracking-tight text-white">WAMU</span>
           </a>
 

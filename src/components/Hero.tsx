@@ -86,7 +86,7 @@ export function Hero() {
                   }}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[68px] h-[68px] bg-brand-primary rounded-full flex items-center justify-center z-20 shadow-lg shadow-brand-primary/50 hover:shadow-[0_0_25px_rgba(15,110,86,0.6)] transition-shadow duration-300 overflow-hidden cursor-pointer"
                 >
-                  <img src="/wamu-logo-v1.png" alt="WAMU Logo" className="w-full h-full object-cover rounded-[100%]" />
+                  <img src="/wamu-logo-v1.png" alt="WAMU Logo" className="w-full h-full object-cover rounded-[100%]" fetchPriority="high" />
                 </motion.div>
 
                 {/* Orbiting Elements */}
