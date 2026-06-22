@@ -54,13 +54,16 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0D1A12]">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:p-4 focus:bg-brand-primary focus:text-white font-bold rounded-md">
+        Skip to main content
+      </a>
       <CustomCursor />
       <motion.div
         className="fixed top-0 left-0 right-0 h-1.5 bg-brand-primary z-[60] origin-left shadow-[0_0_10px_rgba(15,110,86,0.5)]"
         style={{ scaleX }}
       />
       <Navigation />
-      <main>
+      <main id="main-content">
         <Hero />
         <ScrollSection><RealityToday /></ScrollSection>
         <ScrollSection><WhatChanges /></ScrollSection>

@@ -56,13 +56,17 @@ export function WhatChanges() {
             <h2 className="font-serif text-4xl mb-8 leading-tight text-white">
               A unified intelligence layer over fragmented rails.
             </h2>
-            <div className="space-y-0 border-y border-brand-grove/30">
+            <div className="space-y-0 border-y border-brand-grove/30" role="tablist" aria-label="WAMU Capabilities">
               {capabilities.map((cap) => (
                 <button
                   key={cap.id}
+                  id={`tab-${cap.id}`}
+                  role="tab"
+                  aria-selected={activeTab === cap.id}
+                  aria-controls={`panel-${cap.id}`}
                   onClick={() => setActiveTab(cap.id)}
                   className={cn(
-                    "w-full text-left px-4 py-6 transition-all duration-300 flex items-center justify-between group rounded-none border-b border-brand-grove/30 last:border-0",
+                    "w-full text-left px-4 py-6 transition-all duration-300 flex items-center justify-between group rounded-none border-b border-brand-grove/30 last:border-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-highlight",
                     activeTab === cap.id 
                       ? "bg-brand-grove/10" 
                       : "text-brand-moss hover:text-white hover:bg-brand-mist/5"
@@ -74,6 +78,7 @@ export function WhatChanges() {
                       "w-5 h-5 transition-transform duration-300",
                       activeTab === cap.id ? "text-brand-highlight" : "text-brand-moss group-hover:text-brand-mist -rotate-12"
                     )} 
+                    aria-hidden="true"
                   />
                 </button>
               ))}
@@ -81,13 +86,16 @@ export function WhatChanges() {
           </div>
 
           <div className="lg:col-span-7 bg-[#0A140F] border border-brand-grove/30 p-8 md:p-12 min-h-[400px] flex items-center relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[100px] pointer-events-none" />
+            <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[100px] pointer-events-none" aria-hidden="true" />
             
             <AnimatePresence mode="wait">
               {capabilities.map((cap) => 
                 activeTab === cap.id && (
                   <motion.div
                     key={cap.id}
+                    id={`panel-${cap.id}`}
+                    role="tabpanel"
+                    aria-labelledby={`tab-${cap.id}`}
                     initial={{ opacity: 0, x: 20 }}
                     animate={{ opacity: 1, x: 0 }}
                     exit={{ opacity: 0, x: -20 }}

@@ -57,7 +57,7 @@ export function Ecosystem() {
           </motion.div>
           
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none -z-0 opacity-20 hidden md:block">
-            <svg className="w-full h-full" overflow="visible">
+            <svg className="w-full h-full" overflow="visible" aria-hidden="true">
                <line x1="12.5%" y1="50%" x2="50%" y2="50%" stroke="currentColor" className="text-brand-highlight" strokeWidth="1" />
                <line x1="37.5%" y1="50%" x2="50%" y2="50%" stroke="currentColor" className="text-brand-highlight" strokeWidth="1" />
                <line x1="62.5%" y1="50%" x2="50%" y2="50%" stroke="currentColor" className="text-brand-highlight" strokeWidth="1" />

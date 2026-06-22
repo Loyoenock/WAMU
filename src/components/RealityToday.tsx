@@ -54,7 +54,7 @@ export function RealityToday() {
               transition={{ delay: index * 0.15 + 0.2, duration: 0.6 }}
               className="group border-t border-brand-grove pt-6 hover:border-brand-highlight transition-colors flex flex-col"
             >
-              <issue.icon className="w-8 h-8 text-brand-accent mb-6" strokeWidth={1.5} />
+              <issue.icon className="w-8 h-8 text-brand-accent mb-6" strokeWidth={1.5} aria-hidden="true" />
               <h3 className="text-lg font-medium text-white mb-3 tracking-tight">{issue.title}</h3>
               <p className="text-brand-moss leading-relaxed text-sm md:text-base">{issue.description}</p>
             </motion.div>

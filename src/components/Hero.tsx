@@ -46,15 +46,15 @@ export function Hero() {
               <a 
                 href="#wishlist" 
                 onClick={(e) => smoothScroll(e, 'wishlist')}
-                className="bg-brand-highlight hover:bg-brand-mist text-brand-midnight px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-colors flex items-center justify-center group rounded-none shadow-[0_0_15px_rgba(93,202,165,0.2)] whitespace-nowrap"
+                className="bg-brand-highlight hover:bg-brand-mist text-brand-midnight px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-colors flex items-center justify-center group rounded-none shadow-[0_0_15px_rgba(93,202,165,0.2)] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-mist focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1A12]"
               >
                 Join Wishlist
-                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
               <a 
                 href="#platform" 
                 onClick={(e) => smoothScroll(e, 'platform')}
-                className="bg-transparent border border-brand-grove text-brand-moss hover:border-brand-highlight hover:text-brand-highlight px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-colors flex items-center justify-center rounded-none whitespace-nowrap"
+                className="bg-transparent border border-brand-grove text-brand-moss hover:border-brand-highlight hover:text-brand-highlight px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-colors flex items-center justify-center rounded-none whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1A12]"
               >
                 Explore WAMU
               </a>
@@ -89,11 +89,16 @@ export function Hero() {
 
                 {/* Orbiting Elements */}
                 {ecosystemNodes.map((node, i) => (
-                  <div
+                  <button
                     key={node.label}
-                    className="absolute top-1/2 left-1/2 z-10 cursor-pointer"
+                    type="button"
+                    aria-label={`View details for ${node.label}`}
+                    aria-expanded={hoveredNode === node.label}
+                    className="absolute top-1/2 left-1/2 z-10 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1A12] rounded-2xl"
                     onMouseEnter={() => setHoveredNode(node.label)}
                     onMouseLeave={() => setHoveredNode(null)}
+                    onFocus={() => setHoveredNode(node.label)}
+                    onBlur={() => setHoveredNode(null)}
                     style={{
                       transform: `translate(-50%, -50%) rotate(${node.angle}deg) translateY(-140px) rotate(-${node.angle}deg)`,
                       perspective: "1000px"
@@ -111,6 +116,7 @@ export function Hero() {
                         default: { delay: 0.8 + i * 0.1, duration: 0.6 }
                       }}
                       className="flex flex-col items-center gap-3 transition-transform"
+                      aria-hidden="true"
                     >
                       <motion.div
                         animate={hoveredNode === node.label ? { y: 0 } : { y: [0, -10, 0] }}
@@ -138,17 +144,20 @@ export function Hero() {
                         {node.label}
                       </span>
                     </motion.div>
-                  </div>
+                  </button>
                 ))}
 
                 {/* Connecting Lines (Svg) */}
-                <svg className="absolute inset-0 w-full h-full animate-[spin_60s_linear_infinite]" style={{ transformOrigin: 'center' }}>
+                <svg className="absolute inset-0 w-full h-full animate-[spin_60s_linear_infinite]" style={{ transformOrigin: 'center' }} aria-hidden="true">
                   <circle cx="50%" cy="50%" r="140" className="stroke-brand-grove/40 stroke-1 fill-none" />
                   <circle cx="50%" cy="50%" r="140" className="stroke-brand-highlight/20 stroke-[3] fill-none" strokeDasharray="4 20" />
                 </svg>
 
                 {/* Hover Description Popup */}
                 <motion.div
+                  role="region"
+                  aria-live="polite"
+                  aria-atomic="true"
                   initial={false}
                   animate={{ 
                     opacity: hoveredNode ? 1 : 0, 

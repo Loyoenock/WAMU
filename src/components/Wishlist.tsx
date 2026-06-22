@@ -110,36 +110,57 @@ export function Wishlist() {
         ) : (
           <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <input required type="text" id="name" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:border-brand-primary focus:bg-white transition-colors placeholder:text-brand-midnight/60 font-medium" />
-              <input type="text" id="organization" name="organization" placeholder="Organization" value={formData.organization} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:border-brand-primary focus:bg-white transition-colors placeholder:text-brand-midnight/60 font-medium" />
+              <div>
+                <label htmlFor="name" className="sr-only">Full Name</label>
+                <input required type="text" id="name" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-midnight/60 font-medium" />
+              </div>
+              <div>
+                <label htmlFor="organization" className="sr-only">Organization</label>
+                <input type="text" id="organization" name="organization" placeholder="Organization" value={formData.organization} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-midnight/60 font-medium" />
+              </div>
             </div>
 
-            <input required type="email" id="email" name="email" placeholder="Work Email" value={formData.email} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:border-brand-primary focus:bg-white transition-colors placeholder:text-brand-midnight/60 font-medium" />
+            <div>
+              <label htmlFor="email" className="sr-only">Work Email</label>
+              <input required type="email" id="email" name="email" placeholder="Work Email" value={formData.email} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-midnight/60 font-medium" />
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <select required id="country" name="country" value={formData.country} onChange={handleChange} className="w-full sm:w-1/3 bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:border-brand-primary focus:bg-white transition-colors appearance-none font-medium">
-                <option value="" className="bg-brand-mist">Country</option>
-                <option value="Uganda" className="bg-brand-mist">Uganda</option>
-                <option value="Kenya" className="bg-brand-mist">Kenya</option>
-                <option value="Rwanda" className="bg-brand-mist">Rwanda</option>
-              </select>
-              <input required type="tel" id="phone" name="phone" placeholder="WhatsApp Number" value={formData.phone} onChange={handleChange} className="w-full sm:w-2/3 bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:border-brand-primary focus:bg-white transition-colors placeholder:text-brand-midnight/60 font-medium" />
+              <div className="w-full sm:w-1/3">
+                <label htmlFor="country" className="sr-only">Country</label>
+                <select required id="country" name="country" value={formData.country} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors appearance-none font-medium">
+                  <option value="" className="bg-brand-mist">Country</option>
+                  <option value="Uganda" className="bg-brand-mist">Uganda</option>
+                  <option value="Kenya" className="bg-brand-mist">Kenya</option>
+                  <option value="Rwanda" className="bg-brand-mist">Rwanda</option>
+                </select>
+              </div>
+              <div className="w-full sm:w-2/3">
+                <label htmlFor="phone" className="sr-only">WhatsApp Number</label>
+                <input required type="tel" id="phone" name="phone" placeholder="WhatsApp Number" value={formData.phone} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-midnight/60 font-medium" />
+              </div>
             </div>
 
-            <select id="interest" name="interest" value={formData.interest} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:border-brand-primary focus:bg-white transition-colors appearance-none font-medium">
-              <option value="Savings Groups" className="bg-brand-mist">Savings Groups</option>
-              <option value="Micro-Insurance" className="bg-brand-mist">Micro-Insurance</option>
-              <option value="Utility Payments" className="bg-brand-mist">Utility Payments</option>
-              <option value="Institutional Partner" className="bg-brand-mist">Institutional Partner</option>
-              <option value="Other" className="bg-brand-mist">Other</option>
-            </select>
+            <div>
+              <label htmlFor="interest" className="sr-only">Interest</label>
+              <select id="interest" name="interest" value={formData.interest} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors appearance-none font-medium">
+                <option value="Savings Groups" className="bg-brand-mist">Savings Groups</option>
+                <option value="Micro-Insurance" className="bg-brand-mist">Micro-Insurance</option>
+                <option value="Utility Payments" className="bg-brand-mist">Utility Payments</option>
+                <option value="Institutional Partner" className="bg-brand-mist">Institutional Partner</option>
+                <option value="Other" className="bg-brand-mist">Other</option>
+              </select>
+            </div>
 
-            <textarea id="message" name="message" rows={3} placeholder="Message (Optional)" value={formData.message} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:border-brand-primary focus:bg-white transition-colors resize-none placeholder:text-brand-midnight/60 font-medium" />
+            <div>
+              <label htmlFor="message" className="sr-only">Message (Optional)</label>
+              <textarea id="message" name="message" rows={3} placeholder="Message (Optional)" value={formData.message} onChange={handleChange} className="w-full bg-brand-mist border border-brand-highlight rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors resize-none placeholder:text-brand-midnight/60 font-medium" />
+            </div>
 
             <button
               type="submit"
               disabled={status === 'submitting'}
-              className="w-full cursor-pointer bg-brand-highlight hover:bg-brand-mist text-[#0D1A12] font-bold py-4 text-xs uppercase tracking-[0.2em] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center mt-4 shadow-[0_0_15px_rgba(93,202,165,0.2)]"
+              className="w-full cursor-pointer bg-brand-highlight hover:bg-brand-mist text-[#0D1A12] font-bold py-4 text-xs uppercase tracking-[0.2em] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center mt-4 shadow-[0_0_15px_rgba(93,202,165,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary"
             >
               {status === 'submitting' ? <Loader2 className="w-5 h-5 animate-spin" /> : "Request Access"}
             </button>

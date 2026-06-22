@@ -41,32 +41,36 @@ export function Navigation() {
             <span className="font-serif text-2xl font-bold tracking-tight text-white">WAMU</span>
           </a>
 
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#platform" onClick={(e) => smoothScroll(e, 'platform')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors">Platform</a>
-            <a href="#infrastructure" onClick={(e) => smoothScroll(e, 'infrastructure')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors">Infrastructure</a>
-            <a href="#ecosystem" onClick={(e) => smoothScroll(e, 'ecosystem')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors">Ecosystem</a>
+          <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-8">
+            <a href="#platform" onClick={(e) => smoothScroll(e, 'platform')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm py-1 px-2">Platform</a>
+            <a href="#infrastructure" onClick={(e) => smoothScroll(e, 'infrastructure')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm py-1 px-2">Infrastructure</a>
+            <a href="#ecosystem" onClick={(e) => smoothScroll(e, 'ecosystem')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm py-1 px-2">Ecosystem</a>
             <a 
               href="#wishlist" 
               onClick={(e) => smoothScroll(e, 'wishlist')}
-              className="px-4 py-2 border border-brand-highlight/30 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-highlight hover:bg-brand-highlight/10 transition-colors"
+              className="px-4 py-2 border border-brand-highlight/30 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-highlight hover:bg-brand-highlight/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
             >
               Join Wishlist
             </a>
-          </div>
+          </nav>
 
           <button 
-            className="md:hidden text-white opacity-70 hover:opacity-100 transition-opacity"
+            className="md:hidden text-white opacity-70 hover:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm p-1"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-menu"
           >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            {mobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
           </button>
         </div>
 
         {/* Mobile Menu */}
         <AnimatePresence>
           {mobileMenuOpen && (
-            <motion.div
+            <motion.nav
+              id="mobile-menu"
+              aria-label="Mobile Navigation"
               initial={{ opacity: 0, scale: 0.95, y: -10 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.95, y: -10 }}
@@ -75,17 +79,17 @@ export function Navigation() {
                 scrolled ? "top-[110%] rounded-3xl" : "top-full border-t-0 border-x-0"
               )}
             >
-              <a href="#platform" onClick={(e) => smoothScroll(e, 'platform')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent">Platform</a>
-              <a href="#infrastructure" onClick={(e) => smoothScroll(e, 'infrastructure')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent">Infrastructure</a>
-              <a href="#ecosystem" onClick={(e) => smoothScroll(e, 'ecosystem')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent">Ecosystem</a>
+              <a href="#platform" onClick={(e) => smoothScroll(e, 'platform')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm p-1">Platform</a>
+              <a href="#infrastructure" onClick={(e) => smoothScroll(e, 'infrastructure')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm p-1">Infrastructure</a>
+              <a href="#ecosystem" onClick={(e) => smoothScroll(e, 'ecosystem')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm p-1">Ecosystem</a>
               <a 
                 href="#wishlist" 
                 onClick={(e) => smoothScroll(e, 'wishlist')}
-                className="text-[10px] font-bold border border-brand-highlight/30 text-brand-highlight px-6 py-3 rounded-full text-center hover:bg-brand-highlight hover:text-[#0D1A12] transition-colors uppercase tracking-widest mt-4"
+                className="text-[10px] font-bold border border-brand-highlight/30 text-brand-highlight px-6 py-3 rounded-full text-center hover:bg-brand-highlight hover:text-[#0D1A12] transition-colors uppercase tracking-widest mt-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
               >
                 Join Wishlist
               </a>
-            </motion.div>
+            </motion.nav>
           )}
         </AnimatePresence>
       </header>
