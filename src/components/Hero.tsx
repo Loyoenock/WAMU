@@ -23,12 +23,7 @@ export function Hero() {
       <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "radial-gradient(#2D4A38 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-16 items-center">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="lg:col-span-7"
-          >
+          <div className="lg:col-span-7 animate-fade-in-up">
             <div className="mb-4 inline-flex items-center gap-2 text-brand-highlight font-semibold text-sm uppercase tracking-widest">
               <motion.span 
                 className="w-2 h-2 rounded-full bg-brand-highlight"
@@ -61,7 +56,7 @@ export function Hero() {
                 Explore WAMU
               </a>
             </div>
-          </motion.div>
+          </div>
 
           {/* Abstract Ecosystem Visualization instead of Dashboard Mockup */}
           <motion.div 
