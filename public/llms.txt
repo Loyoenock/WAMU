@@ -1,0 +1,14 @@
+# WAMU - The East African Financial OS
+
+> WAMU empowers VSLAs, SACCOs, and investment clubs in Uganda with secure digital tools, mobile money integration, and transparent group savings.
+
+## Overview
+
+WAMU provides a unified intelligence layer over fragmented financial rails in East Africa. By integrating with existing mobile money systems like MTN Mobile Money and Airtel Money, it brings informal savings groups into the digital era with transparency and security.
+
+## Links
+
+- [Home](https://www.wamu.co.ug/): The official WAMU website context.
+- [Platform](https://www.wamu.co.ug/#platform): Learn about the unified digital platform for informal finance.
+- [Ecosystem](https://www.wamu.co.ug/#ecosystem): View how WAMU integrates with the East African financial ecosystem.
+
