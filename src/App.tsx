@@ -60,7 +60,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#0D1A12]">
-      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:p-4 focus:bg-brand-primary focus:text-white font-bold rounded-md">
+      <a id="skip-to-content" href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:p-4 focus:bg-brand-primary focus:text-white font-bold rounded-md">
         Skip to main content
       </a>
       <Suspense fallback={null}>

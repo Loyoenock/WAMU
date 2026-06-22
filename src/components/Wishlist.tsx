@@ -158,6 +158,7 @@ export function Wishlist() {
             </div>
 
             <button
+              id="wishlist-submit-btn"
               type="submit"
               disabled={status === 'submitting'}
               className="w-full cursor-pointer bg-brand-highlight hover:bg-brand-mist text-[#0D1A12] font-bold py-4 text-xs uppercase tracking-[0.2em] transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center mt-4 shadow-[0_0_15px_rgba(93,202,165,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-brand-primary"

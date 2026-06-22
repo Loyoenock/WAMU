@@ -36,16 +36,17 @@ export function Navigation() {
           "mx-auto flex items-center justify-between",
           !scrolled && "max-w-7xl"
         )}>
-          <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-3">
+          <a id="nav-logo" href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-3">
             <img src="/wamu-logo-v1.png" alt="WAMU Logo" className="h-10 w-10 object-contain rounded-[100%] shrink-0" />
             <span className="font-serif text-2xl font-bold tracking-tight text-white">WAMU</span>
           </a>
 
           <nav aria-label="Main Navigation" className="hidden md:flex items-center gap-8">
-            <a href="#platform" onClick={(e) => smoothScroll(e, 'platform')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm py-1 px-2">Platform</a>
-            <a href="#infrastructure" onClick={(e) => smoothScroll(e, 'infrastructure')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm py-1 px-2">Infrastructure</a>
-            <a href="#ecosystem" onClick={(e) => smoothScroll(e, 'ecosystem')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm py-1 px-2">Ecosystem</a>
+            <a id="nav-platform-desktop" href="#platform" onClick={(e) => smoothScroll(e, 'platform')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm py-1 px-2">Platform</a>
+            <a id="nav-infrastructure-desktop" href="#infrastructure" onClick={(e) => smoothScroll(e, 'infrastructure')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm py-1 px-2">Infrastructure</a>
+            <a id="nav-ecosystem-desktop" href="#ecosystem" onClick={(e) => smoothScroll(e, 'ecosystem')} className="text-xs font-medium uppercase tracking-[0.2em] opacity-70 hover:text-brand-accent hover:opacity-100 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm py-1 px-2">Ecosystem</a>
             <a 
+              id="nav-wishlist-desktop"
               href="#wishlist" 
               onClick={(e) => smoothScroll(e, 'wishlist')}
               className="px-4 py-2 border border-brand-highlight/30 rounded-full text-[10px] font-bold uppercase tracking-widest text-brand-highlight hover:bg-brand-highlight/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
@@ -55,6 +56,7 @@ export function Navigation() {
           </nav>
 
           <button 
+            id="nav-mobile-menu-btn"
             className="md:hidden text-white opacity-70 hover:opacity-100 transition-opacity focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm p-1"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
@@ -79,10 +81,11 @@ export function Navigation() {
                 scrolled ? "top-[110%] rounded-3xl" : "top-full border-t-0 border-x-0"
               )}
             >
-              <a href="#platform" onClick={(e) => smoothScroll(e, 'platform')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm p-1">Platform</a>
-              <a href="#infrastructure" onClick={(e) => smoothScroll(e, 'infrastructure')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm p-1">Infrastructure</a>
-              <a href="#ecosystem" onClick={(e) => smoothScroll(e, 'ecosystem')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm p-1">Ecosystem</a>
+              <a id="nav-platform-mobile" href="#platform" onClick={(e) => smoothScroll(e, 'platform')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm p-1">Platform</a>
+              <a id="nav-infrastructure-mobile" href="#infrastructure" onClick={(e) => smoothScroll(e, 'infrastructure')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm p-1">Infrastructure</a>
+              <a id="nav-ecosystem-mobile" href="#ecosystem" onClick={(e) => smoothScroll(e, 'ecosystem')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary rounded-sm p-1">Ecosystem</a>
               <a 
+                id="nav-wishlist-mobile"
                 href="#wishlist" 
                 onClick={(e) => smoothScroll(e, 'wishlist')}
                 className="text-[10px] font-bold border border-brand-highlight/30 text-brand-highlight px-6 py-3 rounded-full text-center hover:bg-brand-highlight hover:text-[#0D1A12] transition-colors uppercase tracking-widest mt-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"

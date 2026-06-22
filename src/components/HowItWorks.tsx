@@ -46,7 +46,7 @@ export function HowItWorks() {
                 className="flex flex-col items-center text-center group"
               >
                 <div className="w-24 h-24 bg-[#0A140F] border border-brand-grove flex items-center justify-center mb-8 relative transition-colors group-hover:border-brand-highlight">
-                  <step.icon className="w-8 h-8 text-brand-accent group-hover:text-brand-highlight transition-colors" strokeWidth={1.5} />
+                  <step.icon className="w-8 h-8 text-brand-accent group-hover:text-brand-highlight transition-colors" strokeWidth={1.5} aria-hidden="true" />
                   <div className="absolute -top-3 -right-3 w-6 h-6 bg-brand-highlight text-[#0D1A12] text-[10px] font-bold flex items-center justify-center">
                     0{idx + 1}
                   </div>

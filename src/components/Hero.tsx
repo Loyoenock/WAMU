@@ -44,6 +44,7 @@ export function Hero() {
             </p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 w-full sm:w-auto">
               <a 
+                id="hero-wishlist-link"
                 href="#wishlist" 
                 onClick={(e) => smoothScroll(e, 'wishlist')}
                 className="bg-brand-highlight hover:bg-brand-mist text-brand-midnight px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-colors flex items-center justify-center group rounded-none shadow-[0_0_15px_rgba(93,202,165,0.2)] whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-mist focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1A12]"
@@ -52,6 +53,7 @@ export function Hero() {
                 <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" aria-hidden="true" />
               </a>
               <a 
+                id="hero-explore-link"
                 href="#platform" 
                 onClick={(e) => smoothScroll(e, 'platform')}
                 className="bg-transparent border border-brand-grove text-brand-moss hover:border-brand-highlight hover:text-brand-highlight px-8 py-4 text-xs font-bold uppercase tracking-[0.2em] transition-colors flex items-center justify-center rounded-none whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1A12]"
@@ -91,6 +93,7 @@ export function Hero() {
                 {ecosystemNodes.map((node, i) => (
                   <button
                     key={node.label}
+                    id={`hero-ecosystem-node-${i}`}
                     type="button"
                     aria-label={`View details for ${node.label}`}
                     aria-expanded={hoveredNode === node.label}
