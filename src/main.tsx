@@ -6,11 +6,10 @@ import './index.css';
 // Suppress Vite WebSocket connection errors when HMR is disabled
 window.addEventListener('unhandledrejection', (event) => {
   const reason = event.reason;
-  if (
-    reason && 
-    ((reason.message && reason.message.includes('WebSocket')) || 
-     (typeof reason === 'string' && reason.includes('WebSocket')))
-  ) {
+  const reasonStr = typeof reason === 'string' ? reason : 
+                    (reason && typeof reason === 'object' && reason.message) ? String(reason.message) : 
+                    String(reason);
+  if (reasonStr.toLowerCase().includes('websocket')) {
     event.preventDefault();
   }
 });
@@ -19,14 +18,10 @@ window.addEventListener('unhandledrejection', (event) => {
 const originalConsoleError = console.error;
 console.error = (...args) => {
   const msg = args[0];
-  if (typeof msg === 'string') {
-    if (msg.includes('failed to connect to websocket') || msg.includes('[vite] failed to connect to websocket')) {
-      return;
-    }
-  } else if (msg instanceof Error) {
-    if (msg.message && msg.message.includes('WebSocket closed without opened')) {
-      return;
-    }
+  if (typeof msg === 'string' && msg.toLowerCase().includes('websocket')) {
+    return;
+  } else if (msg && typeof msg === 'object' && msg.message && typeof msg.message === 'string' && msg.message.toLowerCase().includes('websocket')) {
+    return;
   }
   originalConsoleError.apply(console, args);
 };
