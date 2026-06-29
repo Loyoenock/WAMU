@@ -90,9 +90,9 @@ export function Navigation() {
                 scrolled ? "top-[110%] rounded-3xl" : "top-full border-t-0 border-x-0"
               )}
             >
-              <a id="nav-platform-mobile" href="#platform" onClick={(e) => smoothScroll(e, 'platform')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-highlight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight rounded-sm p-1">Platform</a>
-              <a id="nav-infrastructure-mobile" href="#infrastructure" onClick={(e) => smoothScroll(e, 'infrastructure')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-highlight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight rounded-sm p-1">Infrastructure</a>
-              <a id="nav-ecosystem-mobile" href="#ecosystem" onClick={(e) => smoothScroll(e, 'ecosystem')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-highlight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight rounded-sm p-1">Ecosystem</a>
+              <a id="nav-platform-mobile" href="#platform" onClick={(e) => smoothScroll(e, 'platform')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-highlight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight rounded-sm py-3 px-2 -mx-2">Platform</a>
+              <a id="nav-infrastructure-mobile" href="#infrastructure" onClick={(e) => smoothScroll(e, 'infrastructure')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-highlight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight rounded-sm py-3 px-2 -mx-2">Infrastructure</a>
+              <a id="nav-ecosystem-mobile" href="#ecosystem" onClick={(e) => smoothScroll(e, 'ecosystem')} className="text-sm font-medium uppercase tracking-[0.2em] w-fit opacity-70 hover:text-brand-highlight focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight rounded-sm py-3 px-2 -mx-2">Ecosystem</a>
               <a 
                 id="nav-wishlist-mobile"
                 href="#wishlist" 

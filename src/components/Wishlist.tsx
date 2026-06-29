@@ -112,23 +112,23 @@ export function Wishlist() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               <div>
                 <label htmlFor="name" className="sr-only">Full Name</label>
-                <input required type="text" id="name" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-text-dark/60 font-medium" />
+                <input required type="text" id="name" name="name" placeholder="Full Name" value={formData.name} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-base text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-text-dark/60 font-medium" />
               </div>
               <div>
                 <label htmlFor="organization" className="sr-only">Organization</label>
-                <input type="text" id="organization" name="organization" placeholder="Organization" value={formData.organization} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-text-dark/60 font-medium" />
+                <input type="text" id="organization" name="organization" placeholder="Organization" value={formData.organization} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-base text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-text-dark/60 font-medium" />
               </div>
             </div>
 
             <div>
               <label htmlFor="email" className="sr-only">Work Email</label>
-              <input required type="email" id="email" name="email" placeholder="Work Email" value={formData.email} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-text-dark/60 font-medium" />
+              <input required type="email" id="email" name="email" placeholder="Work Email" value={formData.email} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-base text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-text-dark/60 font-medium" />
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
               <div className="w-full sm:w-1/3">
                 <label htmlFor="country" className="sr-only">Country</label>
-                <select required id="country" name="country" value={formData.country} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors appearance-none font-medium">
+                <select required id="country" name="country" value={formData.country} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-base text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors appearance-none font-medium">
                   <option value="" className="bg-brand-mist">Country</option>
                   <option value="Uganda" className="bg-brand-mist">Uganda</option>
                   <option value="Kenya" className="bg-brand-mist">Kenya</option>
@@ -137,13 +137,13 @@ export function Wishlist() {
               </div>
               <div className="w-full sm:w-2/3">
                 <label htmlFor="phone" className="sr-only">WhatsApp Number</label>
-                <input required type="tel" id="phone" name="phone" placeholder="WhatsApp Number" value={formData.phone} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-text-dark/60 font-medium" />
+                <input required type="tel" id="phone" name="phone" placeholder="WhatsApp Number" value={formData.phone} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-base text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors placeholder:text-brand-text-dark/60 font-medium" />
               </div>
             </div>
 
             <div>
               <label htmlFor="interest" className="sr-only">Interest</label>
-              <select id="interest" name="interest" value={formData.interest} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors appearance-none font-medium">
+              <select id="interest" name="interest" value={formData.interest} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-base text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors appearance-none font-medium">
                 <option value="Savings Groups" className="bg-brand-mist">Savings Groups</option>
                 <option value="Micro-Insurance" className="bg-brand-mist">Micro-Insurance</option>
                 <option value="Utility Payments" className="bg-brand-mist">Utility Payments</option>
@@ -154,7 +154,7 @@ export function Wishlist() {
 
             <div>
               <label htmlFor="message" className="sr-only">Message (Optional)</label>
-              <textarea id="message" name="message" rows={3} placeholder="Message (Optional)" value={formData.message} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-sm text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors resize-none placeholder:text-brand-text-dark/60 font-medium" />
+              <textarea id="message" name="message" rows={3} placeholder="Message (Optional)" value={formData.message} onChange={handleChange} className="w-full bg-brand-mist border border-brand-primary/50 rounded-none px-4 py-3 text-base text-brand-midnight focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-brand-primary focus:bg-white transition-colors resize-none placeholder:text-brand-text-dark/60 font-medium" />
             </div>
 
             <button
