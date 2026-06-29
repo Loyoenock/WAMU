@@ -1,8 +1,27 @@
 import React from 'react';
-import { motion } from 'motion/react';
+import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
 import { Share2 } from 'lucide-react';
 
 export function Ecosystem() {
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const { currentTarget, clientX, clientY } = e;
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    const x = (clientX - left) / width - 0.5;
+    const y = (clientY - top) / height - 0.5;
+    mouseX.set(x);
+    mouseY.set(y);
+  };
+
+  const springConfig = { damping: 25, stiffness: 150 };
+  const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
+
+  const translateX = useTransform(smoothX, [-0.5, 0.5], [-30, 30]);
+  const translateY = useTransform(smoothY, [-0.5, 0.5], [-30, 30]);
+
   const nodes = [
     "MTN Mobile Money",
     "Airtel Money",
@@ -15,9 +34,12 @@ export function Ecosystem() {
   ];
 
   return (
-    <section id="ecosystem" className="py-24 bg-brand-light-2 border-b border-brand-grove/30 relative">
-      <div className="absolute inset-0 bg-pattern-dots opacity-80 pointer-events-none" />
-      <div className="absolute inset-0 opacity-10" style={{ backgroundImage: "linear-gradient(to right, #2D4A38 1px, transparent 1px), linear-gradient(to bottom, #2D4A38 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
+    <section id="ecosystem" className="py-24 bg-brand-light-2 border-b border-brand-grove/30 relative overflow-hidden" onMouseMove={handleMouseMove}>
+      <motion.div 
+        className="absolute -inset-10 bg-pattern-dots opacity-80 pointer-events-none" 
+        style={{ x: translateX, y: translateY }}
+      />
+      <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: "linear-gradient(to right, #2D4A38 1px, transparent 1px), linear-gradient(to bottom, #2D4A38 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
       <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center relative z-10">
         <h2 className="font-serif text-4xl text-brand-text-dark mb-6">Connecting the Ecosystem</h2>
         <p className="text-xl text-brand-primary max-w-2xl mx-auto mb-20">
