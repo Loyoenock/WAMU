@@ -97,7 +97,7 @@ export function Navigation() {
                 id="nav-wishlist-mobile"
                 href="#wishlist" 
                 onClick={(e) => smoothScroll(e, 'wishlist')}
-                className="text-[10px] font-bold border border-brand-primary/50 text-brand-light-1 px-6 py-3 rounded-full text-center hover:bg-brand-highlight hover:text-brand-midnight transition-colors uppercase tracking-widest mt-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight"
+                className="text-[10px] font-bold bg-brand-primary border border-brand-primary text-brand-light-1 px-6 py-3 rounded-full text-center hover:bg-brand-highlight hover:border-brand-highlight hover:text-brand-midnight transition-colors uppercase tracking-widest mt-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-highlight"
               >
                 Join Wishlist
               </a>
