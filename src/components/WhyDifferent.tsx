@@ -14,19 +14,19 @@ export function WhyDifferent() {
   ];
 
   return (
-    <section className="py-24 bg-[#0A140F] border-b border-brand-grove/30">
+    <section className="py-24 bg-brand-light-2 bg-pattern-dots border-b border-brand-grove/30">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <div className="mb-16 text-center">
-          <h2 className="font-serif text-4xl text-white mb-4">A Paradigm Shift</h2>
-          <p className="text-brand-moss">Why the app-centric model fails informal finance, and why WAMU succeeds.</p>
+          <h2 className="font-serif text-4xl text-brand-text-dark mb-4">A Paradigm Shift</h2>
+          <p className="text-brand-primary">Why the app-centric model fails informal finance, and why WAMU succeeds.</p>
         </div>
 
-        <div className="bg-[#0D1A12] border border-brand-grove/50 overflow-x-auto" role="region" aria-label="Comparison Table" tabIndex={0}>
+        <div className="bg-brand-light-1 bg-pattern-lines border border-brand-grove/50 overflow-x-auto" role="region" aria-label="Comparison Table" tabIndex={0}>
           <div className="min-w-[500px]" role="table" aria-label="WAMU vs Traditional Apps">
-            <div className="grid grid-cols-12 border-b border-brand-grove/50 bg-[#0A140F]" role="row">
-              <div role="columnheader" className="col-span-6 md:col-span-6 p-4 md:p-6 font-medium text-brand-moss uppercase tracking-widest text-xs">Capability</div>
-              <div role="columnheader" className="col-span-3 md:col-span-3 p-4 md:p-6 font-medium text-brand-highlight text-center uppercase tracking-widest text-[10px] border-l border-brand-grove/50 bg-brand-primary/10">WAMU</div>
-              <div role="columnheader" className="col-span-3 md:col-span-3 p-4 md:p-6 font-medium text-brand-moss text-center uppercase tracking-widest text-[10px] border-l border-brand-grove/50">Traditional Apps</div>
+            <div className="grid grid-cols-12 border-b border-brand-grove/50 bg-brand-light-2 bg-pattern-dots" role="row">
+              <div role="columnheader" className="col-span-6 md:col-span-6 p-4 md:p-6 font-medium text-brand-primary uppercase tracking-widest text-xs">Capability</div>
+              <div role="columnheader" className="col-span-3 md:col-span-3 p-4 md:p-6 font-medium text-brand-primary text-center uppercase tracking-widest text-[10px] border-l border-brand-grove/50 bg-brand-primary/10">WAMU</div>
+              <div role="columnheader" className="col-span-3 md:col-span-3 p-4 md:p-6 font-medium text-brand-primary text-center uppercase tracking-widest text-[10px] border-l border-brand-grove/50">Traditional Apps</div>
             </div>
 
             <div role="rowgroup">
@@ -38,18 +38,18 @@ export function WhyDifferent() {
                   whileInView={{ opacity: 1 }}
                   viewport={{ once: true }}
                   transition={{ delay: idx * 0.05 }}
-                  className="grid grid-cols-12 border-b border-brand-grove/20 last:border-0 hover:bg-[#0A140F] transition-colors"
+                  className="grid grid-cols-12 border-b border-brand-grove/20 last:border-0 hover:bg-brand-light-2 bg-pattern-dots transition-colors"
                 >
                   <div role="cell" className="col-span-6 md:col-span-6 p-4 md:p-6 flex items-center">
-                    <span className="text-brand-mist font-medium text-sm md:text-base">{row.feature}</span>
+                    <span className="text-brand-text-dark font-medium text-sm md:text-base">{row.feature}</span>
                   </div>
                   <div role="cell" className="col-span-3 md:col-span-3 p-4 md:p-6 flex items-center justify-center border-l border-brand-grove/20 bg-brand-primary/5">
                     <span className="sr-only">{row.wamu ? "Yes" : "No"}</span>
-                    {row.wamu ? <Check className="text-brand-highlight w-5 h-5" aria-hidden="true" /> : <X className="text-brand-grove w-5 h-5" aria-hidden="true" />}
+                    {row.wamu ? <Check className="text-brand-primary w-5 h-5" aria-hidden="true" /> : <X className="text-brand-grove w-5 h-5" aria-hidden="true" />}
                   </div>
                   <div role="cell" className="col-span-3 md:col-span-3 p-4 md:p-6 flex items-center justify-center border-l border-brand-grove/20">
                     <span className="sr-only">{row.traditional ? "Yes" : "No"}</span>
-                    {row.traditional ? <Check className="text-brand-moss w-5 h-5" aria-hidden="true" /> : <X className="text-brand-grove w-5 h-5" aria-hidden="true" />}
+                    {row.traditional ? <Check className="text-brand-primary w-5 h-5" aria-hidden="true" /> : <X className="text-brand-grove w-5 h-5" aria-hidden="true" />}
                   </div>
                 </motion.div>
               ))}

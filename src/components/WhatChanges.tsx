@@ -45,15 +45,15 @@ export function WhatChanges() {
   const [activeTab, setActiveTab] = useState(capabilities[0].id);
 
   return (
-    <section className="py-24 bg-[#0D1A12] border-b border-brand-grove/30 text-white overflow-hidden">
+    <section className="py-24 bg-brand-light-1 bg-pattern-lines border-b border-brand-grove/30 text-brand-text-dark overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-16 lg:gap-8 items-start">
           
           <div className="lg:col-span-5 lg:sticky lg:top-32">
-            <div className="mb-4 inline-flex items-center gap-2 text-brand-highlight font-semibold text-sm uppercase tracking-widest">
+            <div className="mb-4 inline-flex items-center gap-2 text-brand-primary font-semibold text-sm uppercase tracking-widest">
               <span className="w-2 h-2 rounded-full bg-brand-highlight"></span> Dynamic Connectivity
             </div>
-            <h2 className="font-serif text-4xl mb-8 leading-tight text-white">
+            <h2 className="font-serif text-4xl mb-8 leading-tight text-brand-text-dark">
               A unified intelligence layer over fragmented rails.
             </h2>
             <div className="space-y-0 border-y border-brand-grove/30" role="tablist" aria-label="WAMU Capabilities">
@@ -69,14 +69,14 @@ export function WhatChanges() {
                     "w-full text-left px-4 py-6 transition-all duration-300 flex items-center justify-between group rounded-none border-b border-brand-grove/30 last:border-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-brand-highlight",
                     activeTab === cap.id 
                       ? "bg-brand-grove/10" 
-                      : "text-brand-moss hover:text-white hover:bg-brand-mist/5"
+                      : "text-brand-primary hover:text-brand-text-dark hover:bg-brand-mist/5"
                   )}
                 >
                   <span className="text-sm uppercase tracking-widest font-bold font-sans">{cap.title}</span>
                   <cap.icon 
                     className={cn(
                       "w-5 h-5 transition-transform duration-300",
-                      activeTab === cap.id ? "text-brand-highlight" : "text-brand-moss group-hover:text-brand-mist -rotate-12"
+                      activeTab === cap.id ? "text-brand-primary" : "text-brand-primary group-hover:text-brand-text-dark -rotate-12"
                     )} 
                     aria-hidden="true"
                   />
@@ -85,7 +85,7 @@ export function WhatChanges() {
             </div>
           </div>
 
-          <div className="lg:col-span-7 bg-[#0A140F] border border-brand-grove/30 p-8 md:p-12 min-h-[400px] flex items-center relative overflow-hidden">
+          <div className="lg:col-span-7 bg-brand-light-2 bg-pattern-dots border border-brand-grove/30 p-8 md:p-12 min-h-[400px] flex items-center relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 blur-[60px] md:blur-[100px] pointer-events-none transform-gpu will-change-transform" aria-hidden="true" />
             
             <AnimatePresence mode="wait">
@@ -102,15 +102,15 @@ export function WhatChanges() {
                     transition={{ duration: 0.4 }}
                     className="relative z-10 w-full"
                   >
-                    <div className="inline-flex items-center space-x-2 bg-brand-grove/20 border border-brand-grove/50 px-3 py-1 mb-6 text-brand-highlight text-xs font-mono tracking-[0.1em] uppercase">
+                    <div className="inline-flex items-center space-x-2 bg-brand-grove/20 border border-brand-grove/50 px-3 py-1 mb-6 text-brand-primary text-xs font-mono tracking-[0.1em] uppercase">
                       <span className="w-1.5 h-1.5 bg-brand-highlight rounded-full animate-pulse" />
                       <span>{cap.stat}</span>
                     </div>
                     
-                    <h3 className="text-3xl font-serif text-white mb-6">
+                    <h3 className="text-3xl font-serif text-brand-text-dark mb-6">
                       {cap.title}
                     </h3>
-                    <p className="text-lg text-brand-moss leading-relaxed max-w-xl">
+                    <p className="text-lg text-brand-primary leading-relaxed max-w-xl">
                       {cap.description}
                     </p>
                     

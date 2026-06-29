@@ -26,10 +26,10 @@ export function Roadmap() {
   ];
 
   return (
-    <section className="py-24 bg-[#0A140F] border-b border-brand-grove/30 relative">
+    <section className="py-24 bg-brand-light-2 bg-pattern-dots border-b border-brand-grove/30 relative">
       <div className="absolute inset-0 opacity-5" style={{ backgroundImage: "radial-gradient(#2D4A38 1px, transparent 1px)", backgroundSize: "20px 20px" }}></div>
       <div className="max-w-4xl mx-auto px-6 lg:px-8 relative z-10">
-        <h2 className="font-serif text-3xl md:text-4xl text-white mb-16 text-center">Development Roadmap</h2>
+        <h2 className="font-serif text-3xl md:text-4xl text-brand-text-dark mb-16 text-center">Development Roadmap</h2>
         
         <div className="relative border-l border-brand-grove pl-8 space-y-16">
           {timeline.map((item, idx) => (
@@ -41,10 +41,10 @@ export function Roadmap() {
               transition={{ delay: idx * 0.15 }}
               className="relative group"
             >
-              <div className="absolute -left-[37px] top-1 w-2.5 h-2.5 rounded-full bg-brand-primary border-4 border-[#0A140F] box-content transition-colors group-hover:bg-brand-highlight" />
-              <div className="text-[10px] font-bold tracking-[0.2em] text-brand-highlight uppercase mb-2">{item.period}</div>
-              <h3 className="text-2xl font-serif text-white mb-3">{item.title}</h3>
-              <p className="text-brand-moss leading-relaxed">{item.description}</p>
+              <div className="absolute -left-[37px] top-1 w-2.5 h-2.5 rounded-full bg-brand-primary border-4 border-brand-light-2 box-content transition-colors group-hover:bg-brand-highlight" />
+              <div className="text-[10px] font-bold tracking-[0.2em] text-brand-primary uppercase mb-2">{item.period}</div>
+              <h3 className="text-2xl font-serif text-brand-text-dark mb-3">{item.title}</h3>
+              <p className="text-brand-primary leading-relaxed">{item.description}</p>
             </motion.div>
           ))}
         </div>
