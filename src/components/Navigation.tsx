@@ -29,6 +29,7 @@ export function Navigation() {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           setScrolled(window.scrollY > 50);
+          setMobileMenuOpen(false);
           ticking = false;
         });
         ticking = true;
