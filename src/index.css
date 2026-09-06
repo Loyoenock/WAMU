@@ -2,19 +2,29 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-serif: "Georgia", ui-serif, serif;
+  --font-head: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
 
-  --color-brand-primary: #0F6E56;
-  --color-brand-accent: #1D9E75;
-  --color-brand-highlight: #5DCAA5;
-  --color-brand-mist: #C3E8D6;
-  --color-brand-midnight: #0D1A12;
-  --color-brand-grove: #2D4A38;
-  --color-brand-moss: #5A7A68;
-  --color-brand-logo-bg: #0B6B45;
-  --color-brand-light-1: #F4FAF7;
-  --color-brand-light-2: #E8F5F0;
-  --color-brand-text-dark: #083D2F;
+  /* WAMU rebrand palette - see DESIGN_IMPLEMENTATION_PLAN.md section 1.
+     Components use exact export hex as arbitrary values where they differ from these. */
+  --color-brand-dark: #0D2016;
+  --color-brand-green: #1A4029;
+  --color-brand-mid: #2D6A4F;
+  --color-brand-accent: #E8A020;
+  --color-brand-accent-light: #FFF3D6;
+  --color-brand-ink: #0C1E12;
+  --color-brand-gold-deep: #D4A017;
+
+  --color-bg-cream: #F7F4EE;
+  --color-bg-warm: #FDFAF4;
+  --color-bg-white: #FFFFFF;
+
+  --color-text-primary: #1A1A1A;
+  --color-text-muted: #6B7A6D;
+  --color-text-inverse: #F5F2E8;
+  --color-text-accent: #E8A020;
+
+  --color-border-light: #E4DED2;
 }
 
 @layer utilities {
@@ -32,34 +42,24 @@
   .animate-fade-in-up {
     animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   }
-
-  .bg-pattern-dots {
-    background-image: radial-gradient(var(--color-brand-mist) 1px, transparent 1px);
-    background-size: 20px 20px;
-  }
-
-  .bg-pattern-lines {
-    background-image: linear-gradient(45deg, rgba(195, 232, 214, 0.5) 1px, transparent 1px),
-                      linear-gradient(-45deg, rgba(195, 232, 214, 0.5) 1px, transparent 1px);
-    background-size: 30px 30px;
-  }
 }
 
 @layer base {
   html {
     overflow-x: hidden;
-  }
-  @media (pointer: fine) {
-    body, a, button, select, [role="button"], input[type="submit"] {
-      cursor: none !important;
-    }
+    scroll-behavior: smooth;
   }
   body {
-    @apply bg-brand-light-1 text-brand-text-dark font-sans antialiased overflow-x-hidden selection:bg-brand-primary selection:text-white border-[4px] md:border-8 border-brand-primary;
+    @apply bg-bg-warm text-brand-ink font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-brand-ink;
   }
-  @media (pointer: fine) {
-    input, textarea {
-      cursor: auto !important;
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
     }
   }
 }

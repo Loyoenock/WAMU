@@ -1,64 +1,114 @@
 import React from 'react';
-import { motion } from 'motion/react';
-import { MessageSquareText, Cpu, CheckCircle2 } from 'lucide-react';
+import { WaMark } from './WaMark';
+
+type Step = {
+  num: string;
+  title: string;
+  body: string;
+  highlight: boolean;
+};
+
+const STEPS: Step[] = [
+  {
+    num: '01',
+    title: 'Register your group',
+    body: 'Message WAMU on WhatsApp, select your group type (VSLA, SACCO, investment club, or merry-go-round) and set your contribution rules.',
+    highlight: false,
+  },
+  {
+    num: '02',
+    title: 'Verify and add members',
+    body: 'Each member is linked to their phone number and identity-verified before they can send or receive funds. No anonymous transactions.',
+    highlight: false,
+  },
+  {
+    num: '03',
+    title: 'Contribute via mobile money',
+    body: 'On contribution day, members pay through MTN MoMo or Airtel Money directly from the WhatsApp chat. The ledger updates instantly.',
+    highlight: true,
+  },
+  {
+    num: '04',
+    title: 'Track everything in real time',
+    body: "Any member can check their balance, their turn in the rotation, or the group's total position at any moment, without waiting for a meeting.",
+    highlight: false,
+  },
+];
 
 export function HowItWorks() {
-  const steps = [
-    {
-      icon: MessageSquareText,
-      title: "Natural Language Input",
-      description: "A group member sends a simple text or voice note in WhatsApp. E.g., 'I am sending my 50k weekly contribution.'",
-    },
-    {
-      icon: Cpu,
-      title: "Contextual Intelligence",
-      description: "WAMU parses the entity, intent, and amount. It bridges the request to the underlying mobile money USSD gateway programmatically.",
-    },
-    {
-      icon: CheckCircle2,
-      title: "Automated Reconciliation",
-      description: "The transaction executes securely. WAMU immediately updates the group ledger and broadcasts a digital receipt back to the chat.",
-    }
-  ];
-
   return (
-    <section className="py-32 bg-brand-logo-bg border-b border-brand-grove/30 relative">
-      {/* Add subtle background pattern overlay if desired, or keep it clean. We'll use a subtle pattern */}
-      <div className="absolute inset-0 bg-pattern-lines mix-blend-multiply opacity-20 pointer-events-none"></div>
-      
-      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-24">
-          <h2 className="font-serif text-4xl text-white mb-6">Invisible Infrastructure.</h2>
-          <p className="text-xl text-brand-mist">
-            No downloads. No passwords. No learning curve. We handle the complexity of distributed ledgers and mobile network operator APIs behind a conversational interface.
+    <section
+      id="how-it-works"
+      className="relative overflow-hidden bg-[#FFFFFF]"
+    >
+      <WaMark tone="light" className="left-[40px] top-[50px] h-[150px] w-[150px] -z-0" />
+      <WaMark tone="light" className="right-[56px] bottom-[72px] h-[128px] w-[128px] -z-0" />
+
+      <div className="relative flex flex-col gap-[60px] px-6 md:px-12 lg:px-[120px] py-16 md:py-[88px]">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-8">
+          <div className="flex flex-col gap-[14px] items-start max-w-[520px] w-full">
+            <span className="text-[11px] font-bold tracking-[2px] text-[#1A4029]">
+              HOW IT WORKS
+            </span>
+            <h2 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[34px]/[40px] md:text-[42px]/[48px] text-[#0C1E12]">
+              From WhatsApp chat to digital ledger.
+            </h2>
+          </div>
+          <p className="text-[15px]/[25px] text-[#4B6A58] w-full md:w-[380px] md:shrink-0">
+            No tech background needed. If your treasurer can send a voice note on WhatsApp, they
+            can run your group's finances on WAMU.
           </p>
         </div>
 
-        <div className="relative">
-          {/* Connector Line */}
-          <div className="hidden md:block absolute top-[44px] left-[10%] right-[10%] h-[1px] bg-brand-highlight/20 z-0" />
-          
-          <div className="grid md:grid-cols-3 gap-12 relative z-10">
-            {steps.map((step, idx) => (
-              <motion.div 
-                key={idx}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{ delay: idx * 0.2, duration: 0.6 }}
-                className="flex flex-col items-center text-center group"
+        <div className="w-full h-[240px] rounded-[20px] overflow-hidden relative">
+          <img
+            src="/images/how-it-works.webp"
+            alt="A savings group treasurer using WhatsApp on a phone during a group meeting"
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
+          {STEPS.map((step) => (
+            <div
+              key={step.num}
+              className={`flex flex-col gap-[20px] p-[32px] rounded-[16px] transition-transform duration-200 ease-out hover:-translate-y-1 ${
+                step.highlight
+                  ? 'bg-[#1A4029] hover:shadow-[0_18px_36px_-14px_rgba(12,30,18,0.5)]'
+                  : 'bg-[#F7F4EE] hover:shadow-[0_16px_32px_-12px_rgba(26,64,41,0.18)]'
+              }`}
+            >
+              <div className="flex flex-row justify-between items-center">
+                <span
+                  className={`text-[13px] font-bold tracking-[1px] ${
+                    step.highlight ? 'text-[#D4A017]' : 'text-[#1A4029]'
+                  }`}
+                >
+                  {step.num}
+                </span>
+                <span
+                  className={`w-[8px] h-[8px] rounded-full ${
+                    step.highlight ? 'bg-[#D4A01760]' : 'bg-[#1A402940]'
+                  }`}
+                  aria-hidden="true"
+                />
+              </div>
+              <h3
+                className={`font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[20px] ${
+                  step.highlight ? 'text-[#FFFFFF]' : 'text-[#0C1E12]'
+                }`}
               >
-                <div className="w-24 h-24 bg-brand-grove/80 backdrop-blur-sm border border-brand-moss flex items-center justify-center mb-8 relative transition-colors group-hover:border-brand-highlight">
-                  <step.icon className="w-8 h-8 text-brand-highlight group-hover:text-brand-highlight transition-colors" strokeWidth={1.5} aria-hidden="true" />
-                  <div className="absolute -top-3 -right-3 w-6 h-6 bg-brand-light-1 text-brand-logo-bg text-[10px] font-bold flex items-center justify-center">
-                    0{idx + 1}
-                  </div>
-                </div>
-                <h3 className="text-lg font-medium text-white mb-4 tracking-tight">{step.title}</h3>
-                <p className="text-brand-mist leading-relaxed max-w-xs text-sm">{step.description}</p>
-              </motion.div>
-            ))}
-          </div>
+                {step.title}
+              </h3>
+              <p
+                className={`text-[14px]/[23px] ${
+                  step.highlight ? 'text-[#7AAA8A]' : 'text-[#4B6A58]'
+                }`}
+              >
+                {step.body}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

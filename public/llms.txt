@@ -1,14 +1,33 @@
-# WAMU - The East African Financial OS
+# WAMU: Digitize your savings group on WhatsApp
 
-> WAMU empowers VSLAs, SACCOs, and investment clubs in Uganda with secure digital tools, mobile money integration, and transparent group savings.
+> WAMU is a WhatsApp-based platform for running savings groups in Uganda: VSLAs (Village Savings and Loan Associations), SACCOs (Savings and Credit Cooperatives), investment clubs and merry-go-rounds. Members contribute by MTN Mobile Money or Airtel Money inside WhatsApp, and every contribution and payout is recorded automatically in a shared ledger. There is no app to download.
 
-## Overview
+## What WAMU does
 
-WAMU provides a unified intelligence layer over fragmented financial rails in East Africa. By integrating with existing mobile money systems like MTN Mobile Money and Airtel Money, it brings informal savings groups into the digital era with transparency and security.
+- Replaces the treasurer's paper notebook with an automatic, tamper-resistant shared ledger every member can verify.
+- Runs entirely inside WhatsApp, with no app install and no smartphone requirement beyond WhatsApp itself.
+- Collects contributions and sends payouts through regulated mobile money rails (MTN MoMo, Airtel Money).
+- Verifies every member's identity before they can send or receive funds.
+- Calculates merry-go-round (ROSCA) rotation order, dates and amounts automatically.
+- Tracks SACCO share capital separately from savings, with per-member dividend calculations and board-ready reporting.
+
+## Who it is for
+
+- VSLAs / Village Savings and Loan Associations
+- SACCOs / Savings and Credit Cooperatives
+- Investment clubs and pooled investment groups
+- Merry-go-round / rotating savings circles (ROSCAs)
+
+## Company
+
+WAMU is operated by WAMU PAY (UGANDA) LIMITED, a Uganda-registered company. Records and money movement are aligned with Uganda's payment systems and cooperative law and its data protection principles. Groups get started by messaging WAMU on WhatsApp at +256 788 003344 (https://wa.me/256788003344).
 
 ## Links
 
-- [Home](https://www.wamu.co.ug/): The official WAMU website context.
-- [Platform](https://www.wamu.co.ug/#platform): Learn about the unified digital platform for informal finance.
-- [Ecosystem](https://www.wamu.co.ug/#ecosystem): View how WAMU integrates with the East African financial ecosystem.
-
+- [Home](https://www.wamu.co.ug/): Overview of WAMU.
+- [How It Works](https://www.wamu.co.ug/#how-it-works): Registering a group, verifying members, contributing by mobile money, tracking in real time.
+- [Products](https://www.wamu.co.ug/#products): SACCO shares, WhatsApp savings and merry-go-round, mobile money payments.
+- [Who We Serve](https://www.wamu.co.ug/#who-we-serve): VSLAs, SACCOs, investment clubs, merry-go-rounds.
+- [Security](https://www.wamu.co.ug/#security): Identity verification, tamper-resistant ledger, regulated payment rails, data protection.
+- [FAQ](https://www.wamu.co.ug/faq): Common questions about using WAMU on WhatsApp, mobile money, the merry-go-round rotation, SACCO shares, and safety.
+- [Pricing & Waitlist](https://www.wamu.co.ug/pricing): Pricing is priced per group and announced at launch; join the early-access waitlist.

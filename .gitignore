@@ -6,3 +6,15 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Agent / skill tooling (installed via `npx skills add` — not project source)
+.agents/
+.claude/
+skills-lock.json
+
+# Editor / OS
+.vscode/
+.idea/
+*.swp
+Thumbs.db
+.vite/

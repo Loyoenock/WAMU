@@ -4,7 +4,7 @@ import { PNG } from 'pngjs';
 fs.createReadStream('public/wamu-logo-v1.png')
   .pipe(new PNG())
   .on('parsed', function() {
-    const counts = {};
+    const counts: Record<string, number> = {};
     for (let y = 0; y < this.height; y++) {
       for (let x = 0; x < this.width; x++) {
         const idx = (this.width * y + x) << 2;
