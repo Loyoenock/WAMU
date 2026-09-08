@@ -4,6 +4,7 @@ import { useRoute } from './lib/router';
 import { Home } from './pages/Home';
 import { Faq } from './pages/Faq';
 import { Pricing } from './pages/Pricing';
+import { CollectionsPage } from './pages/Collections';
 import { BackToTop } from './components/BackToTop';
 
 export default function App() {
@@ -12,7 +13,15 @@ export default function App() {
   const scaleX = useSpring(scrollYProgress, { stiffness: 120, damping: 30, restDelta: 0.001 });
 
   const page =
-    pathname === '/faq' ? <Faq /> : pathname === '/pricing' ? <Pricing /> : <Home />;
+    pathname === '/faq' ? (
+      <Faq />
+    ) : pathname === '/pricing' ? (
+      <Pricing />
+    ) : pathname === '/collections' ? (
+      <CollectionsPage />
+    ) : (
+      <Home />
+    );
 
   return (
     <div className="min-h-screen bg-bg-warm">

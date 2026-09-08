@@ -7,12 +7,12 @@ import { WhatsAppIcon } from './WhatsAppIcon';
 const FOCUS_RING =
   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2';
 
-type NavLink = { id: string; target: string; label: string; muted?: boolean };
+type NavLink = { id: string; target: string; label: string; muted?: boolean; href?: string };
 
 const NAV_LINKS: NavLink[] = [
   { id: 'nav-how', target: 'how-it-works', label: 'How It Works' },
   { id: 'nav-products', target: 'products', label: 'Products' },
-  { id: 'nav-collections', target: 'collections', label: 'Collections' },
+  { id: 'nav-collections', target: 'collections', label: 'Collections', href: '/collections' },
   { id: 'nav-security', target: 'security', label: 'Security' },
 ];
 
@@ -96,8 +96,8 @@ export function Navigation() {
               <a
                 key={link.id}
                 id={`${link.id}-desktop`}
-                href={`/#${link.target}`}
-                onClick={(e) => smoothScroll(e, link.target)}
+                href={link.href ?? `/#${link.target}`}
+                onClick={(e) => (link.href ? setMobileMenuOpen(false) : smoothScroll(e, link.target))}
                 className={cn(
                   'rounded-sm text-[14px] transition-colors hover:text-[#0D2016]',
                   link.muted ? 'text-[#0D2016] opacity-[0.72]' : 'text-[#5A7A65]',
@@ -147,8 +147,8 @@ export function Navigation() {
                 <a
                   key={link.id}
                   id={`${link.id}-mobile`}
-                  href={`/#${link.target}`}
-                  onClick={(e) => smoothScroll(e, link.target)}
+                  href={link.href ?? `/#${link.target}`}
+                  onClick={(e) => (link.href ? setMobileMenuOpen(false) : smoothScroll(e, link.target))}
                   className={cn(
                     'rounded-sm py-3 text-[14px] transition-colors hover:text-[#0D2016]',
                     link.muted ? 'text-[#0D2016] opacity-[0.72]' : 'text-[#5A7A65]',

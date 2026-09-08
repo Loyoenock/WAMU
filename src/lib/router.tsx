@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
 /**
- * Tiny client-side router. Three routes ("/", "/faq", "/pricing") served by the
+ * Tiny client-side router. Four routes ("/", "/faq", "/pricing", "/collections") served by the
  * SPA fallback in server.ts. No dependency: reads location.pathname, listens for
  * popstate, and intercepts clicks on internal <a href="/..."> links.
  *

@@ -28,8 +28,8 @@ const COLLECTIONS: Collection[] = [
     tag: 'Goal · Burial & bereavement',
     name: 'Funeral collections',
     body:
-      'When a family loses someone, money has to move in hours, not weeks. Open a goal, share the link, and contributions land in a single verified account with a receipt for every shilling.',
-    rows: ['Open a collection in minutes', 'Every contribution receipted', 'Clean statement for the family'],
+      'When a family loses someone, money has to move in hours, not weeks. Open a goal, share the link, and contributions land in a single verified account with a receipt for every shilling. No one person can withdraw it alone.',
+    rows: ['Open a goal in minutes', 'Every contribution receipted', 'Withdrawals need more than one approver'],
   },
   {
     key: 'events',
@@ -104,7 +104,7 @@ export function Collections() {
             </div>
           </div>
           <a
-            href="https://wa.me/256788003344"
+            href="https://wa.me/256788003344?text=I%20want%20to%20start%20a%20collection%20on%20WAMU"
             className="inline-flex shrink-0 items-center gap-[10px] rounded-[8px] bg-[#0D2016] px-[26px] py-[15px] text-[15px] font-bold text-[#FDFAF4] transition-[background-color,transform] duration-200 hover:bg-[#1A4029] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0D2016] focus-visible:ring-offset-2"
           >
             <WhatsAppIcon className="h-[18px] w-[18px] text-[#25D366]" />

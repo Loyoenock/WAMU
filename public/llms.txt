@@ -10,6 +10,7 @@
 - Verifies every member's identity before they can send or receive funds.
 - Calculates merry-go-round (ROSCA) rotation order, dates and amounts automatically.
 - Tracks SACCO share capital separately from savings, with per-member dividend calculations and board-ready reporting.
+- Runs wedding, funeral and event collections as savings goals: a target and deadline, pledges tracked against payments, automatic WhatsApp reminders, and payouts that require more than one approver.
 
 ## Who it is for
 
@@ -17,6 +18,7 @@
 - SACCOs / Savings and Credit Cooperatives
 - Investment clubs and pooled investment groups
 - Merry-go-round / rotating savings circles (ROSCAs)
+- Wedding and introduction committees, funeral and burial contributions, and event collections (graduations, church fundraisers, school fees drives)
 
 ## Company
 
@@ -28,6 +30,7 @@ WAMU is operated by WAMU PAY (UGANDA) LIMITED, a Uganda-registered company. Reco
 - [How It Works](https://www.wamu.co.ug/#how-it-works): Registering a group, verifying members, contributing by mobile money, tracking in real time.
 - [Products](https://www.wamu.co.ug/#products): SACCO shares, WhatsApp savings and merry-go-round, mobile money payments.
 - [Who We Serve](https://www.wamu.co.ug/#who-we-serve): VSLAs, SACCOs, investment clubs, merry-go-rounds.
+- [Collections](https://www.wamu.co.ug/collections): Wedding, funeral and event collections on WhatsApp, with reminders and multi-approver payouts.
 - [Security](https://www.wamu.co.ug/#security): Identity verification, tamper-resistant ledger, regulated payment rails, data protection.
 - [FAQ](https://www.wamu.co.ug/faq): Common questions about using WAMU on WhatsApp, mobile money, the merry-go-round rotation, SACCO shares, and safety.
 - [Pricing & Waitlist](https://www.wamu.co.ug/pricing): Pricing is priced per group and announced at launch; join the early-access waitlist.

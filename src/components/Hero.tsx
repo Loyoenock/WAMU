@@ -9,6 +9,16 @@ const chips = [
   { label: 'WhatsApp native', dot: '#25D366' },
 ];
 
+const USE_CASES = [
+  { label: 'VSLA', href: '#who-we-serve' },
+  { label: 'SACCO', href: '#products' },
+  { label: 'Investment club', href: '#who-we-serve' },
+  { label: 'Merry-go-round', href: '#products' },
+  { label: 'Wedding', href: '#collections' },
+  { label: 'Funeral', href: '#collections' },
+  { label: 'Event', href: '#collections' },
+];
+
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#FDFAF4] px-6 md:px-12 lg:px-20 pt-28 pb-16 md:pt-32 md:pb-20 lg:pt-[124px] lg:pb-[64px]">
@@ -19,7 +29,7 @@ export function Hero() {
         {/* Copy */}
         <div className="flex w-full max-w-[660px] flex-col items-start gap-6">
           <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#1A4029]">
-            SAVINGS GROUPS · UGANDA
+            SAVINGS GROUPS &amp; COLLECTIONS · UGANDA
           </p>
 
           <h1 className="flex flex-col font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[34px]/[38px] md:text-[46px]/[50px] lg:text-[58px]/[64px]">
@@ -29,8 +39,9 @@ export function Hero() {
           </h1>
 
           <p className="max-w-[520px] text-[16px]/[26px] text-[#3C5A48]">
-            WAMU digitizes your savings group through WhatsApp. Every contribution and payout is
-            recorded automatically. Every member can verify it themselves.
+            WAMU digitizes your savings group through WhatsApp, and the money you raise for a
+            wedding, a burial or any event. Every contribution and payout is recorded
+            automatically. Every member can verify it themselves.
           </p>
 
           <div className="flex flex-wrap gap-[10px]">
@@ -77,9 +88,27 @@ export function Hero() {
           <div className="absolute bottom-[28px] left-[28px] flex items-center gap-[8px] rounded-[8px] bg-[#D4A017] px-[16px] py-[10px]">
             <Check className="h-[14px] w-[14px] shrink-0 text-[#0C1E12]" strokeWidth={3} aria-hidden="true" />
             <span className="text-[12px] font-semibold text-[#0C1E12]">
-              Trusted by VSLAs, SACCOs &amp; Investment Clubs
+              VSLAs, SACCOs, weddings &amp; funerals
             </span>
           </div>
+        </div>
+      </div>
+
+      {/* Use-case strip: every group and occasion WAMU runs, one tap from the fold. */}
+      <div className="relative mx-auto mt-12 flex max-w-[1280px] flex-col gap-[14px] border-t border-[#E8E2D8] pt-8 lg:mt-14 lg:flex-row lg:items-center lg:gap-[20px]">
+        <span className="shrink-0 text-[11px] font-bold uppercase tracking-[2px] text-[#4B6A58]">
+          WAMU RUNS
+        </span>
+        <div className="flex flex-row flex-wrap gap-[10px]">
+          {USE_CASES.map((u) => (
+            <a
+              key={u.label}
+              href={u.href}
+              className="rounded-[20px] bg-[#F7F4EE] px-[16px] py-[8px] text-[13px] font-medium text-[#1A4029] outline outline-1 -outline-offset-1 outline-[#E8E2D8] transition-colors duration-200 hover:bg-[#EDF5EF] hover:outline-[#1A4029] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2"
+            >
+              {u.label}
+            </a>
+          ))}
         </div>
       </div>
     </section>
