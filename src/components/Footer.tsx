@@ -15,6 +15,7 @@ const COLUMNS: { header: string; links: FootLink[] }[] = [
       { label: 'SACCOs', href: '/#who-we-serve' },
       { label: 'Investment Clubs', href: '/#who-we-serve' },
       { label: 'Merry-go-Round', href: '/#who-we-serve' },
+      { label: 'Collections', href: '/#collections' },
       { label: 'Security', href: '/#security', muted: true },
     ],
   },

@@ -12,6 +12,7 @@ type NavLink = { id: string; target: string; label: string; muted?: boolean };
 const NAV_LINKS: NavLink[] = [
   { id: 'nav-how', target: 'how-it-works', label: 'How It Works' },
   { id: 'nav-products', target: 'products', label: 'Products' },
+  { id: 'nav-collections', target: 'collections', label: 'Collections' },
   { id: 'nav-security', target: 'security', label: 'Security' },
 ];
 

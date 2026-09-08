@@ -5,6 +5,7 @@ import { Hero } from '../components/Hero';
 import { Problem } from '../components/Problem';
 import { HowItWorks } from '../components/HowItWorks';
 import { Features } from '../components/Features';
+import { Collections } from '../components/Collections';
 import { BuiltForEA } from '../components/BuiltForEA';
 import { Trust } from '../components/Trust';
 import { CTA } from '../components/CTA';
@@ -37,6 +38,7 @@ export function Home() {
         <Reveal><Problem /></Reveal>
         <Reveal><HowItWorks /></Reveal>
         <Reveal><Features /></Reveal>
+        <Reveal><Collections /></Reveal>
         <Reveal><BuiltForEA /></Reveal>
         <Reveal><Trust /></Reveal>
         <Reveal><CTA /></Reveal>

@@ -71,6 +71,31 @@ const FAQS: { q: string; a: React.ReactNode; plain: string }[] = [
       "Yes. WAMU's shares ledger records each member's purchases, dividends and standing separately from ordinary savings, with per-member dividend calculations and board-ready reporting.",
   },
   {
+    q: 'Can we use WAMU for a wedding, funeral or other event collection?',
+    a: (
+      <>
+        Yes. Each one is a WAMU savings goal. Open a goal for a kwanjula or wedding committee, a burial or bereavement
+        contribution, or any event: graduations, church fundraisers, school fees drives. Members
+        contribute by MTN MoMo or Airtel Money inside WhatsApp, pledges are tracked against what is
+        actually paid, and the running total is visible to everyone.
+      </>
+    ),
+    plain:
+      'Yes. Each one is a WAMU savings goal with a target and deadline. WAMU handles wedding and kwanjula committee collections, funeral and burial contributions, and event collections such as graduations, church fundraisers and school fees drives. Members contribute by MTN MoMo or Airtel Money inside WhatsApp, pledges are tracked against what is paid, and the running total is visible to everyone.',
+  },
+  {
+    q: 'Does WAMU send reminders?',
+    a: (
+      <>
+        Yes. WAMU sends automatic WhatsApp reminders before every meeting, contribution date,
+        rotation round and collection deadline, and it targets the members who have not paid yet.
+        No admin has to chase anyone by hand.
+      </>
+    ),
+    plain:
+      'Yes. WAMU sends automatic WhatsApp reminders before every meeting, contribution date, rotation round and collection deadline, targeted at members who have not paid yet.',
+  },
+  {
     q: "Is our group's money and data safe?",
     a: (
       <>
@@ -125,7 +150,7 @@ export function Faq() {
   usePageMeta({
     title: 'FAQ | WAMU savings groups on WhatsApp, Uganda',
     description:
-      'Answers about WAMU: running a VSLA, SACCO, investment club or merry-go-round on WhatsApp in Uganda, contributing by MTN MoMo or Airtel Money, and how member records stay safe.',
+      'Answers about WAMU: running a VSLA, SACCO, investment club or merry-go-round on WhatsApp in Uganda, plus wedding, funeral and event collections, contributions by MTN MoMo or Airtel Money, reminders, and how member records stay safe.',
   });
 
   return (
