@@ -6,17 +6,17 @@ import { WaMark } from './WaMark';
 const chips = [
   { label: 'MTN MoMo', dot: '#FFC403' },
   { label: 'Airtel Money', dot: '#ED1D24' },
-  { label: 'WhatsApp native', dot: '#25D366' },
+  { label: 'Utilities first', dot: '#25D366' },
 ];
 
 const USE_CASES = [
-  { label: 'VSLA', href: '#who-we-serve' },
-  { label: 'SACCO', href: '#products' },
-  { label: 'Investment club', href: '#who-we-serve' },
-  { label: 'Merry-go-round', href: '#products' },
-  { label: 'Wedding', href: '#collections' },
-  { label: 'Funeral', href: '#collections' },
-  { label: 'Event', href: '#collections' },
+  { label: 'Airtime & Voice', href: '#utilities' },
+  { label: 'Internet & Data', href: '#utilities' },
+  { label: 'Electricity', href: '#utilities' },
+  { label: 'Water', href: '#utilities' },
+  { label: 'Taxes', href: '#utilities' },
+  { label: 'Pay TV', href: '#utilities' },
+  { label: 'Savings & groups', href: '#savings-and-groups' },
 ];
 
 export function Hero() {
@@ -29,19 +29,16 @@ export function Hero() {
         {/* Copy */}
         <div className="flex w-full max-w-[660px] flex-col items-start gap-6">
           <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#1A4029]">
-            SAVINGS GROUPS &amp; COLLECTIONS · UGANDA
+            UTILITY PAYMENTS &amp; GROUP SAVINGS
           </p>
 
           <h1 className="flex flex-col font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[34px]/[38px] md:text-[46px]/[50px] lg:text-[58px]/[64px]">
-            <span className="text-[#0D2016]">Stop losing track.</span>
-            <span className="text-[#0D2016] lg:leading-[61px]">Start trusting</span>
-            <span className="text-[#1A4029]">your records.</span>
+            <span className="text-[#0D2016]">Everyday payments,</span>
+            <span className="text-[#1A4029] lg:leading-[61px]">right in WhatsApp.</span>
           </h1>
 
           <p className="max-w-[520px] text-[16px]/[26px] text-[#3C5A48]">
-            WAMU digitizes your savings group through WhatsApp, and the money you raise for a
-            wedding, a burial or any event. Every contribution and payout is recorded
-            automatically. Every member can verify it themselves.
+            Start with utilities, then manage the savings goals and groups that matter to you.
           </p>
 
           <div className="flex flex-wrap gap-[10px]">
@@ -65,11 +62,11 @@ export function Hero() {
           </div>
 
           <a
-            href="https://wa.me/256788003344"
+            href="#utilities"
             className="mt-1 inline-flex items-center gap-[10px] rounded-[8px] bg-[#1A4029] px-[32px] py-[17px] text-[15px] font-bold text-[#FDFAF4] transition-[background-color,transform] duration-200 hover:bg-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2"
           >
             <WhatsAppIcon className="h-[18px] w-[18px] text-[#25D366]" />
-            Message WAMU on WhatsApp
+            Explore utilities
           </a>
         </div>
 
@@ -97,7 +94,7 @@ export function Hero() {
       {/* Use-case strip: every group and occasion WAMU runs, one tap from the fold. */}
       <div className="relative mx-auto mt-12 flex max-w-[1280px] flex-col gap-[14px] border-t border-[#E8E2D8] pt-8 lg:mt-14 lg:flex-row lg:items-center lg:gap-[20px]">
         <span className="shrink-0 text-[11px] font-bold uppercase tracking-[2px] text-[#4B6A58]">
-          WAMU RUNS
+          EXPLORE WAMU
         </span>
         <div className="flex flex-row flex-wrap gap-[10px]">
           {USE_CASES.map((u) => (

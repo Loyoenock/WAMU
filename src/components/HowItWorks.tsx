@@ -38,7 +38,7 @@ const STEPS: Step[] = [
 export function HowItWorks() {
   return (
     <section
-      id="how-it-works"
+      id="savings-and-groups"
       className="relative overflow-hidden bg-[#FFFFFF]"
     >
       <WaMark tone="light" className="left-[40px] top-[50px] h-[150px] w-[150px] -z-0" />
@@ -48,10 +48,10 @@ export function HowItWorks() {
         <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-8">
           <div className="flex flex-col gap-[14px] items-start max-w-[520px] w-full">
             <span className="text-[11px] font-bold tracking-[2px] text-[#1A4029]">
-              HOW IT WORKS
+              SAVINGS &amp; GROUPS
             </span>
             <h2 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[34px]/[40px] md:text-[42px]/[48px] text-[#0C1E12]">
-              From WhatsApp chat to digital ledger.
+              Keep your group records in one place.
             </h2>
           </div>
           <p className="text-[15px]/[25px] text-[#4B6A58] w-full md:w-[380px] md:shrink-0">

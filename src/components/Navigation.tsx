@@ -10,8 +10,9 @@ const FOCUS_RING =
 type NavLink = { id: string; target: string; label: string; muted?: boolean; href?: string };
 
 const NAV_LINKS: NavLink[] = [
+  { id: 'nav-utilities', target: 'utilities', label: 'Utilities' },
   { id: 'nav-how', target: 'how-it-works', label: 'How It Works' },
-  { id: 'nav-products', target: 'products', label: 'Products' },
+  { id: 'nav-products', target: 'savings-and-groups', label: 'Savings & Groups' },
   { id: 'nav-collections', target: 'collections', label: 'Collections', href: '/collections' },
   { id: 'nav-security', target: 'security', label: 'Security' },
 ];
@@ -118,7 +119,7 @@ export function Navigation() {
             )}
           >
             <WhatsAppIcon className="h-[15px] w-[15px] text-[#0D2016]" />
-            Start on WhatsApp
+            Message WAMU
           </a>
 
           <button
@@ -167,7 +168,7 @@ export function Navigation() {
                 )}
               >
                 <WhatsAppIcon className="h-[15px] w-[15px] text-[#0D2016]" />
-                Start on WhatsApp
+                Message WAMU
               </a>
             </motion.nav>
           )}

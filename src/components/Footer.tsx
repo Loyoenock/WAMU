@@ -10,7 +10,8 @@ const COLUMNS: { header: string; links: FootLink[] }[] = [
   {
     header: 'Platform',
     links: [
-      { label: 'How It Works', href: '/#how-it-works' },
+      { label: 'Utilities', href: '/#utilities' },
+      { label: 'Savings & Groups', href: '/#savings-and-groups' },
       { label: 'VSLAs', href: '/#who-we-serve' },
       { label: 'SACCOs', href: '/#who-we-serve' },
       { label: 'Investment Clubs', href: '/#who-we-serve' },
@@ -59,7 +60,7 @@ export function Footer() {
             </span>
           </div>
           <p className="text-[13px]/[21px] text-[#4A6A52]">
-            The savings platform for Uganda's groups. VSLAs, SACCOs, investment clubs, and merry-go-rounds.
+            Utility payments and savings tools for Uganda's communities.
           </p>
           <p className="text-[11px] text-[#2D4A35]">WAMU PAY (UGANDA) LIMITED</p>
         </div>
