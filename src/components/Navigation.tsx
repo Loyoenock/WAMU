@@ -62,23 +62,26 @@ export function Navigation() {
     }
   };
 
+  const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
+
   return (
-    <div className="fixed left-0 right-0 top-0 z-[80] px-3 pt-3 sm:px-4 sm:pt-4">
+    <div className="fixed left-0 right-0 top-3 z-[80] mx-auto w-[min(calc(100%-24px),1180px)] sm:top-4">
       <header
         ref={menuRef}
+        data-scrolled={scrolled}
         className={cn(
-          'relative mx-auto max-w-[1200px] rounded-[18px] border border-[#E4DED2] bg-[#FDFAF4] transition-shadow duration-300',
+          'wamu-nav-pill-surface relative w-full rounded-full border border-[#0D2016]/12 transition-[background-color,box-shadow] duration-200 ease-out motion-reduce:transition-none',
           scrolled
-            ? 'shadow-[0_12px_32px_rgba(13,32,22,0.14)]'
-            : 'shadow-[0_6px_20px_rgba(13,32,22,0.07)]'
+            ? 'shadow-[0_4px_16px_rgba(13,32,22,0.10)]'
+            : 'shadow-[0_8px_30px_rgba(13,32,22,0.12)]'
         )}
       >
-        <div className="flex h-[60px] items-center justify-between px-5 lg:px-8">
+        <div className="flex h-[56px] items-center justify-between py-2 pl-5 pr-3 md:h-[60px]">
           <a
             id="nav-logo"
             href="/"
             onClick={goHome}
-            className={cn('flex items-center gap-[6px] rounded-sm', FOCUS_RING)}
+            className={cn('flex shrink-0 items-center gap-[6px] rounded-full px-1 py-0.5', FOCUS_RING)}
           >
             <img
               src="/wamu-mark.png"
@@ -92,29 +95,37 @@ export function Navigation() {
             </span>
           </a>
 
-          <nav aria-label="Main Navigation" className="hidden items-center gap-[36px] md:flex">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.id}
-                id={`${link.id}-desktop`}
-                href={link.href ?? `/#${link.target}`}
-                onClick={(e) => (link.href ? setMobileMenuOpen(false) : smoothScroll(e, link.target))}
-                className={cn(
-                  'rounded-sm text-[14px] transition-colors hover:text-[#0D2016]',
-                  link.muted ? 'text-[#0D2016] opacity-[0.72]' : 'text-[#5A7A65]',
-                  FOCUS_RING
-                )}
-              >
-                {link.label}
-              </a>
-            ))}
+          <nav aria-label="Main Navigation" className="hidden items-center gap-0.5 md:flex lg:gap-2">
+            {NAV_LINKS.map((link) => {
+              const isActive = Boolean(link.href && pathname === link.href);
+              return (
+                <a
+                  key={link.id}
+                  id={`${link.id}-desktop`}
+                  href={link.href ?? `/#${link.target}`}
+                  onClick={(e) => (link.href ? setMobileMenuOpen(false) : smoothScroll(e, link.target))}
+                  aria-current={isActive ? 'page' : undefined}
+                  className={cn(
+                    'whitespace-nowrap rounded-full px-2.5 py-1.5 text-[13px] font-medium transition-[background-color,color] duration-150 ease-out motion-reduce:transition-none lg:px-3.5 lg:text-[14px]',
+                    isActive
+                      ? 'bg-[#1A4029]/15 font-semibold text-[#0D2016]'
+                      : link.muted
+                        ? 'text-[#244D34] hover:bg-[#1A4029]/10 hover:text-[#0D2016]'
+                        : 'text-[#1A4029] hover:bg-[#1A4029]/10 hover:text-[#0D2016]',
+                    FOCUS_RING
+                  )}
+                >
+                  {link.label}
+                </a>
+              );
+            })}
           </nav>
 
           <a
             id="nav-cta-desktop"
             href="https://wa.me/256788003344"
             className={cn(
-              'hidden items-center gap-[8px] rounded-[6px] bg-[#E8A020] p-[10px_22px] text-[13px] font-bold text-[#0D2016] transition-[opacity,transform] duration-200 hover:opacity-90 active:translate-y-[1px] md:inline-flex',
+              'hidden shrink-0 items-center gap-[8px] whitespace-nowrap rounded-full bg-[#E8A020] px-4 py-2.5 text-[13px] font-bold text-[#0D2016] transition-colors duration-150 ease-out hover:bg-[#D99218] motion-reduce:transition-none md:inline-flex lg:px-5',
               FOCUS_RING
             )}
           >
@@ -124,7 +135,10 @@ export function Navigation() {
 
           <button
             id="nav-mobile-menu-btn"
-            className={cn('rounded-sm p-1 text-[#5A7A65] transition-colors hover:text-[#0D2016] md:hidden', FOCUS_RING)}
+            className={cn(
+              'rounded-full p-2 text-[#1A4029] transition-[background-color,color] duration-150 ease-out hover:bg-[#1A4029]/10 hover:text-[#0D2016] motion-reduce:transition-none md:hidden',
+              FOCUS_RING
+            )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
             aria-expanded={mobileMenuOpen}
@@ -142,28 +156,37 @@ export function Navigation() {
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
-              className="absolute left-0 right-0 top-[calc(100%+8px)] flex w-full flex-col gap-2 rounded-[18px] border border-[#E4DED2] bg-[#FDFAF4] px-6 py-6 shadow-[0_16px_32px_rgba(13,32,22,0.12)] md:hidden"
+              data-scrolled={scrolled}
+              className="wamu-nav-pill-surface absolute left-0 right-0 top-[calc(100%+8px)] flex w-full flex-col gap-1.5 rounded-[28px] border border-[#0D2016]/12 p-4 shadow-[0_16px_32px_rgba(13,32,22,0.14)] md:hidden"
             >
-              {NAV_LINKS.map((link) => (
-                <a
-                  key={link.id}
-                  id={`${link.id}-mobile`}
-                  href={link.href ?? `/#${link.target}`}
-                  onClick={(e) => (link.href ? setMobileMenuOpen(false) : smoothScroll(e, link.target))}
-                  className={cn(
-                    'rounded-sm py-3 text-[14px] transition-colors hover:text-[#0D2016]',
-                    link.muted ? 'text-[#0D2016] opacity-[0.72]' : 'text-[#5A7A65]',
-                    FOCUS_RING
-                  )}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {NAV_LINKS.map((link) => {
+                const isActive = Boolean(link.href && pathname === link.href);
+                return (
+                  <a
+                    key={link.id}
+                    id={`${link.id}-mobile`}
+                    href={link.href ?? `/#${link.target}`}
+                    onClick={(e) => (link.href ? setMobileMenuOpen(false) : smoothScroll(e, link.target))}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={cn(
+                      'rounded-full px-4 py-3 text-[14px] font-medium transition-[background-color,color] duration-150 ease-out motion-reduce:transition-none',
+                      isActive
+                        ? 'bg-[#1A4029]/15 font-semibold text-[#0D2016]'
+                        : link.muted
+                          ? 'text-[#244D34] hover:bg-[#1A4029]/10 hover:text-[#0D2016]'
+                          : 'text-[#1A4029] hover:bg-[#1A4029]/10 hover:text-[#0D2016]',
+                      FOCUS_RING
+                    )}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
               <a
                 id="nav-cta-mobile"
                 href="https://wa.me/256788003344"
                 className={cn(
-                  'mt-3 flex w-full items-center justify-center gap-[8px] rounded-[6px] bg-[#E8A020] p-[10px_22px] text-center text-[13px] font-bold text-[#0D2016]',
+                  'mt-2 flex w-full items-center justify-center gap-[8px] rounded-full bg-[#E8A020] px-5 py-3 text-center text-[13px] font-bold text-[#0D2016] transition-colors duration-150 ease-out hover:bg-[#D99218] motion-reduce:transition-none',
                   FOCUS_RING
                 )}
               >

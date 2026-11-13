@@ -9,13 +9,13 @@ const wishlist: any[] = [];
 
 async function startServer() {
   const app = express();
-  const PORT = 3000;
+  const PORT = Number(process.env.PORT) || 3000;
 
   // Initialize Supabase Admin Client for secure backend operations
   // This bypasses RLS, so be careful to enforce business logic here
-  const rawUrl = process.env.VITE_SUPABASE_URL || "";
+  const rawUrl = process.env.VITE_SUPABASE_URL || process.env.SUPABASE_URL || "";
   const rawServiceKey = process.env.SUPABASE_SERVICE_ROLE_KEY || "";
-  const rawAnonKey = process.env.VITE_SUPABASE_ANON_KEY || "";
+  const rawAnonKey = process.env.VITE_SUPABASE_ANON_KEY || process.env.SUPABASE_ANON_KEY || "";
   
   const resendApiKey = process.env.RESEND_API_KEY || "";
   const resend = resendApiKey ? new Resend(resendApiKey) : null;
@@ -43,16 +43,34 @@ async function startServer() {
 
   // API routes FIRST
   app.post("/api/wishlist", async (req, res) => {
-    const data = req.body;
-    
+    const data = req.body || {};
+    const { name, email, phone, organization, country, interest, message } = data;
+
+    if (!name || !email || !phone) {
+      return res.status(400).json({ error: "Name, email, and WhatsApp number are required." });
+    }
+
     if (!supabaseAdmin) {
-      console.error("Supabase client is not initialized on the server.");
-      return res.status(500).json({ error: "Server database configuration missing" });
+      const normalizedEmail = String(email).trim().toLowerCase();
+      const duplicate = wishlist.some((entry) => String(entry.email).trim().toLowerCase() === normalizedEmail);
+      if (duplicate) {
+        return res.status(400).json({ error: "An entry with this email already exists." });
+      }
+      wishlist.push({
+        id: wishlist.length + 1,
+        name,
+        email,
+        phone,
+        organization: organization || "",
+        country: country || "Uganda",
+        interest: interest || "",
+        message: message || "",
+        created_at: new Date().toISOString(),
+      });
+      return res.json({ success: true, message: "Added to wishlist" });
     }
 
     try {
-      const { name, email, phone, organization, country, interest, message } = data;
-      
       // Check for duplicate
       const { data: existingData, error: searchError } = await supabaseAdmin
         .from('wamu')
@@ -123,7 +141,7 @@ async function startServer() {
         return res.json(data);
       }
     }
-    res.json([]);
+    res.json(wishlist);
   });
 
   // Vite middleware for development
