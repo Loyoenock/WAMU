@@ -1,5 +1,6 @@
 import "dotenv/config";
 import express from "express";
+import { createServer as createHttpServer } from "http";
 import path from "path";
 import { createServer as createViteServer } from "vite";
 import { createClient } from "@supabase/supabase-js";
@@ -9,7 +10,8 @@ const wishlist: any[] = [];
 
 async function startServer() {
   const app = express();
-  const PORT = Number(process.env.PORT) || 3000;
+  const httpServer = createHttpServer(app);
+  const PORT = 3000;
 
   // Initialize Supabase Admin Client for secure backend operations
   // This bypasses RLS, so be careful to enforce business logic here
@@ -146,10 +148,18 @@ async function startServer() {
 
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
+    const isAiStudioHmrDisabled =
+      (process.env.DISABLE_HMR === "true" ||
+        process.env.AI_STUDIO_NO_AUTORELOAD === "true" ||
+        Boolean(process.env.APPLET_ID)) &&
+      process.env.AI_STUDIO_NO_AUTORELOAD !== "false";
+
     const vite = await createViteServer({
-      server: { 
+      server: {
         middlewareMode: true,
-        hmr: false
+        ...(isAiStudioHmrDisabled
+          ? { hmr: false, ws: false }
+          : { hmr: { server: httpServer } }),
       },
       appType: "spa",
     });
@@ -162,7 +172,7 @@ async function startServer() {
     });
   }
 
-  app.listen(PORT, "0.0.0.0", () => {
+  httpServer.listen(PORT, "0.0.0.0", () => {
     console.log(`Server running on http://localhost:${PORT}`);
   });
 }
