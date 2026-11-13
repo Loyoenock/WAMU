@@ -71,18 +71,18 @@ export function Hero() {
         </div>
 
         {/* Photo */}
-        <div className="relative aspect-[580/560] w-full max-w-[580px] shrink-0 overflow-hidden rounded-[24px] lg:h-[560px] lg:w-[580px]">
+        <div className="hero-media relative isolate aspect-[580/560] w-full max-w-[580px] shrink-0 overflow-hidden rounded-[24px] lg:h-[560px] lg:w-[580px]">
           <img
             src="/images/hero.webp"
             alt="A Ugandan savings group meeting"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="absolute inset-0 block h-full w-full object-cover"
           />
           <div
-            className="absolute inset-x-0 bottom-0 h-[252px]"
+            className="hero-media-scrim pointer-events-none absolute inset-x-0 bottom-0 h-[252px]"
             style={{ backgroundImage: 'linear-gradient(180deg, #0D201600 0%, #0D201680 100%)' }}
             aria-hidden="true"
           />
-          <div className="absolute bottom-[28px] left-[28px] flex items-center gap-[8px] rounded-[8px] bg-[#D4A017] px-[16px] py-[10px]">
+          <div className="absolute bottom-[28px] left-[28px] z-[2] flex items-center gap-[8px] rounded-[8px] bg-[#D4A017] px-[16px] py-[10px]">
             <Check className="h-[14px] w-[14px] shrink-0 text-[#0C1E12]" strokeWidth={3} aria-hidden="true" />
             <span className="text-[12px] font-semibold text-[#0C1E12]">
               VSLAs, SACCOs, weddings &amp; funerals
