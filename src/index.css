@@ -86,23 +86,24 @@
   isolation: isolate;
 }
 
-/* Soft radial vignette on the 1448x1086 studio phone mockups so their dark-green studio backdrop melts seamlessly into the carousel's ambient WAMU Forest/Canopy/Midnight lighting while keeping the 30%-zoomed phone and transaction details 100% crisp */
+/* Soft radial vignette on the 1448x1086 studio phone mockups so their dark-green studio backdrop melts seamlessly into the carousel's ambient WAMU Forest/Canopy/Midnight lighting while keeping the zoomed phone and transaction details 100% crisp and GPU-composited */
 .wamu-hero-phone-img {
   display: block;
-  filter: drop-shadow(0 24px 36px rgba(5, 14, 9, 0.55));
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-mask-image: radial-gradient(
-    ellipse 48% 50% at 52% 50%,
-    #000 74%,
-    rgba(0, 0, 0, 0.9) 82%,
-    rgba(0, 0, 0, 0.45) 92%,
-    transparent 99%
+    ellipse 49% 50% at 51% 50%,
+    #000 76%,
+    rgba(0, 0, 0, 0.9) 84%,
+    rgba(0, 0, 0, 0.45) 93%,
+    transparent 99.5%
   );
   mask-image: radial-gradient(
-    ellipse 48% 50% at 52% 50%,
-    #000 74%,
-    rgba(0, 0, 0, 0.9) 82%,
-    rgba(0, 0, 0, 0.45) 92%,
-    transparent 99%
+    ellipse 49% 50% at 51% 50%,
+    #000 76%,
+    rgba(0, 0, 0, 0.9) 84%,
+    rgba(0, 0, 0, 0.45) 93%,
+    transparent 99.5%
   );
 }
 

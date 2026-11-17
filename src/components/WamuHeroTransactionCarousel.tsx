@@ -113,17 +113,35 @@ function TransactionImage({
   const variants = {
     enter: (dir: number) =>
       reduceMotion
-        ? { opacity: 0, x: 0, scale: 1 }
-        : { opacity: 0, x: dir >= 0 ? 34 : -34, scale: 0.965 },
+        ? { opacity: 0, x: 0, y: 0, scale: 1 }
+        : { opacity: 0, x: dir >= 0 ? 48 : -48, y: 10, scale: 0.94 },
     center: {
       opacity: 1,
       x: 0,
+      y: 0,
       scale: 1,
+      transition: reduceMotion
+        ? { duration: 0.2 }
+        : {
+            x: { type: 'spring', stiffness: 130, damping: 21, mass: 0.85 },
+            y: { type: 'spring', stiffness: 130, damping: 21, mass: 0.85 },
+            scale: { type: 'spring', stiffness: 130, damping: 21, mass: 0.85 },
+            opacity: { duration: 0.42, ease: 'easeOut' },
+          },
     },
     exit: (dir: number) =>
       reduceMotion
-        ? { opacity: 0, x: 0, scale: 1 }
-        : { opacity: 0, x: dir >= 0 ? -28 : 28, scale: 0.965 },
+        ? { opacity: 0, x: 0, y: 0, scale: 1, transition: { duration: 0.15 } }
+        : {
+            opacity: 0,
+            x: dir >= 0 ? -36 : 36,
+            y: -4,
+            scale: 0.96,
+            transition: {
+              duration: 0.36,
+              ease: [0.4, 0, 0.2, 1],
+            },
+          },
   };
 
   return (
@@ -134,24 +152,22 @@ function TransactionImage({
       initial="enter"
       animate="center"
       exit="exit"
-      transition={{
-        duration: reduceMotion ? 0.2 : 0.82,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="relative flex h-full w-full items-center justify-center select-none sm:translate-x-[14%] lg:translate-x-[15%]"
+      className="absolute inset-0 flex items-center justify-center select-none will-change-[transform,opacity]"
     >
-      <img
-        src={slide.image}
-        alt={slide.alt}
-        width={1448}
-        height={1086}
-        loading={isFirstSlide ? 'eager' : 'lazy'}
-        fetchPriority={isFirstSlide ? 'high' : 'auto'}
-        decoding="async"
-        draggable={false}
-        referrerPolicy="no-referrer"
-        className="wamu-hero-phone-img pointer-events-none block h-full w-full scale-[1.3] origin-[50%_52%] object-contain"
-      />
+      <div className="flex h-full w-full items-center justify-center sm:translate-x-[14%] lg:translate-x-[15%]">
+        <img
+          src={slide.image}
+          alt={slide.alt}
+          width={1448}
+          height={1086}
+          loading={isFirstSlide ? 'eager' : 'lazy'}
+          fetchPriority={isFirstSlide ? 'high' : 'auto'}
+          decoding="async"
+          draggable={false}
+          referrerPolicy="no-referrer"
+          className="wamu-hero-phone-img pointer-events-none block h-full w-full scale-[1.43] origin-[50%_54%] object-contain"
+        />
+      </div>
     </motion.div>
   );
 }
@@ -170,17 +186,31 @@ function GlassInfoCard({
     enter: (dir: number) =>
       reduceMotion
         ? { opacity: 0, y: 0, x: 0, scale: 1 }
-        : { opacity: 0, y: 14, x: dir >= 0 ? 12 : -12, scale: 0.97 },
+        : { opacity: 0, y: 12, x: dir >= 0 ? 16 : -16, scale: 0.97 },
     center: {
       opacity: 1,
       y: 0,
       x: 0,
       scale: 1,
+      transition: reduceMotion
+        ? { duration: 0.2 }
+        : {
+            x: { type: 'spring', stiffness: 140, damping: 22, mass: 0.8 },
+            y: { type: 'spring', stiffness: 140, damping: 22, mass: 0.8 },
+            scale: { type: 'spring', stiffness: 140, damping: 22, mass: 0.8 },
+            opacity: { duration: 0.38, ease: 'easeOut' },
+          },
     },
     exit: (dir: number) =>
       reduceMotion
-        ? { opacity: 0, y: 0, x: 0, scale: 1 }
-        : { opacity: 0, y: 8, x: dir >= 0 ? -14 : 14, scale: 0.975 },
+        ? { opacity: 0, y: 0, x: 0, scale: 1, transition: { duration: 0.15 } }
+        : {
+            opacity: 0,
+            y: 6,
+            x: dir >= 0 ? -14 : 14,
+            scale: 0.98,
+            transition: { duration: 0.28, ease: [0.4, 0, 0.2, 1] },
+          },
   };
 
   return (
@@ -191,12 +221,7 @@ function GlassInfoCard({
       initial="enter"
       animate="center"
       exit="exit"
-      transition={{
-        duration: reduceMotion ? 0.2 : 0.72,
-        delay: reduceMotion ? 0 : 0.05,
-        ease: [0.22, 1, 0.36, 1],
-      }}
-      className="w-full sm:w-auto"
+      className="w-full will-change-[transform,opacity] sm:w-auto"
     >
       <motion.div
         animate={reduceMotion ? undefined : { y: [0, -4, 0] }}
@@ -493,7 +518,7 @@ export function WamuHeroTransactionCarousel() {
       >
         {/* Dominant Smartphone Transaction Mockup Stage */}
         <div className="relative flex h-[280px] w-full items-center justify-center sm:h-[420px] lg:h-[416px] xl:h-[448px]">
-          <AnimatePresence initial={false} custom={direction} mode="popLayout">
+          <AnimatePresence initial={false} custom={direction}>
             <TransactionImage
               key={activeSlide.id}
               slide={activeSlide}
