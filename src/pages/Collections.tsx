@@ -90,14 +90,14 @@ export function CollectionsPage() {
             <div className="mt-7 flex flex-wrap gap-3">
               <a
                 href={WA_START}
-                className="inline-flex items-center gap-[10px] rounded-[10px] bg-[#1A4029] px-7 py-[15px] text-[15px] font-bold text-[#FDFAF4] transition-colors hover:bg-[#0D2016] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2"
+                className="wamu-liquid-btn-forest inline-flex items-center gap-[10px] rounded-[10px] px-7 py-[15px] text-[15px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2"
               >
-                <WhatsAppIcon className="h-[18px] w-[18px] text-[#25D366]" />
+                <WhatsAppIcon className="h-[18px] w-[18px] text-[#1A4029]" />
                 Start a collection
               </a>
               <a
                 href="/pricing"
-                className="inline-flex items-center rounded-[10px] bg-[#E8A020] px-7 py-[15px] text-[15px] font-bold text-[#0C1E12] transition-opacity hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2"
+                className="wamu-liquid-btn-gold inline-flex items-center rounded-[10px] px-7 py-[15px] text-[15px] font-bold text-[#0C1E12] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2"
               >
                 Join the waitlist
               </a>
@@ -147,9 +147,9 @@ export function CollectionsPage() {
             </div>
             <a
               href={WA_START}
-              className="mt-10 inline-flex items-center gap-[10px] rounded-[10px] bg-[#1A4029] px-7 py-[15px] text-[15px] font-bold text-[#FDFAF4] transition-colors hover:bg-[#0D2016] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2"
+              className="wamu-liquid-btn-forest mt-10 inline-flex items-center gap-[10px] rounded-[10px] px-7 py-[15px] text-[15px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2"
             >
-              <WhatsAppIcon className="h-[18px] w-[18px] text-[#25D366]" />
+              <WhatsAppIcon className="h-[18px] w-[18px] text-[#1A4029]" />
               Start a collection
             </a>
           </div>

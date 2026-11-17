@@ -308,10 +308,10 @@ function CarouselIndicators({
           >
             <span
               className={cn(
-                'block h-2 rounded-full transition-all duration-300 ease-out',
+                'block h-2.5 rounded-full border transition-all duration-300 ease-out backdrop-blur-md',
                 isActive
-                  ? 'w-7 bg-[#52B788] shadow-[0_0_12px_rgba(82,183,136,0.65)]'
-                  : 'w-2 bg-white/35 group-hover:bg-white/60'
+                  ? 'w-8 border-white/45 bg-gradient-to-r from-[#8CE0B1] via-[#52B788] to-[#2D6A4F] shadow-[0_0_14px_rgba(82,183,136,0.7),inset_0_1px_0_rgba(255,255,255,0.65)]'
+                  : 'w-2.5 border-white/25 bg-white/25 shadow-[inset_0_1px_0_rgba(255,255,255,0.35)] group-hover:border-white/45 group-hover:bg-white/45'
               )}
             />
           </button>
@@ -335,7 +335,7 @@ function CarouselControls({
         onClick={onPrev}
         aria-label="Previous transaction slide"
         className={cn(
-          'flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-[#FDFAF4] backdrop-blur-md transition-[background-color,border-color,transform] duration-150 hover:border-white/35 hover:bg-white/20 active:scale-95',
+          'wamu-liquid-btn-glass-dark flex h-8 w-8 items-center justify-center rounded-full text-[#FDFAF4] active:scale-95',
           FOCUS_RING
         )}
       >
@@ -346,7 +346,7 @@ function CarouselControls({
         onClick={onNext}
         aria-label="Next transaction slide"
         className={cn(
-          'flex h-8 w-8 items-center justify-center rounded-full border border-white/20 bg-white/10 text-[#FDFAF4] backdrop-blur-md transition-[background-color,border-color,transform] duration-150 hover:border-white/35 hover:bg-white/20 active:scale-95',
+          'wamu-liquid-btn-glass-dark flex h-8 w-8 items-center justify-center rounded-full text-[#FDFAF4] active:scale-95',
           FOCUS_RING
         )}
       >

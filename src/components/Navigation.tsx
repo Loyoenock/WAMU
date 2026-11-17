@@ -125,7 +125,7 @@ export function Navigation() {
             id="nav-cta-desktop"
             href="https://wa.me/256788003344"
             className={cn(
-              'hidden shrink-0 items-center gap-[8px] whitespace-nowrap rounded-full bg-[#E8A020] px-4 py-2.5 text-[13px] font-bold text-[#0D2016] transition-colors duration-150 ease-out hover:bg-[#D99218] motion-reduce:transition-none md:inline-flex lg:px-5',
+              'wamu-liquid-btn-gold hidden shrink-0 items-center gap-[8px] whitespace-nowrap rounded-full px-4 py-2.5 text-[13px] font-bold text-[#0D2016] motion-reduce:transition-none md:inline-flex lg:px-5',
               FOCUS_RING
             )}
           >
@@ -136,7 +136,7 @@ export function Navigation() {
           <button
             id="nav-mobile-menu-btn"
             className={cn(
-              'rounded-full p-2 text-[#1A4029] transition-[background-color,color] duration-150 ease-out hover:bg-[#1A4029]/10 hover:text-[#0D2016] motion-reduce:transition-none md:hidden',
+              'wamu-liquid-btn-light rounded-full p-2 text-[#1A4029] hover:text-[#0D2016] motion-reduce:transition-none md:hidden',
               FOCUS_RING
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -186,7 +186,7 @@ export function Navigation() {
                 id="nav-cta-mobile"
                 href="https://wa.me/256788003344"
                 className={cn(
-                  'mt-2 flex w-full items-center justify-center gap-[8px] rounded-full bg-[#E8A020] px-5 py-3 text-center text-[13px] font-bold text-[#0D2016] transition-colors duration-150 ease-out hover:bg-[#D99218] motion-reduce:transition-none',
+                  'wamu-liquid-btn-gold mt-2 flex w-full items-center justify-center gap-[8px] rounded-full px-5 py-3 text-center text-[13px] font-bold text-[#0D2016] motion-reduce:transition-none',
                   FOCUS_RING
                 )}
               >
