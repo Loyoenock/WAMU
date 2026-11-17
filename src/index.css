@@ -84,83 +84,55 @@
 .hero-media {
   position: relative;
   isolation: isolate;
-  border-radius: 24px;
-  overflow: hidden;
 }
 
-.hero-media > img {
+/* Soft radial vignette on the 1448x1086 studio phone mockups so their dark-green studio backdrop melts seamlessly into the carousel's ambient WAMU Forest/Canopy/Midnight lighting while keeping the phone and hand 100% crisp */
+.wamu-hero-phone-img {
   display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  filter: drop-shadow(0 24px 36px rgba(5, 14, 9, 0.55));
+  -webkit-mask-image: radial-gradient(
+    ellipse 46% 48% at 54% 50%,
+    #000 66%,
+    rgba(0, 0, 0, 0.88) 76%,
+    rgba(0, 0, 0, 0.45) 88%,
+    transparent 98%
+  );
+  mask-image: radial-gradient(
+    ellipse 46% 48% at 54% 50%,
+    #000 66%,
+    rgba(0, 0, 0, 0.88) 76%,
+    rgba(0, 0, 0, 0.45) 88%,
+    transparent 98%
+  );
 }
 
-.hero-media > img,
-.hero-media-scrim {
-  -webkit-mask-image:
-    linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
-  mask-image:
-    linear-gradient(to right, transparent 0%, #000 12%, #000 88%, transparent 100%),
-    linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
-  -webkit-mask-composite: source-in;
-  mask-composite: intersect;
-}
-
-.hero-media::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  z-index: 1;
-  border-radius: inherit;
-  background: rgba(255, 255, 255, 0.08);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-mask-image: radial-gradient(ellipse at center, transparent 55%, #000 100%);
-  mask-image: radial-gradient(ellipse at center, transparent 55%, #000 100%);
+/* Premium WAMU liquid-glass floating transaction info card */
+.wamu-liquid-glass-card {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.16) 0%,
+    rgba(45, 106, 79, 0.28) 48%,
+    rgba(13, 32, 22, 0.76) 100%
+  );
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow:
-    inset 0 0 0 1px rgba(255, 255, 255, 0.25),
-    inset 0 0 24px rgba(255, 255, 255, 0.12);
-}
-
-@media (max-width: 767.98px) {
-  .hero-media > img,
-  .hero-media-scrim {
-    -webkit-mask-image:
-      linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%),
-      linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
-    mask-image:
-      linear-gradient(to right, transparent 0%, #000 10%, #000 90%, transparent 100%),
-      linear-gradient(to bottom, transparent 0%, #000 10%, #000 90%, transparent 100%);
-    -webkit-mask-composite: source-in;
-    mask-composite: intersect;
-  }
-
-  .hero-media::after {
-    -webkit-backdrop-filter: blur(8px) saturate(140%);
-    backdrop-filter: blur(8px) saturate(140%);
-    -webkit-mask-image: radial-gradient(ellipse at center, transparent 62%, #000 100%);
-    mask-image: radial-gradient(ellipse at center, transparent 62%, #000 100%);
-    box-shadow:
-      inset 0 0 0 1px rgba(255, 255, 255, 0.25),
-      inset 0 0 16px rgba(255, 255, 255, 0.12);
-  }
+    0 20px 44px -12px rgba(6, 16, 10, 0.6),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .hero-media::after {
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    background: transparent;
-    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.25);
+  .wamu-liquid-glass-card {
+    background: rgba(13, 32, 22, 0.94);
   }
 }
 
 @media (prefers-reduced-transparency: reduce) {
-  .hero-media::after {
+  .wamu-liquid-glass-card {
+    background: rgba(13, 32, 22, 0.95);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
-    background: transparent;
   }
 }
+
