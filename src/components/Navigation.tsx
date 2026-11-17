@@ -5,7 +5,7 @@ import { cn } from '../lib/utils';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
 const FOCUS_RING =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2';
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2';
 
 type NavLink = { id: string; target: string; label: string; muted?: boolean; href?: string };
 
@@ -108,10 +108,10 @@ export function Navigation() {
                   className={cn(
                     'whitespace-nowrap rounded-full px-2.5 py-1.5 text-[13px] font-medium transition-[background-color,color] duration-150 ease-out motion-reduce:transition-none lg:px-3.5 lg:text-[14px]',
                     isActive
-                      ? 'bg-[#1A4029]/15 font-semibold text-[#0D2016]'
+                      ? 'bg-[#5DCAA5]/45 font-semibold text-[#0D2016]'
                       : link.muted
-                        ? 'text-[#244D34] hover:bg-[#1A4029]/10 hover:text-[#0D2016]'
-                        : 'text-[#1A4029] hover:bg-[#1A4029]/10 hover:text-[#0D2016]',
+                        ? 'text-[#244D34] hover:bg-[#5DCAA5]/30 hover:text-[#0D2016]'
+                        : 'text-[#1A4029] hover:bg-[#5DCAA5]/30 hover:text-[#0D2016]',
                     FOCUS_RING
                   )}
                 >
@@ -125,7 +125,7 @@ export function Navigation() {
             id="nav-cta-desktop"
             href="https://wa.me/256788003344"
             className={cn(
-              'wamu-liquid-btn-gold hidden shrink-0 items-center gap-[8px] whitespace-nowrap rounded-full px-4 py-2.5 text-[13px] font-bold text-[#0D2016] motion-reduce:transition-none md:inline-flex lg:px-5',
+              'wamu-nav-cta-btn hidden shrink-0 items-center gap-[8px] whitespace-nowrap rounded-full bg-[#5DCAA5] px-4 py-2.5 text-[13px] font-bold text-[#0D2016] motion-reduce:transition-none md:inline-flex lg:px-5',
               FOCUS_RING
             )}
           >
@@ -136,7 +136,7 @@ export function Navigation() {
           <button
             id="nav-mobile-menu-btn"
             className={cn(
-              'wamu-liquid-btn-light rounded-full p-2 text-[#1A4029] hover:text-[#0D2016] motion-reduce:transition-none md:hidden',
+              'wamu-nav-cta-btn rounded-full bg-[#5DCAA5] p-2 text-[#0D2016] motion-reduce:transition-none md:hidden',
               FOCUS_RING
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -171,10 +171,10 @@ export function Navigation() {
                     className={cn(
                       'rounded-full px-4 py-3 text-[14px] font-medium transition-[background-color,color] duration-150 ease-out motion-reduce:transition-none',
                       isActive
-                        ? 'bg-[#1A4029]/15 font-semibold text-[#0D2016]'
+                        ? 'bg-[#5DCAA5]/45 font-semibold text-[#0D2016]'
                         : link.muted
-                          ? 'text-[#244D34] hover:bg-[#1A4029]/10 hover:text-[#0D2016]'
-                          : 'text-[#1A4029] hover:bg-[#1A4029]/10 hover:text-[#0D2016]',
+                          ? 'text-[#244D34] hover:bg-[#5DCAA5]/30 hover:text-[#0D2016]'
+                          : 'text-[#1A4029] hover:bg-[#5DCAA5]/30 hover:text-[#0D2016]',
                       FOCUS_RING
                     )}
                   >
@@ -186,7 +186,7 @@ export function Navigation() {
                 id="nav-cta-mobile"
                 href="https://wa.me/256788003344"
                 className={cn(
-                  'wamu-liquid-btn-gold mt-2 flex w-full items-center justify-center gap-[8px] rounded-full px-5 py-3 text-center text-[13px] font-bold text-[#0D2016] motion-reduce:transition-none',
+                  'wamu-nav-cta-btn mt-2 flex w-full items-center justify-center gap-[8px] rounded-full bg-[#5DCAA5] px-5 py-3 text-center text-[13px] font-bold text-[#0D2016] motion-reduce:transition-none',
                   FOCUS_RING
                 )}
               >
