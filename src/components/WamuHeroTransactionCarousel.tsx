@@ -138,7 +138,7 @@ function TransactionImage({
         duration: reduceMotion ? 0.2 : 0.82,
         ease: [0.22, 1, 0.36, 1],
       }}
-      className="relative flex h-full w-full items-center justify-center select-none sm:translate-x-[12%] lg:translate-x-[13%]"
+      className="relative flex h-full w-full items-center justify-center select-none sm:translate-x-[14%] lg:translate-x-[15%]"
     >
       <img
         src={slide.image}
@@ -150,7 +150,7 @@ function TransactionImage({
         decoding="async"
         draggable={false}
         referrerPolicy="no-referrer"
-        className="wamu-hero-phone-img pointer-events-none block h-full w-full object-contain"
+        className="wamu-hero-phone-img pointer-events-none block h-full w-full scale-[1.3] origin-[50%_52%] object-contain"
       />
     </motion.div>
   );
