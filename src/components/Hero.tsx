@@ -64,9 +64,9 @@ export function Hero() {
 
           <a
             href="#utilities"
-            className="wamu-liquid-btn-forest mt-1 inline-flex items-center gap-[10px] rounded-[10px] px-[32px] py-[17px] text-[15px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2"
+            className="wamu-liquid-btn-forest mt-1 inline-flex items-center gap-[10px] rounded-full px-[32px] py-[17px] text-[15px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
           >
-            <WhatsAppIcon className="h-[18px] w-[18px] text-[#1A4029]" />
+            <WhatsAppIcon className="h-[18px] w-[18px] text-[#0D2016]" />
             Explore utilities
           </a>
         </div>
@@ -85,7 +85,7 @@ export function Hero() {
             <a
               key={u.label}
               href={u.href}
-              className="wamu-liquid-btn-light rounded-[20px] px-[16px] py-[8px] text-[13px] font-medium text-[#1A4029] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2"
+              className="wamu-liquid-btn-light rounded-full px-[16px] py-[8px] text-[13px] font-medium text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
             >
               {u.label}
             </a>

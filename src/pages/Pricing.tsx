@@ -154,7 +154,7 @@ export function Pricing() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="wamu-liquid-btn-gold rounded-[10px] px-6 py-[15px] text-[15px] font-bold text-[#0C1E12] active:translate-y-[1px] disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2"
+              className="wamu-liquid-btn-gold rounded-full px-7 py-[15px] text-[15px] font-bold text-[#0C1E12] active:translate-y-[1px] disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
             >
               {status === 'sending' ? 'Sending...' : 'Join the waitlist'}
             </button>
