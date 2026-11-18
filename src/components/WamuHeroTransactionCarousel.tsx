@@ -221,7 +221,7 @@ function GlassInfoCard({
       initial="enter"
       animate="center"
       exit="exit"
-      className="w-full will-change-[transform,opacity] sm:w-auto"
+      className="absolute inset-x-0 bottom-0 w-full will-change-[transform,opacity] sm:w-[238px] lg:w-[218px] xl:w-[248px]"
     >
       <motion.div
         animate={reduceMotion ? undefined : { y: [0, -4, 0] }}
@@ -234,25 +234,27 @@ function GlassInfoCard({
                 ease: 'easeInOut',
               }
         }
-        className="wamu-liquid-glass-card relative w-full rounded-[20px] p-3.5 sm:max-w-[238px] sm:p-3.5 lg:max-w-[218px] xl:max-w-[248px] xl:p-4"
+        className="wamu-liquid-glass-card relative flex min-h-[144px] w-full flex-col justify-between rounded-[20px] p-3.5 sm:min-h-0 sm:p-3.5 xl:p-4"
       >
-        {/* Top Row: Category + Accent Icon */}
-        <div className="flex items-center justify-between gap-2">
-          <span className="text-[10px] font-bold tracking-[0.14em] text-[#9EE6BE]">
-            {slide.category}
-          </span>
-          <TransactionAccent accent={slide.accent} />
+        <div>
+          {/* Top Row: Category + Accent Icon */}
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-[10px] font-bold tracking-[0.14em] text-[#9EE6BE]">
+              {slide.category}
+            </span>
+            <TransactionAccent accent={slide.accent} />
+          </div>
+
+          {/* Heading */}
+          <h2 className="mt-1.5 font-[Fraunces,ui-serif,Georgia,serif] text-[17px]/[22px] font-bold text-[#FDFAF4] sm:text-[18px]/[23px] xl:text-[19px]/[24px]">
+            {slide.title}
+          </h2>
+
+          {/* Description */}
+          <p className="mt-1 line-clamp-2 text-[12px]/[17px] text-[#DCECE2] sm:line-clamp-none xl:text-[12.5px]/[18px]">
+            {slide.description}
+          </p>
         </div>
-
-        {/* Heading */}
-        <h2 className="mt-1.5 font-[Fraunces,ui-serif,Georgia,serif] text-[17px]/[22px] font-bold text-[#FDFAF4] sm:text-[18px]/[23px] xl:text-[19px]/[24px]">
-          {slide.title}
-        </h2>
-
-        {/* Description */}
-        <p className="mt-1 text-[12px]/[17px] text-[#DCECE2] xl:text-[12.5px]/[18px]">
-          {slide.description}
-        </p>
 
         {/* Subtle divider + unboxed transaction metadata */}
         <div className="mt-2.5 border-t border-white/15 pt-2">
@@ -482,7 +484,7 @@ export function WamuHeroTransactionCarousel() {
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
       className={cn(
-        'hero-media relative isolate flex w-full max-w-[580px] shrink-0 flex-col justify-between overflow-hidden rounded-[24px] bg-[#0D2016] shadow-[0_28px_60px_-18px_rgba(12,30,18,0.42)] lg:h-[520px] lg:w-[440px] xl:h-[560px] xl:w-[580px] touch-pan-y',
+        'hero-media relative isolate flex h-[504px] w-full max-w-[580px] shrink-0 flex-col justify-between overflow-hidden rounded-[24px] bg-[#0D2016] shadow-[0_28px_60px_-18px_rgba(12,30,18,0.42)] sm:h-[512px] lg:h-[520px] lg:w-[440px] xl:h-[560px] xl:w-[580px] touch-pan-y',
         FOCUS_RING
       )}
     >
@@ -514,10 +516,10 @@ export function WamuHeroTransactionCarousel() {
         role="group"
         aria-roledescription="slide"
         aria-label={`${activeIndex + 1} of ${slideCount}: ${activeSlide.title}`}
-        className="relative z-[1] flex flex-1 flex-col justify-between p-3.5 sm:p-5 lg:p-5 xl:p-6"
+        className="relative z-[1] flex h-full flex-col justify-between p-3.5 sm:p-5 lg:p-5 xl:p-6"
       >
         {/* Dominant Smartphone Transaction Mockup Stage */}
-        <div className="relative flex h-[280px] w-full items-center justify-center sm:h-[420px] lg:h-[416px] xl:h-[448px]">
+        <div className="relative flex h-[280px] w-full shrink-0 items-center justify-center sm:h-[420px] lg:h-[416px] xl:h-[448px]">
           <AnimatePresence initial={false} custom={direction}>
             <TransactionImage
               key={activeSlide.id}
@@ -531,9 +533,9 @@ export function WamuHeroTransactionCarousel() {
 
         {/* Floating Liquid-Glass Information Card:
             - On sm+ screens: floats over the lower-left negative space beside the hand/phone without covering the WhatsApp confirmation receipt.
-            - On mobile (<640px): docks cleanly below the phone stage so 0% of the WhatsApp screen is obscured. */}
-        <div className="relative z-[2] mt-2 sm:absolute sm:bottom-[54px] sm:left-5 sm:mt-0 lg:bottom-[52px] lg:left-4 xl:bottom-[58px] xl:left-6">
-          <AnimatePresence initial={false} custom={direction} mode="popLayout">
+            - On mobile (<640px): docks cleanly inside a locked-height stage below the phone so transitions never stretch container height. */}
+        <div className="relative z-[2] mt-2 h-[148px] w-full shrink-0 sm:absolute sm:bottom-[54px] sm:left-5 sm:mt-0 sm:h-0 sm:w-0 lg:bottom-[52px] lg:left-4 xl:bottom-[58px] xl:left-6">
+          <AnimatePresence initial={false} custom={direction}>
             <GlassInfoCard
               key={activeSlide.id}
               slide={activeSlide}
@@ -544,7 +546,7 @@ export function WamuHeroTransactionCarousel() {
         </div>
 
         {/* Bottom Bar: Slide Indicators & Minimal Glass Navigation Arrows */}
-        <div className="relative z-[3] mt-3 flex items-center justify-between border-t border-white/10 pt-2.5 sm:mt-0 sm:border-t-0 sm:pt-0">
+        <div className="relative z-[3] mt-2 flex shrink-0 items-center justify-between border-t border-white/10 pt-2.5 sm:mt-0 sm:border-t-0 sm:pt-0">
           <CarouselIndicators
             slides={TRANSACTION_SLIDES}
             activeIndex={activeIndex}
