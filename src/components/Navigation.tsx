@@ -69,13 +69,13 @@ export function Navigation() {
       <header
         ref={menuRef}
         data-scrolled={scrolled}
-        className={cn(
-          'wamu-nav-pill-surface relative w-full rounded-full border border-[#0D2016]/12 transition-[background-color,box-shadow] duration-200 ease-out motion-reduce:transition-none',
-          scrolled
-            ? 'shadow-[0_4px_16px_rgba(13,32,22,0.10)]'
-            : 'shadow-[0_8px_30px_rgba(13,32,22,0.12)]'
-        )}
+        className="wamu-nav-pill-surface relative w-full rounded-full transition-[background-color,box-shadow,border-color] duration-200 ease-out motion-reduce:transition-none"
       >
+        {/* Liquid-glass top specular light refraction streak */}
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/95 to-transparent"
+        />
         <div className="flex h-[56px] items-center justify-between py-2 pl-5 pr-3 md:h-[60px]">
           <a
             id="nav-logo"
@@ -106,12 +106,12 @@ export function Navigation() {
                   onClick={(e) => (link.href ? setMobileMenuOpen(false) : smoothScroll(e, link.target))}
                   aria-current={isActive ? 'page' : undefined}
                   className={cn(
-                    'whitespace-nowrap rounded-full px-2.5 py-1.5 text-[13px] font-medium transition-[background-color,color] duration-150 ease-out motion-reduce:transition-none lg:px-3.5 lg:text-[14px]',
+                    'whitespace-nowrap rounded-full px-2.5 py-1.5 text-[13px] font-medium transition-[background-color,color,box-shadow] duration-150 ease-out motion-reduce:transition-none lg:px-3.5 lg:text-[14px]',
                     isActive
-                      ? 'bg-[#5DCAA5]/45 font-semibold text-[#0D2016]'
+                      ? 'bg-white/45 font-semibold text-[#0D2016] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]'
                       : link.muted
-                        ? 'text-[#244D34] hover:bg-[#5DCAA5]/30 hover:text-[#0D2016]'
-                        : 'text-[#1A4029] hover:bg-[#5DCAA5]/30 hover:text-[#0D2016]',
+                        ? 'text-[#1A4029] hover:bg-white/35 hover:text-[#0D2016] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]'
+                        : 'text-[#0D2016] hover:bg-white/35 hover:text-[#0D2016] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]',
                     FOCUS_RING
                   )}
                 >
@@ -125,18 +125,18 @@ export function Navigation() {
             id="nav-cta-desktop"
             href="https://wa.me/256788003344"
             className={cn(
-              'wamu-nav-cta-btn hidden shrink-0 items-center gap-[8px] whitespace-nowrap rounded-full bg-[#5DCAA5] px-4 py-2.5 text-[13px] font-bold text-[#0D2016] motion-reduce:transition-none md:inline-flex lg:px-5',
+              'wamu-nav-cta-btn hidden shrink-0 items-center gap-[8px] whitespace-nowrap rounded-full bg-[#0B6B45] px-4 py-2.5 text-[13px] font-bold text-[#FDFAF4] motion-reduce:transition-none md:inline-flex lg:px-5',
               FOCUS_RING
             )}
           >
-            <WhatsAppIcon className="h-[15px] w-[15px] text-[#0D2016]" />
+            <WhatsAppIcon className="h-[15px] w-[15px] text-[#9CECC9]" />
             Message WAMU
           </a>
 
           <button
             id="nav-mobile-menu-btn"
             className={cn(
-              'wamu-nav-cta-btn rounded-full bg-[#5DCAA5] p-2 text-[#0D2016] motion-reduce:transition-none md:hidden',
+              'wamu-nav-cta-btn rounded-full bg-[#0B6B45] p-2 text-[#FDFAF4] motion-reduce:transition-none md:hidden',
               FOCUS_RING
             )}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -157,7 +157,7 @@ export function Navigation() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               data-scrolled={scrolled}
-              className="wamu-nav-pill-surface absolute left-0 right-0 top-[calc(100%+8px)] flex w-full flex-col gap-1.5 rounded-[28px] border border-[#0D2016]/12 p-4 shadow-[0_16px_32px_rgba(13,32,22,0.14)] md:hidden"
+              className="wamu-nav-pill-surface absolute left-0 right-0 top-[calc(100%+8px)] flex w-full flex-col gap-1.5 rounded-[28px] p-4 md:hidden"
             >
               {NAV_LINKS.map((link) => {
                 const isActive = Boolean(link.href && pathname === link.href);
@@ -169,12 +169,12 @@ export function Navigation() {
                     onClick={(e) => (link.href ? setMobileMenuOpen(false) : smoothScroll(e, link.target))}
                     aria-current={isActive ? 'page' : undefined}
                     className={cn(
-                      'rounded-full px-4 py-3 text-[14px] font-medium transition-[background-color,color] duration-150 ease-out motion-reduce:transition-none',
+                      'rounded-full px-4 py-3 text-[14px] font-medium transition-[background-color,color,box-shadow] duration-150 ease-out motion-reduce:transition-none',
                       isActive
-                        ? 'bg-[#5DCAA5]/45 font-semibold text-[#0D2016]'
+                        ? 'bg-white/45 font-semibold text-[#0D2016] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]'
                         : link.muted
-                          ? 'text-[#244D34] hover:bg-[#5DCAA5]/30 hover:text-[#0D2016]'
-                          : 'text-[#1A4029] hover:bg-[#5DCAA5]/30 hover:text-[#0D2016]',
+                          ? 'text-[#1A4029] hover:bg-white/35 hover:text-[#0D2016]'
+                          : 'text-[#0D2016] hover:bg-white/35 hover:text-[#0D2016]',
                       FOCUS_RING
                     )}
                   >
@@ -186,11 +186,11 @@ export function Navigation() {
                 id="nav-cta-mobile"
                 href="https://wa.me/256788003344"
                 className={cn(
-                  'wamu-nav-cta-btn mt-2 flex w-full items-center justify-center gap-[8px] rounded-full bg-[#5DCAA5] px-5 py-3 text-center text-[13px] font-bold text-[#0D2016] motion-reduce:transition-none',
+                  'wamu-nav-cta-btn mt-2 flex w-full items-center justify-center gap-[8px] rounded-full bg-[#0B6B45] px-5 py-3 text-center text-[13px] font-bold text-[#FDFAF4] motion-reduce:transition-none',
                   FOCUS_RING
                 )}
               >
-                <WhatsAppIcon className="h-[15px] w-[15px] text-[#0D2016]" />
+                <WhatsAppIcon className="h-[15px] w-[15px] text-[#9CECC9]" />
                 Message WAMU
               </a>
             </motion.nav>

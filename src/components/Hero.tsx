@@ -168,6 +168,19 @@ function HeroInteractiveDots({ sectionRef }: { sectionRef: React.RefObject<HTMLE
       ctx.clearRect(0, 0, width, height);
       ctx.fillStyle = '#0F6E56';
 
+      // Measure the navigation bar and mobile menu (if open) relative to the hero section so dots never render inside the navbar
+      const sectionRect = section.getBoundingClientRect();
+      const navEl = document.querySelector('.wamu-nav-pill-surface');
+      const navRect = navEl ? navEl.getBoundingClientRect() : null;
+      const navBounds = navRect
+        ? {
+            left: navRect.left - sectionRect.left - 6,
+            right: navRect.right - sectionRect.left + 6,
+            top: navRect.top - sectionRect.top - 6,
+            bottom: navRect.bottom - sectionRect.top + 6,
+          }
+        : null;
+
       const rSq = INTERACTION_RADIUS * INTERACTION_RADIUS;
 
       for (let i = 0; i < dots.length; i++) {
@@ -211,6 +224,18 @@ function HeroInteractiveDots({ sectionRef }: { sectionRef: React.RefObject<HTMLE
 
         d.x += d.vx;
         d.y += d.vy;
+
+        // Do not draw dots inside the top navigation bar band or within the floating navbar pill bounds
+        if (d.y < 84) continue;
+        if (
+          navBounds &&
+          d.x >= navBounds.left &&
+          d.x <= navBounds.right &&
+          d.y >= navBounds.top &&
+          d.y <= navBounds.bottom
+        ) {
+          continue;
+        }
 
         const radius = BASE_RADIUS * d.sizeScale + proximity * 0.42;
         ctx.globalAlpha = d.baseAlpha + proximity * 0.4;
