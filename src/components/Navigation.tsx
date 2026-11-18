@@ -65,23 +65,23 @@ export function Navigation() {
   const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
 
   return (
-    <div className="fixed left-0 right-0 top-3 z-[80] mx-auto w-[min(calc(100%-24px),1180px)] sm:top-4">
+    <div className="fixed left-0 right-0 top-3 z-[80] px-2 sm:top-4 md:px-8 lg:px-16">
       <header
         ref={menuRef}
         data-scrolled={scrolled}
-        className="wamu-nav-pill-surface relative w-full rounded-full transition-[background-color,box-shadow,border-color] duration-200 ease-out motion-reduce:transition-none"
+        className="wamu-nav-pill-surface relative mx-auto w-full max-w-[1312px] rounded-full px-4 transition-[background-color,box-shadow,border-color] duration-200 ease-out motion-reduce:transition-none"
       >
         {/* Liquid-glass top specular light refraction streak */}
         <span
           aria-hidden="true"
           className="pointer-events-none absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/95 to-transparent"
         />
-        <div className="flex h-[56px] items-center justify-between py-2 pl-5 pr-3 md:h-[60px]">
+        <div className="flex h-[56px] w-full items-center justify-between py-2 md:h-[60px]">
           <a
             id="nav-logo"
             href="/"
             onClick={goHome}
-            className={cn('flex shrink-0 items-center gap-[6px] rounded-full px-1 py-0.5', FOCUS_RING)}
+            className={cn('flex shrink-0 items-center gap-[6px] rounded-full py-0.5 pr-1', FOCUS_RING)}
           >
             <img
               src="/wamu-mark.png"
