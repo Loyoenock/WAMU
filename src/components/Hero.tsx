@@ -319,7 +319,7 @@ export function Hero() {
 
           <a
             href="#utilities"
-            className="wamu-liquid-btn-forest mt-1 inline-flex items-center gap-[10px] rounded-full px-[32px] py-[17px] text-[15px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
+            className="wamu-hero-explore-btn mt-1 inline-flex items-center gap-[10px] rounded-full px-[32px] py-[17px] text-[15px] font-bold text-[#0D2016] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
           >
             <WhatsAppIcon className="h-[18px] w-[18px] text-[#0D2016]" />
             Explore utilities
