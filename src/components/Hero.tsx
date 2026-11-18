@@ -301,19 +301,19 @@ export function Hero() {
             {chips.map((c) => (
               <span
                 key={c.label}
-                className="flex items-center gap-[7px] rounded-[20px] bg-[#0D2016] px-[14px] py-[7px] outline outline-1 -outline-offset-1 outline-[#1A4029]"
+                className="flex items-center gap-[7px] rounded-full bg-[#0B6B45] px-[14px] py-[7px]"
               >
                 <span
                   className="h-[7px] w-[7px] shrink-0 rounded-full"
                   style={{ backgroundColor: c.dot }}
                   aria-hidden="true"
                 />
-                <span className="text-[12px] font-medium text-[#F7F4EE]">{c.label}</span>
+                <span className="text-[12px] font-medium text-[#FDFAF4]">{c.label}</span>
               </span>
             ))}
-            <span className="flex items-center gap-[7px] rounded-[20px] bg-[#0D2016] px-[14px] py-[7px] outline outline-1 -outline-offset-1 outline-[#1A4029]">
+            <span className="flex items-center gap-[7px] rounded-full bg-[#0B6B45] px-[14px] py-[7px]">
               <ShieldCheck className="w-[13px] shrink-0" style={{ color: '#D4A017' }} aria-hidden="true" />
-              <span className="text-[12px] font-medium text-[#F7F4EE]">No app needed</span>
+              <span className="text-[12px] font-medium text-[#FDFAF4]">No app needed</span>
             </span>
           </div>
 
