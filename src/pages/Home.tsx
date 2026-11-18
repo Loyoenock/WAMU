@@ -43,7 +43,7 @@ export function Home() {
         <Reveal><Collections /></Reveal>
         <Reveal><BuiltForEA /></Reveal>
         <Reveal><Trust /></Reveal>
-        <Reveal><CTA /></Reveal>
+        <CTA />
       </main>
       <Footer />
     </>

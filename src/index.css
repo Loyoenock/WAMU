@@ -194,110 +194,79 @@
   box-shadow: none;
 }
 
-/* WAMU Light #5DCAA5 Liquid-Glass Button System (Fully Rounded) */
+/* WAMU Flat Transparent Frosted-Glass Button System (Fully Rounded) */
 .wamu-liquid-btn-forest,
 .wamu-liquid-btn-gold {
   border-radius: 9999px;
-  background-color: #5DCAA5;
+  background-color: rgba(93, 202, 165, 0.34);
   background-image: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.34) 0%,
-    rgba(93, 202, 165, 0) 48%,
-    rgba(26, 64, 41, 0.14) 100%
+    135deg,
+    rgba(255, 255, 255, 0.32) 0%,
+    rgba(93, 202, 165, 0.22) 100%
   );
-  -webkit-backdrop-filter: blur(18px) saturate(175%);
-  backdrop-filter: blur(18px) saturate(175%);
-  border: 1px solid #5DCAA5;
-  box-shadow:
-    0 10px 26px -5px rgba(93, 202, 165, 0.55),
-    inset 0 1.5px 0 0 rgba(255, 255, 255, 0.78),
-    inset 0 -1.5px 0 0 rgba(26, 64, 41, 0.2);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(93, 202, 165, 0.58);
+  box-shadow: none;
   transition:
-    background-color 200ms ease,
-    background-image 200ms ease,
-    border-color 200ms ease,
-    box-shadow 200ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
     transform 150ms ease;
 }
 
 .wamu-liquid-btn-forest:hover,
 .wamu-liquid-btn-gold:hover {
-  background-color: #5DCAA5;
-  background-image: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.46) 0%,
-    rgba(93, 202, 165, 0.08) 50%,
-    rgba(26, 64, 41, 0.18) 100%
-  );
-  border-color: #78D8B7;
-  box-shadow:
-    0 14px 32px -5px rgba(93, 202, 165, 0.7),
-    inset 0 1.5px 0 0 rgba(255, 255, 255, 0.92),
-    inset 0 -1.5px 0 0 rgba(26, 64, 41, 0.26);
+  background-color: rgba(93, 202, 165, 0.48);
+  border-color: rgba(93, 202, 165, 0.8);
+  box-shadow: none;
 }
 
 .wamu-liquid-btn-light {
   border-radius: 9999px;
-  background-color: rgba(93, 202, 165, 0.78);
+  background-color: rgba(93, 202, 165, 0.28);
   background-image: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.36) 0%,
-    rgba(93, 202, 165, 0) 52%,
-    rgba(26, 64, 41, 0.12) 100%
+    135deg,
+    rgba(255, 255, 255, 0.34) 0%,
+    rgba(93, 202, 165, 0.18) 100%
   );
-  -webkit-backdrop-filter: blur(16px) saturate(170%);
-  backdrop-filter: blur(16px) saturate(170%);
-  border: 1px solid #5DCAA5;
-  box-shadow:
-    0 6px 20px -5px rgba(93, 202, 165, 0.42),
-    inset 0 1.5px 0 0 rgba(255, 255, 255, 0.82),
-    inset 0 -1px 0 0 rgba(26, 64, 41, 0.15);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  backdrop-filter: blur(16px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow: none;
   transition:
-    background-color 200ms ease,
-    border-color 200ms ease,
-    box-shadow 200ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
     transform 150ms ease;
 }
 
 .wamu-liquid-btn-light:hover {
-  background-color: #5DCAA5;
-  border-color: #78D8B7;
-  box-shadow:
-    0 10px 24px -5px rgba(93, 202, 165, 0.56),
-    inset 0 1.5px 0 0 rgba(255, 255, 255, 0.94),
-    inset 0 -1px 0 0 rgba(26, 64, 41, 0.2);
+  background-color: rgba(93, 202, 165, 0.44);
+  border-color: rgba(255, 255, 255, 0.82);
+  box-shadow: none;
 }
 
 .wamu-liquid-btn-glass-dark {
   border-radius: 9999px;
-  background-color: #5DCAA5;
+  background-color: rgba(93, 202, 165, 0.44);
   background-image: linear-gradient(
-    180deg,
-    rgba(255, 255, 255, 0.34) 0%,
-    rgba(93, 202, 165, 0) 50%,
-    rgba(13, 32, 22, 0.18) 100%
+    135deg,
+    rgba(255, 255, 255, 0.28) 0%,
+    rgba(93, 202, 165, 0.24) 100%
   );
-  -webkit-backdrop-filter: blur(18px) saturate(175%);
-  backdrop-filter: blur(18px) saturate(175%);
-  border: 1px solid #5DCAA5;
-  box-shadow:
-    0 10px 26px -4px rgba(93, 202, 165, 0.48),
-    inset 0 1.5px 0 0 rgba(255, 255, 255, 0.78),
-    inset 0 -1px 0 0 rgba(13, 32, 22, 0.25);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(93, 202, 165, 0.62);
+  box-shadow: none;
   transition:
-    background-color 200ms ease,
-    border-color 200ms ease,
-    box-shadow 200ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease,
     transform 150ms ease;
 }
 
 .wamu-liquid-btn-glass-dark:hover {
-  background-color: #6DD2B0;
-  border-color: #8CE0C3;
-  box-shadow:
-    0 14px 32px -4px rgba(93, 202, 165, 0.62),
-    inset 0 1.5px 0 0 rgba(255, 255, 255, 0.9),
-    inset 0 -1px 0 0 rgba(13, 32, 22, 0.32);
+  background-color: rgba(93, 202, 165, 0.58);
+  border-color: rgba(93, 202, 165, 0.85);
+  box-shadow: none;
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
