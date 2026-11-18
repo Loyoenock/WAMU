@@ -81,14 +81,14 @@ export function HowItWorks() {
               <div className="flex flex-row justify-between items-center">
                 <span
                   className={`text-[13px] font-bold tracking-[1px] ${
-                    step.highlight ? 'text-[#D4A017]' : 'text-[#1A4029]'
+                    step.highlight ? 'text-[#1D9E75]' : 'text-[#1A4029]'
                   }`}
                 >
                   {step.num}
                 </span>
                 <span
                   className={`w-[8px] h-[8px] rounded-full ${
-                    step.highlight ? 'bg-[#D4A01760]' : 'bg-[#1A402940]'
+                    step.highlight ? 'bg-[#1D9E7560]' : 'bg-[#1A402940]'
                   }`}
                   aria-hidden="true"
                 />

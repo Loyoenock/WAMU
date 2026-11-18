@@ -312,7 +312,7 @@ export function Hero() {
               </span>
             ))}
             <span className="flex items-center gap-[7px] rounded-full bg-[#0B6B45] px-[14px] py-[7px]">
-              <ShieldCheck className="w-[13px] shrink-0" style={{ color: '#D4A017' }} aria-hidden="true" />
+              <ShieldCheck className="w-[13px] shrink-0" style={{ color: '#1D9E75' }} aria-hidden="true" />
               <span className="text-[12px] font-medium text-[#FDFAF4]">No app needed</span>
             </span>
           </div>

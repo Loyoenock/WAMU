@@ -85,14 +85,14 @@ export function BuiltForEA() {
               <span
                 className={`w-fit rounded-[20px] p-[4px_10px] text-[11px] font-semibold ${
                   c.dark
-                    ? 'bg-[#D4A01730] text-[#D4A017]'
+                    ? 'bg-[#1D9E7530] text-[#1D9E75]'
                     : 'bg-[#E8E2D8] text-[#4B6A58]'
                 }`}
               >
                 {c.tag}
               </span>
               <c.Icon
-                className={c.dark ? 'h-[30px] w-[30px] text-[#D4A017]' : 'h-[30px] w-[30px] text-[#1A4029]'}
+                className={c.dark ? 'h-[30px] w-[30px] text-[#1D9E75]' : 'h-[30px] w-[30px] text-[#1A4029]'}
                 strokeWidth={1.5}
                 aria-hidden="true"
               />

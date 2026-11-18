@@ -50,7 +50,7 @@ export function Collections() {
 
       <div className="relative z-[1] flex flex-col items-start gap-[48px] px-6 py-16 md:px-12 md:py-[88px] lg:px-[120px]">
         <div className="flex w-full max-w-[680px] flex-col items-start gap-[14px]">
-          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#D4A017]">
+          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#1D9E75]">
             SAVINGS GOALS · COLLECTIONS
           </span>
           <h2 className="w-full font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#FDFAF4] md:text-[42px]/[48px]">
@@ -69,10 +69,10 @@ export function Collections() {
               key={c.key}
               className="flex flex-col items-start gap-[16px] rounded-[16px] bg-[#1A4029] p-[28px] transition-transform duration-200 ease-out hover:-translate-y-1 hover:shadow-[0_18px_36px_-14px_rgba(0,0,0,0.55)]"
             >
-              <span className="w-fit rounded-[20px] bg-[#D4A01730] p-[4px_10px] text-[11px] font-semibold text-[#D4A017]">
+              <span className="w-fit rounded-[20px] bg-[#1D9E7530] p-[4px_10px] text-[11px] font-semibold text-[#1D9E75]">
                 {c.tag}
               </span>
-              <c.Icon className="h-[30px] w-[30px] text-[#D4A017]" strokeWidth={1.5} aria-hidden="true" />
+              <c.Icon className="h-[30px] w-[30px] text-[#1D9E75]" strokeWidth={1.5} aria-hidden="true" />
               <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold text-[#FFFFFF]">
                 {c.name}
               </h3>
@@ -81,7 +81,7 @@ export function Collections() {
               <div className="flex flex-col gap-[10px]">
                 {c.rows.map((row) => (
                   <div key={row} className="flex flex-row items-center gap-[12px]">
-                    <span className="h-[8px] w-[8px] shrink-0 rounded-full bg-[#D4A017]" aria-hidden="true" />
+                    <span className="h-[8px] w-[8px] shrink-0 rounded-full bg-[#1D9E75]" aria-hidden="true" />
                     <span className="text-[13px] text-[#F7F4EE]">{row}</span>
                   </div>
                 ))}
@@ -90,14 +90,14 @@ export function Collections() {
           ))}
         </div>
 
-        <div className="flex w-full flex-col items-start gap-[20px] rounded-[16px] bg-[#D4A017] p-[28px] md:flex-row md:items-center md:justify-between md:p-[32px_40px]">
+        <div className="flex w-full flex-col items-start gap-[20px] rounded-[16px] bg-[#1D9E75] p-[28px] md:flex-row md:items-center md:justify-between md:p-[32px_40px]">
           <div className="flex flex-row items-start gap-[16px] md:items-center">
-            <BellRing className="mt-[2px] h-[28px] w-[28px] shrink-0 text-[#0C1E12] md:mt-0" strokeWidth={1.5} aria-hidden="true" />
+            <BellRing className="mt-[2px] h-[28px] w-[28px] shrink-0 text-[#C3E8D6] md:mt-0" strokeWidth={1.5} aria-hidden="true" />
             <div className="flex flex-col gap-[4px]">
-              <span className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold text-[#0C1E12]">
+              <span className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold text-[#C3E8D6]">
                 Reminders do the chasing for you.
               </span>
-              <span className="text-[14px]/[22px] text-[#5A3A00]">
+              <span className="text-[14px]/[22px] text-[#C3E8D6]">
                 Automatic WhatsApp reminders before every meeting, contribution date and deadline,
                 to the people who have not paid yet. No group admin sending the same message twice.
               </span>

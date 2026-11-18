@@ -26,7 +26,7 @@ export function Utilities() {
         <div className="grid gap-5 lg:grid-cols-[1.12fr_.88fr]">
           <article className="flex min-h-[330px] flex-col justify-between rounded-[20px] bg-[#1A4029] p-7 md:p-10">
             <div className="flex flex-col gap-5">
-              <span className="w-fit rounded-full bg-[#D4A017] px-3 py-1 text-[11px] font-bold text-[#0C1E12]">STARTING WITH</span>
+              <span className="w-fit rounded-full bg-[#1D9E75] px-3 py-1 text-[11px] font-bold text-[#C3E8D6]">STARTING WITH</span>
               <div className="flex flex-col gap-3">
                 <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold text-white md:text-[38px]/[44px]">Airtime &amp; Voice</h3>
                 <p className="max-w-[480px] text-[16px]/[26px] text-[#B4CDBE]">
@@ -48,11 +48,11 @@ export function Utilities() {
                 <p className="text-[14px]/[22px] text-[#4B6A58]">Choose a bundle for your own number or someone else&apos;s.</p>
               </div>
             </article>
-            <article className="flex min-h-[155px] flex-col justify-between rounded-[20px] bg-[#D4A017] p-7">
+            <article className="flex min-h-[155px] flex-col justify-between rounded-[20px] bg-[#1D9E75] p-7">
               <div className="flex flex-col gap-2">
-                <span className="text-[11px] font-bold tracking-[1.5px] text-[#5A3A00]">IN PROGRESS</span>
-                <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[24px] font-bold text-[#0C1E12]">Electricity</h3>
-                <p className="text-[14px]/[22px] text-[#5A3A00]">Enter your meter details, check the payment, and receive your result in WhatsApp.</p>
+                <span className="text-[11px] font-bold tracking-[1.5px] text-[#C3E8D6]">IN PROGRESS</span>
+                <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[24px] font-bold text-[#C3E8D6]">Electricity</h3>
+                <p className="text-[14px]/[22px] text-[#C3E8D6]">Enter your meter details, check the payment, and receive your result in WhatsApp.</p>
               </div>
             </article>
           </div>
@@ -73,7 +73,7 @@ export function Utilities() {
             <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[22px] font-bold text-[#0C1E12]">Choose</h3>
             <p className="mt-2 text-[14px]/[22px] text-[#4B6A58]">Pick the utility you need from the WAMU WhatsApp menu.</p>
           </div>
-          <div className="border-t-2 border-[#D4A017] pt-5">
+          <div className="border-t-2 border-[#1D9E75] pt-5">
             <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[22px] font-bold text-[#0C1E12]">Confirm</h3>
             <p className="mt-2 text-[14px]/[22px] text-[#4B6A58]">Check the recipient, account, amount, and total before you pay.</p>
           </div>

@@ -54,7 +54,7 @@ export function Features() {
             {SACCO_ROWS.map((row) => (
               <div key={row} className="flex flex-row gap-[12px] items-center">
                 <span
-                  className="w-[8px] h-[8px] shrink-0 rounded-full bg-[#D4A017]"
+                  className="w-[8px] h-[8px] shrink-0 rounded-full bg-[#1D9E75]"
                   aria-hidden="true"
                 />
                 <span className="text-[14px] text-[#0C1E12]">{row}</span>
@@ -108,41 +108,41 @@ export function Features() {
       </div>
 
       {/* Band 3 - F3 Mobile Money */}
-      <div className="relative flex flex-col lg:flex-row lg:h-[400px] lg:items-center bg-[#D4A017]">
+      <div className="relative flex flex-col lg:flex-row lg:h-[400px] lg:items-center bg-[#1D9E75]">
         <div className="w-full lg:w-[680px] lg:shrink-0 flex flex-col gap-[20px] justify-center items-start px-6 py-12 md:px-12 lg:p-[60px_120px]">
-          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#5A3A00]">
+          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#C3E8D6]">
             MOBILE MONEY &amp; PAYMENTS
           </span>
-          <h3 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[36px]/[40px] md:text-[48px]/[53px] text-[#0C1E12]">
+          <h3 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[36px]/[40px] md:text-[48px]/[53px] text-[#C3E8D6]">
             Stop moving cash by hand.
           </h3>
-          <p className="text-[15px]/[26px] text-[#5A3A00]">
+          <p className="text-[15px]/[26px] text-[#C3E8D6]">
             Contributions and payouts all move through MTN MoMo or Airtel Money. Each payment
             triggers automatically and generates its own WhatsApp confirmation. No manual entries,
             no disputed figures.
           </p>
         </div>
         <div className="flex-1 flex flex-col gap-[16px] justify-center items-start px-6 py-12 md:px-12 lg:p-[60px_80px]">
-          <div className="w-fit max-w-full flex flex-row gap-[16px] p-[16px_20px] items-center bg-[#C48E10] rounded-[12px]">
+          <div className="w-fit max-w-full flex flex-row gap-[16px] p-[16px_20px] items-center bg-[#168360] rounded-[12px]">
             <div className="w-[56px] h-[56px] shrink-0 flex justify-center items-center bg-[#ffc403] rounded-[10px]">
               <svg viewBox="0 0 820 820" className="w-[40px] h-[40px] shrink-0" aria-hidden="true">
                 <path d={MTN_PATH} fill="#0C1E12" />
               </svg>
             </div>
             <div className="flex flex-col gap-[2px] items-start">
-              <span className="text-[15px] font-bold text-[#0C1E12]">MTN Mobile Money</span>
-              <span className="text-[12px] text-[#5A3A00]">Uganda's largest network</span>
+              <span className="text-[15px] font-bold text-[#C3E8D6]">MTN Mobile Money</span>
+              <span className="text-[12px] text-[#C3E8D6]">Uganda's largest network</span>
             </div>
           </div>
-          <div className="w-fit max-w-full flex flex-row gap-[16px] p-[16px_20px] items-center bg-[#C48E10] rounded-[12px]">
+          <div className="w-fit max-w-full flex flex-row gap-[16px] p-[16px_20px] items-center bg-[#168360] rounded-[12px]">
             <div className="w-[56px] h-[56px] shrink-0 flex justify-center items-center bg-[#FFFFFF] rounded-[10px]">
               <svg viewBox="0 0 122.88 123.79" className="w-[32px] h-[32px] shrink-0" aria-hidden="true">
                 <path d={AIRTEL_PATH} fill="#ed1d24" />
               </svg>
             </div>
             <div className="flex flex-col gap-[2px] items-start">
-              <span className="text-[15px] font-bold text-[#0C1E12]">Airtel Money</span>
-              <span className="text-[12px] text-[#5A3A00]">Full coverage nationwide</span>
+              <span className="text-[15px] font-bold text-[#C3E8D6]">Airtel Money</span>
+              <span className="text-[12px] text-[#C3E8D6]">Full coverage nationwide</span>
             </div>
           </div>
         </div>

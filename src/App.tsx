@@ -34,7 +34,7 @@ export default function App() {
       </a>
 
       <motion.div
-        className="fixed left-0 right-0 top-0 z-[90] h-1 origin-left bg-brand-accent transform-gpu will-change-transform"
+        className="fixed left-0 right-0 top-0 z-[90] h-1 origin-left bg-[#1D9E75] transform-gpu will-change-transform"
         style={{ scaleX }}
         aria-hidden="true"
       />

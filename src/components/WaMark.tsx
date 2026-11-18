@@ -5,7 +5,7 @@ import React from 'react';
  * `tone` picks a fill + opacity that stays subtly visible on that surface:
  *   light -> cream / white sections
  *   dark  -> #0C1E12 sections
- *   gold  -> the #D4A017 band
+ *   gold  -> the #1D9E75 Canopy band
  * `className` carries position + size, e.g. "right-[40px] top-[40px] h-[140px] w-[140px] -z-0".
  */
 const PATH =
@@ -16,7 +16,7 @@ type Tone = 'light' | 'dark' | 'gold';
 const TONE: Record<Tone, { fill: string; opacity: number }> = {
   light: { fill: '#1A4029', opacity: 0.06 },
   dark: { fill: '#F7F4EE', opacity: 0.12 },
-  gold: { fill: '#5A3A00', opacity: 0.1 },
+  gold: { fill: '#0D2016', opacity: 0.1 },
 };
 
 export function WaMark({ tone, className = '' }: { tone: Tone; className?: string }) {

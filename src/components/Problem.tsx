@@ -47,7 +47,7 @@ export function Problem() {
             />
           </div>
           <div className="flex w-full flex-col justify-center gap-[20px] rounded-[20px] bg-[#1A4029] px-[44px] py-[48px] lg:h-[380px] lg:w-[420px] lg:shrink-0">
-            <p className="text-[10px] font-bold tracking-[1.8px] text-[#D4A017]">
+            <p className="text-[10px] font-bold tracking-[1.8px] text-[#1D9E75]">
               THE SCALE OF THE PROBLEM
             </p>
             <p className="font-[Fraunces,ui-serif,Georgia,serif] text-[56px] md:text-[72px] font-bold leading-none text-[#F7F4EE]">

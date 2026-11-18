@@ -93,7 +93,7 @@ export function Trust() {
           {CREDENTIALS.map((c) => (
             <div
               key={c.title}
-              className="flex flex-col gap-[10px] rounded-[16px] border border-[#DBE0D4] bg-[#ECEFE8] p-[22px] shadow-[0_16px_36px_-18px_rgba(0,0,0,0.55)] transition duration-200 ease-out hover:-translate-y-1 hover:border-[#D4A017]"
+              className="flex flex-col gap-[10px] rounded-[16px] border border-[#DBE0D4] bg-[#ECEFE8] p-[22px] shadow-[0_16px_36px_-18px_rgba(0,0,0,0.55)] transition duration-200 ease-out hover:-translate-y-1 hover:border-[#1D9E75]"
             >
               <c.Icon className="h-[22px] w-[22px] text-[#B07E12]" strokeWidth={1.5} aria-hidden="true" />
               <span className="text-[14px] font-bold text-[#0C1E12]">{c.title}</span>
