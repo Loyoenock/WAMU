@@ -131,19 +131,38 @@ export function Navigation() {
             Message WAMU
           </a>
 
-          <button
-            id="nav-mobile-menu-btn"
-            className={cn(
-              'wamu-nav-cta-btn rounded-full bg-[#0B6B45] p-2 text-[#FDFAF4] motion-reduce:transition-none md:hidden',
-              FOCUS_RING
-            )}
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={mobileMenuOpen}
-            aria-controls="mobile-menu"
-          >
-            {mobileMenuOpen ? <X size={24} aria-hidden="true" /> : <Menu size={24} aria-hidden="true" />}
-          </button>
+          <div className="flex items-center gap-2 md:hidden">
+            <a
+              id="nav-cta-mobile-bar"
+              href="https://wa.me/256788003344"
+              aria-label="Message WAMU on WhatsApp"
+              className={cn(
+                'wamu-nav-cta-btn inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-[#0B6B45] px-3 py-2 text-[12px] font-semibold text-white motion-reduce:transition-none',
+                FOCUS_RING
+              )}
+            >
+              <WhatsAppIcon className="h-3.5 w-3.5 text-white" />
+              <span>Message</span>
+            </a>
+
+            <button
+              id="nav-mobile-menu-btn"
+              className={cn(
+                'flex h-9 w-9 items-center justify-center rounded-full border border-white/60 bg-white/35 text-[#1B4332] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] transition-colors hover:bg-white/55 motion-reduce:transition-none',
+                FOCUS_RING
+              )}
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              {mobileMenuOpen ? (
+                <X size={20} strokeWidth={2} aria-hidden="true" />
+              ) : (
+                <Menu size={20} strokeWidth={2} aria-hidden="true" />
+              )}
+            </button>
+          </div>
         </div>
 
         <AnimatePresence>
