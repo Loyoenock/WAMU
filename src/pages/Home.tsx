@@ -5,6 +5,7 @@ import { Hero } from '../components/Hero';
 import { WamuAudienceCards } from '../components/WamuAudienceCards';
 import { Utilities } from '../components/Utilities';
 import { WamuNumberedProcess } from '../components/WamuNumberedProcess';
+import { WamuDeviceFeatureSplit } from '../components/WamuDeviceFeatureSplit';
 import { Problem } from '../components/Problem';
 import { HowItWorks } from '../components/HowItWorks';
 import { Features } from '../components/Features';
@@ -41,6 +42,7 @@ export function Home() {
         <Reveal><WamuAudienceCards /></Reveal>
         <Reveal><Utilities /></Reveal>
         <Reveal><WamuNumberedProcess /></Reveal>
+        <Reveal><WamuDeviceFeatureSplit /></Reveal>
         <Reveal><Problem /></Reveal>
         <Reveal><HowItWorks /></Reveal>
         <Reveal><Features /></Reveal>
