@@ -1,14 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { ShieldCheck } from 'lucide-react';
+import { motion, useReducedMotion } from 'motion/react';
+import { ShieldCheck, Wallet } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { WaMark } from './WaMark';
 import { WamuHeroTransactionCarousel } from './WamuHeroTransactionCarousel';
-
-const chips = [
-  { label: 'MTN MoMo', dot: '#FFC403' },
-  { label: 'Airtel Money', dot: '#ED1D24' },
-  { label: 'Utilities first', dot: '#25D366' },
-];
 
 const USE_CASES = [
   { label: 'Airtime & Voice', href: '#utilities' },
@@ -269,6 +264,7 @@ function HeroInteractiveDots({ sectionRef }: { sectionRef: React.RefObject<HTMLE
 
 export function Hero() {
   const sectionRef = useRef<HTMLElement | null>(null);
+  const reduceMotion = useReducedMotion();
 
   return (
     <section
@@ -297,24 +293,47 @@ export function Hero() {
             Start with utilities, then manage the savings goals and groups that matter to you.
           </p>
 
-          <div className="flex flex-wrap gap-[10px]">
-            {chips.map((c) => (
-              <span
-                key={c.label}
-                className="flex items-center gap-[7px] rounded-full bg-[#0B6B45] px-[14px] py-[7px]"
-              >
-                <span
-                  className="h-[7px] w-[7px] shrink-0 rounded-full"
-                  style={{ backgroundColor: c.dot }}
-                  aria-hidden="true"
-                />
-                <span className="text-[12px] font-medium text-[#FDFAF4]">{c.label}</span>
+          {/* Subtle, premium floating status bubbles (Magie.com.br-inspired frosted mint glass) */}
+          <div className="flex flex-wrap items-center gap-3">
+            {/* Version 1: No app needed */}
+            <motion.div
+              animate={reduceMotion ? undefined : { y: [0, -2.5, 0] }}
+              transition={
+                reduceMotion
+                  ? undefined
+                  : { duration: 4.8, repeat: Infinity, ease: 'easeInOut' }
+              }
+              className="wamu-status-bubble inline-flex min-w-[180px] items-center gap-[9px] px-[15px] py-[11px]"
+            >
+              <ShieldCheck
+                className="h-[16px] w-[16px] shrink-0 text-[#1D9E75]"
+                strokeWidth={2}
+                aria-hidden="true"
+              />
+              <span className="text-[13px] font-medium tracking-[-0.01em] text-[#1B4332]">
+                No app needed
               </span>
-            ))}
-            <span className="flex items-center gap-[7px] rounded-full bg-[#0B6B45] px-[14px] py-[7px]">
-              <ShieldCheck className="w-[13px] shrink-0" style={{ color: '#1D9E75' }} aria-hidden="true" />
-              <span className="text-[12px] font-medium text-[#FDFAF4]">No app needed</span>
-            </span>
+            </motion.div>
+
+            {/* Version 2: MTN MoMo · Airtel Money */}
+            <motion.div
+              animate={reduceMotion ? undefined : { y: [0, -2.5, 0] }}
+              transition={
+                reduceMotion
+                  ? undefined
+                  : { duration: 5.4, delay: 0.6, repeat: Infinity, ease: 'easeInOut' }
+              }
+              className="wamu-status-bubble inline-flex min-w-[210px] items-center gap-[9px] px-[15px] py-[11px]"
+            >
+              <Wallet
+                className="h-[16px] w-[16px] shrink-0 text-[#1D9E75]"
+                strokeWidth={2}
+                aria-hidden="true"
+              />
+              <span className="whitespace-nowrap text-[13px] font-medium tracking-[-0.01em] text-[#1B4332]">
+                MTN MoMo &nbsp;&middot;&nbsp; Airtel Money
+              </span>
+            </motion.div>
           </div>
 
           <a
