@@ -2,6 +2,7 @@ import React from 'react';
 import { motion, useReducedMotion } from 'motion/react';
 import { Navigation } from '../components/Navigation';
 import { Hero } from '../components/Hero';
+import { WamuAudienceCards } from '../components/WamuAudienceCards';
 import { Utilities } from '../components/Utilities';
 import { Problem } from '../components/Problem';
 import { HowItWorks } from '../components/HowItWorks';
@@ -36,6 +37,7 @@ export function Home() {
       <Navigation />
       <main id="main-content">
         <Hero />
+        <Reveal><WamuAudienceCards /></Reveal>
         <Reveal><Utilities /></Reveal>
         <Reveal><Problem /></Reveal>
         <Reveal><HowItWorks /></Reveal>
