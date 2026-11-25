@@ -65,45 +65,46 @@
 }
 
 .wamu-nav-pill-surface {
-  background-color: rgba(255, 255, 255, 0.16);
+  background-color: rgba(224, 245, 233, 0.58);
   background-image: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.44) 0%,
-    rgba(255, 255, 255, 0.10) 48%,
-    rgba(93, 202, 165, 0.22) 100%
+    rgba(255, 255, 255, 0.56) 0%,
+    rgba(224, 245, 233, 0.64) 44%,
+    rgba(200, 230, 201, 0.52) 86%,
+    rgba(27, 67, 50, 0.06) 100%
   );
-  -webkit-backdrop-filter: blur(22px) saturate(190%);
-  backdrop-filter: blur(22px) saturate(190%);
-  border: 1px solid rgba(255, 255, 255, 0.62);
+  -webkit-backdrop-filter: blur(26px) saturate(180%);
+  backdrop-filter: blur(26px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.54);
   box-shadow:
-    0 14px 36px -8px rgba(11, 107, 69, 0.16),
-    0 2px 10px -2px rgba(13, 32, 22, 0.06),
-    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.9),
-    inset 0 -1.5px 1px 0 rgba(255, 255, 255, 0.38),
-    inset 0 0 20px 0 rgba(255, 255, 255, 0.22);
+    0 16px 36px -10px rgba(27, 67, 50, 0.11),
+    0 6px 16px -4px rgba(27, 67, 50, 0.06),
+    0 1px 3px 0 rgba(27, 67, 50, 0.04),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.85),
+    inset 1px 0 0 0 rgba(255, 255, 255, 0.42);
 }
 
 .wamu-nav-pill-surface[data-scrolled='true'] {
-  background-color: rgba(255, 255, 255, 0.24);
+  background-color: rgba(224, 245, 233, 0.68);
   background-image: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.52) 0%,
-    rgba(255, 255, 255, 0.16) 48%,
-    rgba(93, 202, 165, 0.28) 100%
+    rgba(255, 255, 255, 0.62) 0%,
+    rgba(224, 245, 233, 0.72) 44%,
+    rgba(200, 230, 201, 0.58) 86%,
+    rgba(27, 67, 50, 0.07) 100%
   );
-  border-color: rgba(255, 255, 255, 0.72);
+  border-color: rgba(255, 255, 255, 0.64);
   box-shadow:
-    0 12px 32px -6px rgba(11, 107, 69, 0.2),
-    0 2px 10px -2px rgba(13, 32, 22, 0.08),
-    inset 0 1.5px 1px 0 rgba(255, 255, 255, 0.94),
-    inset 0 -1.5px 1px 0 rgba(255, 255, 255, 0.44),
-    inset 0 0 22px 0 rgba(255, 255, 255, 0.28);
+    0 14px 32px -8px rgba(27, 67, 50, 0.14),
+    0 4px 12px -2px rgba(27, 67, 50, 0.07),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
+    inset 1px 0 0 0 rgba(255, 255, 255, 0.48);
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
   .wamu-nav-pill-surface,
   .wamu-nav-pill-surface[data-scrolled='true'] {
-    background-color: rgba(244, 251, 247, 0.85);
+    background-color: rgba(224, 245, 233, 0.9);
   }
 }
 
@@ -171,7 +172,7 @@
     inset 1px 0 0 0 rgba(255, 255, 255, 0.45);
 }
 
-/* Navigation CTA Button — Flat solid WAMU Logo Background Color (#0B6B45) */
+/* Navigation CTA Button — Solid deep green fill with soft elevation shadow */
 .wamu-nav-cta-btn {
   border-radius: 9999px;
   background-color: #0B6B45;
@@ -179,9 +180,12 @@
   -webkit-backdrop-filter: none;
   backdrop-filter: none;
   border: none;
-  box-shadow: none;
+  box-shadow:
+    0 6px 16px -4px rgba(11, 107, 69, 0.24),
+    0 2px 6px -1px rgba(13, 32, 22, 0.10);
   transition:
     background-color 150ms ease,
+    box-shadow 150ms ease,
     transform 150ms ease;
 }
 
@@ -189,7 +193,9 @@
   background-color: #0E7D51;
   background-image: none;
   border: none;
-  box-shadow: none;
+  box-shadow:
+    0 8px 20px -4px rgba(11, 107, 69, 0.30),
+    0 3px 8px -1px rgba(13, 32, 22, 0.12);
 }
 
 /* Hero "Explore utilities" Button — Flat Transparent Frosted-Glass Pill */

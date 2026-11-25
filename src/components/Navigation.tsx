@@ -95,7 +95,7 @@ export function Navigation() {
             </span>
           </a>
 
-          <nav aria-label="Main Navigation" className="hidden items-center gap-0.5 md:flex lg:gap-2">
+          <nav aria-label="Main Navigation" className="hidden items-center gap-1 md:flex lg:gap-2">
             {NAV_LINKS.map((link) => {
               const isActive = Boolean(link.href && pathname === link.href);
               return (
@@ -106,12 +106,10 @@ export function Navigation() {
                   onClick={(e) => (link.href ? setMobileMenuOpen(false) : smoothScroll(e, link.target))}
                   aria-current={isActive ? 'page' : undefined}
                   className={cn(
-                    'whitespace-nowrap rounded-full px-2.5 py-1.5 text-[13px] font-medium transition-[background-color,color,box-shadow] duration-150 ease-out motion-reduce:transition-none lg:px-3.5 lg:text-[14px]',
+                    'whitespace-nowrap rounded-full px-3 py-1.5 text-[13.5px] font-medium tracking-[-0.01em] text-[#1B4332] transition-[background-color,color,box-shadow] duration-150 ease-out motion-reduce:transition-none lg:px-3.5 lg:text-[14px]',
                     isActive
-                      ? 'bg-white/45 font-semibold text-[#0D2016] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]'
-                      : link.muted
-                        ? 'text-[#1A4029] hover:bg-white/35 hover:text-[#0D2016] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]'
-                        : 'text-[#0D2016] hover:bg-white/35 hover:text-[#0D2016] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]',
+                      ? 'bg-white/50 font-semibold text-[#0D2016] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]'
+                      : 'hover:bg-white/40 hover:text-[#0D2016] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]',
                     FOCUS_RING
                   )}
                 >
@@ -125,11 +123,11 @@ export function Navigation() {
             id="nav-cta-desktop"
             href="https://wa.me/256788003344"
             className={cn(
-              'wamu-nav-cta-btn hidden shrink-0 items-center gap-[8px] whitespace-nowrap rounded-full bg-[#0B6B45] px-4 py-2.5 text-[13px] font-bold text-[#FDFAF4] motion-reduce:transition-none md:inline-flex lg:px-5',
+              'wamu-nav-cta-btn hidden shrink-0 items-center gap-[8px] whitespace-nowrap rounded-full bg-[#0B6B45] px-4 py-2.5 text-[13px] font-semibold text-white motion-reduce:transition-none md:inline-flex lg:px-5',
               FOCUS_RING
             )}
           >
-            <WhatsAppIcon className="h-[15px] w-[15px] text-[#9CECC9]" />
+            <WhatsAppIcon className="h-[15px] w-[15px] text-white" />
             Message WAMU
           </a>
 
