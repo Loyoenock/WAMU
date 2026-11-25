@@ -3,6 +3,7 @@ import { motion, useReducedMotion } from 'motion/react';
 import { Navigation } from '../components/Navigation';
 import { Hero } from '../components/Hero';
 import { WamuAudienceCards } from '../components/WamuAudienceCards';
+import { WamuFeatureCards } from '../components/WamuFeatureCards';
 import { Utilities } from '../components/Utilities';
 import { WamuNumberedProcess } from '../components/WamuNumberedProcess';
 import { WamuDeviceFeatureSplit } from '../components/WamuDeviceFeatureSplit';
@@ -40,6 +41,7 @@ export function Home() {
       <main id="main-content">
         <Hero />
         <Reveal><WamuAudienceCards /></Reveal>
+        <Reveal><WamuFeatureCards /></Reveal>
         <Reveal><Utilities /></Reveal>
         <Reveal><WamuNumberedProcess /></Reveal>
         <Reveal><WamuDeviceFeatureSplit /></Reveal>
