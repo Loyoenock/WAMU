@@ -67,21 +67,6 @@ export function Utilities() {
             </div>
           ))}
         </div>
-
-        <div id="how-it-works" className="grid gap-5 pt-2 md:grid-cols-3">
-          <div className="border-t-2 border-[#1A4029] pt-5">
-            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[22px] font-bold text-[#0C1E12]">Choose</h3>
-            <p className="mt-2 text-[14px]/[22px] text-[#4B6A58]">Pick the utility you need from the WAMU WhatsApp menu.</p>
-          </div>
-          <div className="border-t-2 border-[#1D9E75] pt-5">
-            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[22px] font-bold text-[#0C1E12]">Confirm</h3>
-            <p className="mt-2 text-[14px]/[22px] text-[#4B6A58]">Check the recipient, account, amount, and total before you pay.</p>
-          </div>
-          <div className="border-t-2 border-[#1A4029] pt-5">
-            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[22px] font-bold text-[#0C1E12]">Pay</h3>
-            <p className="mt-2 text-[14px]/[22px] text-[#4B6A58]">Approve the Mobile Money prompt and receive your update in WhatsApp.</p>
-          </div>
-        </div>
       </div>
     </section>
   );
