@@ -26,7 +26,7 @@ export function Problem() {
       <WaMark tone="light" className="right-[40px] top-[40px] h-[150px] w-[150px] -z-0" />
       <WaMark tone="light" className="left-[24px] bottom-[56px] h-[112px] w-[112px] -z-0" />
 
-      <div className="relative mx-auto flex max-w-[1440px] flex-col items-center gap-[52px] px-6 md:px-12 lg:px-[120px] py-16 md:py-[88px]">
+      <div className="relative mx-auto flex max-w-[1280px] flex-col items-center gap-[52px] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
         <div className="flex max-w-[680px] flex-col items-center gap-[14px]">
           <p className="text-[11px] font-bold tracking-[2px] text-[#0F6E56]">THE PROBLEM</p>
           <h2 className="text-center font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[30px]/[36px] md:text-[38px]/[44px] lg:text-[42px]/[48px] text-[#0D2016]">

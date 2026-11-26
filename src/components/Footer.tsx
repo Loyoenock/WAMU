@@ -45,7 +45,7 @@ export function Footer() {
       <WaMark tone="dark" className="right-[40px] top-[24px] h-[104px] w-[104px]" />
       <WaMark tone="dark" className="left-[24px] bottom-[36px] h-[84px] w-[84px]" />
 
-      <div className="relative flex flex-col gap-12 px-6 py-[60px] md:px-12 lg:flex-row lg:justify-between lg:px-[120px] lg:pb-10">
+      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-12 px-6 py-[60px] md:px-12 lg:flex-row lg:justify-between lg:px-20 lg:pb-10">
         <div className="flex w-full flex-col gap-[14px] lg:w-[280px]">
           <div className="flex items-center gap-[8px]">
             <img
@@ -85,7 +85,7 @@ export function Footer() {
 
       <div className="relative h-px w-full bg-[#1E3A22]" />
 
-      <div className="relative flex flex-col gap-4 px-6 py-6 md:px-12 lg:flex-row lg:items-center lg:justify-between lg:px-[120px]">
+      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-4 px-6 py-6 md:px-12 lg:flex-row lg:items-center lg:justify-between lg:px-20">
         <p className="text-[12px] text-[#8AB89E]">
           &copy; 2026 WAMU PAY (UGANDA) LIMITED. All rights reserved.
         </p>

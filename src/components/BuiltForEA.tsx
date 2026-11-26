@@ -54,17 +54,17 @@ export function BuiltForEA() {
       id="who-we-serve"
       className="relative overflow-hidden bg-[#FFFFFF]"
     >
-      <div className="relative z-0 flex flex-col items-start gap-[52px] px-6 md:px-12 lg:px-[120px] py-16 md:py-[88px]">
+      <div className="relative z-0 mx-auto flex max-w-[1280px] flex-col items-start gap-[52px] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
         <div className="flex max-w-[600px] w-full flex-col items-start gap-[14px]">
-          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#1A4029]">
+          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
             WHO WE SERVE
           </span>
-          <h2 className="w-full font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[32px]/[38px] md:text-[42px]/[48px] text-[#0C1E12]">
+          <h2 className="w-full font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[32px]/[38px] md:text-[42px]/[48px] text-[#0D2016]">
             WAMU savings products built for how your group actually works.
           </h2>
         </div>
 
-        <div className="relative w-full h-[280px] overflow-hidden rounded-[20px]">
+        <div className="relative h-[280px] w-full overflow-hidden rounded-[20px] border border-[#C3E8D6]/85 shadow-[0_14px_32px_-12px_rgba(27,67,50,0.1)] md:h-[320px]">
           <img
             src="/images/who-we-serve.webp"
             alt="Members of a Ugandan savings group meeting together"

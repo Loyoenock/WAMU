@@ -48,7 +48,7 @@ export function Collections() {
       <WaMark tone="dark" className="right-[40px] top-[48px] h-[132px] w-[132px]" />
       <WaMark tone="dark" className="left-[24px] bottom-[40px] h-[104px] w-[104px]" />
 
-      <div className="relative z-[1] flex flex-col items-start gap-[48px] px-6 py-16 md:px-12 md:py-[88px] lg:px-[120px]">
+      <div className="relative z-[1] mx-auto flex max-w-[1280px] flex-col items-start gap-[48px] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
         <div className="flex w-full max-w-[680px] flex-col items-start gap-[14px]">
           <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#5DCAA5]">
             SAVINGS GOALS · COLLECTIONS

@@ -58,7 +58,7 @@ export function Trust() {
       <WaMark tone="dark" className="right-[48px] top-[56px] h-[132px] w-[132px]" />
       <WaMark tone="dark" className="left-[36px] bottom-[56px] h-[104px] w-[104px]" />
 
-      <div className="relative mx-auto flex max-w-[1440px] flex-col gap-16 px-6 py-20 md:px-12 md:py-24 lg:flex-row lg:items-center lg:gap-20 lg:px-[80px] lg:py-[104px]">
+      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-16 px-6 py-20 md:px-12 md:py-24 lg:flex-row lg:items-center lg:gap-16 lg:px-20 lg:py-[104px]">
         {/* Left: heading + trust points */}
         <div className="flex w-full flex-col items-start gap-[28px] lg:w-[540px] lg:shrink-0">
           <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#5DCAA5]">

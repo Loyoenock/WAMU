@@ -52,13 +52,7 @@ const FEATURE_CARDS: FeatureCardItem[] = [
 function StatusPill({ status }: { status: FeatureCardItem['status'] }) {
   if (status === 'Available') {
     return (
-      <span
-        className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[12px] font-medium tracking-[-0.01em] text-[#0D2016]"
-        style={{
-          background: 'rgba(206, 239, 220, 0.85)',
-          border: '1px solid rgba(15, 110, 86, 0.16)',
-        }}
-      >
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#0F6E56]/15 bg-[#CEEFDC]/85 px-3 py-1 text-[12px] font-medium tracking-[-0.01em] text-[#0D2016]">
         <span className="h-1.5 w-1.5 rounded-full bg-[#1D9E75]" />
         {status}
       </span>
@@ -67,26 +61,14 @@ function StatusPill({ status }: { status: FeatureCardItem['status'] }) {
 
   if (status === 'Starting with') {
     return (
-      <span
-        className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[12px] font-medium tracking-[-0.01em] text-[#0D2016]"
-        style={{
-          background: 'rgba(130, 224, 178, 0.65)',
-          border: '1px solid rgba(29, 158, 117, 0.28)',
-        }}
-      >
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1D9E75]/30 bg-[#82E0B2]/65 px-3 py-1 text-[12px] font-medium tracking-[-0.01em] text-[#0D2016]">
         {status}
       </span>
     );
   }
 
   return (
-    <span
-      className="inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[12px] font-medium tracking-[-0.01em] text-[#1B4332]/80"
-      style={{
-        background: 'rgba(218, 235, 225, 0.72)',
-        border: '1px solid rgba(13, 32, 22, 0.1)',
-      }}
-    >
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#0D2016]/10 bg-[#DAEBE1]/75 px-3 py-1 text-[12px] font-medium tracking-[-0.01em] text-[#1B4332]/85">
       {status}
     </span>
   );
@@ -96,90 +78,68 @@ export function WamuFeatureCards() {
   return (
     <section
       aria-labelledby="wamu-feature-cards-heading"
-      className="relative overflow-hidden bg-[#E0F3E8] py-16 md:py-24 px-4 sm:px-6 md:px-12 lg:px-16 border-t border-[#0F6E56]/10"
+      className="relative overflow-hidden border-t border-[#C3E8D6]/80 bg-[#F4FBF7] px-6 py-16 md:px-12 md:py-24 lg:px-20"
     >
       {/* Subtle top-left diffused light glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-24 -left-24 h-[420px] w-[420px] rounded-full opacity-55 blur-3xl"
-        style={{
-          background:
-            'radial-gradient(circle, rgba(255, 255, 255, 0.78) 0%, rgba(224, 245, 233, 0) 70%)',
-        }}
+        className="pointer-events-none absolute -left-24 -top-24 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.85)_0%,rgba(224,245,233,0)_70%)] opacity-60 blur-3xl"
       />
 
       <div className="relative z-10 mx-auto max-w-[1280px]">
         {/* Section Header */}
-        <div className="mb-10 md:mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div className="mb-10 flex flex-col gap-4 md:mb-14 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[600px]">
-            <div className="mb-3 inline-flex items-center gap-2 rounded-full bg-[#CEEFDC]/80 border border-white/70 px-3.5 py-1.5 text-[11px] font-mono uppercase tracking-[0.14em] text-[#0F6E56] shadow-[0_2px_8px_rgba(13,32,22,0.04)]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#1D9E75]" />
+            <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
+              <span className="h-1.5 w-1.5 rounded-full bg-[#1D9E75]" aria-hidden="true" />
               CORE CAPABILITIES
-            </div>
+            </span>
             <h2
               id="wamu-feature-cards-heading"
-              className="font-serif text-[28px] sm:text-[34px] md:text-[40px] font-semibold leading-[1.12] tracking-[-0.02em] text-[#0D2016]"
+              className="mt-2.5 font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold text-[#0D2016] md:text-[40px]/[46px]"
             >
               Daily utilities and group finance, unified in one place.
             </h2>
           </div>
-          <p className="max-w-[420px] text-[15px] md:text-[16px] leading-[1.6] text-[#1B4332]/85">
+          <p className="max-w-[420px] text-[15px]/[24px] text-[#1B4332]">
             Fast mobile money checkouts for your household bills alongside structured, shared ledgers for your community.
           </p>
         </div>
 
         {/* 4-Card Magie-Inspired Feature Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {FEATURE_CARDS.map((card) => {
             const IconComponent = card.icon;
             return (
               <article
                 key={card.id}
-                className="group relative flex flex-col justify-between rounded-[20px] p-7 sm:p-8 transition-all duration-300 hover:-translate-y-1"
-                style={{
-                  background:
-                    'linear-gradient(155deg, rgba(250, 254, 251, 0.94) 0%, rgba(238, 250, 243, 0.86) 100%)',
-                  backdropFilter: 'blur(16px)',
-                  WebkitBackdropFilter: 'blur(16px)',
-                  border: '1px solid rgba(255, 255, 255, 0.86)',
-                  boxShadow:
-                    '0 14px 34px -10px rgba(13, 32, 22, 0.07), 0 4px 12px -2px rgba(13, 32, 22, 0.04), inset 0 1px 0 0 rgba(255, 255, 255, 0.92)',
-                }}
+                className="group relative flex flex-col justify-between rounded-[20px] border border-[#C3E8D6]/85 bg-white/95 p-7 shadow-[0_14px_34px_-10px_rgba(13,32,22,0.07),0_4px_12px_-2px_rgba(13,32,22,0.04),inset_0_1px_0_0_rgba(255,255,255,0.95)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/80 hover:bg-white hover:shadow-[0_18px_36px_-12px_rgba(27,67,50,0.14)]"
               >
                 <div>
                   {/* Top row: Icon badge on left + Status pill on right */}
-                  <div className="mb-7 flex items-center justify-between gap-3">
-                    <div
-                      className="flex h-12 w-12 items-center justify-center rounded-[14px] text-[#0D2016] transition-transform duration-300 group-hover:scale-105"
-                      style={{
-                        background:
-                          'linear-gradient(145deg, rgba(212, 242, 224, 0.92) 0%, rgba(195, 232, 214, 0.72) 100%)',
-                        border: '1px solid rgba(255, 255, 255, 0.85)',
-                        boxShadow:
-                          '0 4px 10px -2px rgba(15, 110, 86, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.85)',
-                      }}
-                    >
-                      <IconComponent className="h-5 w-5 text-[#0D2016]" strokeWidth={2} />
+                  <div className="mb-6 flex items-center justify-between gap-3">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-[14px] border border-[#C3E8D6] bg-[#E3F5EB] text-[#0B6B45] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] transition-colors duration-200 group-hover:bg-[#0B6B45] group-hover:text-white">
+                      <IconComponent className="h-5 w-5" strokeWidth={1.9} />
                     </div>
 
                     <StatusPill status={card.status} />
                   </div>
 
                   {/* Card Title */}
-                  <h3 className="mb-2.5 font-sans text-[20px] font-semibold leading-[1.25] tracking-[-0.015em] text-[#0D2016]">
+                  <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px]/[26px] font-bold text-[#0D2016]">
                     {card.title}
                   </h3>
 
                   {/* Short Description */}
-                  <p className="text-[14.5px] leading-[1.62] text-[#1B4332]/85">
+                  <p className="mt-2.5 text-[14px]/[22px] text-[#284E3A]">
                     {card.description}
                   </p>
                 </div>
 
                 {/* Subtle bottom metadata line */}
-                <div className="mt-7 pt-4 border-t border-[#0F6E56]/10 flex items-center justify-between text-[12px] font-medium text-[#0F6E56]">
+                <div className="mt-6 flex items-center justify-between border-t border-[#C3E8D6]/70 pt-3.5 text-[12px] font-medium text-[#0F6E56]">
                   <span>{card.detail}</span>
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#1D9E75]/70 transition-transform duration-300 group-hover:scale-125" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#1D9E75]/75 transition-transform duration-200 group-hover:scale-125" />
                 </div>
               </article>
             );

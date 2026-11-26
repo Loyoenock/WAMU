@@ -44,23 +44,23 @@ export function HowItWorks() {
       <WaMark tone="light" className="left-[40px] top-[50px] h-[150px] w-[150px] -z-0" />
       <WaMark tone="light" className="right-[56px] bottom-[72px] h-[128px] w-[128px] -z-0" />
 
-      <div className="relative flex flex-col gap-[60px] px-6 md:px-12 lg:px-[120px] py-16 md:py-[88px]">
+      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-[60px] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
         <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-8">
           <div className="flex flex-col gap-[14px] items-start max-w-[520px] w-full">
-            <span className="text-[11px] font-bold tracking-[2px] text-[#1A4029]">
+            <span className="text-[11px] font-bold tracking-[2px] text-[#0F6E56]">
               SAVINGS &amp; GROUPS
             </span>
-            <h2 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[34px]/[40px] md:text-[42px]/[48px] text-[#0C1E12]">
+            <h2 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[34px]/[40px] md:text-[42px]/[48px] text-[#0D2016]">
               Keep your group records in one place.
             </h2>
           </div>
-          <p className="text-[15px]/[25px] text-[#4B6A58] w-full md:w-[380px] md:shrink-0">
+          <p className="text-[15px]/[25px] text-[#1B4332] w-full md:w-[380px] md:shrink-0">
             No tech background needed. If your treasurer can send a voice note on WhatsApp, they
             can run your group's finances on WAMU.
           </p>
         </div>
 
-        <div className="w-full h-[240px] rounded-[20px] overflow-hidden relative">
+        <div className="relative h-[260px] w-full overflow-hidden rounded-[20px] border border-[#C3E8D6]/85 shadow-[0_14px_32px_-12px_rgba(27,67,50,0.1)] md:h-[320px]">
           <img
             src="/images/how-it-works.webp"
             alt="A savings group treasurer using WhatsApp on a phone during a group meeting"

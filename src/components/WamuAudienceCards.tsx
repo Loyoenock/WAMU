@@ -78,7 +78,7 @@ export function WamuAudienceCards() {
             <a
               key={card.id}
               href={card.href}
-              className="group relative flex flex-col justify-between rounded-[18px] border border-white/80 bg-[#F4FBF7]/90 p-6 shadow-[0_12px_28px_-10px_rgba(27,67,50,0.10),0_2px_8px_-2px_rgba(27,67,50,0.05),inset_0_1px_0_0_rgba(255,255,255,0.9)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/70 hover:bg-white/95 hover:shadow-[0_18px_36px_-12px_rgba(27,67,50,0.15),0_4px_12px_-2px_rgba(27,67,50,0.07)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D9E75] focus-visible:ring-offset-2"
+              className="group relative flex flex-col justify-between rounded-[20px] border border-white/80 bg-[#F4FBF7]/90 p-7 shadow-[0_12px_28px_-10px_rgba(27,67,50,0.10),0_2px_8px_-2px_rgba(27,67,50,0.05),inset_0_1px_0_0_rgba(255,255,255,0.9)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/70 hover:bg-white/95 hover:shadow-[0_18px_36px_-12px_rgba(27,67,50,0.15),0_4px_12px_-2px_rgba(27,67,50,0.07)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D9E75] focus-visible:ring-offset-2"
             >
               <div>
                 {/* Top Row: Icon Badge + Subtle Category Tag */}

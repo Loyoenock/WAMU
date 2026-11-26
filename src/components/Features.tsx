@@ -27,127 +27,145 @@ export function Features() {
       </h2>
 
       {/* Band 1 - F2 SACCO */}
-      <div className="relative flex flex-col overflow-hidden bg-[#F4FBF7] lg:min-h-[560px] lg:flex-row lg:items-stretch">
+      <div className="relative overflow-hidden bg-[#F4FBF7]">
         <WaMark tone="light" className="right-[48px] bottom-[40px] h-[128px] w-[128px]" />
-        <div className="flex w-full shrink-0 justify-center px-6 pt-12 md:px-12 lg:w-[560px] lg:items-center lg:py-[56px] lg:pl-[80px] lg:pr-[24px]">
-          <img
-            src="/images/wamu-feature-sacco.webp"
-            alt="WAMU on WhatsApp showing the main menu with SACCO Shares, Merry-Go-Round and wallet balance"
-            width={300}
-            height={450}
-            className={SHOT}
-          />
-        </div>
-        <div className="flex-1 flex flex-col gap-[24px] justify-center items-start px-6 py-12 md:px-12 lg:py-[56px] lg:pl-[24px] lg:pr-[88px]">
-          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
-            SACCO SHARES
-          </span>
-          <h3 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[28px]/[34px] md:text-[34px]/[41px] text-[#0D2016]">
-            Share ledgers built for how cooperatives actually work.
-          </h3>
-          <p className="text-[15px]/[26px] text-[#1B4332]">
-            SACCOs need share capital tracked separately from savings. WAMU's shares ledger
-            records each member's purchases, dividends, and standing in a structure a board or
-            auditor can actually review.
-          </p>
-          <div className="flex flex-col gap-[12px] items-start">
-            {SACCO_ROWS.map((row) => (
-              <div key={row} className="flex flex-row gap-[12px] items-center">
-                <span
-                  className="w-[8px] h-[8px] shrink-0 rounded-full bg-[#1D9E75]"
-                  aria-hidden="true"
-                />
-                <span className="text-[14px] text-[#0D2016]">{row}</span>
-              </div>
-            ))}
+        <div className="relative mx-auto flex max-w-[1280px] flex-col items-center gap-10 px-6 py-16 md:px-12 md:py-20 lg:min-h-[560px] lg:flex-row lg:gap-14 lg:px-20">
+          {/* Sculpted Frosted Mint Pedestal with Ambient Canopy Glow */}
+          <div className="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-[24px] border border-[#C3E8D6]/90 bg-gradient-to-br from-[#E3F5EB] via-[#D9F0E3] to-[#C3E8D6]/75 px-6 py-10 shadow-[0_18px_40px_-14px_rgba(13,32,22,0.12),inset_0_1px_0_rgba(255,255,255,0.92)] lg:w-[500px] lg:py-12">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.85)_0%,rgba(29,158,117,0.22)_55%,transparent_75%)] blur-2xl"
+            />
+            <img
+              src="/images/wamu-feature-sacco.webp"
+              alt="WAMU on WhatsApp showing the main menu with SACCO Shares, Merry-Go-Round and wallet balance"
+              width={300}
+              height={450}
+              className={`relative z-[1] ${SHOT}`}
+            />
+          </div>
+
+          <div className="flex flex-1 flex-col items-start justify-center gap-[24px]">
+            <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
+              SACCO SHARES
+            </span>
+            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[28px]/[34px] font-bold text-[#0D2016] md:text-[34px]/[41px]">
+              Share ledgers built for how cooperatives actually work.
+            </h3>
+            <p className="text-[15px]/[26px] text-[#1B4332]">
+              SACCOs need share capital tracked separately from savings. WAMU's shares ledger
+              records each member's purchases, dividends, and standing in a structure a board or
+              auditor can actually review.
+            </p>
+            <div className="flex flex-col items-start gap-[12px]">
+              {SACCO_ROWS.map((row) => (
+                <div key={row} className="flex flex-row items-center gap-[12px]">
+                  <span
+                    className="h-[8px] w-[8px] shrink-0 rounded-full bg-[#1D9E75]"
+                    aria-hidden="true"
+                  />
+                  <span className="text-[14px] text-[#0D2016]">{row}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Band 2 - F1 WhatsApp */}
-      <div className="relative flex flex-col overflow-hidden lg:flex-row lg:min-h-[560px]">
+      <div className="relative overflow-hidden bg-[#E0F3E8]">
         <WaMark tone="dark" className="left-[24px] bottom-[36px] h-[120px] w-[120px]" />
-        <div className="relative flex w-full justify-center overflow-hidden bg-[#1A4029] px-6 py-12 lg:w-[600px] lg:shrink-0 lg:items-center lg:py-0">
-          <img
-            src="/images/wamu-feature-savings.webp"
-            alt="WAMU on WhatsApp showing the savings-goals menu with payout accounts"
-            width={300}
-            height={450}
-            className={SHOT}
-          />
-          <span
-            className="hidden lg:block absolute left-[24px] bottom-[28px] text-[11px] font-semibold tracking-[2px] text-[#2D5A3D]"
-            aria-hidden="true"
-          >
-            WhatsApp
-          </span>
-        </div>
-        <div className="flex-1 flex flex-col gap-[24px] justify-center items-start px-6 py-12 md:px-12 lg:p-[60px_56px]">
-          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
-            WHATSAPP SAVINGS &amp; MERRY-GO-ROUND
-          </span>
-          <h3 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[28px]/[34px] md:text-[34px]/[41px] text-[#0D2016]">
-            Your group's contributions, collected and tracked automatically.
-          </h3>
-          <p className="text-[15px]/[26px] text-[#1B4332]">
-            Members contribute via MTN or Airtel directly in WhatsApp. The merry-go-round rotation
-            is calculated automatically. Payout order, dates, and amounts fixed so no one argues
-            over a notebook.
-          </p>
-          <div className="flex flex-row flex-wrap gap-[10px]">
-            {F1_PILLS.map((pill) => (
-              <span
-                key={pill}
-                className="rounded-full border border-white/80 bg-[#F4FBF7]/90 px-[14px] py-[7px] text-[12px] font-medium text-[#0F6E56] shadow-[0_2px_6px_rgba(13,32,22,0.05),inset_0_1px_0_rgba(255,255,255,0.9)]"
-              >
-                {pill}
-              </span>
-            ))}
+        <div className="relative mx-auto flex max-w-[1280px] flex-col items-center gap-10 px-6 py-16 md:px-12 md:py-20 lg:min-h-[560px] lg:flex-row lg:gap-14 lg:px-20">
+          {/* Sculpted Deep Forest Pedestal with Radial Canopy Illumination */}
+          <div className="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-[24px] border border-[#5DCAA5]/30 bg-gradient-to-br from-[#1A4029] via-[#133120] to-[#0D2016] px-6 py-10 shadow-[0_24px_52px_-16px_rgba(12,30,18,0.42),inset_0_1px_0_rgba(255,255,255,0.16)] lg:w-[500px] lg:py-12">
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute left-1/2 top-1/2 h-[320px] w-[320px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(93,202,165,0.34)_0%,rgba(29,158,117,0.16)_52%,transparent_75%)] blur-2xl"
+            />
+            <img
+              src="/images/wamu-feature-savings.webp"
+              alt="WAMU on WhatsApp showing the savings-goals menu with payout accounts"
+              width={300}
+              height={450}
+              className={`relative z-[1] ${SHOT}`}
+            />
+            <span
+              className="absolute bottom-[20px] left-[24px] hidden text-[11px] font-semibold tracking-[2px] text-[#5DCAA5]/50 lg:block"
+              aria-hidden="true"
+            >
+              WhatsApp
+            </span>
+          </div>
+
+          <div className="flex flex-1 flex-col items-start justify-center gap-[24px]">
+            <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
+              WHATSAPP SAVINGS &amp; MERRY-GO-ROUND
+            </span>
+            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[28px]/[34px] font-bold text-[#0D2016] md:text-[34px]/[41px]">
+              Your group's contributions, collected and tracked automatically.
+            </h3>
+            <p className="text-[15px]/[26px] text-[#1B4332]">
+              Members contribute via MTN or Airtel directly in WhatsApp. The merry-go-round rotation
+              is calculated automatically. Payout order, dates, and amounts fixed so no one argues
+              over a notebook.
+            </p>
+            <div className="flex flex-row flex-wrap gap-[10px]">
+              {F1_PILLS.map((pill) => (
+                <span
+                  key={pill}
+                  className="rounded-full border border-white/80 bg-[#F4FBF7]/90 px-[14px] py-[7px] text-[12px] font-medium text-[#0F6E56] shadow-[0_2px_6px_rgba(13,32,22,0.05),inset_0_1px_0_rgba(255,255,255,0.9)]"
+                >
+                  {pill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
 
       {/* Band 3 - F3 Mobile Money */}
-      <div className="relative flex flex-col lg:flex-row lg:h-[400px] lg:items-center bg-[#1D9E75]">
-        <div className="w-full lg:w-[680px] lg:shrink-0 flex flex-col gap-[20px] justify-center items-start px-6 py-12 md:px-12 lg:p-[60px_120px]">
-          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#C3E8D6]">
-            MOBILE MONEY &amp; PAYMENTS
-          </span>
-          <h3 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[36px]/[40px] md:text-[48px]/[53px] text-[#C3E8D6]">
-            Stop moving cash by hand.
-          </h3>
-          <p className="text-[15px]/[26px] text-[#C3E8D6]">
-            Contributions and payouts all move through MTN MoMo or Airtel Money. Each payment
-            triggers automatically and generates its own WhatsApp confirmation. No manual entries,
-            no disputed figures.
-          </p>
-        </div>
-        <div className="flex-1 flex flex-col gap-[16px] justify-center items-start px-6 py-12 md:px-12 lg:p-[60px_80px]">
-          <div className="w-fit max-w-full flex flex-row gap-[16px] p-[16px_20px] items-center bg-[#168360] rounded-[12px]">
-            <div className="w-[56px] h-[56px] shrink-0 flex justify-center items-center bg-[#ffc403] rounded-[10px]">
-              <svg viewBox="0 0 820 820" className="w-[40px] h-[40px] shrink-0" aria-hidden="true">
-                <path d={MTN_PATH} fill="#0C1E12" />
-              </svg>
-            </div>
-            <div className="flex flex-col gap-[2px] items-start">
-              <span className="text-[15px] font-bold text-[#C3E8D6]">MTN Mobile Money</span>
-              <span className="text-[12px] text-[#C3E8D6]">Uganda's largest network</span>
-            </div>
-          </div>
-          <div className="w-fit max-w-full flex flex-row gap-[16px] p-[16px_20px] items-center bg-[#168360] rounded-[12px]">
-            <div className="w-[56px] h-[56px] shrink-0 flex justify-center items-center bg-[#FFFFFF] rounded-[10px]">
-              <svg viewBox="0 0 122.88 123.79" className="w-[32px] h-[32px] shrink-0" aria-hidden="true">
-                <path d={AIRTEL_PATH} fill="#ed1d24" />
-              </svg>
-            </div>
-            <div className="flex flex-col gap-[2px] items-start">
-              <span className="text-[15px] font-bold text-[#C3E8D6]">Airtel Money</span>
-              <span className="text-[12px] text-[#C3E8D6]">Full coverage nationwide</span>
-            </div>
-          </div>
-        </div>
+      <div className="relative overflow-hidden bg-[#1D9E75]">
         <WaMark tone="gold" className="right-[80px] top-[48px] h-[150px] w-[150px]" />
         <WaMark tone="gold" className="left-[32px] bottom-[36px] h-[128px] w-[128px]" />
+        <div className="relative z-[1] mx-auto flex max-w-[1280px] flex-col gap-10 px-6 py-16 md:px-12 md:py-20 lg:min-h-[380px] lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:px-20">
+          <div className="flex w-full max-w-[580px] flex-col items-start justify-center gap-[20px]">
+            <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#C3E8D6]">
+              MOBILE MONEY &amp; PAYMENTS
+            </span>
+            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[36px]/[40px] font-bold text-[#C3E8D6] md:text-[48px]/[53px]">
+              Stop moving cash by hand.
+            </h3>
+            <p className="text-[15px]/[26px] text-[#C3E8D6]">
+              Contributions and payouts all move through MTN MoMo or Airtel Money. Each payment
+              triggers automatically and generates its own WhatsApp confirmation. No manual entries,
+              no disputed figures.
+            </p>
+          </div>
+          <div className="flex flex-1 flex-col items-start justify-center gap-[16px] lg:items-end">
+            <div className="flex w-full max-w-[340px] flex-row items-center gap-[16px] rounded-[20px] border border-[#C3E8D6]/30 bg-[#168360] p-[18px_22px] shadow-[0_14px_30px_-12px_rgba(13,32,22,0.28)]">
+              <div className="flex h-[56px] w-[56px] shrink-0 items-center justify-center rounded-[12px] bg-[#ffc403]">
+                <svg viewBox="0 0 820 820" className="h-[40px] w-[40px] shrink-0" aria-hidden="true">
+                  <path d={MTN_PATH} fill="#0C1E12" />
+                </svg>
+              </div>
+              <div className="flex flex-col items-start gap-[2px]">
+                <span className="text-[15px] font-bold text-[#C3E8D6]">MTN Mobile Money</span>
+                <span className="text-[12px] text-[#C3E8D6]">Uganda's largest network</span>
+              </div>
+            </div>
+            <div className="flex w-full max-w-[340px] flex-row items-center gap-[16px] rounded-[20px] border border-[#C3E8D6]/30 bg-[#168360] p-[18px_22px] shadow-[0_14px_30px_-12px_rgba(13,32,22,0.28)]">
+              <div className="flex h-[56px] w-[56px] shrink-0 items-center justify-center rounded-[12px] bg-[#FFFFFF]">
+                <svg viewBox="0 0 122.88 123.79" className="h-[32px] w-[32px] shrink-0" aria-hidden="true">
+                  <path d={AIRTEL_PATH} fill="#ed1d24" />
+                </svg>
+              </div>
+              <div className="flex flex-col items-start gap-[2px]">
+                <span className="text-[15px] font-bold text-[#C3E8D6]">Airtel Money</span>
+                <span className="text-[12px] text-[#C3E8D6]">Full coverage nationwide</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
