@@ -22,13 +22,13 @@ const cards = [
 
 export function Problem() {
   return (
-    <section className="relative overflow-hidden bg-[#D9F0E3]">
+    <section className="relative overflow-hidden bg-[#F4FBF7]">
       <WaMark tone="light" className="right-[40px] top-[40px] h-[150px] w-[150px] -z-0" />
       <WaMark tone="light" className="left-[24px] bottom-[56px] h-[112px] w-[112px] -z-0" />
 
       <div className="relative mx-auto flex max-w-[1280px] flex-col items-center gap-[52px] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
         <div className="flex max-w-[680px] flex-col items-center gap-[14px]">
-          <p className="text-[11px] font-bold tracking-[2px] text-[#0F6E56]">THE PROBLEM</p>
+          <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">THE PROBLEM</p>
           <h2 className="text-center font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[30px]/[36px] md:text-[38px]/[44px] lg:text-[42px]/[48px] text-[#0D2016]">
             Savings groups run on trust. Not systems.
           </h2>
@@ -39,11 +39,15 @@ export function Problem() {
         </div>
 
         <div className="flex w-full flex-col gap-[24px] lg:h-[380px] lg:flex-row lg:items-center">
-          <div className="relative h-[240px] w-full overflow-hidden rounded-[20px] border border-white/70 shadow-[0_14px_32px_-12px_rgba(27,67,50,0.12)] lg:h-[380px] lg:flex-1">
+          <div className="relative h-[240px] w-full overflow-hidden rounded-[20px] border border-[#C3E8D6]/80 shadow-[0_14px_32px_-12px_rgba(27,67,50,0.12)] lg:h-[380px] lg:flex-1">
             <img
               src="/images/problem.webp"
               alt="A treasurer writing savings group contributions into a paper notebook"
               className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div
+              aria-hidden="true"
+              className="pointer-events-none absolute inset-0 rounded-[20px] ring-1 ring-inset ring-white/50"
             />
           </div>
           <div className="flex w-full flex-col justify-center gap-[20px] rounded-[20px] border border-[#5DCAA5]/25 bg-[#1A4029] px-[44px] py-[48px] shadow-[0_18px_38px_-14px_rgba(13,32,22,0.38)] lg:h-[380px] lg:w-[420px] lg:shrink-0">
@@ -69,16 +73,16 @@ export function Problem() {
           {cards.map((c) => (
             <div
               key={c.title}
-              className="group flex flex-col items-start gap-[16px] rounded-[20px] border border-white/80 bg-[#F4FBF7]/90 p-[28px] shadow-[0_12px_28px_-10px_rgba(27,67,50,0.09),0_2px_8px_-2px_rgba(27,67,50,0.04),inset_0_1px_0_0_rgba(255,255,255,0.9)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/75 hover:bg-white/95 hover:shadow-[0_18px_36px_-12px_rgba(27,67,50,0.14)]"
+              className="group flex flex-col items-start gap-[16px] rounded-[20px] border border-[#C3E8D6]/80 bg-white p-[28px] shadow-[0_14px_34px_-10px_rgba(13,32,22,0.07),0_4px_12px_-2px_rgba(13,32,22,0.04),inset_0_1px_0_0_rgba(255,255,255,0.95)] transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/85 hover:shadow-[0_20px_40px_-12px_rgba(27,67,50,0.14)]"
             >
-              <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[14px] border border-[#C3E8D6] bg-[#E3F5EB] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] transition-colors duration-200 group-hover:bg-[#0B6B45]">
+              <span className="flex h-[52px] w-[52px] shrink-0 items-center justify-center rounded-[14px] border border-[#C3E8D6] bg-[#E3F5EB] text-[#0B6B45] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] transition-colors duration-200 group-hover:border-[#1A4029] group-hover:bg-[#1A4029] group-hover:text-[#C3E8D6]">
                 <c.Icon
-                  className="h-[24px] w-[24px] text-[#0B6B45] transition-colors duration-200 group-hover:text-white"
+                  className="h-[24px] w-[24px] transition-colors duration-200"
                   strokeWidth={1.75}
                   aria-hidden="true"
                 />
               </span>
-              <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[18px] font-bold text-[#0D2016]">
+              <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[19px]/[25px] font-bold text-[#0D2016]">
                 {c.title}
               </h3>
               <p className="text-[14px]/[23px] text-[#284E3A]">{c.body}</p>
