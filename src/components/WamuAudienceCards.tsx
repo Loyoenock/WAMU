@@ -63,12 +63,12 @@ export function WamuAudienceCards() {
             </span>
             <h2
               id="wamu-pillars-heading"
-              className="mt-2.5 font-[Fraunces,ui-serif,Georgia,serif] text-[28px]/[34px] font-bold text-[#0D2016] md:text-[36px]/[42px]"
+              className="mt-2.5 font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold text-[#0D2016] md:text-[40px]/[46px]"
             >
               One WhatsApp conversation for bills, groups and community goals.
             </h2>
           </div>
-          <p className="max-w-[420px] text-[14.5px]/[23px] text-[#1B4332]">
+          <p className="max-w-[420px] text-[15px]/[24px] text-[#1B4332]">
             Designed with the clarity of modern digital banking, right inside the app everyone already uses.
           </p>
         </div>
@@ -78,37 +78,39 @@ export function WamuAudienceCards() {
             <a
               key={card.id}
               href={card.href}
-              className="group relative flex flex-col justify-between rounded-[20px] border border-white/80 bg-[#F4FBF7]/90 p-7 shadow-[0_12px_28px_-10px_rgba(27,67,50,0.10),0_2px_8px_-2px_rgba(27,67,50,0.05),inset_0_1px_0_0_rgba(255,255,255,0.9)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/70 hover:bg-white/95 hover:shadow-[0_18px_36px_-12px_rgba(27,67,50,0.15),0_4px_12px_-2px_rgba(27,67,50,0.07)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D9E75] focus-visible:ring-offset-2"
+              className="group relative flex flex-col justify-between rounded-[20px] border border-white/85 bg-[#F4FBF7]/92 p-7 shadow-[0_14px_32px_-12px_rgba(27,67,50,0.10),0_2px_8px_-2px_rgba(27,67,50,0.05),inset_0_1px_0_0_rgba(255,255,255,0.92)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/85 hover:bg-white hover:shadow-[0_20px_40px_-14px_rgba(27,67,50,0.16),0_4px_12px_-2px_rgba(27,67,50,0.07)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
             >
               <div>
                 {/* Top Row: Icon Badge + Subtle Category Tag */}
                 <div className="flex items-center justify-between gap-2">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-[14px] border border-[#C3E8D6] bg-[#E3F5EB] text-[#0B6B45] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] transition-colors duration-200 group-hover:bg-[#0B6B45] group-hover:text-white">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-[14px] border border-[#C3E8D6] bg-[#E3F5EB] text-[#0B6B45] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] transition-colors duration-200 group-hover:border-[#0B6B45] group-hover:bg-[#0B6B45] group-hover:text-white">
                     <card.Icon className="h-5 w-5" strokeWidth={1.9} aria-hidden="true" />
                   </span>
-                  <span className="rounded-full bg-[#E3F5EB]/90 px-2.5 py-1 text-[11px] font-medium text-[#1B4332]">
+                  <span className="rounded-full border border-[#C3E8D6]/80 bg-[#E3F5EB]/90 px-3 py-1 text-[11.5px] font-medium text-[#0F6E56]">
                     {card.badge}
                   </span>
                 </div>
 
                 {/* Card Title */}
-                <h3 className="mt-5 font-[Fraunces,ui-serif,Georgia,serif] text-[19px]/[24px] font-bold text-[#0D2016]">
+                <h3 className="mt-5 font-[Fraunces,ui-serif,Georgia,serif] text-[20px]/[26px] font-bold text-[#0D2016]">
                   {card.title}
                 </h3>
 
                 {/* Card Description */}
-                <p className="mt-2.5 text-[13.5px]/[21px] text-[#284E3A]">
+                <p className="mt-2.5 text-[14px]/[22px] text-[#284E3A]">
                   {card.description}
                 </p>
               </div>
 
-              {/* Subtle bottom explore cue */}
-              <div className="mt-6 flex items-center gap-1.5 border-t border-[#C3E8D6]/60 pt-3.5 text-[12.5px] font-semibold text-[#0B6B45]">
+              {/* Bottom directory divider & interactive explore link */}
+              <div className="mt-6 flex items-center justify-between border-t border-[#C3E8D6]/80 pt-4 text-[13px] font-semibold text-[#0B6B45] transition-colors duration-200 group-hover:border-[#5DCAA5]/75 group-hover:text-[#085041]">
                 <span>Explore</span>
-                <ArrowUpRight
-                  className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
-                  aria-hidden="true"
-                />
+                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#E3F5EB] text-[#0B6B45] transition-all duration-200 group-hover:bg-[#0B6B45] group-hover:text-white">
+                  <ArrowUpRight
+                    className="h-3.5 w-3.5 transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    aria-hidden="true"
+                  />
+                </span>
               </div>
             </a>
           ))}

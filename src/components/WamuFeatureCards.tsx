@@ -52,8 +52,8 @@ const FEATURE_CARDS: FeatureCardItem[] = [
 function StatusPill({ status }: { status: FeatureCardItem['status'] }) {
   if (status === 'Available') {
     return (
-      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#0F6E56]/15 bg-[#CEEFDC]/85 px-3 py-1 text-[12px] font-medium tracking-[-0.01em] text-[#0D2016]">
-        <span className="h-1.5 w-1.5 rounded-full bg-[#1D9E75]" />
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#0F6E56]/20 bg-[#CEEFDC]/90 px-3 py-1 text-[11.5px] font-medium tracking-[-0.01em] text-[#0D2016]">
+        <span className="h-1.5 w-1.5 rounded-full bg-[#1D9E75]" aria-hidden="true" />
         {status}
       </span>
     );
@@ -61,14 +61,16 @@ function StatusPill({ status }: { status: FeatureCardItem['status'] }) {
 
   if (status === 'Starting with') {
     return (
-      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1D9E75]/30 bg-[#82E0B2]/65 px-3 py-1 text-[12px] font-medium tracking-[-0.01em] text-[#0D2016]">
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1D9E75]/35 bg-[#82E0B2]/65 px-3 py-1 text-[11.5px] font-medium tracking-[-0.01em] text-[#0D2016]">
+        <span className="h-1.5 w-1.5 rounded-full bg-[#0F6E56]" aria-hidden="true" />
         {status}
       </span>
     );
   }
 
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#0D2016]/10 bg-[#DAEBE1]/75 px-3 py-1 text-[12px] font-medium tracking-[-0.01em] text-[#1B4332]/85">
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#C3E8D6] bg-[#F4FBF7] px-3 py-1 text-[11.5px] font-medium tracking-[-0.01em] text-[#1B4332]">
+      <span className="h-1.5 w-1.5 rounded-full bg-[#5DCAA5]" aria-hidden="true" />
       {status}
     </span>
   );
@@ -83,15 +85,14 @@ export function WamuFeatureCards() {
       {/* Subtle top-left diffused light glow */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -left-24 -top-24 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.85)_0%,rgba(224,245,233,0)_70%)] opacity-60 blur-3xl"
+        className="pointer-events-none absolute -left-24 -top-24 h-[420px] w-[420px] rounded-full bg-[radial-gradient(circle,rgba(255,255,255,0.9)_0%,rgba(224,245,233,0)_70%)] opacity-70 blur-3xl"
       />
 
       <div className="relative z-10 mx-auto max-w-[1280px]">
         {/* Section Header */}
         <div className="mb-10 flex flex-col gap-4 md:mb-14 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[600px]">
-            <span className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
-              <span className="h-1.5 w-1.5 rounded-full bg-[#1D9E75]" aria-hidden="true" />
+            <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
               CORE CAPABILITIES
             </span>
             <h2
@@ -113,12 +114,12 @@ export function WamuFeatureCards() {
             return (
               <article
                 key={card.id}
-                className="group relative flex flex-col justify-between rounded-[20px] border border-[#C3E8D6]/85 bg-white/95 p-7 shadow-[0_14px_34px_-10px_rgba(13,32,22,0.07),0_4px_12px_-2px_rgba(13,32,22,0.04),inset_0_1px_0_0_rgba(255,255,255,0.95)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/80 hover:bg-white hover:shadow-[0_18px_36px_-12px_rgba(27,67,50,0.14)]"
+                className="group relative flex flex-col justify-between rounded-[20px] border border-[#C3E8D6]/80 bg-white/95 p-7 shadow-[0_14px_34px_-10px_rgba(13,32,22,0.07),0_4px_12px_-2px_rgba(13,32,22,0.04),inset_0_1px_0_0_rgba(255,255,255,0.95)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/85 hover:bg-white hover:shadow-[0_20px_40px_-12px_rgba(27,67,50,0.14)]"
               >
                 <div>
                   {/* Top row: Icon badge on left + Status pill on right */}
                   <div className="mb-6 flex items-center justify-between gap-3">
-                    <div className="flex h-11 w-11 items-center justify-center rounded-[14px] border border-[#C3E8D6] bg-[#E3F5EB] text-[#0B6B45] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] transition-colors duration-200 group-hover:bg-[#0B6B45] group-hover:text-white">
+                    <div className="flex h-11 w-11 items-center justify-center rounded-[14px] border border-[#C3E8D6] bg-[#E3F5EB] text-[#0B6B45] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] transition-colors duration-200 group-hover:border-[#0B6B45] group-hover:bg-[#0B6B45] group-hover:text-white">
                       <IconComponent className="h-5 w-5" strokeWidth={1.9} />
                     </div>
 
@@ -136,10 +137,13 @@ export function WamuFeatureCards() {
                   </p>
                 </div>
 
-                {/* Subtle bottom metadata line */}
-                <div className="mt-6 flex items-center justify-between border-t border-[#C3E8D6]/70 pt-3.5 text-[12px] font-medium text-[#0F6E56]">
+                {/* Subtle bottom rail metadata line */}
+                <div className="mt-6 flex items-center justify-between border-t border-[#C3E8D6]/75 pt-4 text-[12px] font-medium text-[#0F6E56]">
                   <span>{card.detail}</span>
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#1D9E75]/75 transition-transform duration-200 group-hover:scale-125" />
+                  <span
+                    aria-hidden="true"
+                    className="h-1.5 w-1.5 rounded-full bg-[#1D9E75]/80 transition-transform duration-200 group-hover:scale-125"
+                  />
                 </div>
               </article>
             );
