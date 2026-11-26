@@ -153,9 +153,9 @@ export function CTA() {
           {!isFloating && (
             <a
               href="https://wa.me/256788003344"
-              className="wamu-liquid-btn-glass-dark inline-flex items-center gap-[10px] whitespace-nowrap rounded-full p-[18px_36px] text-[16px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
+              className="wamu-liquid-btn-glass-dark inline-flex items-center gap-[10px] whitespace-nowrap rounded-full p-[18px_36px] text-[16px] font-bold text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C1E12]"
             >
-              <WhatsAppIcon className="h-[18px] w-[18px] shrink-0 text-[#0D2016]" />
+              <WhatsAppIcon className="h-[18px] w-[18px] shrink-0 text-[#0B6B45]" />
               Message WAMU on WhatsApp
             </a>
           )}
@@ -189,9 +189,9 @@ export function CTA() {
               exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 14 }}
               transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
               href="https://wa.me/256788003344"
-              className="wamu-liquid-btn-glass-dark pointer-events-auto inline-flex items-center gap-[10px] whitespace-nowrap rounded-full p-[18px_36px] text-[16px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
+              className="wamu-liquid-btn-glass-dark pointer-events-auto inline-flex items-center gap-[10px] whitespace-nowrap rounded-full p-[18px_36px] text-[16px] font-bold text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C1E12]"
             >
-              <WhatsAppIcon className="h-[18px] w-[18px] shrink-0 text-[#0D2016]" />
+              <WhatsAppIcon className="h-[18px] w-[18px] shrink-0 text-[#0B6B45]" />
               Message WAMU on WhatsApp
             </motion.a>
           </div>

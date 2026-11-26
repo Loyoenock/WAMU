@@ -105,9 +105,9 @@ export function Collections() {
           </div>
           <a
             href="https://wa.me/256788003344?text=I%20want%20to%20start%20a%20collection%20on%20WAMU"
-            className="wamu-liquid-btn-forest inline-flex shrink-0 items-center gap-[10px] rounded-full px-[28px] py-[15px] text-[15px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0D2016] focus-visible:ring-offset-2"
+            className="wamu-liquid-btn-forest inline-flex shrink-0 items-center gap-[10px] rounded-full px-[28px] py-[15px] text-[15px] font-bold text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C3E8D6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D9E75]"
           >
-            <WhatsAppIcon className="h-[18px] w-[18px] text-[#0D2016]" />
+            <WhatsAppIcon className="h-[18px] w-[18px] text-[#0B6B45]" />
             Start a goal
           </a>
         </div>

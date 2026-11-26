@@ -197,103 +197,135 @@
     0 3px 8px -1px rgba(13, 32, 22, 0.12);
 }
 
-/* Hero "Explore utilities" Button — Flat Transparent Frosted-Glass Pill */
+/* Hero "Explore utilities" Button — Elevated Frosted-Glass Pill with High Contrast */
 .wamu-hero-explore-btn {
   border-radius: 9999px;
-  background-color: rgba(93, 202, 165, 0.34);
+  background-color: rgba(244, 251, 247, 0.78);
   background-image: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.32) 0%,
-    rgba(93, 202, 165, 0.22) 100%
+    rgba(255, 255, 255, 0.82) 0%,
+    rgba(224, 245, 233, 0.74) 48%,
+    rgba(93, 202, 165, 0.46) 100%
   );
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-  backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.62);
-  box-shadow: none;
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease;
-}
-
-.wamu-hero-explore-btn:hover {
-  background-color: rgba(93, 202, 165, 0.48);
-  border-color: rgba(255, 255, 255, 0.8);
-  box-shadow: none;
-}
-
-/* WAMU Flat Transparent Frosted-Glass Button System (Fully Rounded) */
-.wamu-liquid-btn-forest,
-.wamu-liquid-btn-gold {
-  border-radius: 9999px;
-  background-color: rgba(93, 202, 165, 0.34);
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.32) 0%,
-    rgba(93, 202, 165, 0.22) 100%
-  );
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-  backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid rgba(93, 202, 165, 0.58);
-  box-shadow: none;
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow:
+    0 12px 28px -8px rgba(13, 32, 22, 0.16),
+    0 4px 10px -2px rgba(13, 32, 22, 0.08),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.94);
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
+    box-shadow 180ms ease,
+    transform 150ms ease;
+}
+
+.wamu-hero-explore-btn:hover {
+  background-color: rgba(244, 251, 247, 0.92);
+  border-color: rgba(255, 255, 255, 0.98);
+  box-shadow:
+    0 16px 34px -8px rgba(13, 32, 22, 0.22),
+    0 6px 14px -3px rgba(13, 32, 22, 0.11),
+    inset 0 1px 0 0 rgba(255, 255, 255, 1);
+}
+
+/* WAMU Frosted-Glass Button System (High-Contrast Mint Glass with Elevation) */
+.wamu-liquid-btn-forest,
+.wamu-liquid-btn-gold {
+  border-radius: 9999px;
+  background-color: rgba(235, 249, 241, 0.84);
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.84) 0%,
+    rgba(195, 232, 214, 0.76) 52%,
+    rgba(93, 202, 165, 0.58) 100%
+  );
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
+  backdrop-filter: blur(18px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  box-shadow:
+    0 10px 24px -6px rgba(13, 32, 22, 0.18),
+    0 3px 8px -2px rgba(13, 32, 22, 0.09),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.92);
+  transition:
+    background-color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
     transform 150ms ease;
 }
 
 .wamu-liquid-btn-forest:hover,
 .wamu-liquid-btn-gold:hover {
-  background-color: rgba(93, 202, 165, 0.48);
-  border-color: rgba(93, 202, 165, 0.8);
-  box-shadow: none;
+  background-color: rgba(244, 251, 247, 0.94);
+  border-color: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    0 14px 30px -6px rgba(13, 32, 22, 0.24),
+    0 5px 12px -2px rgba(13, 32, 22, 0.12),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.98);
 }
 
 .wamu-liquid-btn-light {
   border-radius: 9999px;
-  background-color: rgba(93, 202, 165, 0.28);
+  background-color: rgba(224, 245, 233, 0.56);
   background-image: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.34) 0%,
-    rgba(93, 202, 165, 0.18) 100%
+    rgba(255, 255, 255, 0.62) 0%,
+    rgba(195, 232, 214, 0.44) 55%,
+    rgba(93, 202, 165, 0.28) 100%
   );
   -webkit-backdrop-filter: blur(16px) saturate(180%);
   backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.62);
-  box-shadow: none;
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow:
+    0 4px 12px -3px rgba(13, 32, 22, 0.07),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.85);
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
+    box-shadow 180ms ease,
     transform 150ms ease;
 }
 
 .wamu-liquid-btn-light:hover {
-  background-color: rgba(93, 202, 165, 0.44);
-  border-color: rgba(255, 255, 255, 0.82);
-  box-shadow: none;
+  background-color: rgba(244, 251, 247, 0.78);
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow:
+    0 6px 16px -4px rgba(13, 32, 22, 0.11),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.94);
 }
 
+/* Luminous Mint-Glass CTA for Dark Surfaces (#1A4029, #0C1E12) & Floating CTA Portal */
 .wamu-liquid-btn-glass-dark {
   border-radius: 9999px;
-  background-color: rgba(93, 202, 165, 0.44);
+  background-color: rgba(212, 242, 224, 0.9);
   background-image: linear-gradient(
     135deg,
-    rgba(255, 255, 255, 0.28) 0%,
-    rgba(93, 202, 165, 0.24) 100%
+    rgba(244, 251, 247, 0.95) 0%,
+    rgba(195, 232, 214, 0.88) 52%,
+    rgba(93, 202, 165, 0.78) 100%
   );
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-  backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid rgba(93, 202, 165, 0.62);
-  box-shadow: none;
+  -webkit-backdrop-filter: blur(20px) saturate(185%);
+  backdrop-filter: blur(20px) saturate(185%);
+  border: 1px solid rgba(255, 255, 255, 0.88);
+  box-shadow:
+    0 14px 32px -8px rgba(6, 16, 10, 0.46),
+    0 4px 12px -2px rgba(6, 16, 10, 0.24),
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.94);
   transition:
     background-color 180ms ease,
     border-color 180ms ease,
+    box-shadow 180ms ease,
     transform 150ms ease;
 }
 
 .wamu-liquid-btn-glass-dark:hover {
-  background-color: rgba(93, 202, 165, 0.58);
-  border-color: rgba(93, 202, 165, 0.85);
-  box-shadow: none;
+  background-color: rgba(235, 249, 241, 0.96);
+  border-color: rgba(255, 255, 255, 0.98);
+  box-shadow:
+    0 18px 38px -8px rgba(6, 16, 10, 0.56),
+    0 6px 16px -2px rgba(6, 16, 10, 0.3),
+    inset 0 1px 0 0 rgba(255, 255, 255, 1);
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {

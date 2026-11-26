@@ -34,8 +34,8 @@ export function Utilities() {
                 </p>
               </div>
             </div>
-            <a href="https://wa.me/256788003344?text=I%20want%20to%20ask%20about%20WAMU%20utilities" className="wamu-liquid-btn-glass-dark mt-8 inline-flex w-fit items-center gap-2 rounded-full px-6 py-3 text-[14px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A4029]">
-              <WhatsAppIcon className="h-4 w-4 text-[#0D2016]" />
+            <a href="https://wa.me/256788003344?text=I%20want%20to%20ask%20about%20WAMU%20utilities" className="wamu-liquid-btn-glass-dark mt-8 inline-flex w-fit items-center gap-2.5 rounded-full px-6 py-3.5 text-[14px] font-bold text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1A4029]">
+              <WhatsAppIcon className="h-4 w-4 text-[#0B6B45]" />
               Ask about utilities
             </a>
           </article>
