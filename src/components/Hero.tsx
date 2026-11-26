@@ -338,9 +338,9 @@ export function Hero() {
 
           <a
             href="#utilities"
-            className="wamu-hero-explore-btn mt-1 inline-flex items-center gap-[10px] rounded-full px-[32px] py-[17px] text-[15px] font-bold text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2 focus-visible:ring-offset-[#C3E8D6]"
+            className="wamu-hero-explore-btn mt-1 inline-flex items-center gap-[10px] rounded-full px-[32px] py-[17px] text-[15px] font-bold text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#C3E8D6]"
           >
-            <WhatsAppIcon className="h-[18px] w-[18px] text-[#0B6B45]" />
+            <WhatsAppIcon className="h-[18px] w-[18px] text-[#0D2016]" />
             Explore utilities
           </a>
         </div>
