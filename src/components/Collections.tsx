@@ -67,7 +67,7 @@ export function Collections() {
           {COLLECTIONS.map((c) => (
             <div
               key={c.key}
-              className="flex flex-col items-start gap-[16px] rounded-[20px] border border-[#5DCAA5]/20 bg-[#1A4029] p-[28px] transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/55 hover:shadow-[0_18px_36px_-14px_rgba(0,0,0,0.55)]"
+              className="flex flex-col items-start gap-[16px] rounded-[20px] border border-[#5DCAA5]/20 bg-[#1A4029]/90 p-[28px] shadow-[0_14px_32px_-12px_rgba(0,0,0,0.35)] transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/55 hover:bg-[#1A4029] hover:shadow-[0_18px_36px_-14px_rgba(0,0,0,0.55)]"
             >
               <span className="w-fit rounded-[20px] border border-[#5DCAA5]/25 bg-[#1D9E75]/25 p-[4px_10px] text-[11px] font-semibold text-[#5DCAA5]">
                 {c.tag}
@@ -76,7 +76,7 @@ export function Collections() {
               <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold text-[#FFFFFF]">
                 {c.name}
               </h3>
-              <p className="w-full text-[13px]/[21px] text-[#9FBEAA]">{c.body}</p>
+              <p className="w-full text-[13.5px]/[22px] text-[#9FBEAA]">{c.body}</p>
               <div className="h-[1px] w-full bg-[#2D5A3D]" />
               <div className="flex flex-col gap-[10px]">
                 {c.rows.map((row) => (
@@ -90,7 +90,7 @@ export function Collections() {
           ))}
         </div>
 
-        <div className="flex w-full flex-col items-start gap-[20px] rounded-[20px] bg-[#1D9E75] p-[28px] md:flex-row md:items-center md:justify-between md:p-[32px_40px]">
+        <div className="flex w-full flex-col items-start gap-[20px] rounded-[20px] border border-[#5DCAA5]/30 bg-[#1D9E75] p-[28px] shadow-[0_18px_38px_-14px_rgba(0,0,0,0.45)] md:flex-row md:items-center md:justify-between md:p-[32px_40px]">
           <div className="flex flex-row items-start gap-[16px] md:items-center">
             <BellRing className="mt-[2px] h-[28px] w-[28px] shrink-0 text-[#C3E8D6] md:mt-0" strokeWidth={1.5} aria-hidden="true" />
             <div className="flex flex-col gap-[4px]">
@@ -105,9 +105,9 @@ export function Collections() {
           </div>
           <a
             href="https://wa.me/256788003344?text=I%20want%20to%20start%20a%20collection%20on%20WAMU"
-            className="wamu-liquid-btn-forest inline-flex shrink-0 items-center gap-[10px] rounded-full px-[28px] py-[15px] text-[15px] font-bold text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C3E8D6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D9E75]"
+            className="inline-flex shrink-0 items-center gap-[10px] rounded-full border border-[#5DCAA5]/40 bg-[#0D2016] px-[28px] py-[15px] text-[15px] font-bold text-[#C3E8D6] shadow-[0_12px_26px_-8px_rgba(13,32,22,0.55),inset_0_1px_0_rgba(255,255,255,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#C3E8D6]/65 hover:bg-[#133120] hover:text-white active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C3E8D6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D9E75]"
           >
-            <WhatsAppIcon className="h-[18px] w-[18px] text-[#0B6B45]" />
+            <WhatsAppIcon className="h-[18px] w-[18px] text-[#5DCAA5]" />
             Start a goal
           </a>
         </div>

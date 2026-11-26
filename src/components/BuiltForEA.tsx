@@ -64,11 +64,15 @@ export function BuiltForEA() {
           </h2>
         </div>
 
-        <div className="relative h-[280px] w-full overflow-hidden rounded-[20px] border border-[#C3E8D6]/85 shadow-[0_14px_32px_-12px_rgba(27,67,50,0.1)] md:h-[320px]">
+        <div className="relative h-[280px] w-full overflow-hidden rounded-[20px] border border-[#C3E8D6]/80 shadow-[0_14px_32px_-12px_rgba(27,67,50,0.1)] md:h-[320px]">
           <img
             src="/images/who-we-serve.webp"
             alt="Members of a Ugandan savings group meeting together"
             className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 rounded-[20px] ring-1 ring-inset ring-white/45"
           />
         </div>
 
@@ -78,15 +82,15 @@ export function BuiltForEA() {
               key={c.key}
               className={`flex flex-col items-start gap-[18px] rounded-[20px] p-[28px] transition-all duration-200 ease-out hover:-translate-y-1 ${
                 c.dark
-                  ? 'border border-[#5DCAA5]/25 bg-[#1A4029] hover:border-[#5DCAA5]/60 hover:shadow-[0_18px_36px_-14px_rgba(12,30,18,0.5)]'
-                  : 'border border-[#C3E8D6]/85 bg-[#F4FBF7]/90 shadow-[0_12px_28px_-12px_rgba(27,67,50,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md hover:border-[#5DCAA5]/75 hover:bg-white/95 hover:shadow-[0_16px_32px_-12px_rgba(26,64,41,0.14)]'
+                  ? 'border border-[#5DCAA5]/20 bg-[#1A4029] shadow-[0_16px_34px_-12px_rgba(12,30,18,0.35)] hover:border-[#5DCAA5]/55 hover:shadow-[0_20px_40px_-14px_rgba(12,30,18,0.5)]'
+                  : 'border border-[#C3E8D6]/80 bg-[#F4FBF7] shadow-[0_12px_28px_-12px_rgba(27,67,50,0.08),inset_0_1px_0_rgba(255,255,255,0.92)] hover:border-[#5DCAA5]/80 hover:bg-white hover:shadow-[0_18px_36px_-12px_rgba(26,64,41,0.14)]'
               }`}
             >
               <span
                 className={`w-fit rounded-[20px] p-[4px_10px] text-[11px] font-semibold ${
                   c.dark
                     ? 'border border-[#5DCAA5]/25 bg-[#1D9E75]/25 text-[#5DCAA5]'
-                    : 'border border-[#C3E8D6] bg-[#E3F5EB] text-[#0F6E56]'
+                    : 'border border-[#C3E8D6]/80 bg-[#E3F5EB] text-[#0F6E56]'
                 }`}
               >
                 {c.tag}
@@ -104,8 +108,8 @@ export function BuiltForEA() {
                 {c.name}
               </span>
               <span
-                className={`text-[12px] ${
-                  c.dark ? 'text-[#9FBEAA]' : 'text-[#5A7A68]'
+                className={`text-[12px] font-medium ${
+                  c.dark ? 'text-[#C3E8D6]' : 'text-[#5A7A68]'
                 }`}
               >
                 {c.full}
@@ -116,8 +120,8 @@ export function BuiltForEA() {
                 }`}
               />
               <p
-                className={`w-full text-[13px]/[21px] ${
-                  c.dark ? 'text-[#C3E8D6]' : 'text-[#284E3A]'
+                className={`w-full text-[13.5px]/[22px] ${
+                  c.dark ? 'text-[#9FBEAA]' : 'text-[#284E3A]'
                 }`}
               >
                 {c.body}
