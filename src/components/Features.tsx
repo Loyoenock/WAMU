@@ -21,13 +21,13 @@ const SHOT =
 
 export function Features() {
   return (
-    <section id="products" className="relative overflow-hidden bg-[#E0F3E8]">
+    <section id="products" className="relative overflow-hidden bg-[#F4FBF7]">
       <h2 className="sr-only">
         WAMU savings group software for VSLAs, SACCOs, investment clubs and merry-go-rounds in Uganda
       </h2>
 
       {/* Band 1 - F2 SACCO */}
-      <div className="relative overflow-hidden bg-[#F4FBF7]">
+      <div className="relative overflow-hidden border-t border-[#C3E8D6]/75 bg-[#FFFFFF]">
         <WaMark tone="light" className="right-[48px] bottom-[40px] h-[128px] w-[128px]" />
         <div className="relative mx-auto flex max-w-[1280px] flex-col items-center gap-10 px-6 py-16 md:px-12 md:py-20 lg:min-h-[560px] lg:flex-row lg:gap-14 lg:px-20">
           {/* Sculpted Frosted Mint Pedestal with Ambient Canopy Glow */}
@@ -73,7 +73,7 @@ export function Features() {
       </div>
 
       {/* Band 2 - F1 WhatsApp */}
-      <div className="relative overflow-hidden bg-[#E0F3E8]">
+      <div className="relative overflow-hidden border-t border-[#C3E8D6]/75 bg-[#F4FBF7]">
         <WaMark tone="dark" className="left-[24px] bottom-[36px] h-[120px] w-[120px]" />
         <div className="relative mx-auto flex max-w-[1280px] flex-col items-center gap-10 px-6 py-16 md:px-12 md:py-20 lg:min-h-[560px] lg:flex-row lg:gap-14 lg:px-20">
           {/* Sculpted Deep Forest Pedestal with Radial Canopy Illumination */}
@@ -113,7 +113,7 @@ export function Features() {
               {F1_PILLS.map((pill) => (
                 <span
                   key={pill}
-                  className="rounded-full border border-white/80 bg-[#F4FBF7]/90 px-[14px] py-[7px] text-[12px] font-medium text-[#0F6E56] shadow-[0_2px_6px_rgba(13,32,22,0.05),inset_0_1px_0_rgba(255,255,255,0.9)]"
+                  className="rounded-full border border-[#C3E8D6] bg-white px-[14px] py-[7px] text-[12px] font-medium text-[#0F6E56] shadow-[0_2px_6px_rgba(13,32,22,0.05),inset_0_1px_0_rgba(255,255,255,0.9)]"
                 >
                   {pill}
                 </span>
@@ -142,7 +142,7 @@ export function Features() {
             </p>
           </div>
           <div className="flex flex-1 flex-col items-start justify-center gap-[16px] lg:items-end">
-            <div className="flex w-full max-w-[340px] flex-row items-center gap-[16px] rounded-[20px] border border-[#C3E8D6]/30 bg-[#168360] p-[18px_22px] shadow-[0_14px_30px_-12px_rgba(13,32,22,0.28)]">
+            <div className="flex w-full max-w-[340px] flex-row items-center gap-[16px] rounded-[18px] border border-[#C3E8D6]/25 bg-[#0F6E56]/70 p-[18px_22px] shadow-[0_14px_30px_-12px_rgba(13,32,22,0.28)] backdrop-blur-sm">
               <div className="flex h-[56px] w-[56px] shrink-0 items-center justify-center rounded-[12px] bg-[#ffc403]">
                 <svg viewBox="0 0 820 820" className="h-[40px] w-[40px] shrink-0" aria-hidden="true">
                   <path d={MTN_PATH} fill="#0C1E12" />
@@ -153,7 +153,7 @@ export function Features() {
                 <span className="text-[12px] text-[#C3E8D6]">Uganda's largest network</span>
               </div>
             </div>
-            <div className="flex w-full max-w-[340px] flex-row items-center gap-[16px] rounded-[20px] border border-[#C3E8D6]/30 bg-[#168360] p-[18px_22px] shadow-[0_14px_30px_-12px_rgba(13,32,22,0.28)]">
+            <div className="flex w-full max-w-[340px] flex-row items-center gap-[16px] rounded-[18px] border border-[#C3E8D6]/25 bg-[#0F6E56]/70 p-[18px_22px] shadow-[0_14px_30px_-12px_rgba(13,32,22,0.28)] backdrop-blur-sm">
               <div className="flex h-[56px] w-[56px] shrink-0 items-center justify-center rounded-[12px] bg-[#FFFFFF]">
                 <svg viewBox="0 0 122.88 123.79" className="h-[32px] w-[32px] shrink-0" aria-hidden="true">
                   <path d={AIRTEL_PATH} fill="#ed1d24" />
