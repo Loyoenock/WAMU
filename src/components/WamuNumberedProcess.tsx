@@ -38,11 +38,11 @@ export function WamuNumberedProcess() {
     <section
       id="how-it-works"
       aria-labelledby="wamu-process-heading"
-      className="relative overflow-hidden bg-[#E0F3E8] px-6 py-20 md:px-12 md:py-24 lg:px-20"
+      className="relative overflow-hidden border-y border-[#C3E8D6]/80 bg-[#E0F3E8] px-6 py-16 md:px-12 md:py-24 lg:px-20"
     >
       <div className="mx-auto max-w-[1280px]">
         {/* Section Header */}
-        <div className="mb-14 flex flex-col items-start justify-between gap-4 md:mb-16 md:flex-row md:items-end">
+        <div className="mb-12 flex flex-col items-start justify-between gap-4 md:mb-16 md:flex-row md:items-end">
           <div className="max-w-[560px]">
             <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
               HOW IT WORKS
@@ -59,23 +59,31 @@ export function WamuNumberedProcess() {
           </p>
         </div>
 
-        {/* 4-Step Numbered Grid (Magie-inspired clean numbered layout) */}
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-7">
-          {PROCESS_STEPS.map((step) => (
+        {/* 4-Step Numbered Grid (Magie-inspired clean numbered layout with desktop progression rail) */}
+        <div className="relative grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          {/* Subtle desktop horizontal progression cue behind the 4 cards */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute left-12 right-12 top-[56px] hidden h-px bg-gradient-to-r from-[#5DCAA5]/20 via-[#1D9E75]/35 to-[#5DCAA5]/20 lg:block"
+          />
+
+          {PROCESS_STEPS.map((step, index) => (
             <div
               key={step.num}
-              className="group relative flex flex-col justify-between rounded-[20px] border border-white/75 bg-[#F4FBF7]/85 p-7 shadow-[0_12px_28px_-12px_rgba(27,67,50,0.09),0_2px_6px_-1px_rgba(27,67,50,0.04),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/75 hover:bg-white/95"
+              className="group relative z-10 flex flex-col justify-between rounded-[20px] border border-white/85 bg-[#F4FBF7]/90 p-7 shadow-[0_14px_32px_-12px_rgba(27,67,50,0.09),0_2px_6px_-1px_rgba(27,67,50,0.04),inset_0_1px_0_rgba(255,255,255,0.92)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/80 hover:bg-white hover:shadow-[0_20px_38px_-14px_rgba(27,67,50,0.14)]"
             >
               <div>
                 {/* Top Hairline & Large Bold Number */}
-                <div className="flex items-baseline justify-between border-b border-[#C3E8D6] pb-5">
+                <div className="flex items-baseline justify-between border-b border-[#C3E8D6] pb-5 transition-colors duration-200 group-hover:border-[#5DCAA5]/75">
                   <span className="font-[Fraunces,ui-serif,Georgia,serif] text-[52px]/[52px] font-bold tracking-[-0.03em] text-[#1D9E75] transition-colors duration-200 group-hover:text-[#0B6B45] md:text-[58px]/[58px]">
                     {step.num}
                   </span>
-                  <span
-                    className="h-2 w-2 rounded-full bg-[#5DCAA5] transition-transform duration-200 group-hover:scale-125 group-hover:bg-[#0B6B45]"
-                    aria-hidden="true"
-                  />
+                  <div className="flex items-center gap-1.5" aria-hidden="true">
+                    {index < PROCESS_STEPS.length - 1 && (
+                      <span className="hidden h-px w-5 bg-[#C3E8D6] transition-all duration-200 group-hover:w-7 group-hover:bg-[#5DCAA5] lg:inline-block" />
+                    )}
+                    <span className="h-2 w-2 rounded-full bg-[#5DCAA5] transition-transform duration-200 group-hover:scale-125 group-hover:bg-[#0B6B45]" />
+                  </div>
                 </div>
 
                 {/* Clear Title Under Number */}
