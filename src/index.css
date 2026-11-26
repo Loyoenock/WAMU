@@ -5,26 +5,25 @@
   --font-head: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
   --font-serif: "Fraunces", ui-serif, Georgia, serif;
 
-  /* WAMU rebrand palette - see DESIGN_IMPLEMENTATION_PLAN.md section 1.
-     Components use exact export hex as arbitrary values where they differ from these. */
+  /* WAMU rebrand palette - unified Mint-Glass & Forest/Canopy/Mist/Midnight tokens */
   --color-brand-dark: #0D2016;
   --color-brand-green: #1A4029;
   --color-brand-mid: #2D6A4F;
-  --color-brand-accent: #E8A020;
-  --color-brand-accent-light: #FFF3D6;
+  --color-brand-accent: #1D9E75;
+  --color-brand-accent-light: #E3F5EB;
   --color-brand-ink: #0C1E12;
   --color-brand-gold-deep: #1D9E75;
 
-  --color-bg-cream: #F7F4EE;
-  --color-bg-warm: #FDFAF4;
+  --color-bg-cream: #E0F3E8;
+  --color-bg-warm: #F4FBF7;
   --color-bg-white: #FFFFFF;
 
-  --color-text-primary: #1A1A1A;
-  --color-text-muted: #6B7A6D;
-  --color-text-inverse: #F5F2E8;
-  --color-text-accent: #E8A020;
+  --color-text-primary: #0D2016;
+  --color-text-muted: #5A7A68;
+  --color-text-inverse: #F4FBF7;
+  --color-text-accent: #1D9E75;
 
-  --color-border-light: #E4DED2;
+  --color-border-light: #C3E8D6;
 }
 
 @layer utilities {
@@ -50,7 +49,7 @@
     scroll-behavior: smooth;
   }
   body {
-    @apply bg-bg-warm text-brand-ink font-sans antialiased overflow-x-hidden selection:bg-brand-accent selection:text-brand-ink;
+    @apply bg-bg-warm text-brand-ink font-sans antialiased overflow-x-hidden selection:bg-[#5DCAA5]/40 selection:text-[#0D2016];
   }
   @media (prefers-reduced-motion: reduce) {
     html {

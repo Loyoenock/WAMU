@@ -41,11 +41,11 @@ export function Utilities() {
           </article>
 
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-1">
-            <article className="flex min-h-[155px] flex-col justify-between rounded-[20px] bg-[#F7F4EE] p-7 outline outline-1 -outline-offset-1 outline-[#E4DED2]">
+            <article className="flex min-h-[155px] flex-col justify-between rounded-[20px] border border-[#C3E8D6]/85 bg-[#F4FBF7]/90 p-7 shadow-[0_12px_28px_-12px_rgba(27,67,50,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md">
               <div className="flex flex-col gap-2">
-                <span className="text-[11px] font-bold tracking-[1.5px] text-[#1A4029]">NEXT</span>
-                <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[24px] font-bold text-[#0C1E12]">Internet &amp; Data</h3>
-                <p className="text-[14px]/[22px] text-[#4B6A58]">Choose a bundle for your own number or someone else&apos;s.</p>
+                <span className="text-[11px] font-bold tracking-[1.5px] text-[#0F6E56]">NEXT</span>
+                <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[24px] font-bold text-[#0D2016]">Internet &amp; Data</h3>
+                <p className="text-[14px]/[22px] text-[#284E3A]">Choose a bundle for your own number or someone else&apos;s.</p>
               </div>
             </article>
             <article className="flex min-h-[155px] flex-col justify-between rounded-[20px] bg-[#1D9E75] p-7">
@@ -58,12 +58,12 @@ export function Utilities() {
           </div>
         </div>
 
-        <div className="rounded-[20px] border border-[#E4DED2] bg-[#FDFAF4] px-7 py-2 md:px-10">
+        <div className="rounded-[20px] border border-[#C3E8D6]/85 bg-[#F4FBF7]/90 px-7 py-2 shadow-[0_12px_28px_-12px_rgba(27,67,50,0.07),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md md:px-10">
           {SUPPORTING_SERVICES.map((service) => (
-            <div key={service.name} className="grid gap-3 border-b border-[#E4DED2] py-6 last:border-b-0 md:grid-cols-[180px_1fr_auto] md:items-center md:gap-6">
-              <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[21px] font-bold text-[#0C1E12]">{service.name}</h3>
-              <p className="text-[14px]/[22px] text-[#4B6A58]">{service.body}</p>
-              <span className="w-fit rounded-full bg-[#EDF5EF] px-3 py-1 text-[11px] font-semibold text-[#1A4029]">{service.status}</span>
+            <div key={service.name} className="grid gap-3 border-b border-[#C3E8D6]/75 py-6 last:border-b-0 md:grid-cols-[180px_1fr_auto] md:items-center md:gap-6">
+              <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[21px] font-bold text-[#0D2016]">{service.name}</h3>
+              <p className="text-[14px]/[22px] text-[#284E3A]">{service.body}</p>
+              <span className="w-fit rounded-full border border-[#C3E8D6] bg-[#E3F5EB] px-3 py-1 text-[11px] font-semibold text-[#0F6E56]">{service.status}</span>
             </div>
           ))}
         </div>

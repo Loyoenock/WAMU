@@ -72,37 +72,37 @@ export function HowItWorks() {
           {STEPS.map((step) => (
             <div
               key={step.num}
-              className={`flex flex-col gap-[20px] p-[32px] rounded-[16px] transition-transform duration-200 ease-out hover:-translate-y-1 ${
+              className={`flex flex-col gap-[20px] p-[32px] rounded-[20px] transition-all duration-200 ease-out hover:-translate-y-1 ${
                 step.highlight
-                  ? 'bg-[#1A4029] hover:shadow-[0_18px_36px_-14px_rgba(12,30,18,0.5)]'
-                  : 'bg-[#F7F4EE] hover:shadow-[0_16px_32px_-12px_rgba(26,64,41,0.18)]'
+                  ? 'border border-[#5DCAA5]/25 bg-[#1A4029] hover:shadow-[0_18px_36px_-14px_rgba(12,30,18,0.5)]'
+                  : 'border border-[#C3E8D6]/85 bg-[#F4FBF7]/90 shadow-[0_12px_28px_-12px_rgba(27,67,50,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md hover:border-[#5DCAA5]/75 hover:bg-white/95 hover:shadow-[0_16px_32px_-12px_rgba(26,64,41,0.14)]'
               }`}
             >
               <div className="flex flex-row justify-between items-center">
                 <span
                   className={`text-[13px] font-bold tracking-[1px] ${
-                    step.highlight ? 'text-[#1D9E75]' : 'text-[#1A4029]'
+                    step.highlight ? 'text-[#5DCAA5]' : 'text-[#0F6E56]'
                   }`}
                 >
                   {step.num}
                 </span>
                 <span
                   className={`w-[8px] h-[8px] rounded-full ${
-                    step.highlight ? 'bg-[#1D9E7560]' : 'bg-[#1A402940]'
+                    step.highlight ? 'bg-[#5DCAA5]' : 'bg-[#1D9E75]/60'
                   }`}
                   aria-hidden="true"
                 />
               </div>
               <h3
                 className={`font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[20px] ${
-                  step.highlight ? 'text-[#FFFFFF]' : 'text-[#0C1E12]'
+                  step.highlight ? 'text-[#FFFFFF]' : 'text-[#0D2016]'
                 }`}
               >
                 {step.title}
               </h3>
               <p
                 className={`text-[14px]/[23px] ${
-                  step.highlight ? 'text-[#7AAA8A]' : 'text-[#4B6A58]'
+                  step.highlight ? 'text-[#C3E8D6]' : 'text-[#284E3A]'
                 }`}
               >
                 {step.body}

@@ -84,7 +84,7 @@ const AUTOPLAY_INTERVAL_MS = 6000;
 const SWIPE_THRESHOLD_PX = 40;
 
 const FOCUS_RING =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D2016]';
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D2016]';
 
 function TransactionAccent({ accent }: { accent: TransactionAccentType }) {
   const Icon = ACCENT_ICONS[accent];
@@ -246,7 +246,7 @@ function GlassInfoCard({
           </div>
 
           {/* Heading */}
-          <h2 className="mt-1.5 font-[Fraunces,ui-serif,Georgia,serif] text-[17px]/[22px] font-bold text-[#FDFAF4] sm:text-[18px]/[23px] xl:text-[19px]/[24px]">
+          <h2 className="mt-1.5 font-[Fraunces,ui-serif,Georgia,serif] text-[17px]/[22px] font-bold text-[#F4FBF7] sm:text-[18px]/[23px] xl:text-[19px]/[24px]">
             {slide.title}
           </h2>
 

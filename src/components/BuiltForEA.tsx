@@ -76,48 +76,48 @@ export function BuiltForEA() {
           {CARDS.map((c) => (
             <div
               key={c.key}
-              className={`flex flex-col items-start gap-[18px] rounded-[16px] p-[28px] transition-transform duration-200 ease-out hover:-translate-y-1 ${
+              className={`flex flex-col items-start gap-[18px] rounded-[20px] p-[28px] transition-all duration-200 ease-out hover:-translate-y-1 ${
                 c.dark
-                  ? 'bg-[#1A4029] hover:shadow-[0_18px_36px_-14px_rgba(12,30,18,0.5)]'
-                  : 'bg-[#F7F4EE] hover:shadow-[0_16px_32px_-12px_rgba(26,64,41,0.18)]'
+                  ? 'border border-[#5DCAA5]/25 bg-[#1A4029] hover:border-[#5DCAA5]/60 hover:shadow-[0_18px_36px_-14px_rgba(12,30,18,0.5)]'
+                  : 'border border-[#C3E8D6]/85 bg-[#F4FBF7]/90 shadow-[0_12px_28px_-12px_rgba(27,67,50,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md hover:border-[#5DCAA5]/75 hover:bg-white/95 hover:shadow-[0_16px_32px_-12px_rgba(26,64,41,0.14)]'
               }`}
             >
               <span
                 className={`w-fit rounded-[20px] p-[4px_10px] text-[11px] font-semibold ${
                   c.dark
-                    ? 'bg-[#1D9E7530] text-[#1D9E75]'
-                    : 'bg-[#E8E2D8] text-[#4B6A58]'
+                    ? 'border border-[#5DCAA5]/25 bg-[#1D9E75]/25 text-[#5DCAA5]'
+                    : 'border border-[#C3E8D6] bg-[#E3F5EB] text-[#0F6E56]'
                 }`}
               >
                 {c.tag}
               </span>
               <c.Icon
-                className={c.dark ? 'h-[30px] w-[30px] text-[#1D9E75]' : 'h-[30px] w-[30px] text-[#1A4029]'}
+                className={c.dark ? 'h-[30px] w-[30px] text-[#5DCAA5]' : 'h-[30px] w-[30px] text-[#0B6B45]'}
                 strokeWidth={1.5}
                 aria-hidden="true"
               />
               <span
                 className={`font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold ${
-                  c.dark ? 'text-[#FFFFFF]' : 'text-[#0C1E12]'
+                  c.dark ? 'text-[#FFFFFF]' : 'text-[#0D2016]'
                 }`}
               >
                 {c.name}
               </span>
               <span
                 className={`text-[12px] ${
-                  c.dark ? 'text-[#7AAA8A]' : 'text-[#888888]'
+                  c.dark ? 'text-[#9FBEAA]' : 'text-[#5A7A68]'
                 }`}
               >
                 {c.full}
               </span>
               <div
                 className={`h-[1px] w-full ${
-                  c.dark ? 'bg-[#2D5A3D]' : 'bg-[#E8E2D8]'
+                  c.dark ? 'bg-[#2D5A3D]' : 'bg-[#C3E8D6]'
                 }`}
               />
               <p
                 className={`w-full text-[13px]/[21px] ${
-                  c.dark ? 'text-[#7AAA8A]' : 'text-[#4B6A58]'
+                  c.dark ? 'text-[#C3E8D6]' : 'text-[#284E3A]'
                 }`}
               >
                 {c.body}

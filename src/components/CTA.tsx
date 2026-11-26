@@ -139,7 +139,7 @@ export function CTA() {
         <h2 className="max-w-[680px] text-center font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold text-white md:text-[38px]/[44px] lg:text-[46px]/[53px]">
           Ready to bring your group online?
         </h2>
-        <p className="max-w-[580px] text-center text-[15px]/[24px] text-[#7AAA8A] md:text-[16px]/[26px]">
+        <p className="max-w-[580px] text-center text-[15px]/[24px] text-[#C3E8D6] md:text-[16px]/[26px]">
           Start with the group you already have. No new app, no restructuring, no complicated onboarding.
           <br />
           Message WAMU on WhatsApp and set up in one sitting.
@@ -161,7 +161,7 @@ export function CTA() {
           )}
         </div>
 
-        <p className="text-[13px] text-[#3D7A52]">
+        <p className="text-[13px] text-[#9FBEAA]">
           No commitment required. Ask us a question before you sign up.
         </p>
       </div>

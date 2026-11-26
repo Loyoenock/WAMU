@@ -83,7 +83,7 @@ export function WamuAudienceCards() {
               <div>
                 {/* Top Row: Icon Badge + Subtle Category Tag */}
                 <div className="flex items-center justify-between gap-2">
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-[14px] border border-[#C3E8D6] bg-[#E3F5EB] text-[#0B6B45] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] transition-colors duration-200 group-hover:bg-[#0B6B45] group-hover:text-[#FDFAF4]">
+                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-[14px] border border-[#C3E8D6] bg-[#E3F5EB] text-[#0B6B45] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)] transition-colors duration-200 group-hover:bg-[#0B6B45] group-hover:text-white">
                     <card.Icon className="h-5 w-5" strokeWidth={1.9} aria-hidden="true" />
                   </span>
                   <span className="rounded-full bg-[#E3F5EB]/90 px-2.5 py-1 text-[11px] font-medium text-[#1B4332]">

@@ -15,7 +15,7 @@ type Tone = 'light' | 'dark' | 'gold';
 
 const TONE: Record<Tone, { fill: string; opacity: number }> = {
   light: { fill: '#1A4029', opacity: 0.06 },
-  dark: { fill: '#F7F4EE', opacity: 0.12 },
+  dark: { fill: '#C3E8D6', opacity: 0.12 },
   gold: { fill: '#0D2016', opacity: 0.1 },
 };
 

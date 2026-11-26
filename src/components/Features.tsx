@@ -21,13 +21,13 @@ const SHOT =
 
 export function Features() {
   return (
-    <section id="products" className="relative overflow-hidden bg-[#FDFAF4]">
+    <section id="products" className="relative overflow-hidden bg-[#E0F3E8]">
       <h2 className="sr-only">
         WAMU savings group software for VSLAs, SACCOs, investment clubs and merry-go-rounds in Uganda
       </h2>
 
       {/* Band 1 - F2 SACCO */}
-      <div className="relative flex flex-col overflow-hidden bg-[#FFFFFF] lg:min-h-[560px] lg:flex-row lg:items-stretch">
+      <div className="relative flex flex-col overflow-hidden bg-[#F4FBF7] lg:min-h-[560px] lg:flex-row lg:items-stretch">
         <WaMark tone="light" className="right-[48px] bottom-[40px] h-[128px] w-[128px]" />
         <div className="flex w-full shrink-0 justify-center px-6 pt-12 md:px-12 lg:w-[560px] lg:items-center lg:py-[56px] lg:pl-[80px] lg:pr-[24px]">
           <img
@@ -39,13 +39,13 @@ export function Features() {
           />
         </div>
         <div className="flex-1 flex flex-col gap-[24px] justify-center items-start px-6 py-12 md:px-12 lg:py-[56px] lg:pl-[24px] lg:pr-[88px]">
-          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#1A4029]">
+          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
             SACCO SHARES
           </span>
-          <h3 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[28px]/[34px] md:text-[34px]/[41px] text-[#0C1E12]">
+          <h3 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[28px]/[34px] md:text-[34px]/[41px] text-[#0D2016]">
             Share ledgers built for how cooperatives actually work.
           </h3>
-          <p className="text-[15px]/[26px] text-[#3C5A48]">
+          <p className="text-[15px]/[26px] text-[#1B4332]">
             SACCOs need share capital tracked separately from savings. WAMU's shares ledger
             records each member's purchases, dividends, and standing in a structure a board or
             auditor can actually review.
@@ -57,7 +57,7 @@ export function Features() {
                   className="w-[8px] h-[8px] shrink-0 rounded-full bg-[#1D9E75]"
                   aria-hidden="true"
                 />
-                <span className="text-[14px] text-[#0C1E12]">{row}</span>
+                <span className="text-[14px] text-[#0D2016]">{row}</span>
               </div>
             ))}
           </div>
@@ -83,13 +83,13 @@ export function Features() {
           </span>
         </div>
         <div className="flex-1 flex flex-col gap-[24px] justify-center items-start px-6 py-12 md:px-12 lg:p-[60px_56px]">
-          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#1A4029]">
+          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
             WHATSAPP SAVINGS &amp; MERRY-GO-ROUND
           </span>
-          <h3 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[28px]/[34px] md:text-[34px]/[41px] text-[#0C1E12]">
+          <h3 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[28px]/[34px] md:text-[34px]/[41px] text-[#0D2016]">
             Your group's contributions, collected and tracked automatically.
           </h3>
-          <p className="text-[15px]/[26px] text-[#3C5A48]">
+          <p className="text-[15px]/[26px] text-[#1B4332]">
             Members contribute via MTN or Airtel directly in WhatsApp. The merry-go-round rotation
             is calculated automatically. Payout order, dates, and amounts fixed so no one argues
             over a notebook.
@@ -98,7 +98,7 @@ export function Features() {
             {F1_PILLS.map((pill) => (
               <span
                 key={pill}
-                className="p-[7px_14px] bg-[#EDF5EF] rounded-[20px] text-[12px] font-medium text-[#1A4029]"
+                className="rounded-full border border-white/80 bg-[#F4FBF7]/90 px-[14px] py-[7px] text-[12px] font-medium text-[#0F6E56] shadow-[0_2px_6px_rgba(13,32,22,0.05),inset_0_1px_0_rgba(255,255,255,0.9)]"
               >
                 {pill}
               </span>

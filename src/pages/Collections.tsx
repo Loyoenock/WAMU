@@ -74,15 +74,15 @@ export function CollectionsPage() {
       <Navigation />
       <main id="main-content">
         {/* Page header */}
-        <section className="bg-[#FDFAF4] px-6 pt-28 pb-14 md:px-12 md:pt-32 lg:px-[120px] lg:pt-[136px]">
+        <section className="bg-[#D9F0E3] px-6 pt-28 pb-14 md:px-12 md:pt-32 lg:px-[120px] lg:pt-[136px]">
           <div className="mx-auto max-w-[1280px]">
-            <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#1A4029]">
+            <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
               COLLECTIONS &amp; CONTRIBUTIONS
             </p>
-            <h1 className="mt-3 max-w-[820px] font-[Fraunces,ui-serif,Georgia,serif] text-[34px]/[40px] font-bold text-[#0C1E12] md:text-[46px]/[52px]">
+            <h1 className="mt-3 max-w-[820px] font-[Fraunces,ui-serif,Georgia,serif] text-[34px]/[40px] font-bold text-[#0D2016] md:text-[46px]/[52px]">
               Wedding, funeral and event collections, counted correctly.
             </h1>
-            <p className="mt-4 max-w-[620px] text-[16px]/[26px] text-[#3C5A48]">
+            <p className="mt-4 max-w-[620px] text-[16px]/[26px] text-[#1B4332]">
               Every contribution for a wedding, a burial or an event runs as a WAMU savings goal: a
               target, a deadline, mobile money in, automatic reminders, and a ledger every
               contributor can check for themselves.
@@ -97,7 +97,7 @@ export function CollectionsPage() {
               </a>
               <a
                 href="/pricing"
-                className="wamu-liquid-btn-gold inline-flex items-center rounded-full px-7 py-[15px] text-[15px] font-bold text-[#0C1E12] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
+                className="wamu-liquid-btn-gold inline-flex items-center rounded-full px-7 py-[15px] text-[15px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
               >
                 Join the waitlist
               </a>
@@ -110,19 +110,19 @@ export function CollectionsPage() {
         {/* How a collection runs */}
         <section className="bg-[#FFFFFF] px-6 py-16 md:px-12 md:py-[88px] lg:px-[120px]">
           <div className="mx-auto max-w-[1280px]">
-            <h2 className="max-w-[600px] font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#0C1E12] md:text-[42px]/[48px]">
+            <h2 className="max-w-[600px] font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#0D2016] md:text-[42px]/[48px]">
               How a collection runs, start to payout.
             </h2>
             <div className="mt-10 grid grid-cols-1 gap-[20px] md:grid-cols-2 lg:grid-cols-4">
               {STEPS.map((s) => (
-                <div key={s.n} className="flex flex-col items-start gap-[14px] rounded-[16px] bg-[#F7F4EE] p-[28px]">
-                  <span className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#1A4029] text-[15px] font-bold text-[#FDFAF4]">
+                <div key={s.n} className="flex flex-col items-start gap-[14px] rounded-[20px] border border-[#C3E8D6]/85 bg-[#F4FBF7]/90 p-[28px] shadow-[0_12px_28px_-12px_rgba(27,67,50,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md">
+                  <span className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#0B6B45] text-[15px] font-bold text-white">
                     {s.n}
                   </span>
-                  <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold text-[#0C1E12]">
+                  <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold text-[#0D2016]">
                     {s.title}
                   </h3>
-                  <p className="text-[13px]/[21px] text-[#4B6A58]">{s.body}</p>
+                  <p className="text-[13px]/[21px] text-[#284E3A]">{s.body}</p>
                 </div>
               ))}
             </div>
@@ -130,18 +130,18 @@ export function CollectionsPage() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-[#FDFAF4] px-6 py-16 md:px-12 md:py-[88px] lg:px-[120px]">
+        <section className="bg-[#E0F3E8] px-6 py-16 md:px-12 md:py-[88px] lg:px-[120px]">
           <div className="mx-auto max-w-[780px]">
-            <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#0C1E12] md:text-[42px]/[48px]">
+            <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#0D2016] md:text-[42px]/[48px]">
               Questions about collections
             </h2>
-            <div className="mt-8 border-t border-[#E4DED2]">
+            <div className="mt-8 border-t border-[#0F6E56]/20">
               {FAQS.map((f) => (
-                <div key={f.q} className="border-b border-[#E4DED2] py-6">
-                  <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-semibold text-[#0C1E12]">
+                <div key={f.q} className="border-b border-[#0F6E56]/20 py-6">
+                  <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-semibold text-[#0D2016]">
                     {f.q}
                   </h3>
-                  <p className="mt-2 text-[15px]/[24px] text-[#3C5A48]">{f.a}</p>
+                  <p className="mt-2 text-[15px]/[24px] text-[#1B4332]">{f.a}</p>
                 </div>
               ))}
             </div>

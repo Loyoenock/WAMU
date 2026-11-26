@@ -59,10 +59,10 @@ export function Footer() {
               WAMU
             </span>
           </div>
-          <p className="text-[13px]/[21px] text-[#4A6A52]">
+          <p className="text-[13px]/[21px] text-[#9FBEAA]">
             Utility payments and savings tools for Uganda's communities.
           </p>
-          <p className="text-[11px] text-[#2D4A35]">WAMU PAY (UGANDA) LIMITED</p>
+          <p className="text-[11px] font-medium text-[#8AB89E]">WAMU PAY (UGANDA) LIMITED</p>
         </div>
 
         <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:flex lg:gap-[64px]">
@@ -86,27 +86,27 @@ export function Footer() {
       <div className="relative h-px w-full bg-[#1E3A22]" />
 
       <div className="relative flex flex-col gap-4 px-6 py-6 md:px-12 lg:flex-row lg:items-center lg:justify-between lg:px-[120px]">
-        <p className="text-[12px] text-[#2D4A35]">
+        <p className="text-[12px] text-[#8AB89E]">
           &copy; 2026 WAMU PAY (UGANDA) LIMITED. All rights reserved.
         </p>
         <div className="flex flex-wrap gap-[28px]">
           <a
             id="footer-privacy-link"
             href="/privacy-policy.html"
-            className={`text-[12px] text-[#2D4A35] transition-colors hover:text-[#4A6A52] ${FOCUS_RING} rounded-sm`}
+            className={`text-[12px] text-[#8AB89E] transition-colors hover:text-[#C3E8D6] ${FOCUS_RING} rounded-sm`}
           >
             Privacy Policy
           </a>
           <a
             id="footer-terms-link"
             href="/terms-and-conditions.html"
-            className={`text-[12px] text-[#2D4A35] transition-colors hover:text-[#4A6A52] ${FOCUS_RING} rounded-sm`}
+            className={`text-[12px] text-[#8AB89E] transition-colors hover:text-[#C3E8D6] ${FOCUS_RING} rounded-sm`}
           >
             Terms of Use
           </a>
           <a
             href="/#security"
-            className={`text-[12px] text-[#2D4A35] transition-colors hover:text-[#4A6A52] ${FOCUS_RING} rounded-sm`}
+            className={`text-[12px] text-[#8AB89E] transition-colors hover:text-[#C3E8D6] ${FOCUS_RING} rounded-sm`}
           >
             Security
           </a>
@@ -119,6 +119,6 @@ export function Footer() {
 function cnLink(muted?: boolean) {
   const base = `text-[13px] transition-colors rounded-sm ${FOCUS_RING}`;
   return muted
-    ? `${base} text-[#F7F4EE] opacity-[0.65] hover:opacity-100`
-    : `${base} text-[#4A6A52] hover:text-[#7AAA8A]`;
+    ? `${base} text-[#F4FBF7] opacity-[0.85] hover:opacity-100`
+    : `${base} text-[#9FBEAA] hover:text-[#C3E8D6]`;
 }

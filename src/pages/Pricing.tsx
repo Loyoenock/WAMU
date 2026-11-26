@@ -8,9 +8,9 @@ type Status = 'idle' | 'sending' | 'ok' | 'error';
 const GROUP_TYPES = ['VSLA', 'SACCO', 'Investment club', 'Merry-go-round', 'Not sure yet'];
 
 const inputCls =
-  'w-full rounded-[10px] border border-[#DBE0D4] bg-[#FDFAF4] px-[14px] py-[12px] text-[14px] text-[#26332B] focus:border-[#E8A020] focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-[#E8A020]';
+  'w-full rounded-[12px] border border-[#C3E8D6] bg-[#F4FBF7] px-[14px] py-[12px] text-[14px] text-[#0D2016] focus:border-[#1D9E75] focus:outline focus:outline-2 focus:outline-offset-1 focus:outline-[#5DCAA5]';
 const labelCls =
-  'mb-[6px] block text-[12px] font-semibold uppercase tracking-[0.06em] text-[#0C1E12]';
+  'mb-[6px] block text-[12px] font-semibold uppercase tracking-[0.06em] text-[#0D2016]';
 
 export function Pricing() {
   usePageMeta({
@@ -70,31 +70,31 @@ export function Pricing() {
         id="main-content"
         className="mx-auto max-w-[720px] px-6 pt-28 pb-24 md:px-8 md:pt-32 lg:pt-[136px]"
       >
-        <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#1A4029]">
+        <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
           Pricing &amp; early access
         </p>
-        <h1 className="mt-3 font-[Fraunces,ui-serif,Georgia,serif] text-[34px]/[40px] font-bold text-[#0C1E12] md:text-[42px]/[48px]">
+        <h1 className="mt-3 font-[Fraunces,ui-serif,Georgia,serif] text-[34px]/[40px] font-bold text-[#0D2016] md:text-[42px]/[48px]">
           Simple pricing, priced per group
         </h1>
-        <p className="mt-3 text-[16px]/[26px] text-[#3C5A48]">
+        <p className="mt-3 text-[16px]/[26px] text-[#1B4332]">
           WAMU is preparing to launch in Uganda. Pricing will be announced at launch and kept
           simple, charged per savings group, not per member. Join the waitlist to see pricing first
           and lock in early-access terms for your VSLA, SACCO, investment club or merry-go-round.
         </p>
 
-        <div className="mt-8 rounded-[18px] border border-[#E4DED2] bg-white p-7">
-          <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[22px] font-semibold text-[#0C1E12]">
+        <div className="mt-8 rounded-[20px] border border-[#C3E8D6] bg-white p-7 shadow-[0_14px_34px_-12px_rgba(13,32,22,0.08)]">
+          <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[22px] font-semibold text-[#0D2016]">
             Join the early-access waitlist
           </h2>
-          <p className="mt-1 text-[14px] text-[#5C6B60]">
+          <p className="mt-1 text-[14px] text-[#5A7A68]">
             No payment now. We only contact you about WAMU early access.
           </p>
 
           <ul className="my-6 flex flex-col gap-[10px]">
             {['Pricing shared with you before public launch', 'Priority onboarding for your group', 'Set-up help over WhatsApp'].map(
               (p) => (
-                <li key={p} className="relative pl-[22px] text-[14px] text-[#3C5A48]">
-                  <span className="absolute left-0 top-[8px] h-[8px] w-[8px] rounded-full bg-[#E8A020]" aria-hidden="true" />
+                <li key={p} className="relative pl-[22px] text-[14px] text-[#1B4332]">
+                  <span className="absolute left-0 top-[8px] h-[8px] w-[8px] rounded-full bg-[#1D9E75]" aria-hidden="true" />
                   {p}
                 </li>
               )

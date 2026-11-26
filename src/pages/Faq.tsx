@@ -171,13 +171,13 @@ export function Faq() {
           Uganda.
         </p>
 
-        <div className="mt-10 border-t border-[#E4DED2]">
+        <div className="mt-10 border-t border-[#C3E8D6]">
           {FAQS.map((item) => (
-            <div key={item.q} className="border-b border-[#E4DED2] py-6">
-              <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-semibold text-[#0C1E12]">
+            <div key={item.q} className="border-b border-[#C3E8D6] py-6">
+              <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-semibold text-[#0D2016]">
                 {item.q}
               </h2>
-              <p className="mt-2 text-[15px]/[24px] text-[#3C5A48]">{item.a}</p>
+              <p className="mt-2 text-[15px]/[24px] text-[#1B4332]">{item.a}</p>
             </div>
           ))}
         </div>

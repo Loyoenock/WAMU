@@ -203,11 +203,11 @@ export function Navigation() {
                 id="nav-cta-mobile"
                 href="https://wa.me/256788003344"
                 className={cn(
-                  'wamu-nav-cta-btn mt-2 flex w-full items-center justify-center gap-[8px] rounded-full bg-[#0B6B45] px-5 py-3 text-center text-[13px] font-bold text-[#FDFAF4] motion-reduce:transition-none',
+                  'wamu-nav-cta-btn mt-2 flex w-full items-center justify-center gap-[8px] rounded-full bg-[#0B6B45] px-5 py-3 text-center text-[13px] font-bold text-white motion-reduce:transition-none',
                   FOCUS_RING
                 )}
               >
-                <WhatsAppIcon className="h-[15px] w-[15px] text-[#9CECC9]" />
+                <WhatsAppIcon className="h-[15px] w-[15px] text-white" />
                 Message WAMU
               </a>
             </motion.nav>
