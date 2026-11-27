@@ -160,13 +160,13 @@ export function Faq() {
         id="main-content"
         className="mx-auto max-w-[780px] px-6 pt-28 pb-24 md:px-8 md:pt-32 lg:pt-[136px]"
       >
-        <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#1A4029]">
+        <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
           Frequently asked questions
         </p>
-        <h1 className="mt-3 font-[Fraunces,ui-serif,Georgia,serif] text-[34px]/[40px] font-bold text-[#0C1E12] md:text-[42px]/[48px]">
+        <h1 className="mt-3 font-[Fraunces,ui-serif,Georgia,serif] text-[34px]/[40px] font-bold text-[#0D2016] md:text-[42px]/[48px]">
           Running your savings group on WhatsApp
         </h1>
-        <p className="mt-3 text-[16px]/[26px] text-[#3C5A48]">
+        <p className="mt-3 text-[16px]/[26px] text-[#2D4A38]">
           Short answers about WAMU for VSLAs, SACCOs, investment clubs and merry-go-round groups in
           Uganda.
         </p>
@@ -177,7 +177,7 @@ export function Faq() {
               <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-semibold text-[#0D2016]">
                 {item.q}
               </h2>
-              <p className="mt-2 text-[15px]/[24px] text-[#1B4332]">{item.a}</p>
+              <p className="mt-2 text-[15px]/[24px] text-[#2D4A38]">{item.a}</p>
             </div>
           ))}
         </div>

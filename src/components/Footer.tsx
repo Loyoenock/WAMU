@@ -2,7 +2,7 @@ import React from 'react';
 import { WaMark } from './WaMark';
 
 const FOCUS_RING =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#E8A020] focus-visible:ring-offset-2';
+  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C1E12]';
 
 type FootLink = { label: string; href: string; muted?: boolean };
 

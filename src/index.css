@@ -5,10 +5,26 @@
   --font-head: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
   --font-serif: "Fraunces", ui-serif, Georgia, serif;
 
-  /* WAMU rebrand palette - unified Mint-Glass & Forest/Canopy/Mist/Midnight tokens */
+  /* WAMU Design Direction — Warm Editorial Authority Meets Mint-Glass Conversational Clarity */
+  --color-wamu-forest: #0F6E56;
+  --color-wamu-forest-deep: #1A4029;
+  --color-wamu-canopy: #1D9E75;
+  --color-wamu-light: #5DCAA5;
+  --color-wamu-mist: #C3E8D6;
+  --color-wamu-mint-soft: #D9F0E3;
+  --color-wamu-mint-pale: #E0F3E8;
+  --color-wamu-mint-white: #F4FBF7;
+  --color-wamu-midnight: #0D2016;
+  --color-wamu-midnight-deep: #0C1E12;
+  --color-wamu-midnight-stage: #0D1A12;
+  --color-wamu-grove: #2D4A38;
+  --color-wamu-moss: #5A7A68;
+  --color-wamu-dark-muted: #9FBEAA;
+
+  /* Semantic aliases */
   --color-brand-dark: #0D2016;
   --color-brand-green: #1A4029;
-  --color-brand-mid: #2D6A4F;
+  --color-brand-mid: #0F6E56;
   --color-brand-accent: #1D9E75;
   --color-brand-accent-light: #E3F5EB;
   --color-brand-ink: #0C1E12;
@@ -19,6 +35,7 @@
   --color-bg-white: #FFFFFF;
 
   --color-text-primary: #0D2016;
+  --color-text-body: #2D4A38;
   --color-text-muted: #5A7A68;
   --color-text-inverse: #F4FBF7;
   --color-text-accent: #1D9E75;
@@ -305,7 +322,7 @@
 /* Luminous Mint-Glass CTA for Dark Surfaces (#1A4029, #0C1E12) & Floating CTA Portal */
 .wamu-liquid-btn-glass-dark {
   border-radius: 9999px;
-  background-color: rgba(212, 242, 224, 0.9);
+  background-color: rgba(195, 232, 214, 0.88);
   background-image: linear-gradient(
     135deg,
     rgba(244, 251, 247, 0.95) 0%,
@@ -316,7 +333,7 @@
   backdrop-filter: blur(20px) saturate(185%);
   border: 1px solid rgba(255, 255, 255, 0.88);
   box-shadow:
-    0 14px 32px -8px rgba(6, 16, 10, 0.46),
+    0 14px 32px -8px rgba(6, 16, 10, 0.45),
     0 4px 12px -2px rgba(6, 16, 10, 0.24),
     inset 0 1px 0 0 rgba(255, 255, 255, 0.94);
   transition:

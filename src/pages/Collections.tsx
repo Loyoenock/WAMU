@@ -74,7 +74,7 @@ export function CollectionsPage() {
       <Navigation />
       <main id="main-content">
         {/* Page header */}
-        <section className="bg-[#D9F0E3] px-6 pt-28 pb-14 md:px-12 md:pt-32 lg:px-[120px] lg:pt-[136px]">
+        <section className="bg-[#D9F0E3] px-6 pt-28 pb-14 md:px-12 md:pt-32 lg:px-20 lg:pt-[136px]">
           <div className="mx-auto max-w-[1280px]">
             <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
               COLLECTIONS &amp; CONTRIBUTIONS
@@ -82,7 +82,7 @@ export function CollectionsPage() {
             <h1 className="mt-3 max-w-[820px] font-[Fraunces,ui-serif,Georgia,serif] text-[34px]/[40px] font-bold text-[#0D2016] md:text-[46px]/[52px]">
               Wedding, funeral and event collections, counted correctly.
             </h1>
-            <p className="mt-4 max-w-[620px] text-[16px]/[26px] text-[#1B4332]">
+            <p className="mt-4 max-w-[620px] text-[16px]/[26px] text-[#2D4A38]">
               Every contribution for a wedding, a burial or an event runs as a WAMU savings goal: a
               target, a deadline, mobile money in, automatic reminders, and a ledger every
               contributor can check for themselves.
@@ -108,7 +108,7 @@ export function CollectionsPage() {
         <CollectionsSection />
 
         {/* How a collection runs */}
-        <section className="bg-[#FFFFFF] px-6 py-16 md:px-12 md:py-[88px] lg:px-[120px]">
+        <section className="bg-[#FFFFFF] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
           <div className="mx-auto max-w-[1280px]">
             <h2 className="max-w-[600px] font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#0D2016] md:text-[42px]/[48px]">
               How a collection runs, start to payout.
@@ -122,7 +122,7 @@ export function CollectionsPage() {
                   <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold text-[#0D2016]">
                     {s.title}
                   </h3>
-                  <p className="text-[13px]/[21px] text-[#284E3A]">{s.body}</p>
+                  <p className="text-[13px]/[21px] text-[#2D4A38]">{s.body}</p>
                 </div>
               ))}
             </div>
@@ -130,7 +130,7 @@ export function CollectionsPage() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-[#E0F3E8] px-6 py-16 md:px-12 md:py-[88px] lg:px-[120px]">
+        <section className="bg-[#E0F3E8] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
           <div className="mx-auto max-w-[780px]">
             <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#0D2016] md:text-[42px]/[48px]">
               Questions about collections

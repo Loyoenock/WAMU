@@ -15,21 +15,24 @@ export function Utilities() {
       <WaMark tone="light" className="right-[32px] bottom-[44px] h-[96px] w-[96px] -z-0" />
       <div className="relative mx-auto flex max-w-[1280px] flex-col gap-12 px-6 py-16 md:px-12 md:py-[88px] lg:gap-16 lg:px-20">
         <div className="flex max-w-[650px] flex-col items-start gap-4">
-          <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#0C1E12] md:text-[42px]/[48px]">
+          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
+            EVERYDAY UTILITIES
+          </span>
+          <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#0D2016] md:text-[42px]/[48px]">
             Start with the payment in front of you.
           </h2>
-          <p className="text-[16px]/[26px] text-[#3C5A48]">
+          <p className="text-[16px]/[26px] text-[#2D4A38]">
             WAMU is putting everyday utility payments first, inside the WhatsApp chat you already know. Choose a service, confirm the details, then pay by Mobile Money.
           </p>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-[1.12fr_.88fr]">
-          <article className="flex min-h-[330px] flex-col justify-between rounded-[20px] bg-[#1A4029] p-7 md:p-10">
+          <article className="flex min-h-[330px] flex-col justify-between rounded-[20px] border border-[#5DCAA5]/20 bg-[#1A4029] p-7 shadow-[0_18px_38px_-14px_rgba(13,32,22,0.35)] md:p-10">
             <div className="flex flex-col gap-5">
               <span className="w-fit rounded-full bg-[#1D9E75] px-3 py-1 text-[11px] font-bold text-[#C3E8D6]">STARTING WITH</span>
               <div className="flex flex-col gap-3">
                 <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold text-white md:text-[38px]/[44px]">Airtime &amp; Voice</h3>
-                <p className="max-w-[480px] text-[16px]/[26px] text-[#B4CDBE]">
+                <p className="max-w-[480px] text-[16px]/[26px] text-[#C3E8D6]">
                   Buy airtime for yourself or another number. Review the amount first, then approve the Mobile Money payment from your phone.
                 </p>
               </div>
