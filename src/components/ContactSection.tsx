@@ -16,8 +16,6 @@ const ENQUIRY_TYPES = [
   'Savings & Financial Management',
   'Groups & SACCOs',
   'Collections (Weddings, Funerals & Events)',
-  'Insurance, Loans & Investments',
-  'Pricing & Early Access',
 ];
 
 const inputCls =

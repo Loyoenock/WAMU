@@ -263,7 +263,7 @@ export function Navigation() {
               ))}
             </div>
             <div
-              className={`my-2 grid grid-cols-1 gap-1 border-t pt-2 sm:grid-cols-3 ${
+              className={`my-2 grid grid-cols-1 gap-1 border-t pt-2 sm:grid-cols-2 ${
                 isDark ? 'border-white/10' : 'border-[#C3E8D6]/80'
               }`}
             >
@@ -288,17 +288,6 @@ export function Navigation() {
                 } ${focusRing}`}
               >
                 Full FAQ
-              </a>
-              <a
-                href="/pricing"
-                onClick={() => setMobileOpen(false)}
-                className={`block rounded-xl px-3.5 py-2 text-[14px] transition-colors ${
-                  isDark
-                    ? 'text-[#C3E8D6] hover:bg-[#1A4029]'
-                    : 'text-[#2D4A38] hover:bg-[#EBF6F0]'
-                } ${focusRing}`}
-              >
-                Early Access &amp; Pricing
               </a>
             </div>
             <a

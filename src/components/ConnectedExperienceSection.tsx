@@ -51,7 +51,7 @@ export function ConnectedExperienceSection() {
                   Connected financial activities
                 </h3>
                 <p className="mt-1 text-[14.5px]/[23px] text-[#2D4A38]">
-                  Discover savings, group finance and other relevant financial services within the
+                  Discover savings, group finance and community collections within the
                   WAMU ecosystem without juggling multiple apps.
                 </p>
               </div>
@@ -154,16 +154,16 @@ export function ConnectedExperienceSection() {
                 </p>
               </div>
 
-              {/* Financial Service Inquiry Mini Card */}
+              {/* Collections Mini Card */}
               <div className="rounded-[20px] border border-[#C3E8D6] bg-[#F7FAF8] p-5">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-[#0F6E56]">
-                  Financial Services
+                  Event Collections
                 </p>
                 <p className="mt-1.5 font-editorial text-[17px] font-bold text-[#0D1A12]">
-                  Insurance, Loans &amp; Investments
+                  Weddings, Funerals &amp; Drives
                 </p>
                 <p className="mt-1.5 text-[13px]/[20px] text-[#2D4A38]">
-                  Guided WhatsApp inquiries connecting clients to insurance and broader financial services.
+                  Collect contributions via MTN MoMo and Airtel Money with multi-approver payouts.
                 </p>
               </div>
             </div>

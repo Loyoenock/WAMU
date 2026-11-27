@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { WhatsAppIcon } from '../components/WhatsAppIcon';
@@ -11,13 +11,13 @@ const FAQS: { q: string; a: React.ReactNode; plain: string }[] = [
     a: (
       <>
         WAMU is a WhatsApp-based platform for running savings groups in Uganda: VSLAs (Village
-        Savings and Loan Associations), SACCOs (Savings and Credit Cooperatives), investment clubs
-        and merry-go-rounds. It replaces the treasurer's paper notebook with an automatic shared
+        Savings and Loan Associations), SACCOs (Savings and Credit Cooperatives) and
+        merry-go-rounds. It replaces the treasurer's paper notebook with an automatic shared
         ledger every member can verify.
       </>
     ),
     plain:
-      "WAMU is a WhatsApp-based platform for running savings groups in Uganda: VSLAs, SACCOs, investment clubs and merry-go-rounds. It replaces the treasurer's paper notebook with an automatic shared ledger every member can verify.",
+      "WAMU is a WhatsApp-based platform for running savings groups in Uganda: VSLAs, SACCOs and merry-go-rounds. It replaces the treasurer's paper notebook with an automatic shared ledger every member can verify.",
   },
   {
     q: 'Do members need to download an app?',
@@ -120,20 +120,20 @@ const FAQS: { q: string; a: React.ReactNode; plain: string }[] = [
       "WAMU is operated by WAMU PAY (UGANDA) LIMITED, a Uganda-registered company, aligned with Uganda's payment systems and cooperative law.",
   },
   {
-    q: 'When does WAMU launch, and how much does it cost?',
+    q: 'When does WAMU launch?',
     a: (
       <>
         WAMU Utilities (UEDCL electricity, NWSC water and airtime) are set to launch by the second
-        week of December while we polish SACCO, VSLA and savings features. Group pricing will be
-        kept simple—join the waitlist on the{' '}
-        <a className="font-semibold text-[#1A4029] underline" href="/pricing">
-          Pricing &amp; Waitlist
+        week of December while we polish SACCO, VSLA and savings features. Reach out anytime on
+        WhatsApp or through the{' '}
+        <a className="font-semibold text-[#1A4029] underline" href="/#contact">
+          contact form
         </a>{' '}
-        page for early-access updates.
+        for rollout updates.
       </>
     ),
     plain:
-      'WAMU Utilities (UEDCL electricity, NWSC water and airtime) are set to launch by the second week of December while we polish SACCO, VSLA and savings features. Join the waitlist on the Pricing and Waitlist page for early-access updates.',
+      'WAMU Utilities (UEDCL electricity, NWSC water and airtime) are set to launch by the second week of December while we polish SACCO, VSLA and savings features.',
   },
   {
     q: 'How do we get started?',
@@ -160,7 +160,7 @@ export function Faq() {
   usePageMeta({
     title: 'FAQ | WAMU savings groups on WhatsApp, Uganda',
     description:
-      'Answers about WAMU: running a VSLA, SACCO, investment club or merry-go-round on WhatsApp in Uganda, plus wedding, funeral and event collections, contributions by MTN MoMo or Airtel Money, reminders, and how member records stay safe.',
+      'Answers about WAMU: running a VSLA, SACCO or merry-go-round on WhatsApp in Uganda, plus wedding, funeral and event collections, contributions by MTN MoMo or Airtel Money, reminders, and how member records stay safe.',
   });
 
   return (
@@ -177,8 +177,7 @@ export function Faq() {
           Running your savings group on WhatsApp
         </h1>
         <p className="mt-3 text-[15px]/[24px] text-[#2D4A38] sm:text-[16px]/[26px]">
-          Short answers about WAMU for VSLAs, SACCOs, investment clubs and merry-go-round groups in
-          Uganda.
+          Short answers about WAMU for VSLAs, SACCOs and merry-go-round groups in Uganda.
         </p>
 
         <div className="mt-8 border-t border-[#C3E8D6] sm:mt-10">
@@ -203,15 +202,6 @@ export function Faq() {
             <span>Message WAMU on WhatsApp</span>
             <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#0D1A12] shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-[#5DCAA5] sm:h-10 sm:w-10">
               <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-            </span>
-          </a>
-          <a
-            href="/pricing"
-            className="wamu-magie-btn-light-secondary group inline-flex w-fit items-center gap-2.5 py-1.5 pl-5 pr-1.5 text-[14.5px] font-semibold hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2 sm:gap-3 sm:py-2 sm:pl-6 sm:pr-2 sm:text-[15px]"
-          >
-            <span>Join the waitlist</span>
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#C3E8D6] bg-white text-[#0F6E56] shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:border-[#0F6E56] group-hover:bg-[#0F6E56] group-hover:text-white sm:h-10 sm:w-10">
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </span>
           </a>
         </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Landmark, Shield, Users, Zap } from 'lucide-react';
+import { ArrowRight, HeartHandshake, Landmark, Users, Zap } from 'lucide-react';
 import { FOCUS_RING_LIGHT } from '../lib/siteConfig';
 import { NwscBadge, UedclBadge } from './PaymentBrandBadges';
 
@@ -152,34 +152,34 @@ export function ServiceCategoriesSection() {
             </div>
           </article>
 
-          {/* Card 4: Financial Services */}
+          {/* Card 4: Event & Community Collections */}
           <article className="group flex flex-col justify-between rounded-[22px] border border-[#C3E8D6]/85 bg-gradient-to-br from-[#F7FAF8] to-[#FFFFFF] p-5 transition-all duration-200 hover:-translate-y-0.5 hover:border-[#1D9E75]/50 hover:shadow-[0_18px_40px_-16px_rgba(15,110,86,0.14)] min-[375px]:p-6 sm:p-7 md:p-8">
             <div>
               <div className="flex flex-wrap items-center justify-between gap-2.5">
                 <span className="inline-flex h-11 w-11 items-center justify-center rounded-[14px] border border-[#C3E8D6] bg-[#EBF6F0] text-[#0F6E56] sm:h-12 sm:w-12">
-                  <Shield className="h-5 w-5" aria-hidden="true" />
+                  <HeartHandshake className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <span className="text-[11.5px] font-medium text-[#5A7A68] sm:text-[12px]">
-                  Insurance · Loans · Investments
+                  Weddings · Funerals · Drives
                 </span>
               </div>
               <h3 className="mt-5 font-editorial text-[20px]/[26px] font-bold text-[#0D1A12] sm:text-[22px]/[28px]">
-                Financial Services
+                Event &amp; Community Collections
               </h3>
               <p className="mt-2 text-[14.5px]/[23px] text-[#2D4A38]">
-                Insurance inquiries, loan coordination and investment club tools brought together inside WAMU&apos;s ecosystem.
+                Organise wedding, funeral and fundraising collections with pledge tracking, reminders and multi-approver payouts.
               </p>
             </div>
 
             <div className="mt-6 rounded-[14px] border border-[#C3E8D6]/80 bg-[#F7FAF8] p-3.5 sm:p-4">
               <div className="flex flex-wrap items-center justify-between gap-2 text-[12px]">
-                <span className="font-semibold text-[#0D1A12]">WAMU Ecosystem · Guided Inquiry</span>
-                <span className="font-medium text-[#0F6E56]">WhatsApp discovery</span>
+                <span className="font-semibold text-[#0D1A12]">Savings Goals · Transparent Totals</span>
+                <span className="font-medium text-[#0F6E56]">MoMo &amp; Airtel Money</span>
               </div>
               <div className="mt-2.5 flex flex-wrap items-center justify-between gap-x-3 gap-y-1.5 border-t border-[#C3E8D6]/60 pt-2.5 text-[12px] text-[#2D4A38]">
-                <span>Insurance, credit &amp; pooled club options</span>
+                <span>Pledges, automated reminders &amp; receipts</span>
                 <a
-                  href="#ecosystem"
+                  href="/collections"
                   className={`inline-flex items-center gap-1 font-semibold text-[#0F6E56] hover:text-[#1D9E75] ${FOCUS_RING_LIGHT}`}
                 >
                   <span>Explore</span>

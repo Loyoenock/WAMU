@@ -10,7 +10,7 @@ const VALUE_PANELS = [
   },
   {
     title: 'Connected financial services',
-    body: 'Bring everyday bill payments, savings, group coordination and financial inquiries together in one thread.',
+    body: 'Bring everyday bill payments, savings, group coordination and community collections together in one thread.',
     Icon: Layers,
   },
   {
@@ -28,8 +28,8 @@ const VALUE_PANELS = [
 const HUB_NODES = [
   { label: 'Payments', detail: 'UEDCL · NWSC · Airtime · School fees', Icon: CreditCard },
   { label: 'Savings', detail: 'Personal & group savings goals', Icon: PiggyBank },
-  { label: 'Group Contributions', detail: 'VSLAs · SACCOs · Collections', Icon: Users },
-  { label: 'Financial Services', detail: 'Insurance · Loans · Investments', Icon: Shield },
+  { label: 'Group Contributions', detail: 'VSLAs · SACCOs · Cooperatives', Icon: Users },
+  { label: 'Event Collections', detail: 'Weddings · Funerals · Fundraisers', Icon: Shield },
 ];
 
 export function WamuDifferenceSection() {
@@ -114,7 +114,7 @@ export function WamuDifferenceSection() {
                     <li>1. Pay Utilities &amp; Airtime</li>
                     <li>2. Savings Goals</li>
                     <li>3. Groups &amp; SACCOs</li>
-                    <li>4. Insurance &amp; Financial Services</li>
+                    <li>4. Wedding &amp; Event Collections</li>
                   </ul>
                 </IncomingBubble>
               </WhatsAppChatShell>

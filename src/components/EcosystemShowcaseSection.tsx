@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Check, CreditCard, Landmark, PiggyBank, Shield } from 'lucide-react';
+import { ArrowRight, Check, CreditCard, Landmark, PiggyBank } from 'lucide-react';
 import { FOCUS_RING_DARK, FOCUS_RING_LIGHT, waLink } from '../lib/siteConfig';
 import { NwscBadge, UedclBadge } from './PaymentBrandBadges';
 
@@ -52,8 +52,8 @@ const ECOSYSTEM_CARDS: EcosystemCard[] = [
     previewTitle: 'Polishing Savings Experience',
     previewDetail:
       'Refining personal and group savings goals, targets and automated reminders ahead of rollout.',
-    ctaLabel: 'Join early access',
-    ctaHref: '/pricing',
+    ctaLabel: 'Join WAMU on WhatsApp',
+    ctaHref: waLink('Hello WAMU, I would like to learn about personal and group savings.'),
     Icon: PiggyBank,
   },
   {
@@ -76,23 +76,6 @@ const ECOSYSTEM_CARDS: EcosystemCard[] = [
     featured: true,
     Icon: Landmark,
   },
-  {
-    id: 'financial-services',
-    label: 'Financial Services',
-    title: 'Financial Services',
-    description:
-      'Broader financial services connected into WAMU’s WhatsApp ecosystem for growing needs.',
-    items: [
-      'Insurance inquiries & guidance',
-      'Loans coordination',
-      'Investments & pooled clubs',
-    ],
-    previewTitle: 'Guided Service Discovery',
-    previewDetail: 'Explore connected financial options from the same familiar WAMU thread.',
-    ctaLabel: 'Contact our team',
-    ctaHref: '#contact',
-    Icon: Shield,
-  },
 ];
 
 const AUDIENCES = [
@@ -103,7 +86,6 @@ const AUDIENCES = [
   'Cooperatives',
   'NGOs',
   'Community organisations',
-  'Insurance clients',
 ];
 
 export function EcosystemShowcaseSection() {
@@ -131,7 +113,7 @@ export function EcosystemShowcaseSection() {
         </div>
 
         {/* Multi-Card Ecosystem Grid */}
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 md:grid-cols-2 md:gap-6 lg:mt-14 2xl:gap-7">
+        <div className="mt-10 grid grid-cols-1 gap-5 sm:mt-12 md:grid-cols-2 md:gap-6 lg:mt-14 lg:grid-cols-3 2xl:gap-7">
           {ECOSYSTEM_CARDS.map((card) => (
             <article
               key={card.id}
@@ -258,7 +240,7 @@ export function EcosystemShowcaseSection() {
           ))}
         </div>
 
-        {/* Unboxed Audience Directory Line + Pricing / Waitlist Clarification */}
+        {/* Unboxed Audience Directory Line */}
         <div
           id="who-we-serve"
           className="mt-10 flex flex-col items-center justify-between gap-4 rounded-[18px] border border-[#C3E8D6] bg-white px-6 py-5 text-center md:flex-row md:text-left"
@@ -277,10 +259,10 @@ export function EcosystemShowcaseSection() {
             ))}
           </div>
           <a
-            href="/pricing"
+            href="#contact"
             className={`shrink-0 whitespace-nowrap text-[13.5px] font-semibold text-[#0F6E56] underline underline-offset-4 hover:text-[#1D9E75] ${FOCUS_RING_LIGHT}`}
           >
-            Pricing &amp; early access
+            Talk to our team
           </a>
         </div>
       </div>

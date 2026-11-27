@@ -3,7 +3,6 @@ import { motion, useScroll, useSpring } from 'motion/react';
 import { useRoute } from './lib/router';
 import { Home } from './pages/Home';
 import { Faq } from './pages/Faq';
-import { Pricing } from './pages/Pricing';
 import { CollectionsPage } from './pages/Collections';
 import { BackToTop } from './components/BackToTop';
 
@@ -15,8 +14,6 @@ export default function App() {
   const page =
     pathname === '/faq' ? (
       <Faq />
-    ) : pathname === '/pricing' ? (
-      <Pricing />
     ) : pathname === '/collections' ? (
       <CollectionsPage />
     ) : (

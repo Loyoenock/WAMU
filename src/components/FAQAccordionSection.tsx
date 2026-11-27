@@ -5,7 +5,7 @@ import { FOCUS_RING_LIGHT, WAMU_PHONE_LINK, WAMU_WHATSAPP_NUMBER, waLink } from 
 const FAQ_ITEMS: { q: string; a: React.ReactNode }[] = [
   {
     q: 'What is WAMU?',
-    a: 'WAMU (meaning “together” or “in one” in Luganda) is a WhatsApp-first financial services platform designed to bring everyday payments, personal and group savings, SACCO coordination, and broader financial services together in one familiar conversation.',
+    a: 'WAMU (meaning “together” or “in one” in Luganda) is a WhatsApp-first financial services platform designed to bring everyday payments, personal and group savings, SACCO coordination, and event collections together in one familiar conversation.',
   },
   {
     q: 'How does WAMU work through WhatsApp?',
@@ -17,11 +17,11 @@ const FAQ_ITEMS: { q: string; a: React.ReactNode }[] = [
   },
   {
     q: 'What financial services are available through WAMU?',
-    a: 'Everyday utility payments (UEDCL electricity, NWSC water and MTN/Airtel airtime) are set to launch by the second week of December. Alongside that launch, we are polishing personal and group savings, VSLA and SACCO coordination, and financial service inquiries covering insurance, loans and investments.',
+    a: 'Everyday utility payments (UEDCL electricity, NWSC water and MTN/Airtel airtime) are set to launch by the second week of December. Alongside that launch, we are polishing personal and group savings, VSLA and SACCO coordination, and community event collections.',
   },
   {
     q: 'Can groups and SACCOs use WAMU?',
-    a: 'Yes. We are currently polishing WAMU’s tools for VSLAs, SACCOs, investment clubs, merry-go-round circles, cooperatives, NGOs and community event collections, with early-access onboarding open through our waitlist.',
+    a: 'Yes. We are currently polishing WAMU’s tools for VSLAs, SACCOs, merry-go-round circles, cooperatives, NGOs and community event collections ahead of rollout.',
   },
   {
     q: 'Can I pay utility bills through WAMU?',

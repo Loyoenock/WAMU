@@ -1,6 +1,6 @@
 # WAMU: Digitize your savings group on WhatsApp
 
-> WAMU is a WhatsApp-based platform for running savings groups in Uganda: VSLAs (Village Savings and Loan Associations), SACCOs (Savings and Credit Cooperatives), investment clubs and merry-go-rounds. Members contribute by MTN Mobile Money or Airtel Money inside WhatsApp, and every contribution and payout is recorded automatically in a shared ledger. There is no app to download.
+> WAMU is a WhatsApp-based platform for running savings groups in Uganda: VSLAs (Village Savings and Loan Associations), SACCOs (Savings and Credit Cooperatives) and merry-go-rounds. Members contribute by MTN Mobile Money or Airtel Money inside WhatsApp, and every contribution and payout is recorded automatically in a shared ledger. There is no app to download.
 
 ## What WAMU does
 
@@ -16,7 +16,6 @@
 
 - VSLAs / Village Savings and Loan Associations
 - SACCOs / Savings and Credit Cooperatives
-- Investment clubs and pooled investment groups
 - Merry-go-round / rotating savings circles (ROSCAs)
 - Wedding and introduction committees, funeral and burial contributions, and event collections (graduations, church fundraisers, school fees drives)
 
@@ -29,8 +28,7 @@ WAMU is operated by WAMU PAY (UGANDA) LIMITED, a Uganda-registered company. Reco
 - [Home](https://www.wamu.co.ug/): Overview of WAMU.
 - [How It Works](https://www.wamu.co.ug/#how-it-works): Registering a group, verifying members, contributing by mobile money, tracking in real time.
 - [Products](https://www.wamu.co.ug/#products): SACCO shares, WhatsApp savings and merry-go-round, mobile money payments.
-- [Who We Serve](https://www.wamu.co.ug/#who-we-serve): VSLAs, SACCOs, investment clubs, merry-go-rounds.
+- [Who We Serve](https://www.wamu.co.ug/#who-we-serve): VSLAs, SACCOs, merry-go-rounds, cooperatives.
 - [Collections](https://www.wamu.co.ug/collections): Wedding, funeral and event collections on WhatsApp, with reminders and multi-approver payouts.
 - [Security](https://www.wamu.co.ug/#security): Identity verification, tamper-resistant ledger, regulated payment rails, data protection.
 - [FAQ](https://www.wamu.co.ug/faq): Common questions about using WAMU on WhatsApp, mobile money, the merry-go-round rotation, SACCO shares, and safety.
-- [Pricing & Waitlist](https://www.wamu.co.ug/pricing): Pricing is priced per group and announced at launch; join the early-access waitlist.

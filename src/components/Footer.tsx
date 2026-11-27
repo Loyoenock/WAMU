@@ -28,8 +28,6 @@ const FOOTER_COLUMNS: { title: string; links: FooterLink[] }[] = [
       { label: 'Savings', href: '/#ecosystem' },
       { label: 'Group Contributions', href: '/collections' },
       { label: 'SACCO Management', href: '/#ecosystem' },
-      { label: 'Insurance & Loans', href: '/#ecosystem' },
-      { label: 'Investments', href: '/#ecosystem' },
     ],
   },
   {
@@ -37,7 +35,6 @@ const FOOTER_COLUMNS: { title: string; links: FooterLink[] }[] = [
     links: [
       { label: 'FAQs', href: '/faq' },
       { label: 'Collections', href: '/collections' },
-      { label: 'Pricing & Waitlist', href: '/pricing' },
       { label: 'Contact', href: '/#contact' },
     ],
   },

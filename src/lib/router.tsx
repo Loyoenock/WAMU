@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from 'react';
 
 /**
- * Tiny client-side router. Four routes ("/", "/faq", "/pricing", "/collections") served by the
+ * Tiny client-side router. Three routes ("/", "/faq", "/collections") served by the
  * SPA fallback in server.ts. No dependency: reads location.pathname, listens for
  * popstate, and intercepts clicks on internal <a href="/..."> links.
  *
@@ -58,7 +58,7 @@ export function useRoute(): string {
 
 const DEFAULT_TITLE = 'WAMU: Digitize Your Savings Group on WhatsApp | Uganda';
 const DEFAULT_DESC =
-  'WAMU digitizes VSLAs, SACCOs, investment clubs and merry-go-round groups in Uganda. Members contribute by MTN MoMo or Airtel Money inside WhatsApp, and every contribution and payout is recorded automatically. No app to download.';
+  'WAMU digitizes VSLAs, SACCOs and merry-go-round groups in Uganda. Members contribute by MTN MoMo or Airtel Money inside WhatsApp, and every contribution and payout is recorded automatically. No app to download.';
 
 /** Set <title> and meta description for a client route; restores the defaults on unmount. */
 export function usePageMeta(meta?: { title?: string; description?: string }) {

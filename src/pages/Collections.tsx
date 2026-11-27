@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { Collections as CollectionsSection } from '../components/Collections';
@@ -99,15 +99,6 @@ export function CollectionsPage() {
                 <span>Start a collection</span>
                 <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#0D1A12] shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-[#5DCAA5] sm:h-10 sm:w-10">
                   <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
-                </span>
-              </a>
-              <a
-                href="/pricing"
-                className="wamu-magie-btn-light-secondary group inline-flex w-fit items-center gap-2.5 py-1.5 pl-5 pr-1.5 text-[14.5px] font-semibold hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2 sm:gap-3 sm:py-2 sm:pl-6 sm:pr-2 sm:text-[15px]"
-              >
-                <span>Join the waitlist</span>
-                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#C3E8D6] bg-white text-[#0F6E56] shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:border-[#0F6E56] group-hover:bg-[#0F6E56] group-hover:text-white sm:h-10 sm:w-10">
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </span>
               </a>
             </div>

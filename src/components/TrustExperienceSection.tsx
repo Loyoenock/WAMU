@@ -23,7 +23,7 @@ const EXPERIENCE_SCENARIOS: ExperienceSlide[] = [
     context: 'Shared Group Ledgers',
     headline: 'Replacing manual notebooks with records every member can check.',
     summary:
-      'VSLAs, SACCOs, investment clubs and merry-go-rounds track contributions, rotation turns and share capital transparently without waiting for a physical meeting.',
+      'VSLAs, SACCOs and merry-go-rounds track contributions, rotation turns and share capital transparently without waiting for a physical meeting.',
   },
   {
     audience: 'Community Collections',
@@ -33,11 +33,11 @@ const EXPERIENCE_SCENARIOS: ExperienceSlide[] = [
       'Track pledges against payments, send gentle WhatsApp reminders to members who have not yet contributed, and keep totals visible to the whole committee.',
   },
   {
-    audience: 'SMEs, NGOs & Insurance Clients',
-    context: 'Connected Financial Services',
-    headline: 'One familiar communication channel for insurance, payments and group coordination.',
+    audience: 'SMEs, NGOs & Organisations',
+    context: 'Connected Operations',
+    headline: 'One familiar communication channel for payments, collections and group coordination.',
     summary:
-      'Originating from WhatsApp automation for insurance inquiries and mobile money payments, WAMU connects everyday operations into one cohesive experience.',
+      'From everyday utility payments to mobile money collections and group records, WAMU connects everyday operations into one cohesive WhatsApp experience.',
   },
 ];
 
