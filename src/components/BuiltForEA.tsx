@@ -54,12 +54,12 @@ export function BuiltForEA() {
       id="who-we-serve"
       className="relative overflow-hidden bg-[#FFFFFF]"
     >
-      <div className="relative z-0 mx-auto flex max-w-[1280px] flex-col items-start gap-[52px] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
-        <div className="flex max-w-[600px] w-full flex-col items-start gap-[14px]">
-          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
+      <div className="relative z-0 mx-auto flex max-w-[1280px] flex-col items-start gap-12 px-6 py-16 md:gap-16 md:px-12 md:py-24 lg:px-20">
+        <div className="flex w-full max-w-[600px] flex-col items-start gap-[14px]">
+          <span className="text-[11px]/[16px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
             WHO WE SERVE
           </span>
-          <h2 className="w-full font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[32px]/[38px] md:text-[42px]/[48px] text-[#0D2016]">
+          <h2 className="w-full font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold tracking-[-0.015em] text-[#0D2016] md:text-[42px]/[48px]">
             WAMU savings products built for how your group actually works.
           </h2>
         </div>
@@ -72,22 +72,22 @@ export function BuiltForEA() {
           />
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 rounded-[20px] ring-1 ring-inset ring-white/45"
+            className="pointer-events-none absolute inset-0 rounded-[20px] ring-1 ring-inset ring-[#0D2016]/10"
           />
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-[20px] md:grid-cols-2 lg:grid-cols-4">
+        <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {CARDS.map((c) => (
             <div
               key={c.key}
-              className={`flex flex-col items-start gap-[18px] rounded-[20px] p-[28px] transition-all duration-200 ease-out hover:-translate-y-1 ${
+              className={`flex flex-col items-start gap-[18px] rounded-[20px] p-7 transition-all duration-200 ease-out hover:-translate-y-1 ${
                 c.dark
-                  ? 'border border-[#5DCAA5]/20 bg-[#1A4029] shadow-[0_16px_34px_-12px_rgba(12,30,18,0.35)] hover:border-[#5DCAA5]/55 hover:shadow-[0_20px_40px_-14px_rgba(12,30,18,0.5)]'
-                  : 'border border-[#C3E8D6]/80 bg-[#F4FBF7] shadow-[0_12px_28px_-12px_rgba(27,67,50,0.08),inset_0_1px_0_rgba(255,255,255,0.92)] hover:border-[#5DCAA5]/80 hover:bg-white hover:shadow-[0_18px_36px_-12px_rgba(26,64,41,0.14)]'
+                  ? 'border border-[#5DCAA5]/20 bg-[#1A4029] shadow-[0_18px_36px_-14px_rgba(6,16,10,0.5)] hover:border-[#5DCAA5]/75'
+                  : 'border border-[#C3E8D6]/80 bg-[#F4FBF7]/90 shadow-[0_12px_28px_-10px_rgba(13,32,22,0.08),0_2px_8px_-2px_rgba(13,32,22,0.04)] hover:border-[#5DCAA5]/75 hover:bg-white'
               }`}
             >
               <span
-                className={`w-fit rounded-[20px] p-[4px_10px] text-[11px] font-semibold ${
+                className={`w-fit rounded-full px-3 py-1 text-[11.5px]/[16px] font-semibold tracking-[-0.01em] md:text-[12px]/[16px] ${
                   c.dark
                     ? 'border border-[#5DCAA5]/25 bg-[#1D9E75]/25 text-[#5DCAA5]'
                     : 'border border-[#C3E8D6]/80 bg-[#E3F5EB] text-[#0F6E56]'
@@ -101,7 +101,7 @@ export function BuiltForEA() {
                 aria-hidden="true"
               />
               <span
-                className={`font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold ${
+                className={`font-[Fraunces,ui-serif,Georgia,serif] text-[19px]/[25px] font-bold tracking-[-0.01em] md:text-[20px]/[26px] ${
                   c.dark ? 'text-[#FFFFFF]' : 'text-[#0D2016]'
                 }`}
               >
@@ -120,8 +120,8 @@ export function BuiltForEA() {
                 }`}
               />
               <p
-                className={`w-full text-[13.5px]/[22px] ${
-                  c.dark ? 'text-[#9FBEAA]' : 'text-[#284E3A]'
+                className={`w-full text-[14px]/[22px] ${
+                  c.dark ? 'text-[#9FBEAA]' : 'text-[#2D4A38]'
                 }`}
               >
                 {c.body}

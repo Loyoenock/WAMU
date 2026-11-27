@@ -136,10 +136,10 @@ export function CTA() {
       <WaMark tone="dark" className="right-[56px] bottom-[28px] h-[104px] w-[104px]" />
 
       <div className="relative mx-auto flex w-full max-w-[1280px] flex-col items-center gap-[28px]">
-        <h2 className="max-w-[680px] text-center font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold text-white md:text-[38px]/[44px] lg:text-[46px]/[53px]">
+        <h2 className="max-w-[680px] text-center font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold tracking-[-0.015em] text-white md:text-[42px]/[48px]">
           Ready to bring your group online?
         </h2>
-        <p className="max-w-[580px] text-center text-[15px]/[24px] text-[#C3E8D6] md:text-[16px]/[26px]">
+        <p className="max-w-[58ch] text-center text-[15px]/[24px] text-[#C3E8D6] md:text-[16px]/[26px]">
           Start with the group you already have. No new app, no restructuring, no complicated onboarding.
           <br />
           Message WAMU on WhatsApp and set up in one sitting.
@@ -153,7 +153,7 @@ export function CTA() {
           {!isFloating && (
             <a
               href="https://wa.me/256788003344"
-              className="wamu-liquid-btn-glass-dark inline-flex items-center gap-[10px] whitespace-nowrap rounded-full p-[18px_36px] text-[16px] font-bold text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C1E12]"
+              className="wamu-liquid-btn-glass-dark inline-flex items-center gap-[10px] whitespace-nowrap rounded-full p-[18px_36px] text-[14.5px]/[20px] font-bold tracking-[-0.01em] text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C1E12] md:text-[15px]/[20px]"
             >
               <WhatsAppIcon className="h-[18px] w-[18px] shrink-0 text-[#0B6B45]" />
               Message WAMU on WhatsApp
@@ -189,7 +189,7 @@ export function CTA() {
               exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: 14 }}
               transition={{ duration: 0.18, ease: [0.16, 1, 0.3, 1] }}
               href="https://wa.me/256788003344"
-              className="wamu-liquid-btn-glass-dark pointer-events-auto inline-flex items-center gap-[10px] whitespace-nowrap rounded-full p-[18px_36px] text-[16px] font-bold text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C1E12]"
+              className="wamu-liquid-btn-glass-dark pointer-events-auto inline-flex items-center gap-[10px] whitespace-nowrap rounded-full p-[18px_36px] text-[14.5px]/[20px] font-bold tracking-[-0.01em] text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C1E12] md:text-[15px]/[20px]"
             >
               <WhatsAppIcon className="h-[18px] w-[18px] shrink-0 text-[#0B6B45]" />
               Message WAMU on WhatsApp

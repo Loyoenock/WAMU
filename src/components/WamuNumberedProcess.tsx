@@ -44,17 +44,17 @@ export function WamuNumberedProcess() {
         {/* Section Header */}
         <div className="mb-12 flex flex-col items-start justify-between gap-4 md:mb-16 md:flex-row md:items-end">
           <div className="max-w-[560px]">
-            <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
+            <span className="text-[11px]/[16px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
               HOW IT WORKS
             </span>
             <h2
               id="wamu-process-heading"
-              className="mt-2.5 font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold text-[#0D2016] md:text-[40px]/[46px]"
+              className="mt-2.5 font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold tracking-[-0.015em] text-[#0D2016] md:text-[40px]/[46px]"
             >
               Four simple steps inside WhatsApp.
             </h2>
           </div>
-          <p className="max-w-[400px] text-[15px]/[24px] text-[#1B4332]">
+          <p className="max-w-[400px] text-[15px]/[24px] text-[#2D4A38] md:text-[16px]/[26px]">
             From everyday bills to group contributions, every transaction follows the same clear, verifiable flow.
           </p>
         </div>
@@ -70,7 +70,7 @@ export function WamuNumberedProcess() {
           {PROCESS_STEPS.map((step, index) => (
             <div
               key={step.num}
-              className="group relative z-10 flex flex-col justify-between rounded-[20px] border border-white/85 bg-[#F4FBF7]/90 p-7 shadow-[0_14px_32px_-12px_rgba(27,67,50,0.09),0_2px_6px_-1px_rgba(27,67,50,0.04),inset_0_1px_0_rgba(255,255,255,0.92)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/80 hover:bg-white hover:shadow-[0_20px_38px_-14px_rgba(27,67,50,0.14)]"
+              className="group relative z-10 flex flex-col justify-between rounded-[20px] border border-white/85 bg-[#F4FBF7]/90 p-7 shadow-[0_12px_28px_-10px_rgba(13,32,22,0.08),0_2px_8px_-2px_rgba(13,32,22,0.04),inset_0_1px_0_rgba(255,255,255,0.92)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/75 hover:bg-white hover:shadow-[0_18px_36px_-12px_rgba(13,32,22,0.14)]"
             >
               <div>
                 {/* Top Hairline & Large Bold Number */}
@@ -87,12 +87,12 @@ export function WamuNumberedProcess() {
                 </div>
 
                 {/* Clear Title Under Number */}
-                <h3 className="mt-6 font-[Fraunces,ui-serif,Georgia,serif] text-[22px]/[28px] font-bold text-[#0D2016]">
+                <h3 className="mt-6 font-[Fraunces,ui-serif,Georgia,serif] text-[19px]/[25px] font-bold tracking-[-0.01em] text-[#0D2016] md:text-[22px]/[28px]">
                   {step.title}
                 </h3>
 
                 {/* Short Supporting Text */}
-                <p className="mt-2.5 text-[14px]/[22px] text-[#284E3A]">
+                <p className="mt-2.5 text-[14px]/[22px] text-[#2D4A38]">
                   {step.description}
                 </p>
               </div>

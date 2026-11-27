@@ -58,16 +58,16 @@ export function Trust() {
       <WaMark tone="dark" className="right-[48px] top-[56px] h-[132px] w-[132px]" />
       <WaMark tone="dark" className="left-[36px] bottom-[56px] h-[104px] w-[104px]" />
 
-      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-16 px-6 py-20 md:px-12 md:py-24 lg:flex-row lg:items-center lg:gap-16 lg:px-20 lg:py-[104px]">
+      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-12 px-6 py-16 md:gap-16 md:px-12 md:py-24 lg:flex-row lg:items-center lg:gap-16 lg:px-20">
         {/* Left: heading + trust points */}
-        <div className="flex w-full flex-col items-start gap-[28px] lg:w-[540px] lg:shrink-0">
-          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#5DCAA5]">
+        <div className="flex w-full flex-col items-start gap-[24px] lg:w-[540px] lg:shrink-0">
+          <span className="text-[11px]/[16px] font-bold uppercase tracking-[2px] text-[#5DCAA5]">
             Security &amp; Trust
           </span>
-          <h2 className="w-full font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[38px] font-bold text-white md:text-[38px]/[46px]">
+          <h2 className="w-full font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold tracking-[-0.015em] text-white md:text-[40px]/[46px]">
             Your group's money and records, protected properly.
           </h2>
-          <p className="w-full text-[15px]/[26px] text-[#C3E8D6]">
+          <p className="w-full max-w-[58ch] text-[15px]/[24px] text-[#C3E8D6] md:text-[16px]/[26px]">
             Trust is the foundation every savings group runs on. WAMU makes that trust harder to
             break: it verifies who members are, keeps records that cannot be quietly edited, and
             routes money through regulated payment channels.
@@ -81,7 +81,7 @@ export function Trust() {
                 </span>
                 <span className="flex flex-1 flex-col gap-[3px]">
                   <span className="text-[14px] font-bold text-white">{item.title}</span>
-                  <span className="text-[13px]/[20px] text-[#9FBEAA]">{item.desc}</span>
+                  <span className="text-[14px]/[22px] text-[#9FBEAA]">{item.desc}</span>
                 </span>
               </li>
             ))}
@@ -89,17 +89,17 @@ export function Trust() {
         </div>
 
         {/* Right: credential grid - frosted mint-white cards */}
-        <div className="grid w-full flex-1 grid-cols-1 gap-[16px] sm:grid-cols-2">
+        <div className="grid w-full flex-1 grid-cols-1 gap-5 sm:grid-cols-2 lg:gap-6">
           {CREDENTIALS.map((c) => (
             <div
               key={c.title}
-              className="flex flex-col gap-[10px] rounded-[20px] border border-[#C3E8D6] bg-[#F4FBF7] p-[24px] shadow-[0_16px_36px_-18px_rgba(0,0,0,0.55),inset_0_1px_0_rgba(255,255,255,0.9)] transition duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5] hover:bg-white"
+              className="flex flex-col gap-[10px] rounded-[20px] border border-[#C3E8D6] bg-[#F4FBF7] p-8 shadow-[0_12px_28px_-10px_rgba(13,32,22,0.08),0_2px_8px_-2px_rgba(13,32,22,0.04)] transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/75 hover:bg-white"
             >
               <span className="flex h-10 w-10 items-center justify-center rounded-[12px] border border-[#C3E8D6] bg-[#E3F5EB] text-[#0B6B45]">
                 <c.Icon className="h-[20px] w-[20px] text-[#0B6B45]" strokeWidth={1.75} aria-hidden="true" />
               </span>
-              <span className="mt-1 text-[15px] font-bold text-[#0D2016]">{c.title}</span>
-              <span className="text-[12.5px]/[19px] text-[#284E3A]">{c.sub}</span>
+              <span className="mt-1 font-[Fraunces,ui-serif,Georgia,serif] text-[19px]/[25px] font-bold tracking-[-0.01em] text-[#0D2016] md:text-[20px]/[26px]">{c.title}</span>
+              <span className="text-[14px]/[22px] text-[#2D4A38]">{c.sub}</span>
               {c.logos && (
                 <div className="mt-1 flex items-center gap-[6px]">
                   <span className="flex h-[30px] w-[30px] shrink-0 items-center justify-center rounded-[6px] bg-[#ffc403]">

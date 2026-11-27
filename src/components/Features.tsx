@@ -27,9 +27,9 @@ export function Features() {
       </h2>
 
       {/* Band 1 - F2 SACCO */}
-      <div className="relative overflow-hidden border-t border-[#C3E8D6]/75 bg-[#FFFFFF]">
+      <div className="relative overflow-hidden border-t border-[#C3E8D6]/75 bg-[#F4FBF7]">
         <WaMark tone="light" className="right-[48px] bottom-[40px] h-[128px] w-[128px]" />
-        <div className="relative mx-auto flex max-w-[1280px] flex-col items-center gap-10 px-6 py-16 md:px-12 md:py-20 lg:min-h-[560px] lg:flex-row lg:gap-14 lg:px-20">
+        <div className="relative mx-auto flex max-w-[1280px] flex-col items-center gap-12 px-6 py-16 md:px-12 md:py-24 lg:min-h-[560px] lg:flex-row lg:gap-16 lg:px-20">
           {/* Sculpted Frosted Mint Pedestal with Ambient Canopy Glow */}
           <div className="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-[24px] border border-[#C3E8D6]/90 bg-gradient-to-br from-[#E3F5EB] via-[#D9F0E3] to-[#C3E8D6]/75 px-6 py-10 shadow-[0_18px_40px_-14px_rgba(13,32,22,0.12),inset_0_1px_0_rgba(255,255,255,0.92)] lg:w-[500px] lg:py-12">
             <div
@@ -46,13 +46,13 @@ export function Features() {
           </div>
 
           <div className="flex flex-1 flex-col items-start justify-center gap-[24px]">
-            <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
+            <span className="text-[11px]/[16px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
               SACCO SHARES
             </span>
-            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[28px]/[34px] font-bold text-[#0D2016] md:text-[34px]/[41px]">
+            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[26px]/[32px] font-bold tracking-[-0.01em] text-[#0D2016] md:text-[32px]/[38px]">
               Share ledgers built for how cooperatives actually work.
             </h3>
-            <p className="text-[15px]/[26px] text-[#1B4332]">
+            <p className="max-w-[58ch] text-[15px]/[24px] text-[#2D4A38] md:text-[16px]/[26px]">
               SACCOs need share capital tracked separately from savings. WAMU's shares ledger
               records each member's purchases, dividends, and standing in a structure a board or
               auditor can actually review.
@@ -64,7 +64,7 @@ export function Features() {
                     className="h-[8px] w-[8px] shrink-0 rounded-full bg-[#1D9E75]"
                     aria-hidden="true"
                   />
-                  <span className="text-[14px] text-[#0D2016]">{row}</span>
+                  <span className="text-[14px]/[22px] text-[#0D2016]">{row}</span>
                 </div>
               ))}
             </div>
@@ -73,9 +73,9 @@ export function Features() {
       </div>
 
       {/* Band 2 - F1 WhatsApp */}
-      <div className="relative overflow-hidden border-t border-[#C3E8D6]/75 bg-[#F4FBF7]">
+      <div className="relative overflow-hidden border-t border-[#C3E8D6]/75 bg-[#FFFFFF]">
         <WaMark tone="dark" className="left-[24px] bottom-[36px] h-[120px] w-[120px]" />
-        <div className="relative mx-auto flex max-w-[1280px] flex-col items-center gap-10 px-6 py-16 md:px-12 md:py-20 lg:min-h-[560px] lg:flex-row lg:gap-14 lg:px-20">
+        <div className="relative mx-auto flex max-w-[1280px] flex-col items-center gap-12 px-6 py-16 md:px-12 md:py-24 lg:min-h-[560px] lg:flex-row lg:gap-16 lg:px-20">
           {/* Sculpted Deep Forest Pedestal with Radial Canopy Illumination */}
           <div className="relative flex w-full shrink-0 items-center justify-center overflow-hidden rounded-[24px] border border-[#5DCAA5]/30 bg-gradient-to-br from-[#1A4029] via-[#133120] to-[#0D2016] px-6 py-10 shadow-[0_24px_52px_-16px_rgba(12,30,18,0.42),inset_0_1px_0_rgba(255,255,255,0.16)] lg:w-[500px] lg:py-12">
             <div
@@ -98,13 +98,13 @@ export function Features() {
           </div>
 
           <div className="flex flex-1 flex-col items-start justify-center gap-[24px]">
-            <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
+            <span className="text-[11px]/[16px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
               WHATSAPP SAVINGS &amp; MERRY-GO-ROUND
             </span>
-            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[28px]/[34px] font-bold text-[#0D2016] md:text-[34px]/[41px]">
+            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[26px]/[32px] font-bold tracking-[-0.01em] text-[#0D2016] md:text-[32px]/[38px]">
               Your group's contributions, collected and tracked automatically.
             </h3>
-            <p className="text-[15px]/[26px] text-[#1B4332]">
+            <p className="max-w-[58ch] text-[15px]/[24px] text-[#2D4A38] md:text-[16px]/[26px]">
               Members contribute via MTN or Airtel directly in WhatsApp. The merry-go-round rotation
               is calculated automatically. Payout order, dates, and amounts fixed so no one argues
               over a notebook.
@@ -113,7 +113,7 @@ export function Features() {
               {F1_PILLS.map((pill) => (
                 <span
                   key={pill}
-                  className="rounded-full border border-[#C3E8D6] bg-white px-[14px] py-[7px] text-[12px] font-medium text-[#0F6E56] shadow-[0_2px_6px_rgba(13,32,22,0.05),inset_0_1px_0_rgba(255,255,255,0.9)]"
+                  className="rounded-full border border-[#C3E8D6] bg-[#F4FBF7] px-[14px] py-[7px] text-[11.5px]/[16px] font-medium tracking-[-0.01em] text-[#0F6E56] shadow-[0_2px_6px_rgba(13,32,22,0.05),inset_0_1px_0_rgba(255,255,255,0.9)] md:text-[12px]/[16px]"
                 >
                   {pill}
                 </span>
@@ -127,22 +127,22 @@ export function Features() {
       <div className="relative overflow-hidden bg-[#1D9E75]">
         <WaMark tone="gold" className="right-[80px] top-[48px] h-[150px] w-[150px]" />
         <WaMark tone="gold" className="left-[32px] bottom-[36px] h-[128px] w-[128px]" />
-        <div className="relative z-[1] mx-auto flex max-w-[1280px] flex-col gap-10 px-6 py-16 md:px-12 md:py-20 lg:min-h-[380px] lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:px-20">
+        <div className="relative z-[1] mx-auto flex max-w-[1280px] flex-col gap-12 px-6 py-16 md:px-12 md:py-24 lg:min-h-[380px] lg:flex-row lg:items-center lg:justify-between lg:gap-16 lg:px-20">
           <div className="flex w-full max-w-[580px] flex-col items-start justify-center gap-[20px]">
-            <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#C3E8D6]">
+            <span className="text-[11px]/[16px] font-bold uppercase tracking-[2px] text-[#C3E8D6]">
               MOBILE MONEY &amp; PAYMENTS
             </span>
-            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[36px]/[40px] font-bold text-[#C3E8D6] md:text-[48px]/[53px]">
+            <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold tracking-[-0.015em] text-[#C3E8D6] md:text-[42px]/[48px]">
               Stop moving cash by hand.
             </h3>
-            <p className="text-[15px]/[26px] text-[#C3E8D6]">
+            <p className="max-w-[58ch] text-[15px]/[24px] text-[#C3E8D6] md:text-[16px]/[26px]">
               Contributions and payouts all move through MTN MoMo or Airtel Money. Each payment
               triggers automatically and generates its own WhatsApp confirmation. No manual entries,
               no disputed figures.
             </p>
           </div>
-          <div className="flex flex-1 flex-col items-start justify-center gap-[16px] lg:items-end">
-            <div className="flex w-full max-w-[340px] flex-row items-center gap-[16px] rounded-[18px] border border-[#C3E8D6]/25 bg-[#0F6E56]/70 p-[18px_22px] shadow-[0_14px_30px_-12px_rgba(13,32,22,0.28)] backdrop-blur-sm">
+          <div className="flex flex-1 flex-col items-start justify-center gap-5 lg:items-end">
+            <div className="flex w-full max-w-[340px] flex-row items-center gap-[16px] rounded-[20px] border border-[#C3E8D6]/25 bg-[#0F6E56]/70 p-[18px_22px] shadow-[0_14px_30px_-12px_rgba(13,32,22,0.28)] backdrop-blur-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#C3E8D6]/65">
               <div className="flex h-[56px] w-[56px] shrink-0 items-center justify-center rounded-[12px] bg-[#ffc403]">
                 <svg viewBox="0 0 820 820" className="h-[40px] w-[40px] shrink-0" aria-hidden="true">
                   <path d={MTN_PATH} fill="#0C1E12" />
@@ -153,7 +153,7 @@ export function Features() {
                 <span className="text-[12px] text-[#C3E8D6]">Uganda's largest network</span>
               </div>
             </div>
-            <div className="flex w-full max-w-[340px] flex-row items-center gap-[16px] rounded-[18px] border border-[#C3E8D6]/25 bg-[#0F6E56]/70 p-[18px_22px] shadow-[0_14px_30px_-12px_rgba(13,32,22,0.28)] backdrop-blur-sm">
+            <div className="flex w-full max-w-[340px] flex-row items-center gap-[16px] rounded-[20px] border border-[#C3E8D6]/25 bg-[#0F6E56]/70 p-[18px_22px] shadow-[0_14px_30px_-12px_rgba(13,32,22,0.28)] backdrop-blur-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#C3E8D6]/65">
               <div className="flex h-[56px] w-[56px] shrink-0 items-center justify-center rounded-[12px] bg-[#FFFFFF]">
                 <svg viewBox="0 0 122.88 123.79" className="h-[32px] w-[32px] shrink-0" aria-hidden="true">
                   <path d={AIRTEL_PATH} fill="#ed1d24" />

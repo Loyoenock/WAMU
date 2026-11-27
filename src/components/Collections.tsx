@@ -48,41 +48,41 @@ export function Collections() {
       <WaMark tone="dark" className="right-[40px] top-[48px] h-[132px] w-[132px]" />
       <WaMark tone="dark" className="left-[24px] bottom-[40px] h-[104px] w-[104px]" />
 
-      <div className="relative z-[1] mx-auto flex max-w-[1280px] flex-col items-start gap-[48px] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
+      <div className="relative z-[1] mx-auto flex max-w-[1280px] flex-col items-start gap-12 px-6 py-16 md:gap-16 md:px-12 md:py-24 lg:px-20">
         <div className="flex w-full max-w-[680px] flex-col items-start gap-[14px]">
-          <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#5DCAA5]">
+          <span className="text-[11px]/[16px] font-bold uppercase tracking-[2px] text-[#5DCAA5]">
             SAVINGS GOALS · COLLECTIONS
           </span>
-          <h2 className="w-full font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#F4FBF7] md:text-[42px]/[48px]">
+          <h2 className="w-full font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold tracking-[-0.015em] text-[#F4FBF7] md:text-[42px]/[48px]">
             Weddings, funerals and events. Collected on WhatsApp, counted correctly.
           </h2>
-          <p className="text-[16px]/[26px] text-[#9FBEAA]">
+          <p className="max-w-[58ch] text-[15px]/[24px] text-[#9FBEAA] md:text-[16px]/[26px]">
             Ugandans already contribute for each other constantly. Every one of these is a WAMU
             savings goal: a target, a deadline, contributions by MTN MoMo or Airtel Money, and
             automatic reminders. Same goal, different occasion.
           </p>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-[20px] md:grid-cols-3">
+        <div className="grid w-full grid-cols-1 gap-5 md:grid-cols-3 lg:gap-6">
           {COLLECTIONS.map((c) => (
             <div
               key={c.key}
-              className="flex flex-col items-start gap-[16px] rounded-[20px] border border-[#5DCAA5]/20 bg-[#1A4029]/90 p-[28px] shadow-[0_14px_32px_-12px_rgba(0,0,0,0.35)] transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/55 hover:bg-[#1A4029] hover:shadow-[0_18px_36px_-14px_rgba(0,0,0,0.55)]"
+              className="flex flex-col items-start gap-[16px] rounded-[20px] border border-[#5DCAA5]/20 bg-[#1A4029] p-8 shadow-[0_18px_36px_-14px_rgba(6,16,10,0.5)] transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/75 hover:shadow-[0_22px_42px_-14px_rgba(0,0,0,0.6)]"
             >
-              <span className="w-fit rounded-[20px] border border-[#5DCAA5]/25 bg-[#1D9E75]/25 p-[4px_10px] text-[11px] font-semibold text-[#5DCAA5]">
+              <span className="w-fit rounded-full border border-[#5DCAA5]/25 bg-[#1D9E75]/25 px-3 py-1 text-[11.5px]/[16px] font-semibold tracking-[-0.01em] text-[#5DCAA5] md:text-[12px]/[16px]">
                 {c.tag}
               </span>
               <c.Icon className="h-[30px] w-[30px] text-[#5DCAA5]" strokeWidth={1.5} aria-hidden="true" />
-              <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold text-[#FFFFFF]">
+              <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[19px]/[25px] font-bold tracking-[-0.01em] text-[#FFFFFF] md:text-[20px]/[26px]">
                 {c.name}
               </h3>
-              <p className="w-full text-[13.5px]/[22px] text-[#9FBEAA]">{c.body}</p>
+              <p className="w-full text-[14px]/[22px] text-[#9FBEAA]">{c.body}</p>
               <div className="h-[1px] w-full bg-[#2D5A3D]" />
               <div className="flex flex-col gap-[10px]">
                 {c.rows.map((row) => (
                   <div key={row} className="flex flex-row items-center gap-[12px]">
                     <span className="h-[8px] w-[8px] shrink-0 rounded-full bg-[#5DCAA5]" aria-hidden="true" />
-                    <span className="text-[13px] text-[#E3F5EB]">{row}</span>
+                    <span className="text-[13.5px]/[20px] text-[#E3F5EB]">{row}</span>
                   </div>
                 ))}
               </div>
@@ -90,11 +90,11 @@ export function Collections() {
           ))}
         </div>
 
-        <div className="flex w-full flex-col items-start gap-[20px] rounded-[20px] border border-[#5DCAA5]/30 bg-[#1D9E75] p-[28px] shadow-[0_18px_38px_-14px_rgba(0,0,0,0.45)] md:flex-row md:items-center md:justify-between md:p-[32px_40px]">
+        <div className="flex w-full flex-col items-start gap-[20px] rounded-[20px] border border-[#5DCAA5]/30 bg-[#1D9E75] p-8 shadow-[0_18px_38px_-14px_rgba(0,0,0,0.45)] md:flex-row md:items-center md:justify-between md:px-10 md:py-8">
           <div className="flex flex-row items-start gap-[16px] md:items-center">
             <BellRing className="mt-[2px] h-[28px] w-[28px] shrink-0 text-[#C3E8D6] md:mt-0" strokeWidth={1.5} aria-hidden="true" />
             <div className="flex flex-col gap-[4px]">
-              <span className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold text-[#C3E8D6]">
+              <span className="font-[Fraunces,ui-serif,Georgia,serif] text-[19px]/[25px] font-bold tracking-[-0.01em] text-[#C3E8D6] md:text-[20px]/[26px]">
                 Reminders do the chasing for you.
               </span>
               <span className="text-[14px]/[22px] text-[#C3E8D6]">
@@ -105,7 +105,7 @@ export function Collections() {
           </div>
           <a
             href="https://wa.me/256788003344?text=I%20want%20to%20start%20a%20collection%20on%20WAMU"
-            className="inline-flex shrink-0 items-center gap-[10px] rounded-full border border-[#5DCAA5]/40 bg-[#0D2016] px-[28px] py-[15px] text-[15px] font-bold text-[#C3E8D6] shadow-[0_12px_26px_-8px_rgba(13,32,22,0.55),inset_0_1px_0_rgba(255,255,255,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#C3E8D6]/65 hover:bg-[#133120] hover:text-white active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#C3E8D6] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D9E75]"
+            className="inline-flex shrink-0 items-center gap-[10px] rounded-full border border-[#5DCAA5]/40 bg-[#0D2016] px-[28px] py-[15px] text-[14.5px]/[20px] font-bold tracking-[-0.01em] text-[#C3E8D6] shadow-[0_12px_26px_-8px_rgba(13,32,22,0.55),inset_0_1px_0_rgba(255,255,255,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#C3E8D6]/65 hover:bg-[#133120] hover:text-white active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D9E75] md:text-[15px]/[20px]"
           >
             <WhatsAppIcon className="h-[18px] w-[18px] text-[#5DCAA5]" />
             Start a goal

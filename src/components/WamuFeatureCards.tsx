@@ -52,7 +52,7 @@ const FEATURE_CARDS: FeatureCardItem[] = [
 function StatusPill({ status }: { status: FeatureCardItem['status'] }) {
   if (status === 'Available') {
     return (
-      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#0F6E56]/20 bg-[#CEEFDC]/90 px-3 py-1 text-[11.5px] font-medium tracking-[-0.01em] text-[#0D2016]">
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#0F6E56]/20 bg-[#CEEFDC]/90 px-3 py-1 text-[11.5px]/[16px] font-medium tracking-[-0.01em] text-[#0D2016] md:text-[12px]/[16px]">
         <span className="h-1.5 w-1.5 rounded-full bg-[#1D9E75]" aria-hidden="true" />
         {status}
       </span>
@@ -61,7 +61,7 @@ function StatusPill({ status }: { status: FeatureCardItem['status'] }) {
 
   if (status === 'Starting with') {
     return (
-      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1D9E75]/35 bg-[#82E0B2]/65 px-3 py-1 text-[11.5px] font-medium tracking-[-0.01em] text-[#0D2016]">
+      <span className="inline-flex items-center gap-1.5 rounded-full border border-[#1D9E75]/35 bg-[#82E0B2]/65 px-3 py-1 text-[11.5px]/[16px] font-medium tracking-[-0.01em] text-[#0D2016] md:text-[12px]/[16px]">
         <span className="h-1.5 w-1.5 rounded-full bg-[#0F6E56]" aria-hidden="true" />
         {status}
       </span>
@@ -69,7 +69,7 @@ function StatusPill({ status }: { status: FeatureCardItem['status'] }) {
   }
 
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#C3E8D6] bg-[#F4FBF7] px-3 py-1 text-[11.5px] font-medium tracking-[-0.01em] text-[#1B4332]">
+    <span className="inline-flex items-center gap-1.5 rounded-full border border-[#C3E8D6] bg-[#F4FBF7] px-3 py-1 text-[11.5px]/[16px] font-medium tracking-[-0.01em] text-[#1B4332] md:text-[12px]/[16px]">
       <span className="h-1.5 w-1.5 rounded-full bg-[#5DCAA5]" aria-hidden="true" />
       {status}
     </span>
@@ -90,19 +90,19 @@ export function WamuFeatureCards() {
 
       <div className="relative z-10 mx-auto max-w-[1280px]">
         {/* Section Header */}
-        <div className="mb-10 flex flex-col gap-4 md:mb-14 md:flex-row md:items-end md:justify-between">
+        <div className="mb-12 flex flex-col gap-4 md:mb-16 md:flex-row md:items-end md:justify-between">
           <div className="max-w-[600px]">
-            <span className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
+            <span className="text-[11px]/[16px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
               CORE CAPABILITIES
             </span>
             <h2
               id="wamu-feature-cards-heading"
-              className="mt-2.5 font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold text-[#0D2016] md:text-[40px]/[46px]"
+              className="mt-2.5 font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold tracking-[-0.015em] text-[#0D2016] md:text-[40px]/[46px]"
             >
               Daily utilities and group finance, unified in one place.
             </h2>
           </div>
-          <p className="max-w-[420px] text-[15px]/[24px] text-[#1B4332]">
+          <p className="max-w-[420px] text-[15px]/[24px] text-[#2D4A38] md:text-[16px]/[26px]">
             Fast mobile money checkouts for your household bills alongside structured, shared ledgers for your community.
           </p>
         </div>
@@ -114,7 +114,7 @@ export function WamuFeatureCards() {
             return (
               <article
                 key={card.id}
-                className="group relative flex flex-col justify-between rounded-[20px] border border-[#C3E8D6]/80 bg-white/95 p-7 shadow-[0_14px_34px_-10px_rgba(13,32,22,0.07),0_4px_12px_-2px_rgba(13,32,22,0.04),inset_0_1px_0_0_rgba(255,255,255,0.95)] backdrop-blur-md transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/85 hover:bg-white hover:shadow-[0_20px_40px_-12px_rgba(27,67,50,0.14)]"
+                className="group relative flex flex-col justify-between rounded-[20px] border border-[#C3E8D6]/80 bg-white p-7 shadow-[0_12px_28px_-10px_rgba(13,32,22,0.08),0_2px_8px_-2px_rgba(13,32,22,0.04)] transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/75 hover:shadow-[0_18px_36px_-12px_rgba(13,32,22,0.13)]"
               >
                 <div>
                   {/* Top row: Icon badge on left + Status pill on right */}
@@ -127,12 +127,12 @@ export function WamuFeatureCards() {
                   </div>
 
                   {/* Card Title */}
-                  <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px]/[26px] font-bold text-[#0D2016]">
+                  <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[19px]/[25px] font-bold tracking-[-0.01em] text-[#0D2016] md:text-[20px]/[26px]">
                     {card.title}
                   </h3>
 
                   {/* Short Description */}
-                  <p className="mt-2.5 text-[14px]/[22px] text-[#284E3A]">
+                  <p className="mt-2.5 text-[14px]/[22px] text-[#2D4A38]">
                     {card.description}
                   </p>
                 </div>

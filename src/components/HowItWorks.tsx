@@ -44,41 +44,45 @@ export function HowItWorks() {
       <WaMark tone="light" className="left-[40px] top-[50px] h-[150px] w-[150px] -z-0" />
       <WaMark tone="light" className="right-[56px] bottom-[72px] h-[128px] w-[128px] -z-0" />
 
-      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-[60px] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
-        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-8">
-          <div className="flex flex-col gap-[14px] items-start max-w-[520px] w-full">
-            <span className="text-[11px] font-bold tracking-[2px] text-[#0F6E56]">
+      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-12 px-6 py-16 md:gap-16 md:px-12 md:py-24 lg:px-20">
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+          <div className="flex w-full max-w-[520px] flex-col items-start gap-[14px]">
+            <span className="text-[11px]/[16px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
               SAVINGS &amp; GROUPS
             </span>
-            <h2 className="font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[34px]/[40px] md:text-[42px]/[48px] text-[#0D2016]">
+            <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold tracking-[-0.015em] text-[#0D2016] md:text-[42px]/[48px]">
               Keep your group records in one place.
             </h2>
           </div>
-          <p className="text-[15px]/[25px] text-[#1B4332] w-full md:w-[380px] md:shrink-0">
+          <p className="w-full text-[15px]/[24px] text-[#2D4A38] md:w-[380px] md:shrink-0 md:text-[16px]/[26px]">
             No tech background needed. If your treasurer can send a voice note on WhatsApp, they
             can run your group's finances on WAMU.
           </p>
         </div>
 
-        <div className="relative h-[260px] w-full overflow-hidden rounded-[20px] border border-[#C3E8D6]/85 shadow-[0_14px_32px_-12px_rgba(27,67,50,0.1)] md:h-[320px]">
+        <div className="relative h-[260px] w-full overflow-hidden rounded-[20px] border border-[#C3E8D6]/80 shadow-[0_14px_32px_-12px_rgba(27,67,50,0.1)] md:h-[320px]">
           <img
             src="/images/how-it-works.webp"
             alt="A savings group treasurer using WhatsApp on a phone during a group meeting"
-            className="absolute inset-0 w-full h-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover"
+          />
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 rounded-[20px] ring-1 ring-inset ring-[#0D2016]/10"
           />
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-[20px]">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:gap-6">
           {STEPS.map((step) => (
             <div
               key={step.num}
-              className={`flex flex-col gap-[20px] p-[32px] rounded-[20px] transition-all duration-200 ease-out hover:-translate-y-1 ${
+              className={`flex flex-col gap-[20px] rounded-[20px] p-8 transition-all duration-200 ease-out hover:-translate-y-1 ${
                 step.highlight
-                  ? 'border border-[#5DCAA5]/25 bg-[#1A4029] hover:shadow-[0_18px_36px_-14px_rgba(12,30,18,0.5)]'
-                  : 'border border-[#C3E8D6]/85 bg-[#F4FBF7]/90 shadow-[0_12px_28px_-12px_rgba(27,67,50,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md hover:border-[#5DCAA5]/75 hover:bg-white/95 hover:shadow-[0_16px_32px_-12px_rgba(26,64,41,0.14)]'
+                  ? 'border border-[#5DCAA5]/20 bg-[#1A4029] shadow-[0_18px_36px_-14px_rgba(6,16,10,0.5)] hover:border-[#5DCAA5]/75'
+                  : 'border border-[#C3E8D6]/80 bg-[#F4FBF7]/90 shadow-[0_12px_28px_-10px_rgba(13,32,22,0.08),0_2px_8px_-2px_rgba(13,32,22,0.04)] backdrop-blur-md hover:border-[#5DCAA5]/75 hover:bg-white'
               }`}
             >
-              <div className="flex flex-row justify-between items-center">
+              <div className="flex flex-row items-center justify-between">
                 <span
                   className={`text-[13px] font-bold tracking-[1px] ${
                     step.highlight ? 'text-[#5DCAA5]' : 'text-[#0F6E56]'
@@ -87,22 +91,22 @@ export function HowItWorks() {
                   {step.num}
                 </span>
                 <span
-                  className={`w-[8px] h-[8px] rounded-full ${
+                  className={`h-[8px] w-[8px] rounded-full ${
                     step.highlight ? 'bg-[#5DCAA5]' : 'bg-[#1D9E75]/60'
                   }`}
                   aria-hidden="true"
                 />
               </div>
               <h3
-                className={`font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[20px] ${
+                className={`font-[Fraunces,ui-serif,Georgia,serif] text-[19px]/[25px] font-bold tracking-[-0.01em] md:text-[20px]/[26px] ${
                   step.highlight ? 'text-[#FFFFFF]' : 'text-[#0D2016]'
                 }`}
               >
                 {step.title}
               </h3>
               <p
-                className={`text-[14px]/[23px] ${
-                  step.highlight ? 'text-[#C3E8D6]' : 'text-[#284E3A]'
+                className={`text-[14px]/[22px] ${
+                  step.highlight ? 'text-[#C3E8D6]' : 'text-[#2D4A38]'
                 }`}
               >
                 {step.body}

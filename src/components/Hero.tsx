@@ -280,16 +280,16 @@ export function Hero() {
       <div className="relative z-[2] mx-auto flex max-w-[1280px] flex-col items-start gap-12 lg:flex-row lg:items-center lg:justify-between lg:gap-16">
         {/* Copy */}
         <div className="flex w-full max-w-[660px] flex-col items-start gap-6">
-          <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
+          <p className="text-[11px]/[16px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
             UTILITY PAYMENTS &amp; GROUP SAVINGS
           </p>
 
-          <h1 className="flex flex-col font-[Fraunces,ui-serif,Georgia,serif] font-bold text-[34px]/[38px] md:text-[46px]/[50px] lg:text-[58px]/[64px]">
+          <h1 className="flex flex-col font-[Fraunces,ui-serif,Georgia,serif] font-bold tracking-[-0.02em] text-[34px]/[38px] md:text-[46px]/[50px] lg:text-[58px]/[64px]">
             <span className="text-[#0D2016]">Everyday payments,</span>
-            <span className="text-[#1A4029] lg:leading-[61px]">right in WhatsApp.</span>
+            <span className="text-[#1A4029] lg:leading-[64px]">right in WhatsApp.</span>
           </h1>
 
-          <p className="max-w-[520px] text-[16px]/[26px] text-[#1A4029]">
+          <p className="max-w-[58ch] text-[15px]/[24px] text-[#1A4029] md:text-[16px]/[26px]">
             Start with utilities, then manage the savings goals and groups that matter to you.
           </p>
 
@@ -338,7 +338,7 @@ export function Hero() {
 
           <a
             href="#utilities"
-            className="wamu-hero-explore-btn mt-1 inline-flex items-center gap-[10px] rounded-full px-[32px] py-[17px] text-[15px] font-bold text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#C3E8D6]"
+            className="wamu-hero-explore-btn mt-1 inline-flex items-center gap-[10px] rounded-full px-[32px] py-[17px] text-[14.5px]/[20px] font-bold tracking-[-0.01em] text-[#0D2016] hover:-translate-y-0.5 active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#C3E8D6] md:text-[15px]/[20px]"
           >
             <WhatsAppIcon className="h-[18px] w-[18px] text-[#0D2016]" />
             Explore utilities
