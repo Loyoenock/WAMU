@@ -2,72 +2,43 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-head: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
-  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-head: Georgia, "Times New Roman", serif;
+  --font-serif: Georgia, "Times New Roman", serif;
 
-  /* WAMU Design Direction — Warm Editorial Authority Meets Mint-Glass Conversational Clarity */
+  /* Official WAMU Colour Palette */
   --color-wamu-forest: #0F6E56;
   --color-wamu-forest-deep: #1A4029;
   --color-wamu-canopy: #1D9E75;
   --color-wamu-light: #5DCAA5;
   --color-wamu-mist: #C3E8D6;
-  --color-wamu-mint-soft: #D9F0E3;
-  --color-wamu-mint-pale: #E0F3E8;
-  --color-wamu-mint-white: #F4FBF7;
-  --color-wamu-midnight: #0D2016;
-  --color-wamu-midnight-deep: #0C1E12;
-  --color-wamu-midnight-stage: #0D1A12;
+  --color-wamu-mist-soft: #EBF6F0;
+  --color-wamu-offwhite: #F7FAF8;
+  --color-wamu-midnight: #0D1A12;
   --color-wamu-grove: #2D4A38;
   --color-wamu-moss: #5A7A68;
   --color-wamu-dark-muted: #9FBEAA;
 
-  /* Semantic aliases */
-  --color-brand-dark: #0D2016;
+  /* Compatibility aliases for secondary pages */
+  --color-brand-dark: #0D1A12;
   --color-brand-green: #1A4029;
   --color-brand-mid: #0F6E56;
   --color-brand-accent: #1D9E75;
-  --color-brand-accent-light: #E3F5EB;
-  --color-brand-ink: #0C1E12;
-  --color-brand-gold-deep: #1D9E75;
-
-  --color-bg-cream: #E0F3E8;
-  --color-bg-warm: #F4FBF7;
+  --color-brand-ink: #0D1A12;
+  --color-bg-warm: #F7FAF8;
   --color-bg-white: #FFFFFF;
-
-  --color-text-primary: #0D2016;
-  --color-text-body: #2D4A38;
-  --color-text-muted: #5A7A68;
-  --color-text-inverse: #F4FBF7;
-  --color-text-accent: #1D9E75;
-
-  --color-border-light: #C3E8D6;
-}
-
-@layer utilities {
-  @keyframes fadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  .animate-fade-in-up {
-    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  }
 }
 
 @layer base {
   html {
     overflow-x: hidden;
     scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
   }
+
   body {
-    @apply bg-bg-warm text-brand-ink font-sans antialiased overflow-x-hidden selection:bg-[#5DCAA5]/40 selection:text-[#0D2016];
+    @apply bg-[#F7FAF8] text-[#0D1A12] font-sans antialiased overflow-x-hidden selection:bg-[#5DCAA5]/35 selection:text-[#0D1A12];
   }
+
   @media (prefers-reduced-motion: reduce) {
     html {
       scroll-behavior: auto;
@@ -80,290 +51,126 @@
   }
 }
 
-.wamu-nav-pill-surface {
-  background-color: rgba(224, 245, 233, 0.58);
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.56) 0%,
-    rgba(224, 245, 233, 0.64) 44%,
-    rgba(200, 230, 201, 0.52) 86%,
-    rgba(27, 67, 50, 0.06) 100%
-  );
-  -webkit-backdrop-filter: blur(26px) saturate(180%);
-  backdrop-filter: blur(26px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.54);
-  box-shadow:
-    0 16px 36px -10px rgba(27, 67, 50, 0.11),
-    0 6px 16px -4px rgba(27, 67, 50, 0.06),
-    0 1px 3px 0 rgba(27, 67, 50, 0.04),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.85),
-    inset 1px 0 0 0 rgba(255, 255, 255, 0.42);
+.font-editorial {
+  font-family: Georgia, "Times New Roman", serif;
 }
 
-.wamu-nav-pill-surface[data-scrolled='true'] {
-  background-color: rgba(224, 245, 233, 0.68);
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.62) 0%,
-    rgba(224, 245, 233, 0.72) 44%,
-    rgba(200, 230, 201, 0.58) 86%,
-    rgba(27, 67, 50, 0.07) 100%
-  );
-  border-color: rgba(255, 255, 255, 0.64);
-  box-shadow:
-    0 14px 32px -8px rgba(27, 67, 50, 0.14),
-    0 4px 12px -2px rgba(27, 67, 50, 0.07),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.9),
-    inset 1px 0 0 0 rgba(255, 255, 255, 0.48);
-}
-
-@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .wamu-nav-pill-surface,
-  .wamu-nav-pill-surface[data-scrolled='true'] {
-    background-color: rgba(224, 245, 233, 0.9);
-  }
-}
-
-.hero-media {
-  position: relative;
-  isolation: isolate;
-}
-
-/* Soft radial vignette on the 1448x1086 studio phone mockups so their dark-green studio backdrop melts seamlessly into the carousel's ambient WAMU Forest/Canopy/Midnight lighting while keeping the zoomed phone and transaction details 100% crisp and GPU-composited */
-.wamu-hero-phone-img {
-  display: block;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  -webkit-mask-image: radial-gradient(
-    ellipse 49% 50% at 51% 50%,
-    #000 76%,
-    rgba(0, 0, 0, 0.9) 84%,
-    rgba(0, 0, 0, 0.45) 93%,
-    transparent 99.5%
-  );
-  mask-image: radial-gradient(
-    ellipse 49% 50% at 51% 50%,
-    #000 76%,
-    rgba(0, 0, 0, 0.9) 84%,
-    rgba(0, 0, 0, 0.45) 93%,
-    transparent 99.5%
-  );
-}
-
-/* Premium WAMU liquid-glass floating transaction info card */
-.wamu-liquid-glass-card {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.16) 0%,
-    rgba(45, 106, 79, 0.28) 48%,
-    rgba(13, 32, 22, 0.76) 100%
-  );
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  backdrop-filter: blur(20px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow:
-    0 20px 44px -12px rgba(6, 16, 10, 0.6),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.25);
-}
-
-/* Subtle, premium floating status bubble (Magie.com.br-inspired frosted mint glass) */
-.wamu-status-bubble {
-  border-radius: 20px;
-  background-color: rgba(224, 245, 233, 0.62);
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.55) 0%,
-    rgba(224, 245, 233, 0.68) 38%,
-    rgba(200, 230, 201, 0.54) 78%,
-    rgba(27, 67, 50, 0.07) 100%
-  );
-  -webkit-backdrop-filter: blur(18px) saturate(165%);
-  backdrop-filter: blur(18px) saturate(165%);
-  border: 1px solid rgba(255, 255, 255, 0.58);
-  box-shadow:
-    0 12px 26px -8px rgba(27, 67, 50, 0.11),
-    0 4px 12px -2px rgba(27, 67, 50, 0.06),
-    0 1px 3px 0 rgba(27, 67, 50, 0.04),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.86),
-    inset 1px 0 0 0 rgba(255, 255, 255, 0.45);
-}
-
-/* Navigation CTA Button — Solid deep green fill with soft elevation shadow */
-.wamu-nav-cta-btn {
+/* Primary & Secondary Button Styles */
+.wamu-btn-primary {
   border-radius: 9999px;
-  background-color: #0B6B45;
-  background-image: none;
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-  border: none;
-  box-shadow:
-    0 6px 16px -4px rgba(11, 107, 69, 0.24),
-    0 2px 6px -1px rgba(13, 32, 22, 0.10);
-  transition:
-    background-color 150ms ease,
-    box-shadow 150ms ease,
-    transform 150ms ease;
+  background-color: #1D9E75;
+  color: #FFFFFF;
+  box-shadow: 0 10px 24px -8px rgba(15, 110, 86, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), transform 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.wamu-nav-cta-btn:hover {
-  background-color: #0E7D51;
-  background-image: none;
-  border: none;
-  box-shadow:
-    0 8px 20px -4px rgba(11, 107, 69, 0.30),
-    0 3px 8px -1px rgba(13, 32, 22, 0.12);
+.wamu-btn-primary:hover {
+  background-color: #0F6E56;
+  box-shadow: 0 14px 28px -8px rgba(15, 110, 86, 0.52), inset 0 1px 0 rgba(255, 255, 255, 0.3);
 }
 
-/* Hero "Explore utilities" Button — Elevated Frosted-Glass Pill with High Contrast */
-.wamu-hero-explore-btn {
+.wamu-btn-forest {
   border-radius: 9999px;
-  background-color: rgba(93, 202, 165, 0.48);
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.62) 0%,
-    rgba(195, 232, 214, 0.56) 44%,
-    rgba(29, 158, 117, 0.34) 100%
-  );
-  -webkit-backdrop-filter: blur(20px) saturate(185%);
-  backdrop-filter: blur(20px) saturate(185%);
-  border: 1px solid rgba(255, 255, 255, 0.85);
-  box-shadow:
-    0 10px 24px -6px rgba(15, 110, 86, 0.18),
-    0 4px 10px -2px rgba(13, 32, 22, 0.08),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.92),
-    inset 1px 0 0 0 rgba(255, 255, 255, 0.48);
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 150ms ease;
+  background-color: #0F6E56;
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px -6px rgba(13, 26, 18, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transition: background-color 160ms cubic-bezier(0.16, 1, 0.3, 1), transform 160ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 160ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.wamu-hero-explore-btn:hover {
-  background-color: rgba(93, 202, 165, 0.62);
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.74) 0%,
-    rgba(195, 232, 214, 0.66) 44%,
-    rgba(29, 158, 117, 0.42) 100%
-  );
-  border-color: rgba(255, 255, 255, 0.96);
-  box-shadow:
-    0 14px 30px -6px rgba(15, 110, 86, 0.24),
-    0 6px 14px -3px rgba(13, 32, 22, 0.11),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.98);
+.wamu-btn-forest:hover {
+  background-color: #1D9E75;
+  box-shadow: 0 12px 26px -6px rgba(15, 110, 86, 0.32), inset 0 1px 0 rgba(255, 255, 255, 0.26);
 }
 
-/* WAMU Frosted-Glass Button System (High-Contrast Mint Glass with Elevation) */
+/* Kept for secondary pages compatibility */
 .wamu-liquid-btn-forest,
 .wamu-liquid-btn-gold {
   border-radius: 9999px;
-  background-color: rgba(235, 249, 241, 0.84);
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.84) 0%,
-    rgba(195, 232, 214, 0.76) 52%,
-    rgba(93, 202, 165, 0.58) 100%
-  );
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-  backdrop-filter: blur(18px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.84);
-  box-shadow:
-    0 10px 24px -6px rgba(13, 32, 22, 0.18),
-    0 3px 8px -2px rgba(13, 32, 22, 0.09),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.92);
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 150ms ease;
+  background-color: rgba(235, 246, 240, 0.92);
+  background-image: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(195, 232, 214, 0.72) 100%);
+  border: 1px solid rgba(15, 110, 86, 0.22);
+  box-shadow: 0 10px 24px -8px rgba(13, 26, 18, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
 .wamu-liquid-btn-forest:hover,
 .wamu-liquid-btn-gold:hover {
-  background-color: rgba(244, 251, 247, 0.94);
-  border-color: rgba(255, 255, 255, 0.96);
-  box-shadow:
-    0 14px 30px -6px rgba(13, 32, 22, 0.24),
-    0 5px 12px -2px rgba(13, 32, 22, 0.12),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.98);
+  background-color: #FFFFFF;
+  border-color: rgba(15, 110, 86, 0.4);
+  box-shadow: 0 14px 28px -8px rgba(13, 26, 18, 0.22), inset 0 1px 0 rgba(255, 255, 255, 1);
 }
 
-.wamu-liquid-btn-light {
-  border-radius: 9999px;
-  background-color: rgba(224, 245, 233, 0.56);
-  background-image: linear-gradient(
-    135deg,
-    rgba(255, 255, 255, 0.62) 0%,
-    rgba(195, 232, 214, 0.44) 55%,
-    rgba(93, 202, 165, 0.28) 100%
-  );
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-  backdrop-filter: blur(16px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.72);
-  box-shadow:
-    0 4px 12px -3px rgba(13, 32, 22, 0.07),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.85);
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 150ms ease;
-}
-
-.wamu-liquid-btn-light:hover {
-  background-color: rgba(244, 251, 247, 0.78);
-  border-color: rgba(255, 255, 255, 0.9);
-  box-shadow:
-    0 6px 16px -4px rgba(13, 32, 22, 0.11),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.94);
-}
-
-/* Luminous Mint-Glass CTA for Dark Surfaces (#1A4029, #0C1E12) & Floating CTA Portal */
 .wamu-liquid-btn-glass-dark {
   border-radius: 9999px;
-  background-color: rgba(195, 232, 214, 0.9);
-  background-image: linear-gradient(
-    135deg,
-    rgba(244, 251, 247, 0.95) 0%,
-    rgba(195, 232, 214, 0.9) 52%,
-    rgba(93, 202, 165, 0.8) 100%
-  );
-  -webkit-backdrop-filter: blur(20px) saturate(185%);
-  backdrop-filter: blur(20px) saturate(185%);
-  border: 1px solid rgba(255, 255, 255, 0.88);
-  box-shadow:
-    0 14px 32px -8px rgba(6, 16, 10, 0.45),
-    0 4px 12px -2px rgba(6, 16, 10, 0.24),
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.94);
-  transition:
-    background-color 180ms ease,
-    border-color 180ms ease,
-    box-shadow 180ms ease,
-    transform 150ms ease;
+  background-color: rgba(195, 232, 214, 0.92);
+  background-image: linear-gradient(135deg, rgba(247, 250, 248, 0.96) 0%, rgba(195, 232, 214, 0.9) 55%, rgba(93, 202, 165, 0.78) 100%);
+  border: 1px solid rgba(255, 255, 255, 0.72);
+  box-shadow: 0 12px 28px -8px rgba(6, 16, 10, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  transition: background-color 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
 .wamu-liquid-btn-glass-dark:hover {
-  background-color: rgba(235, 249, 241, 0.96);
-  border-color: rgba(255, 255, 255, 0.98);
-  box-shadow:
-    0 18px 38px -8px rgba(6, 16, 10, 0.56),
-    0 6px 16px -2px rgba(6, 16, 10, 0.3),
-    inset 0 1px 0 0 rgba(255, 255, 255, 1);
+  background-color: #FFFFFF;
+  box-shadow: 0 16px 32px -8px rgba(6, 16, 10, 0.55), inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+/* Selective glass indicator surfaces for overlays & hero device captions */
+.wamu-glass-dark {
+  background: linear-gradient(135deg, rgba(45, 74, 56, 0.48) 0%, rgba(13, 26, 18, 0.86) 100%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  backdrop-filter: blur(18px) saturate(140%);
+  border: 1px solid rgba(93, 202, 165, 0.24);
+  box-shadow: 0 20px 44px -14px rgba(0, 0, 0, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.wamu-hero-phone-img {
+  display: block;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-mask-image: radial-gradient(ellipse 52% 52% at 50% 50%, #000 72%, rgba(0, 0, 0, 0.88) 84%, rgba(0, 0, 0, 0.4) 94%, transparent 99.5%);
+  mask-image: radial-gradient(ellipse 52% 52% at 50% 50%, #000 72%, rgba(0, 0, 0, 0.88) 84%, rgba(0, 0, 0, 0.4) 94%, transparent 99.5%);
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  .wamu-liquid-glass-card {
-    background: rgba(13, 32, 22, 0.94);
+  .wamu-glass-dark {
+    background: rgba(13, 26, 18, 0.95);
   }
 }
 
-@media (prefers-reduced-transparency: reduce) {
-  .wamu-liquid-glass-card {
-    background: rgba(13, 32, 22, 0.95);
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
+/* Mobile Landscape Viewports (short height <= 500px across 568px-932px phones) */
+@media (orientation: landscape) and (max-height: 500px) {
+  html {
+    scroll-padding-top: 4.75rem;
+  }
+
+  [data-site-nav="true"] {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: max(0.75rem, env(safe-area-inset-left));
+    padding-right: max(0.75rem, env(safe-area-inset-right));
+  }
+
+  .wamu-hero-container {
+    padding-top: 4.75rem;
+    padding-bottom: 2rem;
+    padding-left: max(1.25rem, env(safe-area-inset-left));
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+  }
+
+  .wamu-hero-heading {
+    font-size: clamp(1.75rem, 4.2vw, 2.35rem);
+    line-height: 1.08;
+  }
+
+  .wamu-hero-preview-frame {
+    height: 175px;
   }
 }
 
+@media (orientation: landscape) and (max-height: 500px) and (min-width: 640px) {
+  .wamu-hero-grid {
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+    gap: 1.5rem;
+  }
+}
 

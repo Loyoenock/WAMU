@@ -68,32 +68,37 @@ export function Pricing() {
       <Navigation />
       <main
         id="main-content"
-        className="mx-auto max-w-[720px] px-6 pt-28 pb-24 md:px-8 md:pt-32 lg:pt-[136px]"
+        className="mx-auto max-w-[720px] px-4 pt-24 pb-16 min-[375px]:px-6 sm:pt-28 sm:pb-20 md:px-8 md:pt-32 lg:pt-[136px] xl:max-w-[780px]"
       >
         <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
           Pricing &amp; early access
         </p>
-        <h1 className="mt-3 font-[Fraunces,ui-serif,Georgia,serif] text-[34px]/[40px] font-bold text-[#0D2016] md:text-[42px]/[48px]">
+        <h1 className="font-editorial mt-3 text-[28px]/[34px] font-bold text-[#0D1A12] min-[375px]:text-[34px]/[40px] md:text-[42px]/[48px]">
           Simple pricing, priced per group
         </h1>
-        <p className="mt-3 text-[16px]/[26px] text-[#1B4332]">
-          WAMU is preparing to launch in Uganda. Pricing will be announced at launch and kept
-          simple, charged per savings group, not per member. Join the waitlist to see pricing first
-          and lock in early-access terms for your VSLA, SACCO, investment club or merry-go-round.
+        <p className="mt-3 text-[15px]/[24px] text-[#2D4A38] sm:text-[16px]/[26px]">
+          WAMU is set to launch utilities (UEDCL electricity, NWSC water and airtime) by the second
+          week of December, while we polish our SACCO, VSLA and savings features. Pricing for
+          groups is charged per savings group rather than per member—join the waitlist to get
+          early updates and priority onboarding.
         </p>
 
-        <div className="mt-8 rounded-[20px] border border-[#C3E8D6] bg-white p-7 shadow-[0_14px_34px_-12px_rgba(13,32,22,0.08)]">
-          <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[22px] font-semibold text-[#0D2016]">
+        <div className="mt-7 rounded-[20px] border border-[#C3E8D6] bg-white p-5 shadow-[0_14px_34px_-12px_rgba(13,26,18,0.08)] min-[375px]:p-6 sm:mt-8 sm:p-8">
+          <h2 className="font-editorial text-[20px] font-semibold text-[#0D1A12] sm:text-[22px]">
             Join the early-access waitlist
           </h2>
           <p className="mt-1 text-[14px] text-[#5A7A68]">
-            No payment now. We only contact you about WAMU early access.
+            No payment now. We only contact you about WAMU rollout updates and early access.
           </p>
 
           <ul className="my-6 flex flex-col gap-[10px]">
-            {['Pricing shared with you before public launch', 'Priority onboarding for your group', 'Set-up help over WhatsApp'].map(
+            {[
+              'Launch notice for utilities in the second week of December',
+              'Priority onboarding as SACCO, VSLA and savings finish polishing',
+              'Group pricing and setup help shared directly over WhatsApp',
+            ].map(
               (p) => (
-                <li key={p} className="relative pl-[22px] text-[14px] text-[#1B4332]">
+                <li key={p} className="relative pl-[22px] text-[14px] text-[#2D4A38]">
                   <span className="absolute left-0 top-[8px] h-[8px] w-[8px] rounded-full bg-[#1D9E75]" aria-hidden="true" />
                   {p}
                 </li>
@@ -104,7 +109,7 @@ export function Pricing() {
           {status === 'ok' && (
             <p
               role="status"
-              className="mb-4 rounded-[10px] border border-[#CFE6D5] bg-[#EAF4EC] px-[14px] py-[12px] text-[14px] text-[#1A4029]"
+              className="mb-4 rounded-[10px] border border-[#C3E8D6] bg-[#EBF6F0] px-[14px] py-[12px] text-[14px] text-[#0F6E56]"
             >
               You're on the list. We'll be in touch about WAMU early access.
             </p>
@@ -154,14 +159,14 @@ export function Pricing() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="wamu-liquid-btn-gold rounded-full px-7 py-[15px] text-[15px] font-bold text-[#0C1E12] active:translate-y-[1px] disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
+              className="wamu-btn-primary px-7 py-[15px] text-[15px] font-semibold text-white active:translate-y-[1px] disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2"
             >
               {status === 'sending' ? 'Sending...' : 'Join the waitlist'}
             </button>
-            <p className="text-[12px] text-[#6B7A6D]">
+            <p className="text-[12px] text-[#5A7A68]">
               By joining you agree to our{' '}
-              <a className="text-[#1A4029] underline" href="/privacy-policy.html">Privacy Policy</a> and{' '}
-              <a className="text-[#1A4029] underline" href="/terms-and-conditions.html">Terms of Use</a>.
+              <a className="font-medium text-[#0F6E56] underline" href="/privacy-policy.html">Privacy Policy</a> and{' '}
+              <a className="font-medium text-[#0F6E56] underline" href="/terms-and-conditions.html">Terms of Use</a>.
             </p>
           </form>
         </div>

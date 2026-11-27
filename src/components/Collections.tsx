@@ -44,19 +44,19 @@ const COLLECTIONS: Collection[] = [
 
 export function Collections() {
   return (
-    <section id="collections" className="relative overflow-hidden bg-[#0D2016]">
+    <section id="collections" className="relative overflow-hidden bg-[#0D1A12]">
       <WaMark tone="dark" className="right-[40px] top-[48px] h-[132px] w-[132px]" />
       <WaMark tone="dark" className="left-[24px] bottom-[40px] h-[104px] w-[104px]" />
 
-      <div className="relative z-[1] mx-auto flex max-w-[1280px] flex-col items-start gap-12 px-6 py-16 md:gap-16 md:px-12 md:py-24 lg:px-20">
+      <div className="relative z-[1] mx-auto flex max-w-[1280px] flex-col items-start gap-10 px-4 py-14 min-[375px]:px-6 md:gap-14 md:px-10 md:py-22 lg:px-16 lg:py-24 2xl:max-w-[1340px]">
         <div className="flex w-full max-w-[680px] flex-col items-start gap-[14px]">
           <span className="text-[11px]/[16px] font-bold uppercase tracking-[2px] text-[#5DCAA5]">
             SAVINGS GOALS · COLLECTIONS
           </span>
-          <h2 className="w-full font-[Fraunces,ui-serif,Georgia,serif] text-[30px]/[36px] font-bold tracking-[-0.015em] text-[#F4FBF7] md:text-[42px]/[48px]">
+          <h2 className="font-editorial w-full text-[27px]/[34px] font-bold tracking-[-0.015em] text-[#F4FBF7] min-[375px]:text-[30px]/[36px] md:text-[40px]/[46px] xl:text-[42px]/[48px]">
             Weddings, funerals and events. Collected on WhatsApp, counted correctly.
           </h2>
-          <p className="max-w-[58ch] text-[15px]/[24px] text-[#9FBEAA] md:text-[16px]/[26px]">
+          <p className="max-w-[58ch] text-[14.5px]/[23px] text-[#9FBEAA] min-[375px]:text-[15px]/[24px] md:text-[16px]/[26px]">
             Ugandans already contribute for each other constantly. Every one of these is a WAMU
             savings goal: a target, a deadline, contributions by MTN MoMo or Airtel Money, and
             automatic reminders. Same goal, different occasion.
@@ -67,13 +67,13 @@ export function Collections() {
           {COLLECTIONS.map((c) => (
             <div
               key={c.key}
-              className="flex flex-col items-start gap-[16px] rounded-[20px] border border-[#5DCAA5]/20 bg-[#1A4029] p-8 shadow-[0_18px_36px_-14px_rgba(6,16,10,0.5)] transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/75 hover:shadow-[0_22px_42px_-14px_rgba(0,0,0,0.6)]"
+              className="flex flex-col items-start gap-[14px] rounded-[20px] border border-[#5DCAA5]/20 bg-[#1A4029] p-5 shadow-[0_18px_36px_-14px_rgba(6,16,10,0.5)] transition-all duration-200 ease-out hover:-translate-y-1 hover:border-[#5DCAA5]/75 hover:shadow-[0_22px_42px_-14px_rgba(0,0,0,0.6)] min-[375px]:p-6 lg:gap-[16px] lg:p-8"
             >
-              <span className="w-fit rounded-full border border-[#5DCAA5]/25 bg-[#1D9E75]/25 px-3 py-1 text-[11.5px]/[16px] font-semibold tracking-[-0.01em] text-[#5DCAA5] md:text-[12px]/[16px]">
+              <span className="text-[11.5px]/[16px] font-semibold uppercase tracking-[0.06em] text-[#5DCAA5]">
                 {c.tag}
               </span>
               <c.Icon className="h-[30px] w-[30px] text-[#5DCAA5]" strokeWidth={1.5} aria-hidden="true" />
-              <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[19px]/[25px] font-bold tracking-[-0.01em] text-[#FFFFFF] md:text-[20px]/[26px]">
+              <h3 className="font-editorial text-[19px]/[25px] font-bold tracking-[-0.01em] text-[#FFFFFF] md:text-[20px]/[26px]">
                 {c.name}
               </h3>
               <p className="w-full text-[14px]/[22px] text-[#9FBEAA]">{c.body}</p>
@@ -90,14 +90,14 @@ export function Collections() {
           ))}
         </div>
 
-        <div className="flex w-full flex-col items-start gap-[20px] rounded-[20px] border border-[#5DCAA5]/30 bg-[#1D9E75] p-8 shadow-[0_18px_38px_-14px_rgba(0,0,0,0.45)] md:flex-row md:items-center md:justify-between md:px-10 md:py-8">
-          <div className="flex flex-row items-start gap-[16px] md:items-center">
-            <BellRing className="mt-[2px] h-[28px] w-[28px] shrink-0 text-[#C3E8D6] md:mt-0" strokeWidth={1.5} aria-hidden="true" />
+        <div className="flex w-full flex-col items-start gap-5 rounded-[20px] border border-[#5DCAA5]/30 bg-[#1D9E75] p-5 shadow-[0_18px_38px_-14px_rgba(0,0,0,0.45)] min-[375px]:p-6 md:flex-row md:items-center md:justify-between md:px-10 md:py-8">
+          <div className="flex flex-row items-start gap-[14px] min-[375px]:gap-[16px] md:items-center">
+            <BellRing className="mt-[2px] h-[26px] w-[26px] shrink-0 text-[#C3E8D6] sm:h-[28px] sm:w-[28px] md:mt-0" strokeWidth={1.5} aria-hidden="true" />
             <div className="flex flex-col gap-[4px]">
-              <span className="font-[Fraunces,ui-serif,Georgia,serif] text-[19px]/[25px] font-bold tracking-[-0.01em] text-[#C3E8D6] md:text-[20px]/[26px]">
+              <span className="font-editorial text-[18px]/[24px] font-bold tracking-[-0.01em] text-[#FFFFFF] sm:text-[19px]/[25px] md:text-[20px]/[26px]">
                 Reminders do the chasing for you.
               </span>
-              <span className="text-[14px]/[22px] text-[#C3E8D6]">
+              <span className="text-[13.5px]/[21px] text-[#EBF6F0] sm:text-[14px]/[22px]">
                 Automatic WhatsApp reminders before every meeting, contribution date and deadline,
                 to the people who have not paid yet. No group admin sending the same message twice.
               </span>
@@ -105,7 +105,9 @@ export function Collections() {
           </div>
           <a
             href="https://wa.me/256788003344?text=I%20want%20to%20start%20a%20collection%20on%20WAMU"
-            className="inline-flex shrink-0 items-center gap-[10px] rounded-full border border-[#5DCAA5]/40 bg-[#0D2016] px-[28px] py-[15px] text-[14.5px]/[20px] font-bold tracking-[-0.01em] text-[#C3E8D6] shadow-[0_12px_26px_-8px_rgba(13,32,22,0.55),inset_0_1px_0_rgba(255,255,255,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#C3E8D6]/65 hover:bg-[#133120] hover:text-white active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D9E75] md:text-[15px]/[20px]"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center gap-[10px] rounded-full border border-[#5DCAA5]/40 bg-[#0D1A12] px-[28px] py-[15px] text-[14.5px]/[20px] font-bold tracking-[-0.01em] text-[#FFFFFF] shadow-[0_12px_26px_-8px_rgba(13,26,18,0.55),inset_0_1px_0_rgba(255,255,255,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#C3E8D6]/65 hover:bg-[#133120] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D9E75] md:text-[15px]/[20px]"
           >
             <WhatsAppIcon className="h-[18px] w-[18px] text-[#5DCAA5]" />
             Start a goal

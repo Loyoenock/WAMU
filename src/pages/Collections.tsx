@@ -74,15 +74,15 @@ export function CollectionsPage() {
       <Navigation />
       <main id="main-content">
         {/* Page header */}
-        <section className="bg-[#D9F0E3] px-6 pt-28 pb-14 md:px-12 md:pt-32 lg:px-20 lg:pt-[136px]">
-          <div className="mx-auto max-w-[1280px]">
+        <section className="bg-[#EBF6F0] px-4 pt-24 pb-12 min-[375px]:px-6 sm:pt-28 md:px-10 md:pt-32 lg:px-16 lg:pt-[136px]">
+          <div className="mx-auto max-w-[1280px] 2xl:max-w-[1340px]">
             <p className="text-[11px] font-bold uppercase tracking-[2px] text-[#0F6E56]">
               COLLECTIONS &amp; CONTRIBUTIONS
             </p>
-            <h1 className="mt-3 max-w-[820px] font-[Fraunces,ui-serif,Georgia,serif] text-[34px]/[40px] font-bold text-[#0D2016] md:text-[46px]/[52px]">
+            <h1 className="font-editorial mt-3 max-w-[820px] text-[28px]/[34px] font-bold text-[#0D1A12] min-[375px]:text-[34px]/[40px] md:text-[44px]/[50px] xl:text-[46px]/[52px]">
               Wedding, funeral and event collections, counted correctly.
             </h1>
-            <p className="mt-4 max-w-[620px] text-[16px]/[26px] text-[#2D4A38]">
+            <p className="mt-4 max-w-[620px] text-[15px]/[24px] text-[#2D4A38] sm:text-[16px]/[26px]">
               Every contribution for a wedding, a burial or an event runs as a WAMU savings goal: a
               target, a deadline, mobile money in, automatic reminders, and a ledger every
               contributor can check for themselves.
@@ -90,14 +90,16 @@ export function CollectionsPage() {
             <div className="mt-7 flex flex-wrap gap-3">
               <a
                 href={WA_START}
-                className="wamu-liquid-btn-forest inline-flex items-center gap-[10px] rounded-full px-7 py-[15px] text-[15px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="wamu-btn-primary inline-flex items-center gap-[10px] px-6 py-[14px] text-[14.5px] font-semibold text-white active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2 sm:px-7 sm:py-[15px] sm:text-[15px]"
               >
-                <WhatsAppIcon className="h-[18px] w-[18px] text-[#0D2016]" />
+                <WhatsAppIcon className="h-[18px] w-[18px] text-white" />
                 Start a collection
               </a>
               <a
                 href="/pricing"
-                className="wamu-liquid-btn-gold inline-flex items-center rounded-full px-7 py-[15px] text-[15px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
+                className="inline-flex items-center rounded-full border border-[#C3E8D6] bg-white px-6 py-[14px] text-[14.5px] font-semibold text-[#0F6E56] transition hover:border-[#0F6E56]/40 hover:bg-[#F7FAF8] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2 sm:px-7 sm:py-[15px] sm:text-[15px]"
               >
                 Join the waitlist
               </a>
@@ -108,21 +110,21 @@ export function CollectionsPage() {
         <CollectionsSection />
 
         {/* How a collection runs */}
-        <section className="bg-[#FFFFFF] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
-          <div className="mx-auto max-w-[1280px]">
-            <h2 className="max-w-[600px] font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#0D2016] md:text-[42px]/[48px]">
+        <section className="bg-[#FFFFFF] px-4 py-14 min-[375px]:px-6 sm:py-16 md:px-10 md:py-[88px] lg:px-16">
+          <div className="mx-auto max-w-[1280px] 2xl:max-w-[1340px]">
+            <h2 className="font-editorial max-w-[600px] text-[28px]/[34px] font-bold text-[#0D1A12] min-[375px]:text-[32px]/[38px] md:text-[40px]/[46px] xl:text-[42px]/[48px]">
               How a collection runs, start to payout.
             </h2>
-            <div className="mt-10 grid grid-cols-1 gap-[20px] md:grid-cols-2 lg:grid-cols-4">
+            <div className="mt-8 grid grid-cols-1 gap-4 sm:mt-10 sm:gap-[20px] md:grid-cols-2 lg:grid-cols-4">
               {STEPS.map((s) => (
-                <div key={s.n} className="flex flex-col items-start gap-[14px] rounded-[20px] border border-[#C3E8D6]/85 bg-[#F4FBF7]/90 p-[28px] shadow-[0_12px_28px_-12px_rgba(27,67,50,0.08),inset_0_1px_0_rgba(255,255,255,0.9)] backdrop-blur-md">
-                  <span className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#0B6B45] text-[15px] font-bold text-white">
+                <div key={s.n} className="flex flex-col items-start gap-[14px] rounded-[20px] border border-[#C3E8D6] bg-[#F7FAF8] p-5 shadow-[0_12px_28px_-12px_rgba(13,26,18,0.06)] min-[375px]:p-6 lg:p-[28px]">
+                  <span className="flex h-[36px] w-[36px] items-center justify-center rounded-full bg-[#0F6E56] text-[15px] font-bold text-white">
                     {s.n}
                   </span>
-                  <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-bold text-[#0D2016]">
+                  <h3 className="font-editorial text-[19px] font-bold text-[#0D1A12] sm:text-[20px]">
                     {s.title}
                   </h3>
-                  <p className="text-[13px]/[21px] text-[#2D4A38]">{s.body}</p>
+                  <p className="text-[13.5px]/[21px] text-[#2D4A38]">{s.body}</p>
                 </div>
               ))}
             </div>
@@ -130,26 +132,28 @@ export function CollectionsPage() {
         </section>
 
         {/* FAQ */}
-        <section className="bg-[#E0F3E8] px-6 py-16 md:px-12 md:py-[88px] lg:px-20">
-          <div className="mx-auto max-w-[780px]">
-            <h2 className="font-[Fraunces,ui-serif,Georgia,serif] text-[32px]/[38px] font-bold text-[#0D2016] md:text-[42px]/[48px]">
+        <section className="bg-[#F7FAF8] px-4 py-14 min-[375px]:px-6 sm:py-16 md:px-10 md:py-[88px] lg:px-16">
+          <div className="mx-auto max-w-[780px] xl:max-w-[840px]">
+            <h2 className="font-editorial text-[28px]/[34px] font-bold text-[#0D1A12] min-[375px]:text-[32px]/[38px] md:text-[40px]/[46px] xl:text-[42px]/[48px]">
               Questions about collections
             </h2>
-            <div className="mt-8 border-t border-[#0F6E56]/20">
+            <div className="mt-8 border-t border-[#C3E8D6]">
               {FAQS.map((f) => (
-                <div key={f.q} className="border-b border-[#0F6E56]/20 py-6">
-                  <h3 className="font-[Fraunces,ui-serif,Georgia,serif] text-[20px] font-semibold text-[#0D2016]">
+                <div key={f.q} className="border-b border-[#C3E8D6] py-5 sm:py-6">
+                  <h3 className="font-editorial text-[18px] font-semibold text-[#0D1A12] sm:text-[20px]">
                     {f.q}
                   </h3>
-                  <p className="mt-2 text-[15px]/[24px] text-[#1B4332]">{f.a}</p>
+                  <p className="mt-2 text-[14.5px]/[23px] text-[#2D4A38] sm:text-[15px]/[24px]">{f.a}</p>
                 </div>
               ))}
             </div>
             <a
               href={WA_START}
-              className="wamu-liquid-btn-forest mt-10 inline-flex items-center gap-[10px] rounded-full px-7 py-[15px] text-[15px] font-bold text-[#0D2016] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="wamu-btn-primary mt-8 inline-flex items-center gap-[10px] px-6 py-[14px] text-[14.5px] font-semibold text-white active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2 sm:mt-10 sm:px-7 sm:py-[15px] sm:text-[15px]"
             >
-              <WhatsAppIcon className="h-[18px] w-[18px] text-[#0D2016]" />
+              <WhatsAppIcon className="h-[18px] w-[18px] text-white" />
               Start a collection
             </a>
           </div>

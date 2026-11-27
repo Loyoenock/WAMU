@@ -1,219 +1,324 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'motion/react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { useRoute } from '../lib/router';
+import { FOCUS_RING_DARK, FOCUS_RING_LIGHT, waLink } from '../lib/siteConfig';
 import { WhatsAppIcon } from './WhatsAppIcon';
 
-const FOCUS_RING =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2';
+type NavItem = {
+  id: string;
+  label: string;
+  href: string;
+  anchor?: string;
+};
 
-type NavLink = { id: string; target: string; label: string; muted?: boolean; href?: string };
-
-const NAV_LINKS: NavLink[] = [
-  { id: 'nav-utilities', target: 'utilities', label: 'Utilities' },
-  { id: 'nav-how', target: 'how-it-works', label: 'How It Works' },
-  { id: 'nav-products', target: 'savings-and-groups', label: 'Savings & Groups' },
-  { id: 'nav-collections', target: 'collections', label: 'Collections', href: '/collections' },
-  { id: 'nav-security', target: 'security', label: 'Security' },
+const NAV_ITEMS: NavItem[] = [
+  { id: 'home', label: 'Home', href: '/' },
+  { id: 'solutions', label: 'Solutions', href: '/#solutions', anchor: 'solutions' },
+  { id: 'how-it-works', label: 'How It Works', href: '/#how-it-works', anchor: 'how-it-works' },
+  { id: 'who-we-serve', label: 'Who We Serve', href: '/#who-we-serve', anchor: 'who-we-serve' },
+  { id: 'about', label: 'About', href: '/#difference', anchor: 'difference' },
+  { id: 'faq', label: 'FAQs', href: '/#faq', anchor: 'faq' },
+  { id: 'contact', label: 'Contact', href: '/#contact', anchor: 'contact' },
 ];
 
+function isDarkBackground(el: Element): boolean {
+  const bg = window.getComputedStyle(el).backgroundColor;
+  const match = bg.match(/rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*([\d.]+))?\)/);
+  if (!match) return false;
+  const alpha = match[4] !== undefined ? parseFloat(match[4]) : 1;
+  if (alpha < 0.2) return false;
+  const r = Number(match[1]);
+  const g = Number(match[2]);
+  const b = Number(match[3]);
+  const luminance = (0.2126 * r + 0.7152 * g + 0.0722 * b) / 255;
+  return luminance < 0.35;
+}
+
 export function Navigation() {
-  const [scrolled, setScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const menuRef = useRef<HTMLElement>(null);
+  const pathname = useRoute();
+  const [pillTheme, setPillTheme] = useState<'dark' | 'light'>(() =>
+    pathname === '/' ? 'dark' : 'light'
+  );
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-      if (mobileMenuOpen && menuRef.current && !menuRef.current.contains(event.target as Node)) {
-        setMobileMenuOpen(false);
+    setPillTheme(pathname === '/' ? 'dark' : 'light');
+
+    let rafId = 0;
+    const detectBandUnderNav = () => {
+      rafId = 0;
+      const probeY = 44;
+      const bands = document.querySelectorAll('main section, footer');
+      for (let i = 0; i < bands.length; i += 1) {
+        const band = bands[i];
+        const rect = band.getBoundingClientRect();
+        if (rect.top <= probeY && rect.bottom > probeY) {
+          setPillTheme(isDarkBackground(band) ? 'dark' : 'light');
+          return;
+        }
+      }
+      setPillTheme(pathname === '/' ? 'dark' : 'light');
+    };
+
+    const scheduleCheck = () => {
+      if (!rafId) {
+        rafId = window.requestAnimationFrame(detectBandUnderNav);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
-    document.addEventListener('touchstart', handleClickOutside);
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('touchstart', handleClickOutside);
+    const onScroll = () => {
+      setMobileOpen(false);
+      scheduleCheck();
     };
-  }, [mobileMenuOpen]);
 
-  const { scrollY } = useScroll();
-  useMotionValueEvent(scrollY, 'change', (y) => {
-    setScrolled(y > 50);
-    setMobileMenuOpen((open) => (open ? false : open));
-  });
+    detectBandUnderNav();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', scheduleCheck, { passive: true });
+    return () => {
+      if (rafId) window.cancelAnimationFrame(rafId);
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', scheduleCheck);
+    };
+  }, [pathname]);
 
-  const onHome = () => typeof window !== 'undefined' && window.location.pathname === '/';
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const onClickOutside = (e: MouseEvent | TouchEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setMobileOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', onClickOutside);
+    document.addEventListener('touchstart', onClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', onClickOutside);
+      document.removeEventListener('touchstart', onClickOutside);
+    };
+  }, [mobileOpen]);
 
-  const smoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
-    setMobileMenuOpen(false);
-    // On the home page, scroll smoothly. Elsewhere, let the "/#id" link navigate home.
-    if (onHome()) {
-      e.preventDefault();
-      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  const goHome = (e: React.MouseEvent<HTMLAnchorElement>) => {
-    setMobileMenuOpen(false);
-    if (onHome()) {
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, item: NavItem) => {
+    setMobileOpen(false);
+    if (item.id === 'home' && pathname === '/') {
       e.preventDefault();
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      return;
+    }
+    if (item.anchor && pathname === '/') {
+      e.preventDefault();
+      document.getElementById(item.anchor)?.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
-  const pathname = typeof window !== 'undefined' ? window.location.pathname : '/';
+  const isDark = pillTheme === 'dark';
+  const focusRing = isDark ? FOCUS_RING_DARK : FOCUS_RING_LIGHT;
 
   return (
-    <div className="fixed left-0 right-0 top-3 z-[80] px-2 sm:top-4 md:px-8 lg:px-16">
-      <header
-        ref={menuRef}
-        data-scrolled={scrolled}
-        className="wamu-nav-pill-surface relative mx-auto w-full max-w-[1312px] rounded-full px-4 transition-[background-color,box-shadow,border-color] duration-200 ease-out motion-reduce:transition-none"
-      >
-        {/* Liquid-glass top specular light refraction streak */}
-        <span
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-8 top-0 h-[1px] bg-gradient-to-r from-transparent via-white/95 to-transparent"
-        />
-        <div className="flex h-[56px] w-full items-center justify-between py-2 md:h-[60px]">
+    <header
+      ref={headerRef}
+      data-site-nav="true"
+      className="pointer-events-none fixed inset-x-0 top-0 z-[80] mx-auto flex max-w-[1280px] justify-center px-3 py-3 min-[375px]:px-4 min-[375px]:py-4 sm:px-6 sm:py-5 md:px-10 2xl:max-w-[1400px]"
+    >
+      <div className="pointer-events-auto relative w-full">
+        {/* Detached Floating Liquid-Glass Pill Capsule */}
+        <div
+          className={`relative flex w-full items-center justify-between gap-2 rounded-full border py-1.5 pl-3 pr-1.5 backdrop-blur-xl transition-colors duration-500 min-[375px]:gap-3 min-[375px]:py-2 min-[375px]:pl-4 min-[375px]:pr-2 sm:pl-6 sm:pr-2 ${
+            isDark
+              ? 'border-white/25 bg-[#0D1A12]/65 text-white shadow-[0_18px_40px_-14px_rgba(0,0,0,0.55)]'
+              : 'border-[#0F6E56]/20 bg-white/85 text-[#0D1A12] shadow-[0_14px_34px_-14px_rgba(13,26,18,0.14)]'
+          }`}
+        >
+          {/* Specular Top Edge Highlight Layer */}
+          <div
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 rounded-full"
+            style={{
+              boxShadow: isDark
+                ? 'inset 0 1px 0 rgba(255,255,255,0.34), inset 0 0 0 1px rgba(255,255,255,0.08)'
+                : 'inset 0 1px 0 rgba(255,255,255,0.95), inset 0 0 0 1px rgba(15,110,86,0.06)',
+            }}
+          />
+
+          {/* Zone 1: Brand Identity */}
           <a
-            id="nav-logo"
             href="/"
-            onClick={goHome}
-            className={cn('flex shrink-0 items-center gap-[6px] rounded-full py-0.5 pr-1', FOCUS_RING)}
+            onClick={(e) => {
+              setMobileOpen(false);
+              if (pathname === '/') {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
+            className={`relative z-10 flex shrink-0 items-center gap-2 whitespace-nowrap rounded-full py-0.5 transition-colors duration-500 min-[375px]:gap-2.5 ${focusRing}`}
           >
             <img
-              src="/wamu-mark.png"
+              src="/wamu-mark.webp"
               alt="WAMU"
-              width={28}
-              height={28}
-              className="h-7 w-7 rounded-[7px]"
+              width={26}
+              height={26}
+              className="h-6 w-6 rounded-[7px] min-[375px]:h-[26px] min-[375px]:w-[26px]"
             />
-            <span className="font-[Fraunces,ui-serif,Georgia,serif] text-[15px] font-bold tracking-[3px] text-[#0D2016]">
+            <span
+              className={`font-editorial text-[14px] font-bold tracking-[0.14em] transition-colors duration-500 min-[375px]:text-[15.5px] min-[375px]:tracking-[0.18em] ${
+                isDark ? 'text-white' : 'text-[#0D1A12]'
+              }`}
+            >
               WAMU
             </span>
           </a>
 
-          <nav aria-label="Main Navigation" className="hidden items-center gap-1 md:flex lg:gap-2">
-            {NAV_LINKS.map((link) => {
-              const isActive = Boolean(link.href && pathname === link.href);
+          {/* Zone 2: Centered Streamlined Navigation Links (Top-to-Bottom Flow) */}
+          <nav
+            aria-label="Primary Navigation"
+            className="relative z-10 hidden items-center gap-4 lg:flex xl:gap-6 2xl:gap-8"
+          >
+            {NAV_ITEMS.map((item) => {
+              const isActive = item.href === '/' && pathname === '/';
               return (
                 <a
-                  key={link.id}
-                  id={`${link.id}-desktop`}
-                  href={link.href ?? `/#${link.target}`}
-                  onClick={(e) => (link.href ? setMobileMenuOpen(false) : smoothScroll(e, link.target))}
+                  key={item.id}
+                  href={item.href}
+                  onClick={(e) => handleLinkClick(e, item)}
                   aria-current={isActive ? 'page' : undefined}
-                  className={cn(
-                    'whitespace-nowrap rounded-full px-3 py-1.5 text-[13.5px] font-medium tracking-[-0.01em] text-[#1B4332] transition-[background-color,color,box-shadow] duration-150 ease-out motion-reduce:transition-none lg:px-3.5 lg:text-[14px]',
-                    isActive
-                      ? 'bg-white/50 font-semibold text-[#0D2016] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]'
-                      : 'hover:bg-white/40 hover:text-[#0D2016] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.75)]',
-                    FOCUS_RING
-                  )}
+                  className={`shrink-0 whitespace-nowrap rounded-sm text-[13.5px] font-medium transition-colors duration-300 2xl:text-[14px] ${
+                    isDark
+                      ? isActive
+                        ? 'text-[#5DCAA5]'
+                        : 'text-white/80 hover:text-white'
+                      : isActive
+                        ? 'font-semibold text-[#0F6E56]'
+                        : 'text-[#0D1A12]/75 hover:text-[#0F6E56]'
+                  } ${focusRing}`}
                 >
-                  {link.label}
+                  {item.label}
                 </a>
               );
             })}
           </nav>
 
-          <a
-            id="nav-cta-desktop"
-            href="https://wa.me/256788003344"
-            className={cn(
-              'wamu-nav-cta-btn hidden shrink-0 items-center gap-[8px] whitespace-nowrap rounded-full bg-[#0B6B45] px-4 py-2.5 text-[13px] font-semibold text-white motion-reduce:transition-none md:inline-flex lg:px-5',
-              FOCUS_RING
-            )}
-          >
-            <WhatsAppIcon className="h-[15px] w-[15px] text-white" />
-            Message WAMU
-          </a>
-
-          <div className="flex items-center gap-2 md:hidden">
+          {/* Zone 3: Concentric Right Pill Action + Mobile Drawer Trigger */}
+          <div className="relative z-10 flex shrink-0 items-center gap-1 min-[375px]:gap-1.5 sm:gap-2">
             <a
-              id="nav-cta-mobile-bar"
-              href="https://wa.me/256788003344"
-              aria-label="Message WAMU on WhatsApp"
-              className={cn(
-                'wamu-nav-cta-btn inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-[#0B6B45] px-3 py-2 text-[12px] font-semibold text-white motion-reduce:transition-none',
-                FOCUS_RING
-              )}
+              href={waLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`inline-flex shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full px-3 py-1.5 text-[12px] font-semibold transition-colors duration-300 min-[375px]:gap-2 min-[375px]:px-4 min-[375px]:py-2 min-[375px]:text-[13px] sm:px-4.5 sm:text-[13.5px] ${
+                isDark
+                  ? 'bg-white text-[#0D1A12] hover:bg-[#EBF6F0]'
+                  : 'bg-[#0D1A12] text-white hover:bg-[#0F6E56]'
+              } ${focusRing}`}
             >
-              <WhatsAppIcon className="h-3.5 w-3.5 text-white" />
-              <span>Message</span>
+              <WhatsAppIcon
+                className={`h-3.5 w-3.5 ${isDark ? 'text-[#0F6E56]' : 'text-[#5DCAA5]'}`}
+              />
+              <span>Join WAMU</span>
             </a>
 
             <button
-              id="nav-mobile-menu-btn"
-              className={cn(
-                'flex h-9 w-9 items-center justify-center rounded-full border border-white/60 bg-white/35 text-[#1B4332] shadow-[inset_0_1px_0_rgba(255,255,255,0.8)] transition-colors hover:bg-white/55 motion-reduce:transition-none',
-                FOCUS_RING
-              )}
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileMenuOpen}
-              aria-controls="mobile-menu"
+              type="button"
+              onClick={() => setMobileOpen((open) => !open)}
+              aria-label={mobileOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={mobileOpen}
+              aria-controls="mobile-nav-drawer"
+              className={`inline-flex h-9 w-9 items-center justify-center rounded-full transition-colors duration-300 min-[375px]:h-10 min-[375px]:w-10 lg:hidden ${
+                isDark
+                  ? 'text-white hover:bg-white/15'
+                  : 'text-[#0D1A12] hover:bg-[#0F6E56]/10'
+              } ${focusRing}`}
             >
-              {mobileMenuOpen ? (
-                <X size={20} strokeWidth={2} aria-hidden="true" />
+              {mobileOpen ? (
+                <X className="h-5 w-5" aria-hidden="true" />
               ) : (
-                <Menu size={20} strokeWidth={2} aria-hidden="true" />
+                <Menu className="h-5 w-5" aria-hidden="true" />
               )}
             </button>
           </div>
         </div>
 
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.nav
-              id="mobile-menu"
-              aria-label="Mobile Navigation"
-              initial={{ opacity: 0, y: -10 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -10 }}
-              data-scrolled={scrolled}
-              className="wamu-nav-pill-surface absolute left-0 right-0 top-[calc(100%+8px)] flex w-full flex-col gap-1.5 rounded-[28px] p-4 md:hidden"
+        {/* Floating Rounded Mobile Menu Panel (scrollable on short Mobile Landscape) */}
+        {mobileOpen && (
+          <nav
+            id="mobile-nav-drawer"
+            aria-label="Mobile Navigation"
+            className={`mt-2.5 max-h-[calc(100svh-5.25rem)] overflow-y-auto overscroll-contain rounded-[24px] border p-4 backdrop-blur-xl transition-colors duration-300 lg:hidden ${
+              isDark
+                ? 'border-white/20 bg-[#0D1A12]/95 text-white shadow-[0_24px_48px_-16px_rgba(0,0,0,0.65)]'
+                : 'border-[#C3E8D6] bg-white/95 text-[#0D1A12] shadow-[0_24px_48px_-16px_rgba(13,26,18,0.2)]'
+            }`}
+          >
+            <div className="grid grid-cols-1 gap-1 sm:grid-cols-2">
+              {NAV_ITEMS.map((item) => (
+                <a
+                  key={item.id}
+                  href={item.href}
+                  onClick={(e) => handleLinkClick(e, item)}
+                  className={`rounded-xl px-3.5 py-2.5 text-[15px] font-medium transition-colors ${
+                    isDark
+                      ? 'text-[#EBF6F0] hover:bg-[#1A4029] hover:text-white'
+                      : 'text-[#0D1A12] hover:bg-[#EBF6F0] hover:text-[#0F6E56]'
+                  } ${focusRing}`}
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+            <div
+              className={`my-2 grid grid-cols-1 gap-1 border-t pt-2 sm:grid-cols-3 ${
+                isDark ? 'border-white/10' : 'border-[#C3E8D6]/80'
+              }`}
             >
-              {NAV_LINKS.map((link) => {
-                const isActive = Boolean(link.href && pathname === link.href);
-                return (
-                  <a
-                    key={link.id}
-                    id={`${link.id}-mobile`}
-                    href={link.href ?? `/#${link.target}`}
-                    onClick={(e) => (link.href ? setMobileMenuOpen(false) : smoothScroll(e, link.target))}
-                    aria-current={isActive ? 'page' : undefined}
-                    className={cn(
-                      'rounded-full px-4 py-3 text-[14px] font-medium transition-[background-color,color,box-shadow] duration-150 ease-out motion-reduce:transition-none',
-                      isActive
-                        ? 'bg-white/45 font-semibold text-[#0D2016] shadow-[inset_0_1px_0_rgba(255,255,255,0.85)]'
-                        : link.muted
-                          ? 'text-[#1A4029] hover:bg-white/35 hover:text-[#0D2016]'
-                          : 'text-[#0D2016] hover:bg-white/35 hover:text-[#0D2016]',
-                      FOCUS_RING
-                    )}
-                  >
-                    {link.label}
-                  </a>
-                );
-              })}
               <a
-                id="nav-cta-mobile"
-                href="https://wa.me/256788003344"
-                className={cn(
-                  'wamu-nav-cta-btn mt-2 flex w-full items-center justify-center gap-[8px] rounded-full bg-[#0B6B45] px-5 py-3 text-center text-[13px] font-bold text-white motion-reduce:transition-none',
-                  FOCUS_RING
-                )}
+                href="/collections"
+                onClick={() => setMobileOpen(false)}
+                className={`block rounded-xl px-3.5 py-2 text-[14px] transition-colors ${
+                  isDark
+                    ? 'text-[#C3E8D6] hover:bg-[#1A4029]'
+                    : 'text-[#2D4A38] hover:bg-[#EBF6F0]'
+                } ${focusRing}`}
               >
-                <WhatsAppIcon className="h-[15px] w-[15px] text-white" />
-                Message WAMU
+                Collections
               </a>
-            </motion.nav>
-          )}
-        </AnimatePresence>
-      </header>
-    </div>
+              <a
+                href="/faq"
+                onClick={() => setMobileOpen(false)}
+                className={`block rounded-xl px-3.5 py-2 text-[14px] transition-colors ${
+                  isDark
+                    ? 'text-[#C3E8D6] hover:bg-[#1A4029]'
+                    : 'text-[#2D4A38] hover:bg-[#EBF6F0]'
+                } ${focusRing}`}
+              >
+                Full FAQ
+              </a>
+              <a
+                href="/pricing"
+                onClick={() => setMobileOpen(false)}
+                className={`block rounded-xl px-3.5 py-2 text-[14px] transition-colors ${
+                  isDark
+                    ? 'text-[#C3E8D6] hover:bg-[#1A4029]'
+                    : 'text-[#2D4A38] hover:bg-[#EBF6F0]'
+                } ${focusRing}`}
+              >
+                Early Access &amp; Pricing
+              </a>
+            </div>
+            <a
+              href={waLink()}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`mt-1 flex w-full items-center justify-center gap-2 rounded-full py-3 text-[14px] font-semibold transition-colors ${
+                isDark
+                  ? 'bg-white text-[#0D1A12] hover:bg-[#EBF6F0]'
+                  : 'bg-[#0D1A12] text-white hover:bg-[#0F6E56]'
+              } ${focusRing}`}
+            >
+              <WhatsAppIcon
+                className={`h-4 w-4 ${isDark ? 'text-[#0F6E56]' : 'text-[#5DCAA5]'}`}
+              />
+              <span>Join WAMU</span>
+            </a>
+          </nav>
+        )}
+      </div>
+    </header>
   );
 }

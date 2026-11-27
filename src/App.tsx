@@ -24,11 +24,11 @@ export default function App() {
     );
 
   return (
-    <div className="min-h-screen bg-bg-warm">
+    <div className="min-h-screen bg-[#F7FAF8]">
       <a
         id="skip-to-content"
         href="#main-content"
-        className="sr-only rounded-md font-bold focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-brand-accent focus:p-4 focus:text-brand-ink"
+        className="sr-only rounded-md font-bold focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:bg-[#1D9E75] focus:p-4 focus:text-white"
       >
         Skip to main content
       </a>

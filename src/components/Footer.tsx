@@ -1,124 +1,131 @@
 import React from 'react';
-import { WaMark } from './WaMark';
+import {
+  FOCUS_RING_DARK,
+  WAMU_LEGAL_NAME,
+  WAMU_PHONE_LINK,
+  WAMU_PHONE_NUMBER,
+  WAMU_WHATSAPP_NUMBER,
+  waLink,
+} from '../lib/siteConfig';
 
-const FOCUS_RING =
-  'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0C1E12]';
+type FooterLink = { label: string; href: string };
 
-type FootLink = { label: string; href: string; muted?: boolean };
-
-const COLUMNS: { header: string; links: FootLink[] }[] = [
+const FOOTER_COLUMNS: { title: string; links: FooterLink[] }[] = [
   {
-    header: 'Platform',
+    title: 'Explore',
     links: [
-      { label: 'Utilities', href: '/#utilities' },
-      { label: 'Savings & Groups', href: '/#savings-and-groups' },
-      { label: 'VSLAs', href: '/#who-we-serve' },
-      { label: 'SACCOs', href: '/#who-we-serve' },
-      { label: 'Investment Clubs', href: '/#who-we-serve' },
-      { label: 'Merry-go-Round', href: '/#who-we-serve' },
-      { label: 'Collections', href: '/collections' },
-      { label: 'Security', href: '/#security', muted: true },
-    ],
-  },
-  {
-    header: 'Company',
-    links: [
-      { label: 'About WAMU', href: '/' },
+      { label: 'Home', href: '/' },
+      { label: 'Solutions', href: '/#solutions' },
+      { label: 'How It Works', href: '/#how-it-works' },
       { label: 'Who We Serve', href: '/#who-we-serve' },
-      { label: 'FAQ', href: '/faq' },
-      { label: 'Contact', href: 'https://wa.me/256788003344' },
+      { label: 'About', href: '/#difference' },
     ],
   },
   {
-    header: 'Get Started',
+    title: 'Services',
     links: [
-      { label: 'Register Your Group', href: 'https://wa.me/256788003344' },
-      { label: 'Message on WhatsApp', href: 'https://wa.me/256788003344' },
+      { label: 'Payments', href: '/#solutions' },
+      { label: 'Savings', href: '/#ecosystem' },
+      { label: 'Group Contributions', href: '/collections' },
+      { label: 'SACCO Management', href: '/#ecosystem' },
+      { label: 'Insurance & Loans', href: '/#ecosystem' },
+      { label: 'Investments', href: '/#ecosystem' },
+    ],
+  },
+  {
+    title: 'Resources',
+    links: [
+      { label: 'FAQs', href: '/faq' },
+      { label: 'Collections', href: '/collections' },
       { label: 'Pricing & Waitlist', href: '/pricing' },
+      { label: 'Contact', href: '/#contact' },
+    ],
+  },
+  {
+    title: 'Legal',
+    links: [
+      { label: 'Privacy Policy', href: '/privacy-policy.html' },
+      { label: 'Terms and Conditions', href: '/terms-and-conditions.html' },
     ],
   },
 ];
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-[#0C1E12]">
-      <WaMark tone="dark" className="right-[40px] top-[24px] h-[104px] w-[104px]" />
-      <WaMark tone="dark" className="left-[24px] bottom-[36px] h-[84px] w-[84px]" />
-
-      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-12 px-6 py-[60px] md:px-12 lg:flex-row lg:justify-between lg:px-20 lg:pb-10">
-        <div className="flex w-full flex-col gap-[14px] lg:w-[280px]">
-          <div className="flex items-center gap-[8px]">
-            <img
-              src="/wamu-mark.png"
-              alt="WAMU"
-              width={26}
-              height={26}
-              className="h-[26px] w-[26px] rounded-[6px]"
-            />
-            <span className="font-[Fraunces,ui-serif,Georgia,serif] text-[15px] font-bold tracking-[2.5px] text-white">
-              WAMU
-            </span>
-          </div>
-          <p className="text-[13px]/[21px] text-[#9FBEAA]">
-            Utility payments and savings tools for Uganda's communities.
-          </p>
-          <p className="text-[11px] font-medium text-[#8AB89E]">WAMU PAY (UGANDA) LIMITED</p>
-        </div>
-
-        <div className="grid grid-cols-2 gap-10 md:grid-cols-3 lg:flex lg:gap-[64px]">
-          {COLUMNS.map((col) => (
-            <div key={col.header} className="flex flex-col gap-[14px] lg:w-[160px]">
-              <h3 className="text-[12px] font-bold tracking-[0.5px] text-white">{col.header}</h3>
-              {col.links.map((link) => (
+    <footer className="bg-[#0D1A12] text-white">
+      <div className="mx-auto max-w-[1200px] px-4 pt-12 pb-[max(3rem,env(safe-area-inset-bottom))] min-[375px]:px-6 sm:pt-16 md:px-10 lg:px-16 2xl:max-w-[1340px]">
+        <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1.2fr_2fr] lg:gap-14">
+          {/* Brand Column */}
+          <div className="max-w-[320px]">
+            <a href="/" className={`inline-flex items-center gap-2.5 rounded-md ${FOCUS_RING_DARK}`}>
+              <img
+                src="/wamu-mark.webp"
+                alt="WAMU"
+                width={28}
+                height={28}
+                className="h-7 w-7 rounded-[7px]"
+              />
+              <span className="font-editorial text-[16px] font-bold tracking-[0.18em] text-white">
+                WAMU
+              </span>
+            </a>
+            <p className="mt-4 text-[14px]/[22px] text-[#C3E8D6]">
+              WAMU brings financial services together through the convenience of WhatsApp.
+            </p>
+            <div className="mt-5 space-y-1.5 text-[12.5px] text-[#9FBEAA]">
+              <p className="font-semibold text-[#EBF6F0]">{WAMU_LEGAL_NAME}</p>
+              <p>
+                Phone:{' '}
                 <a
-                  key={link.label}
-                  href={link.href}
-                  className={cnLink(link.muted)}
+                  href={WAMU_PHONE_LINK}
+                  className={`text-[#5DCAA5] underline-offset-2 hover:underline ${FOCUS_RING_DARK}`}
                 >
-                  {link.label}
+                  {WAMU_PHONE_NUMBER}
                 </a>
-              ))}
+              </p>
+              <p>
+                WhatsApp:{' '}
+                <a
+                  href={waLink()}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`text-[#5DCAA5] underline-offset-2 hover:underline ${FOCUS_RING_DARK}`}
+                >
+                  {WAMU_WHATSAPP_NUMBER}
+                </a>
+              </p>
             </div>
-          ))}
+          </div>
+
+          {/* 4 Navigation Columns (Explore, Services, Resources, Legal) */}
+          <div className="grid grid-cols-1 gap-7 min-[360px]:grid-cols-2 sm:grid-cols-4 sm:gap-8">
+            {FOOTER_COLUMNS.map((col) => (
+              <div key={col.title}>
+                <h3 className="text-[12.5px] font-semibold uppercase tracking-[0.1em] text-white">
+                  {col.title}
+                </h3>
+                <ul className="mt-4 space-y-2.5">
+                  {col.links.map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        className={`text-[13.5px] text-[#9FBEAA] transition-colors hover:text-[#5DCAA5] ${FOCUS_RING_DARK} rounded-sm`}
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <div className="relative h-px w-full bg-[#1E3A22]" />
-
-      <div className="relative mx-auto flex max-w-[1280px] flex-col gap-4 px-6 py-6 md:px-12 lg:flex-row lg:items-center lg:justify-between lg:px-20">
-        <p className="text-[12px] text-[#8AB89E]">
-          &copy; 2026 WAMU PAY (UGANDA) LIMITED. All rights reserved.
-        </p>
-        <div className="flex flex-wrap gap-[28px]">
-          <a
-            id="footer-privacy-link"
-            href="/privacy-policy.html"
-            className={`text-[12px] text-[#8AB89E] transition-colors hover:text-[#C3E8D6] ${FOCUS_RING} rounded-sm`}
-          >
-            Privacy Policy
-          </a>
-          <a
-            id="footer-terms-link"
-            href="/terms-and-conditions.html"
-            className={`text-[12px] text-[#8AB89E] transition-colors hover:text-[#C3E8D6] ${FOCUS_RING} rounded-sm`}
-          >
-            Terms of Use
-          </a>
-          <a
-            href="/#security"
-            className={`text-[12px] text-[#8AB89E] transition-colors hover:text-[#C3E8D6] ${FOCUS_RING} rounded-sm`}
-          >
-            Security
-          </a>
+        <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-white/10 pt-6 text-[12px] text-[#9FBEAA] sm:flex-row sm:items-center">
+          <p>&copy; 2026 {WAMU_LEGAL_NAME}. All rights reserved.</p>
+          <p>WhatsApp-first financial services for Uganda.</p>
         </div>
       </div>
     </footer>
   );
-}
-
-function cnLink(muted?: boolean) {
-  const base = `text-[13px] transition-colors rounded-sm ${FOCUS_RING}`;
-  return muted
-    ? `${base} text-[#F4FBF7] opacity-[0.85] hover:opacity-100`
-    : `${base} text-[#9FBEAA] hover:text-[#C3E8D6]`;
 }

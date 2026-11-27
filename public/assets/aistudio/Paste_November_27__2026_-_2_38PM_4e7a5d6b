@@ -1,0 +1,1260 @@
+# MASTER IMPLEMENTATION PROMPT: COMPLETE WAMU WEBSITE REDESIGN USING THE PROVIDED FINANEX TEMPLATE
+
+## 1. ROLE AND PROJECT RESPONSIBILITY
+
+Act as a multidisciplinary senior digital product team comprising:
+
+- Principal UX/UI Designer.
+- Senior Fintech Product Designer.
+- Creative Director and Brand Strategist.
+- Senior Frontend Software Engineer.
+- Senior Full-Stack Engineer.
+- Design Systems Architect.
+- Interaction and Motion Designer.
+- Conversion Rate Optimisation Specialist.
+- Accessibility and Performance Engineer.
+
+Your assignment is to redesign and implement the **entire WAMU website**, using the attached Finanex website screenshot as the primary visual and structural reference.
+
+This is a complete website redesign, not a redesign of an individual hero section.
+
+The supplied screenshot must be treated as the primary reference for the website's:
+
+- Overall layout.
+- Section sequence.
+- Vertical arrangement.
+- Content proportions.
+- Section spacing.
+- Visual hierarchy.
+- Alternating background treatments.
+- Component arrangement.
+- Card compositions.
+- Product showcase positioning.
+- Conversion flow.
+- Footer structure.
+
+**Recreate the structural and visual approach of the reference while replacing its branding, messaging, imagery, product demonstrations and content with WAMU's actual identity and financial services ecosystem.**
+
+The final result should look like a professionally designed, premium African fintech website, not a generic AI-generated landing page.
+
+---
+
+# 2. UNDERSTAND THE REFERENCE IMAGE BEFORE IMPLEMENTING
+
+Study the attached screenshot carefully before making changes.
+
+The reference is a vertically arranged, single-page digital banking website with a distinctive sequence of compact, well-defined sections.
+
+Do not simply extract its colours or copy its individual components.
+
+Understand how the page is constructed.
+
+### Reference layout breakdown
+
+The reference follows this general structure:
+
+1. Compact navigation and hero introduction.
+2. Large product/device showcase.
+3. Recommended needs or service categories displayed in a two-column card arrangement.
+4. Dark, full-width getting-started section with a vertically connected three-step process.
+5. Light transaction/features section with text and layered product visuals.
+6. Pricing-style section using multiple comparison cards.
+7. Dark impact section containing metric cards and a large central illustration.
+8. Frequently asked questions with accordion elements and a supporting human visual.
+9. Client/brand recognition and testimonial section.
+10. Dark app promotion section with a smartphone demonstration.
+11. Contact section with a form.
+12. Comprehensive footer.
+
+Preserve this overall sequence and its visual arrangement.
+
+You may adapt the names and purpose of individual sections to make them appropriate for WAMU, but do not arbitrarily remove sections or reorganise the entire page.
+
+### Important interpretation
+
+Some sections in the reference contain content that does not correspond to WAMU.
+
+For example:
+
+- A pricing-plan section should not result in invented WAMU subscription prices.
+- An impact-in-numbers section must not contain fabricated statistics.
+- An app-download section must not imply that customers need to download a separate WAMU mobile application.
+- A testimonials section must not contain invented customer reviews.
+- Brand or partner logos must not be fabricated.
+
+Retain the original section's visual purpose and layout while replacing its content with a suitable WAMU equivalent.
+
+---
+
+# 3. UNDERSTAND WAMU'S PRODUCT AND BUSINESS MODEL
+
+WAMU means "together" or "in one" in Luganda.
+
+WAMU Pay is a WhatsApp-first financial services platform being developed to bring multiple financial activities into one familiar communication channel.
+
+Its central proposition is to reduce the need for customers to navigate multiple separate financial applications by making relevant financial services accessible through WhatsApp.
+
+WAMU originated from WhatsApp automation for insurance inquiries and mobile money payments and is developing into a broader financial services ecosystem.
+
+### Core positioning
+
+Position WAMU as:
+
+**A connected financial services platform that brings everyday payments, savings, group finance and other financial services closer to people through WhatsApp.**
+
+WAMU is not:
+
+- A conventional digital bank.
+- A standalone mobile banking application.
+- A generic AI chatbot.
+- A WhatsApp clone.
+- A generic payment gateway.
+
+The WhatsApp-first experience must be the central theme throughout the website.
+
+### WAMU's service ecosystem
+
+The redesigned website must accurately represent the following service categories.
+
+**A. Payments and everyday services**
+- Electricity payments.
+- Water payments.
+- Airtime purchases.
+- School fees.
+- Utility payments.
+
+**B. Savings and financial management**
+- Personal savings.
+- Group savings.
+- Financial planning and management.
+
+**C. Group finance**
+- Group contributions.
+- SACCO management.
+- Cooperative financial activities.
+- Group financial coordination.
+
+**D. Financial services**
+- Insurance.
+- Loans.
+- Investments.
+
+### Target audiences
+
+The website should communicate relevance to:
+
+- Individuals.
+- Savings groups.
+- SACCOs.
+- SMEs and businesses.
+- Cooperatives.
+- NGOs.
+- Community organisations.
+- Insurance clients.
+
+Do not invent additional services or claim that every service is already fully operational.
+
+Where availability is uncertain, describe the service as part of WAMU's ecosystem without implying that a live integration or operational feature has been verified.
+
+---
+
+# 4. STRICT WAMU BRAND IDENTITY
+
+The existing WAMU brand identity must be retained.
+
+Do not inherit the reference website's purple, pink, blue or other brand colours.
+
+### Official colour palette
+
+| Colour | Hex | Usage |
+|---|---|---|
+| Forest | #0F6E56 | Primary brand colour |
+| Canopy | #1D9E75 | Secondary brand colour |
+| Light | #5DCAA5 | Highlights and accents |
+| Mist | #C3E8D6 | Soft backgrounds |
+| Midnight | #0D1A12 | Dark sections |
+| Grove | #2D4A38 | Supporting surfaces |
+| Moss | #5A7A68 | Muted details |
+
+### Colour application
+
+Use the reference's alternating light and dark section arrangement, but translate it into WAMU's colour system.
+
+Recommended treatment:
+
+- Hero: Midnight or Forest green with carefully controlled green illumination.
+- Product showcase: Forest and Midnight with subtle Canopy accents.
+- Service categories: Warm off-white or Mist backgrounds.
+- Getting started: Midnight background.
+- Product features: Warm off-white.
+- Service showcase cards: White and Mist.
+- Connected financial experience: Forest or Midnight.
+- Trust and FAQ sections: Light neutral backgrounds.
+- Conversion section: Deep Forest or Midnight.
+- Footer: Midnight or deep Forest.
+
+Do not make the entire website green.
+
+Use negative space and light backgrounds to create contrast between the darker sections.
+
+### Typography
+
+Use:
+
+**Georgia**
+- Large editorial headlines.
+- Major section headings.
+- Selected brand statements.
+
+**Inter**
+- Body text.
+- Navigation.
+- Buttons.
+- Labels.
+- Service descriptions.
+- Financial information.
+- Product interfaces.
+
+Maintain a clear and consistent typographic hierarchy.
+
+Avoid excessive font sizes and unnecessarily decorative typography.
+
+### Brand personality
+
+WAMU should feel:
+
+- Trustworthy.
+- Modern.
+- Approachable.
+- Intelligent.
+- Inclusive.
+- Connected.
+- Dependable.
+- Premium.
+
+---
+
+# 5. COMPLETE WEBSITE STRUCTURE AND DESIGN INSTRUCTIONS
+
+Follow the section sequence below.
+
+The screenshot is a visual arrangement reference, not a content source.
+
+## SECTION 01 — NAVIGATION AND HERO
+
+**Reference equivalent:** The opening section containing the navigation, headline, primary CTA and large product image.
+
+### Navigation
+
+Create a clean and compact navigation bar.
+
+Left:
+- WAMU logo.
+
+Centre:
+- Home.
+- Solutions.
+- How It Works.
+- Who We Serve.
+- About.
+- Resources.
+
+Right:
+- Get Started CTA.
+
+Use the existing website's actual navigation destinations wherever available.
+
+Do not invent additional routes.
+
+### Hero messaging
+
+Eyebrow:
+
+FINANCIAL SERVICES, CONNECTED THROUGH WHATSAPP
+
+Headline:
+
+**Your financial world. Together on WhatsApp.**
+
+Supporting text:
+
+From everyday payments to savings and group finances, WAMU brings financial services closer to you through the convenience of WhatsApp.
+
+Primary CTA:
+
+Get Started
+
+Secondary CTA:
+
+Explore WAMU
+
+Supporting statement:
+
+One familiar conversation. Multiple financial possibilities.
+
+### Hero visual
+
+Follow the reference's prominent product-first composition.
+
+Use a large smartphone as the main visual, showing a realistic WAMU Pay WhatsApp conversation.
+
+The phone should be visually prominent and surrounded by authentic product-related visual elements.
+
+Include the three important transaction experiences:
+
+1. UEDCL electricity payment.
+2. NWSC water payment.
+3. MTN/Airtel airtime purchase.
+
+Use the actual WAMU transaction mockups and assets already available in the project where possible.
+
+The visual should communicate that WAMU services are accessed through WhatsApp.
+
+Use realistic African lifestyle imagery where appropriate.
+
+Do not use a generic banking dashboard as the central product visual.
+
+---
+
+## SECTION 02 — WAMU SERVICES / RECOMMENDED FINANCIAL NEEDS
+
+**Reference equivalent:** The four compact service cards beneath the hero.
+
+Preserve the two-column by two-row card arrangement shown in the reference.
+
+Section eyebrow:
+
+WHAT YOU CAN DO WITH WAMU
+
+Headline:
+
+**Financial services for your everyday needs.**
+
+Supporting text:
+
+Discover connected financial services designed for individuals, groups and organisations.
+
+Create four visually distinct service cards:
+
+### Card 1 — Payments and Everyday Services
+
+Electricity, water, airtime, school fees and other payment activities.
+
+Visual: A realistic WhatsApp utility payment interaction.
+
+### Card 2 — Savings and Financial Management
+
+Personal savings, group savings and financial planning.
+
+Visual: A savings conversation or savings progress interface.
+
+### Card 3 — Groups and SACCOs
+
+Group contributions, SACCO management and cooperative financial activities.
+
+Visual: A group contribution interaction with member information.
+
+### Card 4 — Financial Services
+
+Insurance, loans and investments.
+
+Visual: A financial service discovery or insurance inquiry interaction.
+
+Each card should have:
+
+- A distinct icon.
+- A concise heading.
+- A short description.
+- A subtle visual treatment.
+- An appropriate hover state.
+- A clear visual relationship with WAMU's brand.
+
+Do not make all four cards look identical apart from their icons.
+
+---
+
+## SECTION 03 — HOW TO GET STARTED WITH WAMU
+
+**Reference equivalent:** The full-width dark section containing a vertical timeline with three steps.
+
+Use a deep Midnight or Forest background.
+
+Eyebrow:
+
+GETTING STARTED
+
+Headline:
+
+**It's simple to get started with WAMU.**
+
+Supporting text:
+
+Access relevant financial services through a familiar WhatsApp conversation.
+
+Create a vertically connected three-step process.
+
+### Step 01 — Start a conversation
+
+Explain how a user begins interacting with WAMU Pay through WhatsApp.
+
+Visual:
+A WhatsApp conversation opening with WAMU Pay.
+
+Example:
+
+Customer: Hello WAMU.
+
+WAMU: Welcome! How can we help you today?
+
+### Step 02 — Choose your service
+
+Explain how customers identify and select the service they need.
+
+Visual:
+A WhatsApp service-selection interface showing relevant options.
+
+Examples:
+- Pay a bill.
+- Buy airtime.
+- Manage savings.
+- Group contributions.
+- Explore financial services.
+
+### Step 03 — Complete your activity
+
+Explain how customers review relevant information and complete an activity through the supported process.
+
+Visual:
+A realistic transaction summary and confirmation interaction.
+
+### Design requirements
+
+Retain the reference's vertical timeline arrangement.
+
+Use:
+- Three connected steps.
+- Compact dark cards.
+- Subtle borders.
+- Green highlights.
+- Small interface demonstrations.
+- Clear numbering.
+- Controlled transitions.
+
+Avoid replacing this section with three large generic cards in a horizontal row.
+
+---
+
+## SECTION 04 — EVERYDAY FINANCIAL ACTIVITIES, MADE MORE CONNECTED
+
+**Reference equivalent:** The light section containing short feature descriptions and layered product interface visuals.
+
+Use a light background.
+
+Eyebrow:
+
+A MORE CONNECTED EXPERIENCE
+
+Headline:
+
+**Everyday financial activities. One familiar conversation.**
+
+Supporting text:
+
+Explore how WAMU brings different financial activities closer through WhatsApp.
+
+Create an asymmetrical feature composition.
+
+Include two principal explanatory areas:
+
+### Feature A — Everyday payments
+
+Description:
+
+Access supported payment services, including electricity, water and airtime, through WAMU's WhatsApp-first experience.
+
+Visual:
+- A phone displaying a utility payment conversation.
+- A payment summary.
+- A confirmation message.
+
+### Feature B — Connected financial activities
+
+Description:
+
+Discover savings, group finance and other relevant financial services within the WAMU ecosystem.
+
+Visual:
+- Savings interface.
+- Group contribution interface.
+- Financial service inquiry interface.
+
+Preserve the reference's use of layered product illustrations and supporting visual cards.
+
+Do not repeat the exact same phone composition from the hero.
+
+---
+
+## SECTION 05 — EXPLORE WAMU'S FINANCIAL SERVICES
+
+**Reference equivalent:** The reference's pricing-plan section containing multiple comparison cards.
+
+This section must retain the reference's card-based arrangement and visual density, but it must not introduce fabricated subscription plans or pricing.
+
+Eyebrow:
+
+EXPLORE THE WAMU ECOSYSTEM
+
+Headline:
+
+**Different financial needs. Connected possibilities.**
+
+Supporting text:
+
+WAMU brings together financial activities for individuals, groups and organisations.
+
+Replace the pricing comparison cards with four service-category cards.
+
+### Card 1 — Everyday Payments
+
+Include:
+- Electricity.
+- Water.
+- Airtime.
+- School fees.
+- Utility payments.
+
+### Card 2 — Savings
+
+Include:
+- Personal savings.
+- Group savings.
+- Financial management.
+
+### Card 3 — Group Finance
+
+Include:
+- Group contributions.
+- SACCO management.
+- Cooperative activities.
+
+### Card 4 — Financial Services
+
+Include:
+- Insurance.
+- Loans.
+- Investments.
+
+### Visual arrangement
+
+Retain the reference's multiple-card composition.
+
+Use:
+- Four cards.
+- Different but coordinated card sizes where appropriate.
+- Small category labels.
+- Service descriptions.
+- Distinctive icons.
+- Small product interface previews.
+- Subtle Canopy highlights.
+- Clear spacing.
+
+Do not display:
+- Fake monthly subscription prices.
+- Invented service fees.
+- Unverified plan names.
+- Unsupported service availability claims.
+
+The purpose of this section is to help visitors understand WAMU's service ecosystem, not to sell invented subscription packages.
+
+---
+
+## SECTION 06 — THE WAMU DIFFERENCE
+
+**Reference equivalent:** The dark impact-in-numbers section with metric cards and a central illustration.
+
+Preserve the dark background, compact information cards and large central visual composition.
+
+Eyebrow:
+
+THE WAMU DIFFERENCE
+
+Headline:
+
+**Bringing financial services closer to people.**
+
+Supporting text:
+
+A more connected approach to accessing everyday financial activities through a familiar communication channel.
+
+Instead of fabricated statistics, create four concise value proposition panels:
+
+1. WhatsApp-first access.
+2. Connected financial services.
+3. Support for individuals and groups.
+4. A familiar way to interact.
+
+Each panel should contain:
+- A short heading.
+- A concise explanation.
+- A minimal icon or interface detail.
+
+### Central visual
+
+Use a large, premium visual illustration showing a smartphone with a WAMU Pay WhatsApp conversation.
+
+Around it, show subtle representations of:
+- Payments.
+- Savings.
+- Group contributions.
+- Financial services.
+
+Use a sophisticated composition that communicates the idea of multiple financial activities coming together.
+
+Do not invent customer numbers, transaction volumes, growth rates, percentages or impact statistics.
+
+---
+
+## SECTION 07 — FREQUENTLY ASKED QUESTIONS
+
+**Reference equivalent:** The FAQ section with accordion items and a supporting human photograph.
+
+Use a clean, light background.
+
+Eyebrow:
+
+NEED TO KNOW MORE?
+
+Headline:
+
+**Frequently asked questions.**
+
+Include the following questions:
+
+1. What is WAMU?
+2. How does WAMU work through WhatsApp?
+3. Do I need to download a separate application?
+4. What financial services are available through WAMU?
+5. Can groups and SACCOs use WAMU?
+6. Can I pay utility bills through WAMU?
+7. How are transaction confirmations handled?
+8. What happens if a transaction fails?
+9. How can I get assistance?
+
+Use functional accordion components.
+
+Include concise, understandable answers based on verified WAMU product information.
+
+Do not invent:
+- Pricing.
+- Transaction limits.
+- Processing times.
+- Licensing information.
+- Service availability.
+- Guarantees.
+
+### Supporting visual
+
+Retain the reference's human-focused supporting image.
+
+Use an authentic African person interacting with a smartphone.
+
+The image should complement the FAQ section without competing with the accordion.
+
+---
+
+## SECTION 08 — WAMU TRUST AND CUSTOMER EXPERIENCE
+
+**Reference equivalent:** The client logos and customer testimonial area.
+
+Preserve the visual sequence of:
+
+1. A compact recognition or partner area.
+2. A testimonial heading.
+3. A testimonial card or carousel.
+
+Eyebrow:
+
+BUILT AROUND CONNECTED EXPERIENCES
+
+Headline:
+
+**Financial services should feel simple and accessible.**
+
+### Partner and recognition area
+
+Use only real, verified WAMU partners, integrations, organisations or supported service-provider identities already present in the existing website or project.
+
+Do not invent partnerships or imply formal endorsement.
+
+If verified logos are unavailable, use relevant service-category symbols or omit the partner logo strip.
+
+### Testimonials
+
+Use actual customer testimonials only if they already exist in the project or approved content.
+
+If there are no verified testimonials:
+
+- Retain the testimonial section's visual structure.
+- Use a non-testimonial product experience showcase instead.
+- Do not generate fake customer names, photographs, quotations or ratings.
+
+Keep the section visually consistent with the reference.
+
+---
+
+## SECTION 09 — ACCESS WAMU THROUGH WHATSAPP
+
+**Reference equivalent:** The dark app-download promotional section containing a large phone visual.
+
+This section requires a deliberate content adaptation.
+
+WAMU is WhatsApp-first. Do not imply that users must download a separate WAMU mobile application.
+
+Retain the reference's dark background, strong headline, supporting copy and prominent smartphone visual.
+
+Eyebrow:
+
+YOUR FINANCIAL WORLD, MORE CONNECTED
+
+Headline:
+
+**Your financial activities, closer through WhatsApp.**
+
+Supporting text:
+
+Discover a more familiar way to access payments, savings, group finance and other financial services through WAMU.
+
+Primary CTA:
+
+Get Started with WAMU
+
+Secondary CTA:
+
+Talk to Our Team
+
+### Visual
+
+Use a prominent smartphone showing a realistic WAMU Pay WhatsApp conversation.
+
+The visual should communicate:
+- Familiar interaction.
+- Service discovery.
+- Financial activities.
+- Payment conversations.
+- Connected experiences.
+
+Use the WAMU logo and established brand colours.
+
+Do not display app-store badges or a fictitious WAMU mobile application.
+
+Only include a WhatsApp contact link if the verified destination exists in the project.
+
+---
+
+## SECTION 10 — CONTACT WAMU
+
+**Reference equivalent:** The light contact section with a compact form.
+
+Preserve the reference's clean layout and prominent contact form.
+
+Eyebrow:
+
+LET'S TALK
+
+Headline:
+
+**Let's start talking. Contact us today.**
+
+Supporting text:
+
+Have questions about WAMU, its services or how it can support your organisation? Get in touch with our team.
+
+Create a functional contact form containing:
+
+- Full name.
+- Email address.
+- Phone number.
+- Subject or enquiry type.
+- Message.
+
+Submit button:
+
+Send Message
+
+Include appropriate validation, loading, success and error states.
+
+Use the existing contact form integration or backend functionality where available.
+
+Do not create a decorative form that does not submit data.
+
+If no contact submission backend exists, identify the missing integration rather than pretending that submissions are being stored or sent.
+
+---
+
+## SECTION 11 — FOOTER
+
+**Reference equivalent:** The full-width dark footer.
+
+Use a deep Midnight or Forest background.
+
+### Brand column
+
+- WAMU logo.
+- Short brand description.
+- Appropriate social links, where verified.
+
+Suggested description:
+
+WAMU brings financial services together through the convenience of WhatsApp.
+
+### Explore
+
+- Home.
+- About.
+- How It Works.
+- Who We Serve.
+
+### Services
+
+- Payments.
+- Savings.
+- Group Contributions.
+- SACCO Management.
+- Insurance.
+- Loans.
+- Investments.
+
+### Resources
+
+- Blog.
+- FAQs.
+- Guides.
+- Contact.
+
+### Legal
+
+- Privacy Policy.
+- Terms and Conditions.
+
+Use existing verified routes and content.
+
+Do not invent contact information or social media destinations.
+
+Include the appropriate copyright information and a concise brand statement.
+
+---
+
+# 6. VISUAL DESIGN SYSTEM AND COMPONENT DIRECTION
+
+The redesigned website must use a coherent design system.
+
+### Layout and proportions
+
+Use the reference image to guide:
+- Section widths.
+- Container alignment.
+- Vertical spacing.
+- Card positioning.
+- Image-to-text ratios.
+- Section transitions.
+- Content density.
+- Alternating light and dark backgrounds.
+
+Maintain a consistent content container across sections.
+
+Use generous but controlled spacing.
+
+### Cards
+
+Create reusable visual styles for:
+- Service cards.
+- Product showcase cards.
+- Value proposition cards.
+- FAQ rows.
+- Contact form elements.
+
+Avoid making every card identical.
+
+Use different compositions where the content requires them.
+
+### WhatsApp interface components
+
+Build a consistent family of realistic WhatsApp-style product mockups.
+
+Components may include:
+- Conversation header.
+- Customer message bubbles.
+- WAMU response bubbles.
+- Service-selection options.
+- Payment summaries.
+- Transaction confirmation messages.
+- Group contribution updates.
+- Savings information.
+
+These are illustrative product demonstrations, not proof of completed live integrations.
+
+### Glass and depth effects
+
+Use glass-inspired styling selectively for:
+- Floating service labels.
+- Hero product overlays.
+- Contextual product information.
+- Small interface indicators.
+
+Use restrained blur, translucent Forest surfaces, soft shadows and subtle edge highlights.
+
+Do not apply glassmorphism to every component.
+
+### Icons
+
+Use a consistent minimal line-icon system.
+
+Avoid mixing unrelated icon styles.
+
+### Photography
+
+Use authentic African lifestyle imagery.
+
+Show realistic everyday contexts involving people using smartphones and financial technology.
+
+Avoid stereotypical stock imagery.
+
+---
+
+# 7. INTERACTION AND MOTION REQUIREMENTS
+
+Implement purposeful interactions.
+
+### Navigation
+- Functional links.
+- Responsive mobile menu.
+- Appropriate hover and focus states.
+- Sticky navigation only if it supports the experience.
+
+### Hero
+- Smooth product carousel if supported by the existing assets.
+- Clear CTA interactions.
+- Subtle product visual transitions.
+
+### Service cards
+- Subtle hover treatment.
+- Clear interactive affordance where cards link to real content.
+
+### How it works
+- Smooth timeline presentation.
+- Appropriate visual transitions between steps.
+
+### FAQ
+- Functional accordion.
+- Accessible keyboard interaction.
+- Clear open and closed states.
+
+### Testimonials
+- Functional carousel only if real testimonial content exists.
+
+### Contact
+- Form validation.
+- Submission feedback.
+- Accessible error messages.
+
+Respect reduced-motion preferences.
+
+Avoid excessive bouncing, spinning, parallax or decorative animations.
+
+---
+
+# 8. RESPONSIVE DESIGN
+
+The desktop screenshot is the primary structural reference, but the implementation must work across all screen sizes.
+
+### Desktop
+- 1440px reference canvas.
+- 1280px secondary consideration.
+- Full visual compositions.
+- Clear content hierarchy.
+- Properly balanced product imagery.
+
+### Tablet
+- 768px reference.
+- Reorganise card arrangements where needed.
+- Scale phone mockups appropriately.
+- Maintain readable typography.
+
+### Mobile
+- 390px primary reference.
+- 360px minimum consideration.
+- Single-column content where appropriate.
+- Compact navigation.
+- Properly scaled WhatsApp interfaces.
+- Full-width accessible buttons.
+- No horizontal overflow.
+- Appropriately cropped photography.
+- Simplified motion.
+
+Do not simply shrink the desktop design.
+
+Recompose the sections for mobile while retaining their original order and visual identity.
+
+---
+
+# 9. TECHNICAL IMPLEMENTATION — PRESERVE THE EXISTING WAMU PROJECT
+
+This is an existing website redesign, not permission to rebuild the application from scratch.
+
+Before editing, inspect the entire existing project.
+
+Identify:
+
+1. Frontend framework and version.
+2. Routing structure.
+3. Existing page components.
+4. Styling system.
+5. Shared design components.
+6. Existing images, illustrations and assets.
+7. Existing website content.
+8. Backend architecture.
+9. Supabase integrations, if present.
+10. Authentication and permissions.
+11. Contact forms and APIs.
+12. Existing CMS or content-management integrations.
+13. Analytics and SEO configuration.
+14. Existing environment variables and deployment configuration.
+
+### Strict technical rules
+
+- Preserve the current technology stack.
+- Preserve existing routes.
+- Preserve existing backend integrations.
+- Preserve authentication and authorisation.
+- Preserve existing APIs.
+- Preserve working contact and enquiry functionality.
+- Preserve existing content-management capabilities.
+- Preserve database structures unless a documented change is necessary.
+- Do not replace working functionality with static mockups.
+- Do not introduce unnecessary dependencies.
+- Do not hardcode secrets or credentials.
+- Do not expose service-role keys or sensitive environment variables in frontend code.
+- Do not modify production data to create design demonstrations.
+
+If the current implementation uses Supabase, preserve its existing configuration and integration.
+
+Do not introduce Firebase, a new database, a new backend or another framework without a demonstrated technical requirement and explicit approval.
+
+### Component architecture
+
+Use reusable components for repeated structures.
+
+Suggested components include:
+
+- Header.
+- HeroSection.
+- WhatsAppPhoneMockup.
+- ServiceCategoryCard.
+- GettingStartedTimeline.
+- ProductExperience.
+- ServiceShowcaseCard.
+- ValuePropositionCard.
+- FAQAccordion.
+- TestimonialSection.
+- ContactForm.
+- Footer.
+
+Organise components according to the existing project conventions.
+
+Avoid building the entire website as one oversized component.
+
+---
+
+# 10. CONTENT AND DATA INTEGRITY
+
+The existing WAMU website and project content are the source of truth for established business information.
+
+Preserve existing valid content and improve its presentation and readability.
+
+The design must not introduce:
+
+- Fabricated customer statistics.
+- Invented transaction volumes.
+- Unsupported user counts.
+- Fake customer testimonials.
+- Fake partner logos.
+- Unverified regulatory licences.
+- Unsupported security certifications.
+- Invented pricing plans.
+- Unsupported transaction guarantees.
+- False claims about live service integrations.
+- Fake contact information.
+- Claims that WAMU is an official WhatsApp or Meta product.
+
+Do not confuse illustrative WhatsApp conversations with live transactions.
+
+Use realistic demonstration data only where clearly presented as illustrative.
+
+Where information is missing, preserve the visual space and flag the missing content rather than fabricating it.
+
+---
+
+# 11. ACCESSIBILITY, PERFORMANCE AND SEO
+
+The final website must be suitable for production.
+
+### Accessibility
+- Semantic HTML.
+- Correct heading hierarchy.
+- Keyboard-accessible navigation.
+- Visible focus indicators.
+- Accessible accordion controls.
+- Appropriate image alt text.
+- Sufficient colour contrast.
+- Accessible form labels.
+- Reduced-motion support.
+
+### Performance
+- Optimise images.
+- Use responsive image sizes.
+- Lazy-load below-the-fold media.
+- Avoid unnecessary JavaScript.
+- Prevent layout shifts.
+- Optimise font loading.
+- Avoid oversized video and animation assets.
+
+### SEO
+- Appropriate page title.
+- Meta description.
+- Open Graph metadata.
+- Semantic page sections.
+- Descriptive image alt text.
+- Appropriate heading hierarchy.
+- Preserve existing SEO routes and metadata where possible.
+
+---
+
+# 12. IMPLEMENTATION WORKFLOW
+
+Do not immediately start replacing files or generating a new website without first understanding the existing project.
+
+Follow this workflow.
+
+### Phase 1 — Project inspection
+
+Inspect the existing codebase, architecture, website content, assets, routes and integrations.
+
+Identify reusable components and existing functionality.
+
+### Phase 2 — Reference analysis
+
+Analyse the attached Finanex screenshot.
+
+Map its complete section sequence, layout, proportions, card arrangements and background transitions to the WAMU sections specified in this prompt.
+
+### Phase 3 — Design mapping
+
+Create a section-by-section implementation plan.
+
+For each section identify:
+- Reference layout.
+- WAMU content.
+- Required assets.
+- Required components.
+- Background treatment.
+- Responsive behaviour.
+- Interactive behaviour.
+
+### Phase 4 — Design system
+
+Establish the WAMU colours, typography, spacing, content widths, card styles, buttons, icons and reusable components.
+
+### Phase 5 — Implementation
+
+Implement the entire homepage in the specified order.
+
+Do not stop after the navigation or hero.
+
+Do not leave sections as placeholders when their content and visual requirements have been provided.
+
+### Phase 6 — Functional integration
+
+Reconnect existing routes, APIs, forms, backend services and other working website features.
+
+Ensure that all advertised interactive elements perform their intended actions.
+
+### Phase 7 — Quality assurance
+
+Test the entire page at:
+- 1440px.
+- 1280px.
+- 768px.
+- 390px.
+- 360px.
+
+Check:
+- Visual similarity to the reference structure.
+- WAMU brand consistency.
+- Content accuracy.
+- Responsive behaviour.
+- Navigation.
+- CTA destinations.
+- Accordion functionality.
+- Contact form submission.
+- Console errors.
+- Network errors.
+- Accessibility.
+- Performance.
+- Existing backend integrations.
+
+Resolve identified issues before declaring completion.
+
+---
+
+# 13. FINAL ACCEPTANCE CRITERIA
+
+The redesign is complete only when all the following conditions are satisfied:
+
+1. The entire WAMU website follows the supplied reference's section sequence and overall structural arrangement.
+2. The website retains WAMU's official colour palette.
+3. Georgia and Inter are used consistently.
+4. The website clearly communicates WAMU's WhatsApp-first financial services model.
+5. The hero contains a convincing WAMU Pay product demonstration.
+6. The four service categories are clearly represented.
+7. The three-step getting-started journey is implemented.
+8. Product showcases use realistic WhatsApp interactions.
+9. The service-category card section replaces the reference's pricing plans without inventing prices.
+10. The WAMU difference section contains no fabricated statistics.
+11. FAQs are functional and contain accurate answers.
+12. Testimonials and partner information are authentic or appropriately omitted.
+13. The app-download section is correctly adapted to WAMU's WhatsApp-first model.
+14. The contact form is connected to a working submission process or its missing integration is clearly identified.
+15. The footer contains relevant WAMU navigation and service links.
+16. All sections are responsive.
+17. Existing website functionality and backend integrations remain intact.
+18. There are no critical console errors, broken routes or non-functional controls.
+19. The design looks professionally art-directed rather than like a generic AI-generated template.
+20. The complete website has been implemented, not just visually demonstrated in a single section.
+
+---
+
+# 14. FINAL CREATIVE DIRECTION
+
+Use the attached Finanex screenshot as the structural blueprint.
+
+Reproduce its compact, vertically organised layout, prominent product visual, two-by-two service arrangement, dark three-step timeline, layered feature showcase, multi-card section, dark impact composition, FAQ area, testimonial treatment, dark promotional section, contact form and comprehensive footer.
+
+However, transform the entire experience into WAMU.
+
+Replace the reference's banking-app messaging with WAMU's WhatsApp-first financial services proposition.
+
+Replace its purple and pink palette with WAMU's established Forest, Canopy, Mist and Midnight colours.
+
+Replace its banking-dashboard illustrations with authentic WhatsApp transaction conversations, savings interactions, group contribution demonstrations and financial service experiences.
+
+Replace invented pricing and numerical claims with accurate WAMU service information.
+
+Do not copy the Finanex logo, name, content, images, typography or brand identity.
+
+**The final website must preserve the reference's structural identity while expressing WAMU's own product identity.**
+
+The visitor should understand within a few seconds:
+
+**WAMU brings financial services together through WhatsApp.**
+
+Design and implement the entire experience to production-quality standards.
