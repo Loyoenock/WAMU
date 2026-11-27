@@ -176,10 +176,12 @@ export function HeroSection() {
 
               <a
                 href="#solutions"
-                className={`inline-flex items-center gap-2 rounded-full border border-[#5DCAA5]/30 bg-[#0D1A12]/55 px-5 py-3 text-[13.5px] font-semibold text-[#EBF6F0] backdrop-blur-md transition-colors hover:border-[#5DCAA5]/65 hover:bg-[#1A4029]/80 sm:px-6 sm:py-3.5 sm:text-[14.5px] ${FOCUS_RING_DARK}`}
+                className={`wamu-magie-btn-dark-secondary group inline-flex w-fit items-center gap-2.5 py-1.5 pl-5 pr-1.5 text-[13.5px] font-semibold hover:scale-[1.02] sm:gap-3 sm:py-2 sm:pl-6 sm:pr-2 sm:text-[14.5px] ${FOCUS_RING_DARK}`}
               >
                 <span>Explore WAMU</span>
-                <ArrowRight className="h-4 w-4 text-[#5DCAA5]" aria-hidden="true" />
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#5DCAA5]/30 bg-[#1A4029] text-[#5DCAA5] transition-all duration-300 group-hover:scale-105 group-hover:bg-[#5DCAA5] group-hover:text-[#0D1A12] sm:h-10 sm:w-10">
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </span>
               </a>
             </div>
 

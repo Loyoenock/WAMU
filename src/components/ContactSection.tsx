@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Clock, Globe, Phone } from 'lucide-react';
+import { ArrowRight, CheckCircle2, Clock, Globe, Phone } from 'lucide-react';
 import {
   FOCUS_RING_LIGHT,
   WAMU_PHONE_LINK,
@@ -255,9 +255,12 @@ export function ContactSection() {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className={`wamu-btn-forest inline-flex w-full items-center justify-center px-8 py-3.5 text-[14.5px] font-semibold disabled:opacity-60 sm:w-auto ${FOCUS_RING_LIGHT}`}
+                className={`wamu-magie-btn-light group inline-flex w-full items-center justify-between gap-3 py-1.5 pl-6 pr-1.5 text-[14.5px] font-semibold text-white hover:scale-[1.01] disabled:opacity-60 sm:w-fit ${FOCUS_RING_LIGHT}`}
               >
-                {status === 'sending' ? 'Sending...' : 'Send Message'}
+                <span>{status === 'sending' ? 'Sending...' : 'Send Message'}</span>
+                <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#0D1A12] shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-[#5DCAA5]">
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </span>
               </button>
               <p className="text-[12px] text-[#5A7A68]">
                 Direct line:{' '}

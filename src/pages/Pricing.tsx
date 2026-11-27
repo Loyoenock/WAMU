@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ArrowRight } from 'lucide-react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { usePageMeta } from '../lib/router';
@@ -159,9 +160,12 @@ export function Pricing() {
             <button
               type="submit"
               disabled={status === 'sending'}
-              className="wamu-btn-primary px-7 py-[15px] text-[15px] font-semibold text-white active:translate-y-[1px] disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2"
+              className="wamu-magie-btn-light group inline-flex w-full items-center justify-between gap-3 py-1.5 pl-6 pr-1.5 text-[15px] font-semibold text-white hover:scale-[1.01] disabled:opacity-60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2 sm:w-fit"
             >
-              {status === 'sending' ? 'Sending...' : 'Join the waitlist'}
+              <span>{status === 'sending' ? 'Sending...' : 'Join the waitlist'}</span>
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#0D1A12] shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-[#5DCAA5] sm:h-10 sm:w-10">
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </span>
             </button>
             <p className="text-[12px] text-[#5A7A68]">
               By joining you agree to our{' '}

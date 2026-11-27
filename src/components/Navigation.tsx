@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Menu, X } from 'lucide-react';
+import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { useRoute } from '../lib/router';
 import { FOCUS_RING_DARK, FOCUS_RING_LIGHT, waLink } from '../lib/siteConfig';
 import { WhatsAppIcon } from './WhatsAppIcon';
@@ -305,16 +305,19 @@ export function Navigation() {
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className={`mt-1 flex w-full items-center justify-center gap-2 rounded-full py-3 text-[14px] font-semibold transition-colors ${
+              className={`group mt-1 flex w-full items-center justify-between gap-2 rounded-full py-1.5 pl-5 pr-1.5 text-[14px] font-semibold transition-all duration-300 ${
                 isDark
-                  ? 'bg-white text-[#0D1A12] hover:bg-[#EBF6F0]'
-                  : 'bg-[#0D1A12] text-white hover:bg-[#0F6E56]'
+                  ? 'wamu-magie-btn-dark text-white hover:border-[#5DCAA5]/75'
+                  : 'wamu-magie-btn-light text-white'
               } ${focusRing}`}
             >
-              <WhatsAppIcon
-                className={`h-4 w-4 ${isDark ? 'text-[#0F6E56]' : 'text-[#5DCAA5]'}`}
-              />
-              <span>Join WAMU</span>
+              <span className="inline-flex items-center gap-2">
+                <WhatsAppIcon className="h-4 w-4 text-[#5DCAA5]" />
+                <span>Join WAMU</span>
+              </span>
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#0D1A12] shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-[#5DCAA5]">
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </span>
             </a>
           </nav>
         )}

@@ -1,4 +1,5 @@
 import React from 'react';
+import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Navigation } from '../components/Navigation';
 import { Footer } from '../components/Footer';
 import { WhatsAppIcon } from '../components/WhatsAppIcon';
@@ -191,21 +192,27 @@ export function Faq() {
           ))}
         </div>
 
-        <div className="mt-8 flex flex-wrap gap-3 sm:mt-10">
+        <div className="mt-8 flex flex-wrap items-center gap-3 sm:mt-10">
           <a
             href="https://wa.me/256788003344"
             target="_blank"
             rel="noopener noreferrer"
-            className="wamu-btn-primary inline-flex items-center gap-[10px] px-6 py-[14px] text-[14.5px] font-semibold text-white active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2 sm:px-7 sm:py-[15px] sm:text-[15px]"
+            className="wamu-magie-btn-light group inline-flex w-fit items-center gap-2.5 py-1.5 pl-5 pr-1.5 text-[14.5px] font-semibold text-white hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2 sm:gap-3 sm:py-2 sm:pl-6 sm:pr-2 sm:text-[15px]"
           >
-            <WhatsAppIcon className="h-[18px] w-[18px] text-white" />
-            Message WAMU on WhatsApp
+            <WhatsAppIcon className="h-[17px] w-[17px] text-[#5DCAA5]" />
+            <span>Message WAMU on WhatsApp</span>
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#0D1A12] shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-[#5DCAA5] sm:h-10 sm:w-10">
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </span>
           </a>
           <a
             href="/pricing"
-            className="inline-flex items-center rounded-full border border-[#C3E8D6] bg-white px-6 py-[14px] text-[14.5px] font-semibold text-[#0F6E56] transition hover:border-[#0F6E56]/40 hover:bg-[#EBF6F0] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2 sm:px-7 sm:py-[15px] sm:text-[15px]"
+            className="wamu-magie-btn-light-secondary group inline-flex w-fit items-center gap-2.5 py-1.5 pl-5 pr-1.5 text-[14.5px] font-semibold hover:scale-[1.02] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F6E56] focus-visible:ring-offset-2 sm:gap-3 sm:py-2 sm:pl-6 sm:pr-2 sm:text-[15px]"
           >
-            Join the waitlist
+            <span>Join the waitlist</span>
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full border border-[#C3E8D6] bg-white text-[#0F6E56] shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:border-[#0F6E56] group-hover:bg-[#0F6E56] group-hover:text-white sm:h-10 sm:w-10">
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </span>
           </a>
         </div>
       </main>

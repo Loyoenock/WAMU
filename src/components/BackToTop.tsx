@@ -23,7 +23,7 @@ export function BackToTop() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.8, y: 20 }}
           onClick={scrollToTop}
-          className="wamu-btn-forest fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))] z-50 rounded-full p-2.5 text-white active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1A12] sm:bottom-6 sm:right-6 sm:p-3"
+          className="wamu-magie-btn-dark-secondary fixed bottom-[max(1rem,env(safe-area-inset-bottom))] right-[max(1rem,env(safe-area-inset-right))] z-50 rounded-full p-2.5 text-white hover:scale-105 hover:border-[#5DCAA5]/75 hover:bg-[#0F6E56] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#0D1A12] sm:bottom-6 sm:right-6 sm:p-3"
           aria-label="Back to top"
         >
           <ArrowUp className="h-5 w-5" />

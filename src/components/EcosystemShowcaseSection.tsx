@@ -1,6 +1,6 @@
 import React from 'react';
 import { ArrowRight, Check, CreditCard, Landmark, PiggyBank, Shield } from 'lucide-react';
-import { FOCUS_RING_LIGHT, waLink } from '../lib/siteConfig';
+import { FOCUS_RING_DARK, FOCUS_RING_LIGHT, waLink } from '../lib/siteConfig';
 import { NwscBadge, UedclBadge } from './PaymentBrandBadges';
 
 interface EcosystemCard {
@@ -236,14 +236,22 @@ export function EcosystemShowcaseSection() {
                   href={card.ctaHref}
                   target={card.ctaHref.startsWith('http') ? '_blank' : undefined}
                   rel={card.ctaHref.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className={`inline-flex w-full items-center justify-center gap-2 rounded-full px-6 py-3 text-[14px] font-semibold transition-colors ${
+                  className={`group inline-flex w-full items-center justify-between gap-3 py-1.5 pl-5 pr-1.5 text-[14px] font-semibold hover:scale-[1.01] ${
                     card.featured
-                      ? 'wamu-btn-primary text-white'
-                      : `border border-[#0F6E56]/25 bg-[#EBF6F0] text-[#0D1A12] hover:bg-[#C3E8D6]/70 ${FOCUS_RING_LIGHT}`
+                      ? `wamu-magie-btn-dark ${FOCUS_RING_DARK}`
+                      : `wamu-magie-btn-light-secondary ${FOCUS_RING_LIGHT}`
                   }`}
                 >
                   <span>{card.ctaLabel}</span>
-                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  <span
+                    className={`grid h-9 w-9 shrink-0 place-items-center rounded-full shadow-sm transition-all duration-300 group-hover:scale-105 ${
+                      card.featured
+                        ? 'bg-white text-[#0D1A12] group-hover:bg-[#5DCAA5]'
+                        : 'border border-[#C3E8D6] bg-white text-[#0F6E56] group-hover:border-[#0F6E56] group-hover:bg-[#0F6E56] group-hover:text-white'
+                    }`}
+                  >
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </span>
                 </a>
               </div>
             </article>

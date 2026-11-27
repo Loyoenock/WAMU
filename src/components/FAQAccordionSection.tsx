@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Minus, Plus } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Minus, Plus } from 'lucide-react';
 import { FOCUS_RING_LIGHT, WAMU_PHONE_LINK, WAMU_WHATSAPP_NUMBER, waLink } from '../lib/siteConfig';
 
 const FAQ_ITEMS: { q: string; a: React.ReactNode }[] = [
@@ -170,10 +170,12 @@ export function FAQAccordionSection() {
               href={waLink('Hi WAMU, I have a question about how it works.')}
               target="_blank"
               rel="noopener noreferrer"
-              className={`wamu-btn-forest mt-1 inline-flex items-center gap-2 px-6 py-3 text-[14px] font-semibold ${FOCUS_RING_LIGHT}`}
+              className={`wamu-magie-btn-light group mt-1 inline-flex w-fit items-center gap-2.5 py-1.5 pl-5 pr-1.5 text-[14px] font-semibold hover:scale-[1.02] sm:gap-3 sm:py-2 sm:pl-6 sm:pr-2 ${FOCUS_RING_LIGHT}`}
             >
               <span>Ask a question on WhatsApp</span>
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#0D1A12] shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-[#5DCAA5]">
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </span>
             </a>
           </div>
         </div>

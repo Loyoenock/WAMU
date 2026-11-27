@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heart, Flower2, PartyPopper, BellRing, type LucideIcon } from 'lucide-react';
+import { ArrowUpRight, Heart, Flower2, PartyPopper, BellRing, type LucideIcon } from 'lucide-react';
 import { WhatsAppIcon } from './WhatsAppIcon';
 import { WaMark } from './WaMark';
 
@@ -107,10 +107,13 @@ export function Collections() {
             href="https://wa.me/256788003344?text=I%20want%20to%20start%20a%20collection%20on%20WAMU"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex shrink-0 items-center gap-[10px] rounded-full border border-[#5DCAA5]/40 bg-[#0D1A12] px-[28px] py-[15px] text-[14.5px]/[20px] font-bold tracking-[-0.01em] text-[#FFFFFF] shadow-[0_12px_26px_-8px_rgba(13,26,18,0.55),inset_0_1px_0_rgba(255,255,255,0.14)] transition-all duration-200 hover:-translate-y-0.5 hover:border-[#C3E8D6]/65 hover:bg-[#133120] active:translate-y-[1px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D9E75] md:text-[15px]/[20px]"
+            className="group inline-flex w-fit shrink-0 items-center gap-2.5 rounded-full border border-white/35 bg-[#0D1A12]/90 py-1.5 pl-5 pr-1.5 text-[14px]/[20px] font-bold tracking-[-0.01em] text-[#FFFFFF] backdrop-blur-md shadow-[0_14px_28px_-10px_rgba(13,26,18,0.55),inset_0_1px_0_rgba(255,255,255,0.2)] transition-all duration-300 hover:scale-[1.02] hover:border-[#C3E8D6]/80 hover:bg-[#0D1A12] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#5DCAA5] focus-visible:ring-offset-2 focus-visible:ring-offset-[#1D9E75] sm:gap-3 sm:py-2 sm:pl-6 sm:pr-2 md:text-[15px]/[20px]"
           >
-            <WhatsAppIcon className="h-[18px] w-[18px] text-[#5DCAA5]" />
-            Start a goal
+            <WhatsAppIcon className="h-[17px] w-[17px] text-[#5DCAA5]" />
+            <span>Start a goal</span>
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-white text-[#0D1A12] shadow-sm transition-all duration-300 group-hover:scale-105 group-hover:bg-[#5DCAA5] sm:h-10 sm:w-10">
+              <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+            </span>
           </a>
         </div>
       </div>
